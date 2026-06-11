@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デイリーリサーチ ZINE — 2026年6月11日</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #FAFAF8;
+      --surf:   #F2F1EC;
+      --ink:    #1C1C1A;
+      --muted:  #6B6B67;
+      --bd:     rgba(28,28,26,.13);
+      --bd-med: rgba(28,28,26,.26);
+      --serif:  'Noto Serif JP', Georgia, serif;
+      --sans:   'Noto Sans JP', system-ui, sans-serif;
+      --green-bg: #EAF3DE; --green-fg: #3B6D11;
+      --blue-bg:  #E6F1FB; --blue-fg:  #185FA5; --blue-bd: #B5D4F4;
+      --amber-bg: #FAEEDA; --amber-fg: #854F0B;
+      --red-bg:   #FCEBEB; --red-fg:   #A32D2D;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.65;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .wrap { max-width: 740px; margin: 0 auto; }
+
+    /* ── Masthead ── */
+    .masthead {
+      border-top: 4px solid var(--ink);
+      border-bottom: 4px solid var(--ink);
+      padding: .75rem 0;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .mast-eyebrow {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 2px;
+    }
+    .mast-title {
+      font-family: var(--serif);
+      font-size: 64px; font-weight: 500;
+      line-height: 1; letter-spacing: -4px;
+    }
+    .mast-right {
+      text-align: right; font-size: 12px;
+      color: var(--muted); line-height: 1.75;
+    }
+    .subbar {
+      font-size: 11px; color: var(--muted);
+      padding: 5px 0;
+      border-bottom: 1.5px solid var(--ink);
+      margin-bottom: 1.25rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 6px;
+    }
+
+    /* ── Link badge ── */
+    a.lb {
+      display: inline-flex; align-items: center; gap: 3px;
+      font-size: 10px; font-weight: 500;
+      padding: 2px 8px;
+      background: var(--blue-bg); color: var(--blue-fg);
+      text-decoration: none;
+      border: .5px solid var(--blue-bd);
+      letter-spacing: .2px;
+      white-space: nowrap;
+    }
+    a.lb:hover { background: var(--blue-bd); }
+    a.lb.sm { padding: 2px 6px; }
+    a.lb.inv {
+      background: rgba(255,255,255,.15);
+      color: #fff; border-color: rgba(255,255,255,.3);
+    }
+    a.lb.inv:hover { background: rgba(255,255,255,.28); }
+    a.lb.pill-lnk {
+      background: var(--surf); color: var(--muted);
+      border-color: var(--bd-med); font-size: 11px;
+      padding: 3px 10px;
+    }
+    a.lb.pill-lnk:hover { background: #e5e4df; color: var(--ink); }
+
+    /* ── Tags ── */
+    .tag {
+      display: inline-block; font-size: 10px; font-weight: 500;
+      padding: 2px 8px; letter-spacing: .2px;
+    }
+    .t-ga  { background: var(--green-bg); color: var(--green-fg); }
+    .t-pre { background: var(--blue-bg);  color: var(--blue-fg); }
+    .t-amb { background: var(--amber-bg); color: var(--amber-fg); }
+    .t-nc  { background: var(--surf);     color: var(--muted); }
+
+    /* ── Stats ── */
+    .stats {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      border: 2px solid var(--ink);
+      margin-bottom: 1.25rem;
+    }
+    .stat {
+      padding: 1rem .75rem;
+      text-align: center;
+      border-right: 2px solid var(--ink);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 60px; font-weight: 500;
+      line-height: 1; letter-spacing: -3px;
+    }
+    .c-green { color: var(--green-fg); }
+    .c-blue  { color: var(--blue-fg); }
+    .c-red   { color: var(--red-fg); }
+    .stat-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+    /* ── Section header ── */
+    .sec-hd {
+      background: var(--ink); color: var(--bg);
+      padding: .35rem .75rem;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: .875rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .sec-hd .meta {
+      display: flex; align-items: center;
+      gap: 8px; font-size: 10px;
+      letter-spacing: 0; opacity: .75;
+    }
+
+    /* ── Feature table ── */
+    .ftable {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px; margin-bottom: 1.25rem;
+    }
+    .ftable th {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--muted); padding: 5px 8px;
+      border-bottom: 1.5px solid var(--ink);
+      text-align: left;
+    }
+    .ftable td {
+      padding: 7px 8px;
+      border-bottom: .5px solid var(--bd);
+      vertical-align: middle;
+    }
+    .ftable tr:last-child td { border-bottom: none; }
+    .ftable tr:hover td { background: var(--surf); }
+    .ftable td:nth-child(2),
+    .ftable td:nth-child(3),
+    .ftable td:last-child { white-space: nowrap; }
+    .ftable td:nth-child(3) { color: var(--muted); font-size: 12px; }
+
+    /* ── Two-panel ── */
+    .two-panel {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border: 1.5px solid var(--ink);
+      margin-bottom: 1.25rem;
+    }
+    .panel {
+      padding: 1rem;
+      border-right: 1.5px solid var(--ink);
+    }
+    .panel:last-child { border-right: none; }
+    .panel-title {
+      font-family: var(--serif);
+      font-size: 15px; font-weight: 500;
+      margin-bottom: 2px; line-height: 1.25;
+    }
+    .panel-sub {
+      font-size: 10px; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .5px;
+      margin-bottom: .625rem;
+      display: flex; align-items: center;
+      gap: 8px; flex-wrap: wrap;
+    }
+    .upd {
+      display: flex; gap: 8px;
+      padding: 5px 0;
+      border-bottom: .5px solid var(--bd);
+      font-size: 12.5px; align-items: flex-start;
+    }
+    .upd:last-child { border-bottom: none; }
+    .upd-date {
+      font-size: 10px; font-weight: 500;
+      min-width: 30px; color: var(--muted);
+      padding-top: 2px; flex-shrink: 0;
+    }
+    .upd-text { line-height: 1.5; }
+
+    /* ── Region grid ── */
+    .region {
+      border: 1.5px solid var(--ink);
+      margin-bottom: 1.25rem; overflow: hidden;
+    }
+    .region-note {
+      font-size: 11px; color: var(--muted);
+      font-style: italic; padding: .5rem .875rem;
+      border-bottom: .5px solid var(--bd);
+      background: var(--surf);
+    }
+    .region-row {
+      display: flex; justify-content: space-between;
+      align-items: center;
+      padding: 7px 10px;
+      border-bottom: .5px solid var(--bd);
+      font-size: 13px;
+    }
+    .region-row:last-child { border-bottom: none; }
+    .region-row:hover { background: var(--surf); }
+    .rsvc {
+      font-weight: 500;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .rmeta {
+      display: flex; align-items: center;
+      gap: 8px; flex-shrink: 0;
+    }
+    .sbadge {
+      display: inline-block; font-size: 10px;
+      font-weight: 500; padding: 2px 10px;
+    }
+    .s-ok   { background: var(--green-bg); color: var(--green-fg); }
+    .s-ng   { background: var(--red-bg);   color: var(--red-fg); }
+    .s-part { background: var(--amber-bg); color: var(--amber-fg); }
+    .s-nc   { background: var(--surf);     color: var(--muted); }
+
+    /* ── Deadline box ── */
+    .dl-box {
+      border: 3px solid var(--ink);
+      padding: .875rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .dl-eyebrow {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: .375rem;
+    }
+    .dl-head {
+      font-family: var(--serif);
+      font-size: 22px; font-weight: 500;
+      line-height: 1.15; margin-bottom: .75rem;
+    }
+    .dl-list { list-style: none; }
+    .dl-item {
+      display: grid;
+      grid-template-columns: 105px 1fr auto;
+      gap: 10px; align-items: start;
+      padding: 7px 0;
+      border-top: .5px solid var(--bd);
+      font-size: 13px;
+    }
+    .dl-date { font-weight: 500; font-size: 12px; padding-top: 2px; }
+    .dl-desc { color: var(--muted); line-height: 1.5; }
+
+    /* ── Footer no-update strip ── */
+    .no-upd {
+      border-top: 1.5px solid var(--ink);
+      padding-top: .75rem;
+      display: flex; flex-wrap: wrap;
+      gap: 6px; align-items: center;
+    }
+    .no-upd-lbl {
+      font-size: 10px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 2px;
+      color: var(--muted); flex-shrink: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 560px) {
+      body { padding: 1.25rem .875rem 3rem; }
+      .mast-title { font-size: 46px; }
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 2px solid var(--ink); }
+      .stat:last-child { border-bottom: none; }
+      .two-panel { grid-template-columns: 1fr; }
+      .panel { border-right: none; border-bottom: 1.5px solid var(--ink); }
+      .panel:last-child { border-bottom: none; }
+      .dl-item { grid-template-columns: 90px 1fr; }
+      .dl-item a { grid-column: 2; }
+    }
+
+    i.ti { font-size: 14px; vertical-align: -2px; margin-right: 2px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div>
+      <div class="mast-eyebrow">Daily Research</div>
+      <h1 class="mast-title">ZINE</h1>
+    </div>
+    <div class="mast-right">
+      2026年6月11日（木）<br>
+      Google Cloud &amp; Genesys Cloud<br>
+      対象期間: 6月8日〜11日
+    </div>
+  </header>
+  <div class="subbar">
+    <span><i class="ti ti-news"></i> 公式リリースノート自動収集 · Claude 編集 · 毎朝配信</span>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+      <a href="index.html" class="lb"><i class="ti ti-arrow-left"></i> 一覧へ</a>
+      <a href="https://github.com/ko-shimada/daily-research" class="lb" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i> ko-shimada/daily-research</a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num c-green">5</div>
+      <div class="stat-lbl">BigQuery<br>今週の GA 機能</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num c-blue" id="lang-num">16</div>
+      <div class="stat-lbl">Genesys 追加<br>対応言語数（今月計）</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num c-red" id="days-left">–</div>
+      <div class="stat-lbl">期限まで<br>あと N 日（6/30）</div>
+    </div>
+  </div>
+
+  <!-- BigQuery -->
+  <div class="sec-hd">
+    <span><i class="ti ti-database"></i>&nbsp;BigQuery</span>
+    <span class="meta">
+      6月8日 &amp; 10日
+      <a href="https://docs.cloud.google.com/bigquery/docs/release-notes" class="lb inv" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Release Notes</a>
+    </span>
+  </div>
+  <table class="ftable">
+    <thead>
+      <tr>
+        <th>機能</th>
+        <th>ステージ</th>
+        <th>日付</th>
+        <th>参照</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gemini Cloud Assist — データ系統分析（data lineage）</td>
+        <td><span class="tag t-pre">Preview</span></td>
+        <td>6/8</td>
+        <td><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_08_2026" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+      </tr>
+      <tr>
+        <td>Gemini Cloud Assist — クエリスケジューリング</td>
+        <td><span class="tag t-pre">Preview</span></td>
+        <td>6/8</td>
+        <td><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_08_2026" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+      </tr>
+      <tr>
+        <td>Java JDBC ドライバ（Google 開発 OSS）</td>
+        <td><span class="tag t-ga">GA</span></td>
+        <td>6/8</td>
+        <td><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_08_2026" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+      </tr>
+      <tr>
+        <td>Organization Policy カスタム制約</td>
+        <td><span class="tag t-ga">GA</span></td>
+        <td>6/8</td>
+        <td><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_08_2026" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+      </tr>
+      <tr>
+        <td>IAM 否定ポリシー（deny policy）</td>
+        <td><span class="tag t-ga">GA</span></td>
+        <td>6/8</td>
+        <td><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_08_2026" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+      </tr>
+      <tr>
+        <td>生成AI コスト管理（daily token quotas）</td>
+        <td><span class="tag t-ga">GA</span></td>
+        <td>6/8</td>
+        <td><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_08_2026" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+      </tr>
+      <tr>
+        <td>連続クエリ — ARRAY_AGG / STRING_AGG 集約関数対応</td>
+        <td><span class="tag t-pre">Preview</span></td>
+        <td>6/10</td>
+        <td><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_10_2026" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- CX Agent Studio + Genesys two-panel -->
+  <div class="two-panel">
+    <div class="panel">
+      <div class="panel-title">Conversational Agents / CX Agent Studio</div>
+      <div class="panel-sub">
+        <span><i class="ti ti-robot"></i> Google Cloud</span>
+        <a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/resources/release-notes" class="lb" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
+      </div>
+      <div class="upd">
+        <span class="upd-date">6/8</span>
+        <span class="upd-text">評価データのインポート / エクスポート対応 <span class="tag t-ga">GA</span></span>
+      </div>
+      <div class="upd">
+        <span class="upd-date">直近</span>
+        <span class="upd-text">Evaluation UI に Naive Replay モード追加、音声録音・エラー詳細化</span>
+      </div>
+      <div class="upd">
+        <span class="upd-date">直近</span>
+        <span class="upd-text">誤バージイン（false-positive barge-in）回復メカニズム実装</span>
+      </div>
+      <div class="upd">
+        <span class="upd-date">5月</span>
+        <span class="upd-text">Playbook インポートの認可欠落脆弱性を修正
+          <a href="https://docs.cloud.google.com/dialogflow/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Dialogflow</a>
+        </span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Genesys Cloud — STT / TTS / AVA</div>
+      <div class="panel-sub">
+        <span><i class="ti ti-headset"></i> Genesys Cloud</span>
+        <a href="https://help.genesys.cloud/release-notes/genesys-cloud/" class="lb" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
+      </div>
+      <div class="upd">
+        <span class="upd-date">6/8</span>
+        <span class="upd-text">AWS Transcribe 経由で <strong>12 言語</strong>追加（Bengali, Bosnian, Estonian ほか）
+          <a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-8-2026/" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
+        </span>
+      </div>
+      <div class="upd">
+        <span class="upd-date">6/8</span>
+        <span class="upd-text">AVA: ユーザー発話の verbatim コピー変数設定が可能に
+          <a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-8-2026/" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
+        </span>
+      </div>
+      <div class="upd">
+        <span class="upd-date">6/1</span>
+        <span class="upd-text">AI 機能に <strong>4 言語</strong>追加（Filipino, Malay, Hebrew, Greek）
+          <a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-1-2026/" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
+        </span>
+      </div>
+      <div class="upd">
+        <span class="upd-date">6/1</span>
+        <span class="upd-text">Architect flow → Journey Management インポート対応
+          <a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-1-2026/" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VPC Service Controls (inline, compact) -->
+  <div class="sec-hd">
+    <span><i class="ti ti-shield-lock"></i>&nbsp;VPC Service Controls</span>
+    <span class="meta">
+      6月3日〜6日
+      <a href="https://docs.cloud.google.com/vpc-service-controls/docs/release-notes" class="lb inv" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Release Notes</a>
+    </span>
+  </div>
+  <table class="ftable" style="margin-bottom:1.25rem">
+    <thead>
+      <tr><th>機能</th><th>ステージ</th><th>日付</th><th>参照</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Firebase Phone Number Verification サポート</td>
+        <td><span class="tag t-ga">GA</span></td>
+        <td>6/6</td>
+        <td><a href="https://docs.cloud.google.com/vpc-service-controls/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+      </tr>
+      <tr>
+        <td>Workload Identity API サポート</td>
+        <td><span class="tag t-pre">Preview</span></td>
+        <td>6/3</td>
+        <td><a href="https://docs.cloud.google.com/vpc-service-controls/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Tokyo region -->
+  <div class="sec-hd">
+    <span><i class="ti ti-map-pin"></i>&nbsp;asia-northeast1（東京）リージョン対応状況</span>
+    <span class="meta">今週の新規追加: なし</span>
+  </div>
+  <div class="region">
+    <div class="region-note"><i class="ti ti-info-circle"></i>&nbsp;今週の公式リリースノートに東京リージョン固有のアップデートはありません。</div>
+    <div class="region-row">
+      <span class="rsvc"><i class="ti ti-cpu"></i> Vertex AI / Gemini（基本機能）</span>
+      <div class="rmeta">
+        <span class="sbadge s-ok">対応済み</span>
+        <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/locations" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-map"></i> Locations</a>
+      </div>
+    </div>
+    <div class="region-row">
+      <span class="rsvc"><i class="ti ti-server"></i> Cloud Run</span>
+      <span class="sbadge s-ok">対応済み</span>
+    </div>
+    <div class="region-row">
+      <span class="rsvc"><i class="ti ti-database"></i> BigQuery</span>
+      <span class="sbadge s-ok">対応済み</span>
+    </div>
+    <div class="region-row">
+      <span class="rsvc"><i class="ti ti-bucket"></i> Cloud Storage</span>
+      <span class="sbadge s-ok">対応済み</span>
+    </div>
+    <div class="region-row">
+      <span class="rsvc"><i class="ti ti-shield"></i> VPC Service Controls</span>
+      <span class="sbadge s-ok">対応済み</span>
+    </div>
+    <div class="region-row">
+      <span class="rsvc"><i class="ti ti-git-branch"></i> Workflows</span>
+      <div class="rmeta">
+        <span class="sbadge s-part">東京リージョン未追加</span>
+        <a href="https://docs.cloud.google.com/workflows/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
+      </div>
+    </div>
+    <div class="region-row">
+      <span class="rsvc"><i class="ti ti-microphone"></i> Speech-to-Text Chirp 3</span>
+      <div class="rmeta">
+        <span class="sbadge s-ng">未対応</span>
+        <a href="https://docs.cloud.google.com/speech-to-text/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
+      </div>
+    </div>
+    <div class="region-row">
+      <span class="rsvc"><i class="ti ti-volume"></i> Text-to-Speech Gemini TTS 2.5</span>
+      <div class="rmeta">
+        <span class="sbadge s-part">要確認（Global / US / EU 対象）</span>
+        <a href="https://docs.cloud.google.com/text-to-speech/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
+      </div>
+    </div>
+    <div class="region-row">
+      <span class="rsvc"><i class="ti ti-message-chatbot"></i> Conversational Agents / CX Agent Studio</span>
+      <div class="rmeta">
+        <span class="sbadge s-nc">公式ドキュメント要確認</span>
+        <a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/region" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-map"></i> Regions</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deadlines -->
+  <div class="dl-box">
+    <div class="dl-eyebrow"><i class="ti ti-alert-triangle"></i>&nbsp;期限 &amp; 非推奨アラート</div>
+    <h2 class="dl-head">移行期限 &amp; シャットダウン予定</h2>
+    <ul class="dl-list">
+      <li class="dl-item">
+        <span class="dl-date">2026年6月30日</span>
+        <span class="dl-desc">Vertex AI ビデオ生成 — 旧エンドポイント廃止。放置するとサービス中断。<br><span class="tag t-amb" style="margin-top:4px;display:inline-block">残り <span class="days-30"></span> 日</span></span>
+        <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
+      </li>
+      <li class="dl-item">
+        <span class="dl-date">2026年6月1日〜</span>
+        <span class="dl-desc">BigQuery Legacy SQL — 2025/11〜2026/6/1 未使用の場合、以降利用不可。</span>
+        <a href="https://docs.cloud.google.com/bigquery/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
+      </li>
+      <li class="dl-item">
+        <span class="dl-date">2026年11月26日</span>
+        <span class="dl-desc">Vertex AI Extensions — 非推奨化・シャットダウン。Agent Platform への移行を推奨。<br><span class="tag t-nc" style="margin-top:4px;display:inline-block">残り <span class="days-1126"></span> 日</span></span>
+        <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- No-update footer -->
+  <div class="no-upd">
+    <span class="no-upd-lbl">今週更新なし</span>
+    <a href="https://docs.cloud.google.com/run/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer"><i class="ti ti-cloud"></i> Cloud Run（最終: 4/20）</a>
+    <a href="https://docs.cloud.google.com/storage/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">Cloud Storage（5/28）</a>
+    <a href="https://docs.cloud.google.com/workflows/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">Workflows（2/17）</a>
+    <a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">Vertex AI（5/26）</a>
+    <a href="https://docs.cloud.google.com/speech-to-text/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">STT / TTS ノート</a>
+  </div>
+
+</div>
+<script>
+(function () {
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var ms = 86400000;
+
+  var d30   = Math.ceil((new Date('2026-06-30')  - today) / ms);
+  var d1126 = Math.ceil((new Date('2026-11-26')  - today) / ms);
+
+  document.getElementById('days-left').textContent = d30 > 0 ? d30 : '経過';
+  document.querySelectorAll('.days-30').forEach(function(el){ el.textContent = d30 > 0 ? d30 : '経過'; });
+  document.querySelectorAll('.days-1126').forEach(function(el){ el.textContent = d1126 > 0 ? d1126 : '経過'; });
+})();
+</script>
+</body>
+</html>
