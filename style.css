@@ -6,6 +6,8 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { scroll-behavior: smooth; }
+
 :root {
   --bg:         #FFFFFF;
   --bg-sub:     #F7F7F5;
@@ -127,6 +129,14 @@ a.src-link:hover { text-decoration: underline; }
 .status-table .svc-col { font-weight: 500; }
 .status-table .dt-col  { color: var(--muted); font-size: 12px; white-space: nowrap; }
 
+/* jump link from overview → detail section */
+.svc-jump {
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1px dotted var(--bd-med);
+  transition: color .1s, border-color .1s;
+}
+.svc-jump:hover { color: var(--blue-fg); border-bottom-color: var(--blue-fg); }
+
 /* ── Badges ── */
 .badge {
   display: inline-flex; align-items: center;
@@ -160,6 +170,7 @@ a.src-link:hover { text-decoration: underline; }
   border: 1px solid var(--bd-med);
   border-radius: 6px;
   overflow: hidden;
+  scroll-margin-top: 1rem;
 }
 .svc-section.has-update { border-color: var(--blue-bd); }
 .svc-hd {
