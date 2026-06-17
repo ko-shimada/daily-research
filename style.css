@@ -73,7 +73,7 @@ a.lb {
   padding: 3px 10px;
   background: var(--blue-bg); color: var(--blue-fg);
   text-decoration: none;
-  border: .5px solid var(--blue-bd);
+  border: 1px solid var(--blue-bd);
   white-space: nowrap;
   transition: background .1s;
 }
@@ -107,19 +107,19 @@ a.src-link:hover { text-decoration: underline; }
 .status-table {
   width: 100%; border-collapse: collapse;
   font-size: 13px; margin-bottom: 1.75rem;
-  border: 0.5px solid var(--bd-med);
+  border: 1px solid var(--bd-med);
 }
 .status-table th {
   font-size: 10px; font-weight: 500;
   text-transform: uppercase; letter-spacing: .08em;
   color: var(--muted); padding: 7px 10px;
   background: var(--bg-sub);
-  border-bottom: 0.5px solid var(--bd-med);
+  border-bottom: 1px solid var(--bd-med);
   text-align: left;
 }
 .status-table td {
   padding: 7px 10px;
-  border-bottom: 0.5px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
   vertical-align: middle;
 }
 .status-table tr:last-child td { border-bottom: none; }
@@ -130,8 +130,10 @@ a.src-link:hover { text-decoration: underline; }
 /* ── Badges ── */
 .badge {
   display: inline-flex; align-items: center;
-  font-size: 10.5px; font-weight: 500;
-  padding: 2px 8px; white-space: nowrap;
+  font-size: 11px; font-weight: 600;
+  padding: 2px 9px; white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid rgba(28,28,26,.08);
 }
 .b-updated { background: var(--green-bg); color: var(--green-fg); }
 .b-none    { background: var(--gray-bg);  color: var(--gray-fg); }
@@ -140,8 +142,10 @@ a.src-link:hover { text-decoration: underline; }
 
 /* ── Stage tags ── */
 .tag {
-  display: inline-block; font-size: 10px; font-weight: 500;
-  padding: 1px 7px; white-space: nowrap;
+  display: inline-block; font-size: 10.5px; font-weight: 600;
+  padding: 1px 8px; white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid rgba(28,28,26,.08);
 }
 .t-ga  { background: var(--green-bg); color: var(--green-fg); }
 .t-pre { background: var(--blue-bg);  color: var(--blue-fg); }
@@ -153,19 +157,21 @@ a.src-link:hover { text-decoration: underline; }
 /* ── Service section ── */
 .svc-section {
   margin-bottom: 1rem;
-  border: 0.5px solid var(--bd-med);
+  border: 1px solid var(--bd-med);
+  border-radius: 6px;
+  overflow: hidden;
 }
-.svc-section.has-update { border-color: var(--bd-str); }
+.svc-section.has-update { border-color: var(--blue-bd); }
 .svc-hd {
   display: flex; justify-content: space-between;
   align-items: center; padding: .5rem .875rem;
   background: var(--bg-sub);
-  border-bottom: 0.5px solid var(--bd-med);
+  border-bottom: 1px solid var(--bd-med);
   gap: 12px; flex-wrap: wrap;
 }
 .svc-section.has-update .svc-hd {
   background: #EEF4FF;
-  border-bottom-color: var(--bd-str);
+  border-bottom-color: var(--blue-bd);
 }
 .svc-name {
   font-size: 13.5px; font-weight: 500;
@@ -193,12 +199,12 @@ a.src-link:hover { text-decoration: underline; }
   font-size: 10px; font-weight: 500;
   letter-spacing: .06em; text-transform: uppercase;
   color: var(--subtle); padding: 5px 10px;
-  border-bottom: 0.5px solid var(--bd-med);
+  border-bottom: 1px solid var(--bd-med);
   text-align: left; background: var(--bg-row);
 }
 .detail-table td {
   padding: 7px 10px;
-  border-bottom: 0.5px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
   vertical-align: top; line-height: 1.55;
 }
 .detail-table tr:last-child td { border-bottom: none; }
@@ -214,7 +220,7 @@ a.src-link:hover { text-decoration: underline; }
 }
 .other-table td {
   padding: 6px 10px;
-  border-bottom: 0.5px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
   vertical-align: middle;
 }
 .other-table tr:last-child td { border-bottom: none; }
@@ -224,14 +230,14 @@ a.src-link:hover { text-decoration: underline; }
 
 /* ── Deadline alert box ── */
 .alert-box {
-  border: 0.5px solid var(--red-fg);
+  border: 1px solid var(--red-fg);
   margin-top: .5rem;
 }
 .alert-hd {
   background: var(--red-bg);
   padding: .5rem .875rem;
   font-size: 11.5px; font-weight: 500; color: var(--red-fg);
-  border-bottom: 0.5px solid var(--red-fg);
+  border-bottom: 1px solid var(--red-fg);
   display: flex; align-items: center; gap: 6px;
 }
 .alert-list { list-style: none; }
@@ -240,7 +246,7 @@ a.src-link:hover { text-decoration: underline; }
   grid-template-columns: 160px 1fr auto;
   gap: 8px; align-items: start;
   padding: 8px .875rem;
-  border-bottom: 0.5px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
   font-size: 13px;
 }
 .alert-item:last-child { border-bottom: none; }
@@ -256,19 +262,19 @@ a.src-link:hover { text-decoration: underline; }
 /* ── Tokyo region table ── */
 .region-table {
   width: 100%; border-collapse: collapse;
-  font-size: 13px; border: 0.5px solid var(--bd-med);
+  font-size: 13px; border: 1px solid var(--bd-med);
 }
 .region-table th {
   font-size: 10px; font-weight: 500;
   letter-spacing: .06em; text-transform: uppercase;
   color: var(--muted); padding: 6px 10px;
   background: var(--bg-sub);
-  border-bottom: 0.5px solid var(--bd-med);
+  border-bottom: 1px solid var(--bd-med);
   text-align: left;
 }
 .region-table td {
   padding: 7px 10px;
-  border-bottom: 0.5px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
   vertical-align: middle;
 }
 .region-table tr:last-child td { border-bottom: none; }
@@ -276,8 +282,10 @@ a.src-link:hover { text-decoration: underline; }
 .region-table .svc-col { font-weight: 500; }
 
 .sbadge {
-  display: inline-block; font-size: 10px;
-  font-weight: 500; padding: 2px 9px;
+  display: inline-block; font-size: 10.5px;
+  font-weight: 600; padding: 2px 9px;
+  border-radius: 4px;
+  border: 1px solid rgba(28,28,26,.08);
 }
 .s-ok   { background: var(--green-bg); color: var(--green-fg); }
 .s-ng   { background: var(--red-bg);   color: var(--red-fg); }
@@ -287,7 +295,7 @@ a.src-link:hover { text-decoration: underline; }
 /* ── Report footer ── */
 .rpt-footer {
   margin-top: 2.5rem; padding-top: .875rem;
-  border-top: 0.5px solid var(--bd-med);
+  border-top: 1px solid var(--bd-med);
   font-size: 11px; color: var(--subtle);
   display: flex; gap: 8px; flex-wrap: wrap;
   align-items: center;
@@ -308,7 +316,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 .idx-title   { font-size: 22px; font-weight: 500; }
 
 .about {
-  border: 0.5px solid var(--bd-med);
+  border: 1px solid var(--bd-med);
   padding: .875rem 1.125rem;
   margin-bottom: 1.25rem;
   font-size: 13px; color: var(--muted);
@@ -317,7 +325,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 .about strong { color: var(--ink); }
 
 .report-list { list-style: none; }
-.report-item { border-bottom: .5px solid var(--bd); }
+.report-item { border-bottom: 1px solid var(--bd); }
 .report-item:last-child { border-bottom: none; }
 .report-link {
   display: flex; justify-content: space-between;
@@ -337,7 +345,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 .rtag {
   font-size: 10px; font-weight: 500; padding: 1px 7px;
   background: var(--bg-sub); color: var(--muted);
-  border: .5px solid var(--bd-med);
+  border: 1px solid var(--bd-med);
 }
 .report-arrow {
   font-size: 18px; color: var(--muted);
