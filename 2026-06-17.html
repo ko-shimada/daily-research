@@ -3,290 +3,515 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>デイリーリサーチ ZINE — 2026年6月17日</title>
+  <title>デイリーリサーチ — 2026年6月17日</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
 
-  <!-- Masthead -->
-  <header class="masthead">
+  <!-- Header -->
+  <header class="rpt-header">
     <div>
-      <div class="mast-eyebrow">Daily Research</div>
-      <h1 class="mast-title">ZINE</h1>
+      <div class="rpt-eyebrow">Google Cloud &amp; Genesys Cloud デイリーリサーチ</div>
+      <h1 class="rpt-date">2026年6月17日（火）</h1>
+      <div class="rpt-period">調査対象期間: 6月14日〜17日</div>
     </div>
-    <div class="mast-right">
-      2026年6月17日（火）<br>
-      Google Cloud &amp; Genesys Cloud<br>
-      対象期間: 6月14日〜17日
-    </div>
+    <nav class="rpt-nav">
+      <a href="index.html" class="lb neutral"><i class="ti ti-arrow-left" aria-hidden="true"></i> 一覧</a>
+      <a href="https://github.com/ko-shimada/daily-research" class="lb neutral" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+    </nav>
   </header>
-  <div class="subbar">
-    <span><i class="ti ti-news"></i> 公式リリースノート自動収集 · Claude 編集 · 毎朝配信</span>
-    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-      <a href="index.html" class="lb"><i class="ti ti-arrow-left"></i> 一覧へ</a>
-      <a href="https://github.com/ko-shimada/daily-research" class="lb" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i> ko-shimada/daily-research</a>
-    </div>
-  </div>
 
-  <!-- Stats -->
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-num c-amber">1</div>
-      <div class="stat-lbl">BigQuery<br>UI 変更予告</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num c-blue">573</div>
-      <div class="stat-lbl">Cloud SDK<br>最新バージョン</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num c-red" id="days-left">–</div>
-      <div class="stat-lbl">期限まで<br>あと N 日（6/30）</div>
-    </div>
-  </div>
-
-  <!-- BigQuery -->
-  <div class="sec-hd">
-    <span><i class="ti ti-database"></i>&nbsp;BigQuery</span>
-    <span class="meta">
-      6月16日
-      <a href="https://docs.cloud.google.com/bigquery/docs/release-notes" class="lb inv" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Release Notes</a>
-    </span>
-  </div>
-  <table class="ftable">
+  <!-- Overview: all-services status -->
+  <h2 class="sec-title no-margin-top">概況 — 全サービス</h2>
+  <table class="status-table">
     <thead>
       <tr>
-        <th>機能</th>
-        <th>ステージ</th>
-        <th>日付</th>
-        <th>参照</th>
+        <th>サービス</th>
+        <th>状態</th>
+        <th class="dt-col">最終更新</th>
+        <th>公式ソース</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Table Explorer — <strong>Reference パネルへ移行予告</strong>（2026年7月以降）。既存の Table Explorer 機能が Reference パネルに統合される。</td>
-        <td><span class="tag t-nc">予告</span></td>
-        <td>6/16</td>
-        <td><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_16_2026" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
+        <td class="svc-col">Genesys Cloud</td>
+        <td><span class="badge b-none">変化なし</span></td>
+        <td class="dt-col">6/15</td>
+        <td><a href="https://help.genesys.cloud/release-notes/genesys-cloud/" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> リリースノート</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Dialogflow CX</td>
+        <td><span class="badge b-none">変化なし</span></td>
+        <td class="dt-col">5/7</td>
+        <td><a href="https://docs.cloud.google.com/dialogflow/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> リリースノート</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Conversational Agents</td>
+        <td><span class="badge b-none">変化なし</span></td>
+        <td class="dt-col">6/8</td>
+        <td><a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/resources/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> リリースノート</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">CX Agent Studio</td>
+        <td><span class="badge b-none">変化なし</span></td>
+        <td class="dt-col">6/8</td>
+        <td><a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/resources/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> リリースノート</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Google Cloud TTS</td>
+        <td><span class="badge b-none">変化なし</span></td>
+        <td class="dt-col">2025/12</td>
+        <td><a href="https://docs.cloud.google.com/text-to-speech/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> リリースノート</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Speech-to-Text</td>
+        <td><span class="badge b-none">変化なし</span></td>
+        <td class="dt-col">2025/11</td>
+        <td><a href="https://docs.cloud.google.com/speech-to-text/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> リリースノート</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">BigQuery</td>
+        <td><span class="badge b-updated">更新あり</span></td>
+        <td class="dt-col">6/16</td>
+        <td><a href="https://docs.cloud.google.com/bigquery/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> リリースノート</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Cloud Run</td>
+        <td><span class="badge b-sdk">SDK 同梱 GA</span></td>
+        <td class="dt-col">6/16 (SDK 573)</td>
+        <td><a href="https://docs.cloud.google.com/run/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> リリースノート</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">その他 GCP</td>
+        <td><span class="badge b-none">変化なし</span></td>
+        <td class="dt-col">〜6/6</td>
+        <td>—</td>
       </tr>
     </tbody>
   </table>
 
-  <!-- Cloud SDK -->
-  <div class="sec-hd">
-    <span><i class="ti ti-terminal-2"></i>&nbsp;Cloud SDK 573.0.0</span>
-    <span class="meta">
-      6月16日
-      <a href="https://docs.cloud.google.com/release-notes" class="lb inv" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Release Notes</a>
-    </span>
-  </div>
-  <table class="ftable">
-    <thead>
-      <tr>
-        <th>機能</th>
-        <th>ステージ</th>
-        <th>参照</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Cloud Run — <code>--readiness_probe</code> フラグが GA 昇格</td>
-        <td><span class="tag t-ga">GA</span></td>
-        <td><a href="https://docs.cloud.google.com/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
-      </tr>
-      <tr>
-        <td>Cloud Storage — バケット管理バッチ操作が GA 昇格</td>
-        <td><span class="tag t-ga">GA</span></td>
-        <td><a href="https://docs.cloud.google.com/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
-      </tr>
-      <tr>
-        <td>Vertex AI — <code>gcloud ai tuning-jobs</code> コマンドグループ追加（supervised fine-tuning ジョブ管理）</td>
-        <td><span class="tag t-nc">CLI 追加</span></td>
-        <td><a href="https://docs.cloud.google.com/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
-      </tr>
-      <tr>
-        <td><strong>Breaking Change</strong>: <code>gcloud container attached clusters get-credentials</code> 廃止 → <code>gcloud container fleet memberships get-credentials</code> へ移行</td>
-        <td><span class="tag t-amb">Breaking</span></td>
-        <td><a href="https://docs.cloud.google.com/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
-      </tr>
-      <tr>
-        <td>Windows バンドル Python を 3.14.5 に更新</td>
-        <td><span class="tag t-nc">更新</span></td>
-        <td><a href="https://docs.cloud.google.com/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a></td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- 1. Genesys Cloud -->
+  <h2 class="sec-title">詳細</h2>
 
-  <!-- CX Agent Studio + Genesys two-panel -->
-  <div class="two-panel">
-    <div class="panel">
-      <div class="panel-title">Conversational Agents / CX Agent Studio</div>
-      <div class="panel-sub">
-        <span><i class="ti ti-robot"></i> Google Cloud</span>
-        <a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/resources/release-notes" class="lb" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
-      </div>
-      <div class="upd">
-        <span class="upd-date">今週</span>
-        <span class="upd-text">更新なし（最終更新: 6月8日 — 評価データのインポート / エクスポート GA）</span>
-      </div>
-      <div class="upd">
-        <span class="upd-date">6/8</span>
-        <span class="upd-text">評価データのインポート / エクスポート対応 <span class="tag t-ga">GA</span></span>
-      </div>
-      <div class="upd">
-        <span class="upd-date">直近</span>
-        <span class="upd-text">Evaluation UI に Naive Replay モード追加、音声録音・エラー詳細化</span>
-      </div>
-      <div class="upd">
-        <span class="upd-date">直近</span>
-        <span class="upd-text">誤バージイン（false-positive barge-in）回復メカニズム実装</span>
+  <section class="svc-section">
+    <div class="svc-hd">
+      <h3 class="svc-name"><i class="ti ti-headset" aria-hidden="true"></i> Genesys Cloud</h3>
+      <div class="svc-meta">
+        <span class="badge b-none">変化なし</span>
+        <span class="last-upd">最終: 6/15</span>
+        <a href="https://help.genesys.cloud/release-notes/genesys-cloud/" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> 公式リリースノート</a>
       </div>
     </div>
-    <div class="panel">
-      <div class="panel-title">Genesys Cloud — STT / TTS / AVA</div>
-      <div class="panel-sub">
-        <span><i class="ti ti-headset"></i> Genesys Cloud</span>
-        <a href="https://help.genesys.cloud/release-notes/genesys-cloud/" class="lb" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
-      </div>
-      <div class="upd">
-        <span class="upd-date">今週</span>
-        <span class="upd-text">6/17 リリースなし（最終: 6/15 — 昨日レポート済み）。次回予定: ~6/22</span>
-      </div>
-      <div class="upd">
-        <span class="upd-date">6/15</span>
-        <span class="upd-text">Semantic Topic Spotting — セマンティック類似性でトピック設定可能に（英語のみ）
-          <a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-15-2026/" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
-        </span>
-      </div>
-      <div class="upd">
-        <span class="upd-date">6/15</span>
-        <span class="upd-text">Agent Copilot チェックリスト — 完全一致（Exact Match）オプション追加
-          <a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-15-2026/" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
-        </span>
-      </div>
-      <div class="upd">
-        <span class="upd-date">6/15</span>
-        <span class="upd-text">1インタラクション中に複数 Agent Copilot チェックリスト表示・完了が可能に
-          <a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-15-2026/" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
-        </span>
-      </div>
-      <div class="upd">
-        <span class="upd-date">6/8</span>
-        <span class="upd-text">AVA: ユーザー発話の verbatim コピー変数設定が可能に
-          <a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-8-2026/" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
-        </span>
-      </div>
-    </div>
-  </div>
+    <p class="no-upd-note">6/14〜17 の期間に新規リリースなし。最終更新は 6/15（昨日レポート済み）。次回予定: ~6/22。</p>
+    <table class="detail-table">
+      <thead>
+        <tr>
+          <th>カテゴリ</th>
+          <th>機能 / 変更内容</th>
+          <th class="col-stage">ステージ</th>
+          <th class="col-date">日付</th>
+          <th>概要</th>
+          <th class="col-src">ソース</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="white-space:nowrap;color:var(--muted);font-size:12px;">DialogflowCX 連携</td>
+          <td>新規更新なし</td>
+          <td class="col-stage">—</td>
+          <td class="col-date">—</td>
+          <td class="col-sum">6/15 リリースに Dialogflow CX / Conversational Agents 連携の変更なし</td>
+          <td class="col-src">—</td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;color:var(--muted);font-size:12px;">Architect / フロー</td>
+          <td>新規更新なし</td>
+          <td class="col-stage">—</td>
+          <td class="col-date">—</td>
+          <td class="col-sum">インバウンドフロー・Architect の変更なし</td>
+          <td class="col-src">—</td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;color:var(--muted);font-size:12px;">STT / TTS / AVA</td>
+          <td>Semantic Topic Spotting</td>
+          <td class="col-stage"><span class="tag t-ga">GA</span></td>
+          <td class="col-date">6/15</td>
+          <td class="col-sum">セマンティック類似性でトピック設定可能に（英語のみ）</td>
+          <td class="col-src"><a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-15-2026/" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;color:var(--muted);font-size:12px;">Agent Copilot</td>
+          <td>チェックリスト Exact Match</td>
+          <td class="col-stage"><span class="tag t-ga">GA</span></td>
+          <td class="col-date">6/15</td>
+          <td class="col-sum">チェックリスト項目に完全一致オプション追加。エージェントが設定フレーズを発話した場合のみチェック</td>
+          <td class="col-src"><a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-15-2026/" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;color:var(--muted);font-size:12px;">Agent Copilot</td>
+          <td>複数チェックリスト対応</td>
+          <td class="col-stage"><span class="tag t-ga">GA</span></td>
+          <td class="col-date">6/15</td>
+          <td class="col-sum">1 インタラクション中に複数のチェックリストを表示・完了可能。インテント検出で動的に切り替え</td>
+          <td class="col-src"><a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-15-2026/" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;color:var(--muted);font-size:12px;">STT / AVA</td>
+          <td>AVA verbatim コピー変数</td>
+          <td class="col-stage"><span class="tag t-ga">GA</span></td>
+          <td class="col-date">6/8</td>
+          <td class="col-sum">ユーザー発話をそのまま変数に格納できるように</td>
+          <td class="col-src"><a href="https://help.genesys.cloud/release-notes/genesys-cloud/june-8-2026/" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-  <!-- Tokyo region -->
-  <div class="sec-hd">
-    <span><i class="ti ti-map-pin"></i>&nbsp;asia-northeast1（東京）リージョン対応状況</span>
-    <span class="meta"><span style="color:var(--c-fg-muted)"><i class="ti ti-circle-check"></i> 今週の変更: なし</span></span>
-  </div>
-  <div class="region">
-    <div class="region-note"><i class="ti ti-info-circle"></i>&nbsp;今週（6/14〜17）は東京リージョン対応状況に変化なし。前回（6/16）調査で確認した TTS Chirp 3 HD（asia-northeast1 対応済み）の状況を継続記録。</div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-cpu"></i> Vertex AI / Gemini（基本機能）</span>
-      <div class="rmeta">
-        <span class="sbadge s-ok">対応済み</span>
-        <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/locations" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-map"></i> Locations</a>
+  <!-- 2. Dialogflow CX -->
+  <section class="svc-section">
+    <div class="svc-hd">
+      <h3 class="svc-name"><i class="ti ti-message-chatbot" aria-hidden="true"></i> Dialogflow CX</h3>
+      <div class="svc-meta">
+        <span class="badge b-none">変化なし</span>
+        <span class="last-upd">最終: 5/7（セキュリティ修正）</span>
+        <a href="https://docs.cloud.google.com/dialogflow/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> 公式リリースノート</a>
       </div>
     </div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-server"></i> Cloud Run</span>
-      <span class="sbadge s-ok">対応済み</span>
-    </div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-database"></i> BigQuery</span>
-      <span class="sbadge s-ok">対応済み</span>
-    </div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-bucket"></i> Cloud Storage</span>
-      <span class="sbadge s-ok">対応済み</span>
-    </div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-shield"></i> VPC Service Controls</span>
-      <span class="sbadge s-ok">対応済み</span>
-    </div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-git-branch"></i> Workflows</span>
-      <div class="rmeta">
-        <span class="sbadge s-part">東京リージョン未追加</span>
-        <a href="https://docs.cloud.google.com/workflows/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
-      </div>
-    </div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-microphone"></i> Speech-to-Text Chirp 3（文字起こし）</span>
-      <div class="rmeta">
-        <span class="sbadge s-ng">未対応</span>
-        <a href="https://docs.cloud.google.com/speech-to-text/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
-      </div>
-    </div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-volume"></i> Text-to-Speech Chirp 3 HD</span>
-      <div class="rmeta">
-        <span class="sbadge s-ok">対応済み（2025/9〜）</span>
-        <a href="https://docs.cloud.google.com/text-to-speech/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
-      </div>
-    </div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-volume"></i> Text-to-Speech Gemini TTS 2.5</span>
-      <div class="rmeta">
-        <span class="sbadge s-part">要確認（Global / US / EU 対象）</span>
-        <a href="https://docs.cloud.google.com/text-to-speech/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-link"></i></a>
-      </div>
-    </div>
-    <div class="region-row">
-      <span class="rsvc"><i class="ti ti-message-chatbot"></i> Conversational Agents / CX Agent Studio</span>
-      <div class="rmeta">
-        <span class="sbadge s-nc">公式ドキュメント要確認</span>
-        <a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/region" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-map"></i> Regions</a>
-      </div>
-    </div>
-  </div>
+    <p class="no-upd-note">6/14〜17 の期間に更新なし。最終更新は 5/7（Playbook インポートの認可脆弱性パッチ、2026年3月15日に修正済み）。</p>
+  </section>
 
-  <!-- Deadlines -->
-  <div class="dl-box">
-    <div class="dl-eyebrow"><i class="ti ti-alert-triangle"></i>&nbsp;期限 &amp; 非推奨アラート</div>
-    <h2 class="dl-head">移行期限 &amp; シャットダウン予定</h2>
-    <ul class="dl-list">
-      <li class="dl-item">
-        <span class="dl-date">2026年6月30日</span>
-        <span class="dl-desc">Vertex AI ビデオ生成 — 旧エンドポイント廃止。放置するとサービス中断。<br><span class="tag t-amb" style="margin-top:4px;display:inline-block">残り <span class="days-30"></span> 日</span></span>
-        <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
+  <!-- 3. Conversational Agents -->
+  <section class="svc-section">
+    <div class="svc-hd">
+      <h3 class="svc-name"><i class="ti ti-robot" aria-hidden="true"></i> Conversational Agents（Dialogflow CX コンソール）</h3>
+      <div class="svc-meta">
+        <span class="badge b-none">変化なし</span>
+        <span class="last-upd">最終: 6/8</span>
+        <a href="https://docs.cloud.google.com/dialogflow/cx/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> 公式リリースノート</a>
+      </div>
+    </div>
+    <p class="no-upd-note">6/14〜17 の期間に更新なし。直近の主なアップデート: Evaluation UI に Naive Replay モード追加（音声録音・エラー詳細化）、誤バージイン（false-positive barge-in）回復メカニズム実装。</p>
+  </section>
+
+  <!-- 4. CX Agent Studio -->
+  <section class="svc-section">
+    <div class="svc-hd">
+      <h3 class="svc-name"><i class="ti ti-wand" aria-hidden="true"></i> CX Agent Studio</h3>
+      <div class="svc-meta">
+        <span class="badge b-none">変化なし</span>
+        <span class="last-upd">最終: 6/8</span>
+        <a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/resources/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> 公式リリースノート</a>
+      </div>
+    </div>
+    <table class="detail-table">
+      <thead>
+        <tr>
+          <th>機能 / 変更内容</th>
+          <th class="col-stage">ステージ</th>
+          <th class="col-date">日付</th>
+          <th>概要</th>
+          <th class="col-src">ソース</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>評価データのインポート / エクスポート</td>
+          <td class="col-stage"><span class="tag t-ga">GA</span></td>
+          <td class="col-date">6/8</td>
+          <td class="col-sum">評価データを外部から取り込み・書き出し可能に。CI/CD パイプラインへの統合が容易になる</td>
+          <td class="col-src"><a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/resources/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5. Google Cloud TTS -->
+  <section class="svc-section">
+    <div class="svc-hd">
+      <h3 class="svc-name"><i class="ti ti-volume" aria-hidden="true"></i> Google Cloud Text-to-Speech</h3>
+      <div class="svc-meta">
+        <span class="badge b-none">変化なし</span>
+        <span class="last-upd">最終: 2025/12/30</span>
+        <a href="https://docs.cloud.google.com/text-to-speech/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> 公式リリースノート</a>
+      </div>
+    </div>
+    <p class="no-upd-note">6/14〜17 の期間に更新なし。東京リージョン対応メモ: Chirp 3 HD voices は asia-northeast1 で利用可能（2025/9/15〜）。Gemini TTS 2.5 は Global / US / EU が主対象で東京未確認。</p>
+  </section>
+
+  <!-- 6. Speech-to-Text -->
+  <section class="svc-section">
+    <div class="svc-hd">
+      <h3 class="svc-name"><i class="ti ti-microphone" aria-hidden="true"></i> Speech-to-Text</h3>
+      <div class="svc-meta">
+        <span class="badge b-none">変化なし</span>
+        <span class="last-upd">最終: 2025/11/13</span>
+        <a href="https://docs.cloud.google.com/speech-to-text/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> 公式リリースノート</a>
+      </div>
+    </div>
+    <p class="no-upd-note">6/14〜17 の期間に更新なし。東京リージョン対応メモ: Chirp 3（STT）は asia-northeast1 未対応。現在対応: asia-south1 / europe-west2 / europe-west3 / northamerica-northeast1 のみ。</p>
+  </section>
+
+  <!-- 7. BigQuery -->
+  <section class="svc-section has-update">
+    <div class="svc-hd">
+      <h3 class="svc-name"><i class="ti ti-database" aria-hidden="true"></i> BigQuery</h3>
+      <div class="svc-meta">
+        <span class="badge b-updated">更新あり</span>
+        <span class="last-upd">6/16</span>
+        <a href="https://docs.cloud.google.com/bigquery/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> 公式リリースノート</a>
+      </div>
+    </div>
+    <table class="detail-table">
+      <thead>
+        <tr>
+          <th>機能 / 変更内容</th>
+          <th class="col-stage">ステージ</th>
+          <th class="col-date">日付</th>
+          <th>概要</th>
+          <th class="col-src">ソース</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Table Explorer → Reference パネルへ移行予告</td>
+          <td class="col-stage"><span class="tag t-amb">予告</span></td>
+          <td class="col-date">6/16</td>
+          <td class="col-sum">BigQuery Studio の Table Explorer 機能が Reference パネルへ統合される。移行は 2026年7月以降の予定。詳細日程は追って告知。</td>
+          <td class="col-src"><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_16_2026" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td>Gemini Cloud Assist — クエリ最適化</td>
+          <td class="col-stage"><span class="tag t-pre">Preview</span></td>
+          <td class="col-date">6/15</td>
+          <td class="col-sum">SQL を分析してパフォーマンス改善のレコメンドを自動提示。BigQuery Editions 向け。</td>
+          <td class="col-src"><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_15_2026" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td>Gemini Code Assist — Jobs Explorer 統合</td>
+          <td class="col-stage"><span class="tag t-pre">Preview</span></td>
+          <td class="col-date">6/15</td>
+          <td class="col-sum">ジョブ管理ページから直接パフォーマンス分析・トラブルシューティングが可能に。</td>
+          <td class="col-src"><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_15_2026" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td>BigQuery Studio — テーブルカラムリサイズ</td>
+          <td class="col-stage"><span class="tag t-ga">GA</span></td>
+          <td class="col-date">6/15</td>
+          <td class="col-sum">データセット・リポジトリ・ジョブ履歴・接続ビューで列幅を手動調整可能に。</td>
+          <td class="col-src"><a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_15_2026" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 8. Cloud Run -->
+  <section class="svc-section has-update">
+    <div class="svc-hd">
+      <h3 class="svc-name"><i class="ti ti-server" aria-hidden="true"></i> Cloud Run</h3>
+      <div class="svc-meta">
+        <span class="badge b-sdk">SDK 573 同梱 GA</span>
+        <span class="last-upd">6/16 (Cloud SDK 573.0.0)</span>
+        <a href="https://docs.cloud.google.com/run/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> 公式リリースノート</a>
+      </div>
+    </div>
+    <table class="detail-table">
+      <thead>
+        <tr>
+          <th>機能 / 変更内容</th>
+          <th class="col-stage">ステージ</th>
+          <th class="col-date">日付</th>
+          <th>概要</th>
+          <th class="col-src">ソース</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>--readiness_probe</code> フラグ</td>
+          <td class="col-stage"><span class="tag t-sdk">SDK GA</span></td>
+          <td class="col-date">6/16</td>
+          <td class="col-sum">Cloud SDK 573.0.0 同梱で GA 昇格。Readiness probe の設定がコマンドラインから正式サポート。</td>
+          <td class="col-src"><a href="https://docs.cloud.google.com/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 9. Other GCP -->
+  <section class="svc-section">
+    <div class="svc-hd">
+      <h3 class="svc-name"><i class="ti ti-cloud" aria-hidden="true"></i> その他 GCP</h3>
+      <div class="svc-meta">
+        <span class="badge b-none">変化なし</span>
+        <a href="https://docs.cloud.google.com/release-notes" class="src-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link" aria-hidden="true"></i> Google Cloud リリースノート</a>
+      </div>
+    </div>
+    <table class="other-table">
+      <tbody>
+        <tr>
+          <td class="svc-col">Vertex AI / GenAI</td>
+          <td><span class="badge b-none">変化なし</span></td>
+          <td class="dt-col">最終: 5/26</td>
+          <td>直近: Vertex AI Extensions 非推奨化告知（2026/11/26 廃止）、Gemini 3.1 Pro Preview</td>
+          <td><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td class="svc-col">Cloud Storage</td>
+          <td><span class="badge b-sdk">SDK GA</span></td>
+          <td class="dt-col">6/16 (SDK 573)</td>
+          <td>バケット管理バッチ操作が Cloud SDK 573.0.0 で GA 昇格</td>
+          <td><a href="https://docs.cloud.google.com/storage/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td class="svc-col">VPC Service Controls</td>
+          <td><span class="badge b-none">変化なし</span></td>
+          <td class="dt-col">最終: 6/6</td>
+          <td>Firebase Phone Number Verification の VPC SC 統合が GA（6/6）</td>
+          <td><a href="https://docs.cloud.google.com/vpc-service-controls/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td class="svc-col">Workflows</td>
+          <td><span class="badge b-none">変化なし</span></td>
+          <td class="dt-col">最終: 2/17</td>
+          <td>asia-northeast1（東京）未対応。最新追加は asia-southeast3（バンコク、2026/2/17）</td>
+          <td><a href="https://docs.cloud.google.com/workflows/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+        <tr>
+          <td class="svc-col">Cloud SDK 573.0.0</td>
+          <td><span class="badge b-sdk">SDK リリース</span></td>
+          <td class="dt-col">6/16</td>
+          <td>Breaking Change: <code>gcloud container attached clusters get-credentials</code> 廃止 → <code>gcloud container fleet memberships get-credentials</code> へ移行。Vertex AI <code>gcloud ai tuning-jobs</code> コマンドグループ追加。</td>
+          <td><a href="https://docs.cloud.google.com/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Deadline alerts -->
+  <h2 class="sec-title">期限 &amp; 非推奨アラート</h2>
+  <div class="alert-box">
+    <div class="alert-hd"><i class="ti ti-alert-triangle" aria-hidden="true"></i> 要対応: 移行期限 &amp; シャットダウン予定</div>
+    <ul class="alert-list">
+      <li class="alert-item">
+        <span class="alert-date">2026年6月30日</span>
+        <span class="alert-desc">
+          <strong>Vertex AI ビデオ生成 — 旧エンドポイント廃止</strong><br>
+          放置するとサービス中断。新エンドポイントへ移行が必要。<br>
+          <span class="days-badge">残り <span class="days-30"></span> 日</span>
+        </span>
+        <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗ Notes</a>
       </li>
-      <li class="dl-item">
-        <span class="dl-date">2026年7月以降（予定）</span>
-        <span class="dl-desc">BigQuery Table Explorer → Reference パネル 移行（6/16 予告）。正確な日付は追って告知。</span>
-        <a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_16_2026" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
+      <li class="alert-item">
+        <span class="alert-date">2026年7月以降（予定）</span>
+        <span class="alert-desc">
+          <strong>BigQuery Table Explorer → Reference パネル移行</strong><br>
+          6/16 に移行予告が公開。正確な日程は追って告知予定。
+        </span>
+        <a href="https://docs.cloud.google.com/bigquery/docs/release-notes#June_16_2026" class="src-link" target="_blank" rel="noopener noreferrer">↗ Notes</a>
       </li>
-      <li class="dl-item">
-        <span class="dl-date">2026年6月1日〜（制限開始済み）</span>
-        <span class="dl-desc">BigQuery Legacy SQL — 2025/11〜2026/6/1 に未使用だった場合、以降利用不可。制限はすでに開始しています。</span>
-        <a href="https://docs.cloud.google.com/bigquery/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
+      <li class="alert-item">
+        <span class="alert-date">2026年6月1日〜（制限開始済み）</span>
+        <span class="alert-desc">
+          <strong>BigQuery Legacy SQL 制限</strong><br>
+          2025/11〜2026/6/1 の間に未使用だった場合、以降利用不可。制限はすでに開始済み。
+        </span>
+        <a href="https://docs.cloud.google.com/bigquery/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗ Notes</a>
       </li>
-      <li class="dl-item">
-        <span class="dl-date">2026年11月26日</span>
-        <span class="dl-desc">Vertex AI Extensions — 非推奨化・シャットダウン。Agent Platform への移行を推奨。<br><span class="tag t-nc" style="margin-top:4px;display:inline-block">残り <span class="days-1126"></span> 日</span></span>
-        <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes" class="lb sm" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Notes</a>
+      <li class="alert-item">
+        <span class="alert-date">2026年11月26日</span>
+        <span class="alert-desc">
+          <strong>Vertex AI Extensions 非推奨・シャットダウン</strong><br>
+          Agent Platform への移行を推奨。<br>
+          <span class="days-badge">残り <span class="days-1126"></span> 日</span>
+        </span>
+        <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗ Notes</a>
       </li>
     </ul>
   </div>
 
-  <!-- No-update footer -->
-  <div class="no-upd">
-    <span class="no-upd-lbl">今週更新なし</span>
-    <a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/resources/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer"><i class="ti ti-robot"></i> CX Agent Studio（最終: 6/8）</a>
-    <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">Vertex AI GenAI（最終: 5/26）</a>
-    <a href="https://docs.cloud.google.com/vpc-service-controls/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">VPC Service Controls（6/6）</a>
-    <a href="https://docs.cloud.google.com/storage/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">Cloud Storage（5/28）</a>
-    <a href="https://docs.cloud.google.com/workflows/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">Workflows（2/17）</a>
-    <a href="https://docs.cloud.google.com/speech-to-text/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">Speech-to-Text（2025/11）</a>
-    <a href="https://docs.cloud.google.com/text-to-speech/docs/release-notes" class="lb pill-lnk" target="_blank" rel="noopener noreferrer">Text-to-Speech（2025/12）</a>
-  </div>
+  <!-- Tokyo region matrix -->
+  <h2 class="sec-title">asia-northeast1（東京）リージョン対応状況</h2>
+  <table class="region-table">
+    <thead>
+      <tr>
+        <th class="svc-col">サービス</th>
+        <th>東京対応</th>
+        <th>備考</th>
+        <th>ソース</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="svc-col">Vertex AI / Gemini</td>
+        <td><span class="sbadge s-ok">対応済み</span></td>
+        <td style="font-size:12px;color:var(--muted);">基本機能は対応。モデルによって利用可能リージョンが異なる</td>
+        <td><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/locations" class="src-link" target="_blank" rel="noopener noreferrer">↗ Locations</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Cloud Run</td>
+        <td><span class="sbadge s-ok">対応済み</span></td>
+        <td style="font-size:12px;color:var(--muted);">—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td class="svc-col">BigQuery</td>
+        <td><span class="sbadge s-ok">対応済み</span></td>
+        <td style="font-size:12px;color:var(--muted);">—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td class="svc-col">Cloud Storage</td>
+        <td><span class="sbadge s-ok">対応済み</span></td>
+        <td style="font-size:12px;color:var(--muted);">—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td class="svc-col">VPC Service Controls</td>
+        <td><span class="sbadge s-ok">対応済み</span></td>
+        <td style="font-size:12px;color:var(--muted);">—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td class="svc-col">Workflows</td>
+        <td><span class="sbadge s-part">東京未追加</span></td>
+        <td style="font-size:12px;color:var(--muted);">最新追加は asia-southeast3（バンコク, 2026/2）</td>
+        <td><a href="https://docs.cloud.google.com/workflows/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Speech-to-Text Chirp 3</td>
+        <td><span class="sbadge s-ng">未対応</span></td>
+        <td style="font-size:12px;color:var(--muted);">対応: asia-south1 / europe-west2 / europe-west3 / northamerica-northeast1</td>
+        <td><a href="https://docs.cloud.google.com/speech-to-text/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Text-to-Speech Chirp 3 HD</td>
+        <td><span class="sbadge s-ok">対応済み（2025/9〜）</span></td>
+        <td style="font-size:12px;color:var(--muted);">2025年9月15日から asia-northeast1 エンドポイントで利用可能</td>
+        <td><a href="https://docs.cloud.google.com/text-to-speech/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Text-to-Speech Gemini TTS 2.5</td>
+        <td><span class="sbadge s-part">要確認</span></td>
+        <td style="font-size:12px;color:var(--muted);">主に Global / US / EU。asia-northeast1 への明示的な記載なし</td>
+        <td><a href="https://docs.cloud.google.com/text-to-speech/docs/release-notes" class="src-link" target="_blank" rel="noopener noreferrer">↗</a></td>
+      </tr>
+      <tr>
+        <td class="svc-col">Conversational Agents / CX Agent Studio</td>
+        <td><span class="sbadge s-nc">要確認</span></td>
+        <td style="font-size:12px;color:var(--muted);">公式 Regions ドキュメントを参照</td>
+        <td><a href="https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/region" class="src-link" target="_blank" rel="noopener noreferrer">↗ Regions</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Footer -->
+  <footer class="rpt-footer">
+    <span>自動収集: Claude</span>
+    <span>·</span>
+    <a href="index.html" class="src-link">← 一覧に戻る</a>
+  </footer>
 
 </div>
 <script>
@@ -294,11 +519,8 @@
   var today = new Date();
   today.setHours(0, 0, 0, 0);
   var ms = 86400000;
-
   var d30   = Math.ceil((new Date('2026-06-30')  - today) / ms);
   var d1126 = Math.ceil((new Date('2026-11-26')  - today) / ms);
-
-  document.getElementById('days-left').textContent = d30 > 0 ? d30 : '経過';
   document.querySelectorAll('.days-30').forEach(function(el){ el.textContent = d30 > 0 ? d30 : '経過'; });
   document.querySelectorAll('.days-1126').forEach(function(el){ el.textContent = d1126 > 0 ? d1126 : '経過'; });
 })();
