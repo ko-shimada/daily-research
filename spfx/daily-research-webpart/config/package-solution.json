@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "daily-research-client-side-solution",
+    "id": "4c631cec-3034-4765-9f65-bf4767e9ee48",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "ko-shimada",
+      "websiteUrl": "https://github.com/ko-shimada/daily-research",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.21.1"
+    },
+    "features": [
+      {
+        "title": "Daily Research Web Part",
+        "description": "Daily SaaS intelligence web part for SharePoint and Teams tabs.",
+        "id": "46a3e0e9-f714-40b7-a756-304e697d130b",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "sharepoint/solution/daily-research.sppkg"
+  }
+}

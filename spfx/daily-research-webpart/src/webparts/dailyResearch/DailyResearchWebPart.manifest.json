@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "ac2f0182-d079-4b2b-95ad-abb0acc4cdba",
+  "alias": "DailyResearchWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "SharePointWebPart",
+    "SharePointFullPage",
+    "TeamsTab"
+  ],
+  "supportsFullBleed": true,
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": {
+        "default": "Other"
+      },
+      "title": {
+        "default": "Daily Research"
+      },
+      "description": {
+        "default": "Daily SaaS intelligence for voicebot and chatbot projects."
+      },
+      "officeFabricIconFontName": "News",
+      "properties": {
+        "description": "Daily Research"
+      }
+    }
+  ]
+}

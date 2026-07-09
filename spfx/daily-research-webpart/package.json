@@ -1,0 +1,35 @@
+{
+  "name": "daily-research-webpart",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0 <23.0.0"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "bundle": "gulp bundle",
+    "bundle:ship": "gulp bundle --ship",
+    "package-solution": "gulp package-solution",
+    "package-solution:ship": "gulp package-solution --ship",
+    "serve": "gulp serve"
+  },
+  "dependencies": {
+    "@microsoft/sp-core-library": "1.21.1",
+    "@microsoft/sp-property-pane": "1.21.1",
+    "@microsoft/sp-webpart-base": "1.21.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "tslib": "2.3.1"
+  },
+  "devDependencies": {
+    "@microsoft/rush-stack-compiler-5.3": "0.1.0",
+    "@microsoft/sp-build-web": "1.21.1",
+    "@microsoft/sp-module-interfaces": "1.21.1",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
+    "@types/webpack-env": "~1.15.2",
+    "gulp": "4.0.2",
+    "typescript": "~5.3.3"
+  }
+}

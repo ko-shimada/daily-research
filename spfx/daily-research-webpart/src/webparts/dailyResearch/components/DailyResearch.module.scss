@@ -1,0 +1,507 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.dailyResearch {
+  --paper: #f6f1eb;
+  --ink: #2e241d;
+  --muted: #5f5349;
+  --line: #ddd1c4;
+  --strongLine: #b8a189;
+  --brand: #995a29;
+  --brandHover: #7a431d;
+  --red: #c73f2f;
+  --blue: #1268b3;
+  --card: #fffdfa;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'BIZ UDPGothic', 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
+  line-height: 1.7;
+}
+
+.teamsHost {
+  max-width: none;
+}
+
+a {
+  color: var(--blue);
+}
+
+.masthead {
+  padding-bottom: 22px;
+  border-bottom: 4px double var(--ink);
+}
+
+.kicker {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.masthead h1 {
+  margin: 8px 0 0;
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 900;
+  line-height: 1.02;
+}
+
+.masthead p {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 190px 190px minmax(220px, 1fr) 76px;
+  gap: 10px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.controls label {
+  display: grid;
+  gap: 5px;
+}
+
+.controls span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.controls select,
+.controls input,
+.controls button {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.controls select,
+.controls input {
+  padding: 0 12px;
+}
+
+.controls button {
+  align-self: end;
+  border-color: var(--ink);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.controls button:hover,
+.controls button:focus-visible,
+.service summary:focus-visible,
+.archiveList a:focus-visible,
+.sources a:focus-visible {
+  outline: 3px solid rgba(18, 104, 179, .25);
+  outline-offset: 3px;
+}
+
+.controls button:hover {
+  border-color: var(--blue);
+  background: #eef5fb;
+  color: var(--blue);
+}
+
+.leadGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 18px;
+  margin: 22px 0;
+}
+
+.feature,
+.monitor,
+.sources,
+.archive {
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.feature {
+  min-height: 236px;
+  padding: clamp(22px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-top: 5px solid var(--ink);
+}
+
+.feature h2 {
+  max-width: 820px;
+  margin: 8px 0 12px;
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: clamp(26px, 4vw, 44px);
+  line-height: 1.18;
+}
+
+.feature p {
+  max-width: 780px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.featureMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.featureMeta span,
+.featureMeta a {
+  border-top: 1px solid var(--line);
+  padding-top: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.monitor {
+  padding: 20px;
+}
+
+.monitor h2,
+.sources h2,
+.sectionTitle h2 {
+  margin: 0;
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.monitor div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.monitor span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.monitor strong {
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 28px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+.sectionTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin: 0 0 12px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 8px;
+}
+
+.sectionTitle span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.serviceList {
+  display: grid;
+  gap: 10px;
+}
+
+.service {
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.service[open] {
+  border-color: var(--ink);
+}
+
+.service summary {
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.service summary::-webkit-details-marker {
+  display: none;
+}
+
+.service strong {
+  display: block;
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.service small {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.updateCounts {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 196px;
+  font-style: normal;
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.updateCounts span,
+.zeroCount {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 2px 8px;
+  border: 1px solid rgba(153, 90, 41, .28);
+  background: rgba(153, 90, 41, .08);
+}
+
+.zeroCount {
+  color: var(--muted);
+  font-style: normal;
+}
+
+.hotCount {
+  border-color: rgba(199, 63, 47, .32) !important;
+  background: rgba(199, 63, 47, .08) !important;
+  color: var(--red);
+}
+
+.serviceBody {
+  padding: 0 16px 16px;
+  border-top: 1px solid var(--line);
+}
+
+.serviceBody > p {
+  color: var(--muted);
+  margin: 13px 0;
+  font-size: 13px;
+}
+
+.updateGroup {
+  margin-top: 12px;
+}
+
+.updateGroup h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 15px;
+}
+
+.updateGroup h4 span {
+  color: var(--brand);
+  font-family: 'BIZ UDPGothic', 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
+  font-size: 12px;
+}
+
+.update {
+  padding: 13px 0 13px 16px;
+  border-left: 2px solid var(--brand);
+  border-bottom: 1px solid var(--line);
+}
+
+.updateMeta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.updateMeta b {
+  color: var(--red);
+}
+
+.update h3 {
+  margin: 5px 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.update p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.update a,
+.links a,
+.sources a {
+  display: inline-flex;
+  margin: 8px 12px 0 0;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.update a:hover,
+.links a:hover,
+.sources a:hover,
+.archiveList a:hover span {
+  text-decoration: underline;
+}
+
+.empty {
+  border: 1px dashed var(--line);
+  background: #fff;
+  color: var(--muted);
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.sources {
+  position: sticky;
+  top: 18px;
+  padding: 18px;
+}
+
+.sources p {
+  color: var(--muted);
+  font-size: 12.5px;
+  margin: 8px 0 12px;
+}
+
+.sources details {
+  border-top: 1px solid var(--line);
+  padding: 9px 0;
+}
+
+.sources summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.sources a {
+  display: block;
+  margin-top: 7px;
+}
+
+.archive {
+  margin-top: 24px;
+  padding: 18px;
+}
+
+.archiveList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.archiveList a {
+  display: grid;
+  gap: 5px;
+  min-height: 90px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.archiveList strong {
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 18px;
+}
+
+.archiveList span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hotMark {
+  display: inline-flex;
+  min-width: 1.35em;
+  margin-right: 6px;
+  color: var(--red);
+  font-family: 'BIZ UDPGothic', 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
+  font-size: .8em;
+  line-height: 1;
+  vertical-align: .08em;
+}
+
+@media (max-width: 900px) {
+  .leadGrid,
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sources {
+    position: static;
+  }
+
+  .controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .searchControl {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .dailyResearch {
+    padding: 16px 12px 36px;
+  }
+
+  .masthead h1 {
+    font-size: 42px;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .service summary {
+    grid-template-columns: 1fr;
+  }
+
+  .updateCounts {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+}
