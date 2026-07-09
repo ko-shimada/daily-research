@@ -58,7 +58,7 @@
   var $ = function(id){ return document.getElementById(id); };
   var project = $('project-filter'), date = $('date-filter'), keyword = $('keyword-filter');
   project.value = 'all'; date.value = ''; keyword.value = '';
-  fetch('data/research-data.json?v=20260709h', {cache:'no-store'}).then(function(r){return r.json();}).then(function(data){ state.data=data; render(); }).catch(function(){ $('service-list').innerHTML='<p class="ed-empty">データを読み込めませんでした。</p>'; });
+  fetch('data/research-data.json?v=20260709i', {cache:'no-store'}).then(function(r){return r.json();}).then(function(data){ state.data=data; render(); }).catch(function(){ $('service-list').innerHTML='<p class="ed-empty">データを読み込めませんでした。</p>'; });
   project.onchange = function(){ state.project=this.value; render(); };
   date.onchange = function(){ state.date=this.value; render(); };
   keyword.oninput = function(){ state.keyword=this.value.trim().toLowerCase(); render(); };
