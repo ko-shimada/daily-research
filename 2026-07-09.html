@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デイリーリサーチ — 2026年7月9日</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260709e">
+</head>
+<body>
+<div class="wrap">
+  <header class="rpt-header">
+    <div>
+      <div class="rpt-eyebrow">Daily SaaS Intelligence 差分リサーチ</div>
+      <h1 class="rpt-date">2026年7月9日（木）</h1>
+      <div class="rpt-period">調査対象期間: 2026年6月18日〜2026年7月9日</div>
+    </div>
+    <nav class="rpt-nav">
+      <a href="index.html" class="lb neutral"><i class="ti ti-arrow-left" aria-hidden="true"></i> ホーム</a>
+      <a href="https://github.com/ko-shimada/daily-research" class="lb neutral" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+    </nav>
+  </header>
+
+  <h2 class="sec-title no-margin-top">概況 — 6/18以降の差分</h2>
+  <table class="status-table">
+    <thead><tr><th>サービス</th><th>状態</th><th class="dt-col">最新</th><th>要点</th></tr></thead>
+    <tbody>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-chatplus">ChatPlus</a></td><td><span class="badge b-updated">更新あり</span></td><td class="dt-col">7/8</td><td>AI AgentPlus、LINE連携、FAQPlus、Tree Editorなど6月アップデートまとめ。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-bigquery">BigQuery</a></td><td><span class="badge b-updated">更新あり</span></td><td class="dt-col">7/8</td><td>multi-level aggregation Preview、Conversational Analytics GA、ハイブリッド検索Preview。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-cloudrun">Cloud Run</a></td><td><span class="badge b-updated">更新あり</span></td><td class="dt-col">7/8</td><td>Cloud Run sandboxes Preview、service health/readiness probes GA。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-agent-platform">Gemini Enterprise Agent Platform</a></td><td><span class="badge b-updated">更新あり</span></td><td class="dt-col">7/8</td><td>Memory Bank IngestEvents GA、Grok 4.1非推奨。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-genesys">Genesys Cloud</a></td><td><span class="badge b-updated">更新あり</span></td><td class="dt-col">7/6</td><td>AVA言語追加、Bot Flow呼び出し、Architect dark mode、文字起こし改善。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-vpcsc">VPC Service Controls</a></td><td><span class="badge b-updated">更新あり</span></td><td class="dt-col">6/29</td><td>Agent identities / SPIFFE形式、Conversational Analytics API連携がGA。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-cloudsdk">Cloud SDK</a></td><td><span class="badge b-alert">Security</span></td><td class="dt-col">7/7</td><td>Windows同梱Pythonを3.14.6へ更新しCVE-2026-34182に対応。</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-title">詳細</h2>
+
+  <section class="svc-section has-update" id="svc-chatplus"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-messages"></i> ChatPlus</h3><div class="svc-meta"><span class="badge b-updated">更新あり</span><span class="last-upd">最終: 7/8</span><a class="src-link" href="https://chatplus.jp/news/update-202606/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">AI AgentPlusのサイト学習精度、解決確認表示、複製、参照側の事前学習置換ルール、提案・分析レポート、サポートチケット連携、LINE連携、多言語音声再生などを確認。FAQPlus、Tree Editor、ChatPlus本体の修正も含まれます。FAQ側では2026年7月29日 0:00〜3:00のメンテナンス告知も確認しました。</p></section>
+
+  <section class="svc-section has-update" id="svc-genesys"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-headset"></i> Genesys Cloud</h3><div class="svc-meta"><span class="badge b-updated">更新あり</span><span class="last-upd">最終: 7/6</span><a class="src-link" href="https://help.genesys.cloud/release-notes/genesys-cloud/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><table class="detail-table"><thead><tr><th>日付</th><th>内容</th><th>概要</th></tr></thead><tbody><tr><td class="col-date">7/6</td><td>AVA / Bot Flow</td><td class="col-sum">AVA言語追加、Bot Flowから別Bot Flow呼び出し、In-Queue Flow Errorから別キュー転送。</td></tr><tr><td class="col-date">6/29</td><td>Architect / AVA / STT</td><td class="col-sum">Architect dark mode、AVAデバッグ詳細、Knowledge回答改善、文字起こし精度と辞書上限改善。</td></tr><tr><td class="col-date">6/22</td><td>Knowledge / Messaging</td><td class="col-sum">French transcription改善、Knowledge Fabric強化、Supervisor takeover、オンデマンド要約。</td></tr></tbody></table></section>
+
+  <section class="svc-section has-update" id="svc-bigquery"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-database"></i> BigQuery</h3><div class="svc-meta"><span class="badge b-updated">更新あり</span><span class="last-upd">最終: 7/8</span><a class="src-link" href="https://docs.cloud.google.com/bigquery/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><table class="detail-table"><thead><tr><th>日付</th><th>内容</th><th>概要</th></tr></thead><tbody><tr><td class="col-date">7/8</td><td>multi-level aggregation / ODBC</td><td class="col-sum">GoogleSQLのmulti-level aggregationがPreview。Simba ODBC driver更新。</td></tr><tr><td class="col-date">7/1</td><td>TimesFM GA</td><td class="col-sum">Connected Sheetsから事前学習済みTimesFMモデルを直接利用可能。</td></tr><tr><td class="col-date">6/25</td><td>Hybrid search Preview</td><td class="col-sum">VECTOR_SEARCH / AI.SEARCH HYBRIDでセマンティック検索とキーワード検索を組み合わせ可能。</td></tr><tr><td class="col-date">6/23</td><td>Conversational Analytics GA</td><td class="col-sum">エージェントのモデル選択、thinking mode、clarifying questions、context citationsなどを含めGA。</td></tr></tbody></table></section>
+
+  <section class="svc-section has-update" id="svc-cloudrun"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-server"></i> Cloud Run</h3><div class="svc-meta"><span class="badge b-updated">更新あり</span><span class="last-upd">最終: 7/8</span><a class="src-link" href="https://docs.cloud.google.com/run/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">7/8にAIエージェント生成コードなどの非信頼コードを隔離実行するCloud Run sandboxesがPreview。6/29にCloud Run service healthのマルチリージョンfailover/failbackとHTTP/gRPC readiness probesがGA。</p></section>
+
+  <section class="svc-section has-update" id="svc-agent-platform"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-sparkles"></i> Vertex AI / GenAI / Agent Platform</h3><div class="svc-meta"><span class="badge b-updated">更新あり</span><span class="last-upd">最終: 7/8</span><a class="src-link" href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Gemini Enterprise Agent PlatformでMemory Bank IngestEvents APIがGA、Memory Bankがgemini-embedding-2に対応。Grok 4.1系は2026年8月20日に停止予定。Vertex AI個別リリースノートはAgent Platform系へ集約される流れとして継続監視します。</p></section>
+
+  <section class="svc-section has-update" id="svc-vpcsc"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-shield-lock"></i> VPC Service Controls</h3><div class="svc-meta"><span class="badge b-updated">更新あり</span><span class="last-upd">最終: 6/29</span><a class="src-link" href="https://docs.cloud.google.com/vpc-service-controls/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">6/29にAgent identitiesとSPIFFE形式をingress/egress rulesで使う機能がGA。6/24にConversational Analytics API連携がGA。</p></section>
+
+  <section class="svc-section has-update" id="svc-cloudsdk"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-terminal-2"></i> Cloud SDK / gcloud CLI</h3><div class="svc-meta"><span class="badge b-alert">Security</span><span class="last-upd">最終: 7/7</span><a class="src-link" href="https://docs.cloud.google.com/sdk/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">gcloud 575.0.1でWindows同梱Pythonを3.14.6へ更新し、CVE-2026-34182に対応しました。Windows運用端末はSDK更新確認対象です。</p></section>
+
+  <section class="svc-section has-update" id="svc-status"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-alert-triangle"></i> Google Cloud Status</h3><div class="svc-meta"><span class="badge b-alert">復旧確認</span><span class="last-upd">最終: 6/29</span><a class="src-link" href="https://status.cloud.google.com/incidents.json" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Delhi / Chennai / Mumbai周辺発のGoogle Cloud向け通信に関する高レイテンシ・パケットロスは、2026年6月29日の更新で復旧確認。Hybrid Connectivity、VPC、Media CDNが影響対象として記載されていました。</p></section>
+
+  <h2 class="sec-title">更新なし / 継続監視</h2>
+  <table class="other-table"><tbody><tr><td class="svc-col">Text-to-Speech</td><td>対象期間内の新規更新なし（公式リリースノート到達成功）</td></tr><tr><td class="svc-col">Speech-to-Text</td><td>対象期間内の新規更新なし（公式リリースノート到達成功）</td></tr><tr><td class="svc-col">Cloud Storage</td><td>6/17以降の新規更新なし（公式リリースノート到達成功）</td></tr><tr><td class="svc-col">Workflows</td><td>対象期間内の新規更新なし（公式リリースノート到達成功）</td></tr><tr><td class="svc-col">Dialogflow CX / Conversational Agents / CX Agent Studio</td><td>個別公式ページで対象期間内の直接更新は未確認。Google Cloud release notes、Agent Platform、CCaaS、Conversational Analyticsを関連ソースとして継続監視。</td></tr></tbody></table>
+
+  <footer class="rpt-footer"><span>Official-source research completed for 2026-06-18 through 2026-07-09.</span></footer>
+</div>
+</body>
+</html>

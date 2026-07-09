@@ -677,3 +677,54 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   .ed-service em { grid-column: 1; }
   .ed-service-body { padding: 0 14px 14px; }
 }
+
+
+.ed-update-counts {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 196px;
+  font-style: normal;
+  color: var(--ed-gold);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: normal;
+}
+.ed-update-counts span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 2px 8px;
+  border: 1px solid rgba(178,122,44,.28);
+  background: rgba(178,122,44,.08);
+}
+.ed-update-counts.zero {
+  min-width: 0;
+  color: var(--ed-muted);
+}
+.ed-update-group { margin-top: 12px; }
+.ed-update-group h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ed-line);
+  color: var(--ed-ink);
+  font-family: "Noto Serif JP", serif;
+  font-size: 15px;
+  line-height: 1.3;
+}
+.ed-update-group h4 span {
+  color: var(--ed-gold);
+  font: 700 12px/1 "Noto Sans JP", sans-serif;
+}
+@media (max-width: 600px) {
+  .ed-update-counts {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+}

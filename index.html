@@ -6,7 +6,7 @@
   <title>デイリーリサーチ</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260709d">
+  <link rel="stylesheet" href="style.css?v=20260709e">
 </head>
 <body class="editorial-home">
 <div class="ed-shell">
@@ -30,7 +30,7 @@
       <h2>Monitor</h2>
       <div class="ed-stat"><span>Services</span><strong id="stat-services">-</strong></div>
       <div class="ed-stat"><span>Updates</span><strong id="stat-updates">-</strong></div>
-      <div class="ed-stat"><span>Latest</span><strong><a href="2026-06-17.html">2026.06.17</a></strong></div>
+      <div class="ed-stat"><span>Latest</span><strong id="stat-latest">-</strong></div>
     </aside>
   </section>
 
@@ -69,6 +69,8 @@
     var services = data.services.filter(function(s){ return state.project==='all' || s.projects.indexOf(state.project)>=0; }).filter(matchKeyword);
     $('stat-services').textContent = data.services.length;
     $('stat-updates').textContent = data.updates.length;
+    var latestReport = data.reports[0];
+    $('stat-latest').innerHTML = latestReport ? '<a href="'+latestReport.href+'">'+fmt(latestReport.date)+'</a>' : '-';
     $('visible-count').textContent = services.length + ' services';
     renderFeature(data.updates[0]);
     renderServices(services);
@@ -86,11 +88,40 @@
   }
   function renderServices(list){
     $('service-list').innerHTML = list.map(function(s){
-      var us = updates(s.id), latest = us[0];
-      return '<article class="ed-service"><button type="button" aria-expanded="false"><span class="ed-service-icon"><i class="ti '+s.icon+'"></i></span><span><strong>'+s.name+'</strong><small>'+s.category+' / '+s.projects.map(plabel).join('・')+'</small></span><em>'+us.length+' updates</em></button><div class="ed-service-body"><p>'+s.note+'</p>'+(us.length?us.map(updateHtml).join(''):'<p class="ed-empty small">選択条件内の更新はありません。公式ソースの到達確認対象です。</p>')+'<div class="ed-links">'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</div></div></article>';
+      var us = updates(s.id);
+      return '<article class="ed-service"><button type="button" aria-expanded="false"><span class="ed-service-icon"><i class="ti '+s.icon+'"></i></span><span><strong>'+s.name+'</strong><small>'+s.category+' / '+s.projects.map(plabel).join('・')+'</small></span>'+densityHtml(us)+'</button><div class="ed-service-body"><p>'+s.note+'</p>'+(us.length?groupedUpdatesHtml(us):'<p class="ed-empty small">選択条件内の更新はありません。公式ソースの到達確認対象です。</p>')+'<div class="ed-links">'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</div></div></article>';
     }).join('');
     document.querySelectorAll('.ed-service button').forEach(function(btn){ btn.onclick=function(){ var card=btn.parentElement, open=card.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); }; });
   }
+  function groupedUpdatesHtml(list){
+    var groups = [
+      {key:'fresh', label:'直近3日間'},
+      {key:'week', label:'1週間以内'},
+      {key:'month', label:'1か月以内'},
+      {key:'older', label:'過去'}
+    ];
+    var buckets = {fresh:[], week:[], month:[], older:[]};
+    list.forEach(function(u){ buckets[recencyKey(u.date)].push(u); });
+    return groups.filter(function(g){ return buckets[g.key].length; }).map(function(g){
+      return '<section class="ed-update-group"><h4>'+g.label+'<span>'+buckets[g.key].length+'</span></h4>'+buckets[g.key].map(updateHtml).join('')+'</section>';
+    }).join('');
+  }
+  function densityHtml(list){
+    if(!list.length) return '<em class="ed-update-counts zero">0 updates</em>';
+    var c = {fresh:0, week:0, month:0};
+    list.forEach(function(u){ var k=recencyKey(u.date); if(c[k] !== undefined) c[k]++; });
+    return '<em class="ed-update-counts"><span>3日 '+c.fresh+'</span><span>1週 '+c.week+'</span><span>1か月 '+c.month+'</span></em>';
+  }
+  function recencyKey(date){
+    var diff = Math.floor((parseDate(todayDate()).getTime() - parseDate(date).getTime()) / 86400000);
+    if(diff <= 2) return 'fresh';
+    if(diff <= 6) return 'week';
+    if(diff <= 30) return 'month';
+    return 'older';
+  }
+  function todayDate(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function parseDate(d){ var p=d.split('-').map(Number); return new Date(p[0], p[1]-1, p[2]); }
+  function pad(n){ return String(n).padStart(2,'0'); }
   function updateHtml(u){ return '<div class="ed-update"><div><span>'+fmt(u.date)+'</span><b>'+u.kind+'</b></div><h3>'+u.title+'</h3><p>'+u.summary+'</p><a href="'+u.report+'">該当レポート</a><a target="_blank" rel="noopener noreferrer" href="'+u.source+'">公式ソース</a></div>'; }
   function renderSources(list){ $('source-list').innerHTML = list.map(function(s){ return '<details><summary>'+s.name+'</summary>'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</details>'; }).join(''); }
   function plabel(v){ return v==='voicebot'?'ボイスボット':'チャットボット'; }
