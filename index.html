@@ -6,7 +6,7 @@
   <title>デイリーリサーチ</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260709c">
+  <link rel="stylesheet" href="style.css?v=20260709d">
 </head>
 <body class="editorial-home">
 <div class="ed-shell">
@@ -57,6 +57,7 @@
   var state = {data:null, project:'all', date:'', keyword:''};
   var $ = function(id){ return document.getElementById(id); };
   var project = $('project-filter'), date = $('date-filter'), keyword = $('keyword-filter');
+  project.value = 'all'; date.value = ''; keyword.value = '';
   fetch('data/research-data.json').then(function(r){return r.json();}).then(function(data){ state.data=data; render(); }).catch(function(){ $('service-list').innerHTML='<p class="ed-empty">データを読み込めませんでした。</p>'; });
   project.onchange = function(){ state.project=this.value; render(); };
   date.onchange = function(){ state.date=this.value; render(); };
