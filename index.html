@@ -5,112 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>デイリーリサーチ</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260617c">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260709b">
 </head>
-<body>
-<div class="wrap">
-
-  <header class="idx-header">
-    <div>
-      <div class="idx-eyebrow">Google Cloud &amp; Genesys Cloud</div>
-      <h1 class="idx-title">デイリーリサーチ</h1>
-    </div>
-    <a href="https://github.com/ko-shimada/daily-research" class="lb neutral" target="_blank" rel="noopener noreferrer">
-      <i class="ti ti-brand-github" aria-hidden="true"></i> ko-shimada/daily-research
-    </a>
+<body class="editorial-home">
+<div class="ed-shell">
+  <header class="ed-masthead">
+    <div class="ed-kicker">Daily SaaS Intelligence</div>
+    <h1>デイリーリサーチ</h1>
+    <p>ボイスボットとチャットボットに関係するSaaSのアップデート、障害、メンテナンスをサービス単位で読むためのホームです。</p>
+    <a href="https://github.com/ko-shimada/daily-research" class="ed-github" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i> ko-shimada/daily-research</a>
   </header>
 
-  <div class="about">
-    <strong>このサイトについて</strong><br>
-    Genesys Cloud・Dialogflow CX・Conversational Agents・CX Agent Studio・Google Cloud TTS/STT・BigQuery・Cloud Run など公式リリースノートを毎朝自動収集し、まとめたレポートです。asia-northeast1（東京）リージョンの対応状況も毎回確認します。
-  </div>
+  <section class="ed-controls" aria-label="絞り込み">
+    <label><span>Project</span><select id="project-filter"><option value="all">すべて</option><option value="voicebot">ボイスボット</option><option value="chatbot">チャットボット</option></select></label>
+    <label><span>Date</span><input id="date-filter" type="date"></label>
+    <label class="wide"><span>Search</span><input id="keyword-filter" type="search" placeholder="BigQuery、障害、GA など"></label>
+    <button id="clear-filter" type="button" aria-label="条件をクリア" title="条件をクリア"><i class="ti ti-filter-x"></i></button>
+  </section>
 
-  <h2 class="sec-title no-margin-top"><i class="ti ti-calendar" aria-hidden="true"></i> レポート一覧</h2>
-  <ul class="report-list" id="report-list">
-    <li class="report-item">
-      <a href="2026-06-17.html" class="report-link">
-        <div class="report-left">
-          <span class="report-date">2026年6月17日</span>
-          <div>
-            <div class="report-meta">BigQuery Table Explorer → Reference パネル移行予告・Cloud SDK 573.0.0 GA 昇格・Genesys Agent Copilot 強化</div>
-            <div class="report-tags">
-              <span class="rtag">BigQuery</span>
-              <span class="rtag">Cloud SDK</span>
-              <span class="rtag">Genesys Agent Copilot</span>
-            </div>
-          </div>
-        </div>
-        <i class="ti ti-arrow-right report-arrow"></i>
-      </a>
-    </li>
-    <li class="report-item">
-      <a href="2026-06-16.html" class="report-link">
-        <div class="report-left">
-          <span class="report-date">2026年6月16日</span>
-          <div>
-            <div class="report-meta">BigQuery Gemini クエリ最適化 Preview・Jobs Explorer Gemini Code Assist・TTS Chirp 3 HD 東京対応確認</div>
-            <div class="report-tags">
-              <span class="rtag">BigQuery</span>
-              <span class="rtag">Text-to-Speech</span>
-              <span class="rtag">東京リージョン</span>
-            </div>
-          </div>
-        </div>
-        <i class="ti ti-arrow-right report-arrow"></i>
-      </a>
-    </li>
-    <li class="report-item">
-      <a href="2026-06-15.html" class="report-link">
-        <div class="report-left">
-          <span class="report-date">2026年6月15日</span>
-          <div>
-            <div class="report-meta">BigQuery AI functions GA・Genesys Semantic Topic Spotting・Agent Copilot Exact Match・OAuth IP制限</div>
-            <div class="report-tags">
-              <span class="rtag">BigQuery</span>
-              <span class="rtag">Genesys AI</span>
-              <span class="rtag">Genesys セキュリティ</span>
-            </div>
-          </div>
-        </div>
-        <i class="ti ti-arrow-right report-arrow"></i>
-      </a>
-    </li>
-    <li class="report-item">
-      <a href="2026-06-13.html" class="report-link">
-        <div class="report-left">
-          <span class="report-date">2026年6月13日</span>
-          <div>
-            <div class="report-meta">BigQuery GA×1・Preview×3・Gemini Agent Platform 名称変更・Gemini Live API 非同期関数呼び出し</div>
-            <div class="report-tags">
-              <span class="rtag">BigQuery</span>
-              <span class="rtag">Gemini Agent Platform</span>
-              <span class="rtag">Gemini Live API</span>
-            </div>
-          </div>
-        </div>
-        <i class="ti ti-arrow-right report-arrow"></i>
-      </a>
-    </li>
-    <li class="report-item">
-      <a href="2026-06-11.html" class="report-link">
-        <div class="report-left">
-          <span class="report-date">2026年6月11日</span>
-          <div>
-            <div class="report-meta">BigQuery GA×5 · Genesys 12言語追加 · CX Agent Studio 評価データ入出力</div>
-            <div class="report-tags">
-              <span class="rtag">BigQuery</span>
-              <span class="rtag">CX Agent Studio</span>
-              <span class="rtag">Genesys STT</span>
-              <span class="rtag">VPC Service Controls</span>
-            </div>
-          </div>
-        </div>
-        <i class="ti ti-arrow-right report-arrow"></i>
-      </a>
-    </li>
-  </ul>
+  <section class="ed-lead-grid">
+    <article class="ed-feature" id="featured-update"></article>
+    <aside class="ed-index-card">
+      <h2>Monitor</h2>
+      <div class="ed-stat"><span>Services</span><strong id="stat-services">-</strong></div>
+      <div class="ed-stat"><span>Updates</span><strong id="stat-updates">-</strong></div>
+      <div class="ed-stat"><span>Latest</span><strong><a href="2026-06-17.html">2026.06.17</a></strong></div>
+    </aside>
+  </section>
 
+  <main class="ed-layout">
+    <section>
+      <div class="ed-section-title"><h2>Services</h2><span id="visible-count"></span></div>
+      <div id="service-list" class="ed-service-list"></div>
+    </section>
+    <aside class="ed-source-rail">
+      <h2>Official Sources</h2>
+      <p>公式リリースノート、ステータスページ、公式ニュースを採取対象にします。</p>
+      <div id="source-list"></div>
+    </aside>
+  </main>
+
+  <section class="ed-archive">
+    <div class="ed-section-title"><h2>Reports by Date</h2><span>既存の日付別レポート</span></div>
+    <div id="archive-list" class="ed-archive-list"></div>
+  </section>
 </div>
+
+<script>
+(function(){
+  var state = {data:null, project:'all', date:'', keyword:''};
+  var $ = function(id){ return document.getElementById(id); };
+  var project = $('project-filter'), date = $('date-filter'), keyword = $('keyword-filter');
+  fetch('data/research-data.json').then(function(r){return r.json();}).then(function(data){ state.data=data; render(); }).catch(function(){ $('service-list').innerHTML='<p class="ed-empty">データを読み込めませんでした。</p>'; });
+  project.onchange = function(){ state.project=this.value; render(); };
+  date.onchange = function(){ state.date=this.value; render(); };
+  keyword.oninput = function(){ state.keyword=this.value.trim().toLowerCase(); render(); };
+  $('clear-filter').onclick = function(){ state.project='all'; state.date=''; state.keyword=''; project.value='all'; date.value=''; keyword.value=''; render(); };
+
+  function render(){
+    var data = state.data; if(!data) return;
+    var services = data.services.filter(function(s){ return state.project==='all' || s.projects.indexOf(state.project)>=0; }).filter(matchKeyword);
+    $('stat-services').textContent = data.services.length;
+    $('stat-updates').textContent = data.updates.length;
+    $('visible-count').textContent = services.length + ' services';
+    renderFeature(data.updates[0]);
+    renderServices(services);
+    renderSources(services);
+    $('archive-list').innerHTML = data.reports.map(function(r){ return '<a href="'+r.href+'"><strong>'+fmt(r.date)+'</strong><span>'+r.summary+'</span></a>'; }).join('');
+  }
+  function matchKeyword(s){
+    if(!state.keyword) return true;
+    var t = [s.name,s.category,s.note].join(' ').toLowerCase();
+    return t.indexOf(state.keyword)>=0 || updates(s.id).some(function(u){ return [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; });
+  }
+  function updates(id){ return state.data.updates.filter(function(u){ return u.serviceId===id; }).filter(function(u){ return !state.date || u.date===state.date; }).filter(function(u){ return !state.keyword || [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; }); }
+  function renderFeature(u){
+    $('featured-update').innerHTML = '<div class="ed-kicker">Latest Signal</div><h2>'+u.title+'</h2><p>'+u.summary+'</p><div class="ed-feature-meta"><span>'+fmt(u.date)+'</span><span>'+u.kind+'</span><a href="'+u.report+'">レポートを読む</a></div>';
+  }
+  function renderServices(list){
+    $('service-list').innerHTML = list.map(function(s){
+      var us = updates(s.id), latest = us[0];
+      return '<article class="ed-service"><button type="button" aria-expanded="false"><span class="ed-service-icon"><i class="ti '+s.icon+'"></i></span><span><strong>'+s.name+'</strong><small>'+s.category+' / '+s.projects.map(plabel).join('・')+'</small></span><em>'+us.length+' updates</em></button><div class="ed-service-body"><p>'+s.note+'</p>'+(us.length?us.map(updateHtml).join(''):'<p class="ed-empty small">選択条件内の更新はありません。公式ソースの到達確認対象です。</p>')+'<div class="ed-links">'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</div></div></article>';
+    }).join('');
+    document.querySelectorAll('.ed-service button').forEach(function(btn){ btn.onclick=function(){ var card=btn.parentElement, open=card.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); }; });
+  }
+  function updateHtml(u){ return '<div class="ed-update"><div><span>'+fmt(u.date)+'</span><b>'+u.kind+'</b></div><h3>'+u.title+'</h3><p>'+u.summary+'</p><a href="'+u.report+'">該当レポート</a><a target="_blank" rel="noopener noreferrer" href="'+u.source+'">公式ソース</a></div>'; }
+  function renderSources(list){ $('source-list').innerHTML = list.map(function(s){ return '<details><summary>'+s.name+'</summary>'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</details>'; }).join(''); }
+  function plabel(v){ return v==='voicebot'?'ボイスボット':'チャットボット'; }
+  function fmt(d){ var p=d.split('-'); return p[0]+'.'+p[1]+'.'+p[2]; }
+})();
+</script>
 </body>
 </html>

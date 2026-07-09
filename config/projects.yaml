@@ -1,0 +1,54 @@
+projects:
+  - id: voicebot
+    name: ボイスボット
+    services:
+      - genesys-cloud
+      - dialogflow-cx
+      - conversational-agents
+      - cx-agent-studio
+      - text-to-speech
+      - speech-to-text
+      - bigquery
+      - cloud-run
+      - vertex-agent-platform
+      - cloud-storage
+      - vpc-service-controls
+      - workflows
+      - cloud-sdk
+  - id: chatbot
+    name: チャットボット
+    services:
+      - chatplus
+      - conversational-agents
+      - cx-agent-studio
+      - bigquery
+      - cloud-run
+      - vertex-agent-platform
+      - cloud-storage
+      - vpc-service-controls
+      - workflows
+      - cloud-sdk
+
+success_when:
+  - all_resources_accessible
+  - all_resources_collected
+  - github_pages_content_generated
+  - git_push_succeeded
+
+fail_when:
+  - any_resource_inaccessible
+  - any_resource_collection_failed
+  - github_pages_generation_failed
+  - git_push_failed
+
+collection_policy:
+  source_priority:
+    - official_status_page
+    - official_release_notes
+    - official_docs
+    - official_news
+    - official_faq_or_maintenance_notice
+  require_source_url: true
+  store_access_result: true
+  store_collected_at: true
+  stop_publish_on_any_failure: true
