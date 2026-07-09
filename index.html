@@ -19,7 +19,7 @@
 
   <section class="ed-controls" aria-label="絞り込み">
     <label><span>Project</span><select id="project-filter"><option value="all">すべて</option><option value="voicebot">ボイスボット</option><option value="chatbot">チャットボット</option></select></label>
-    <label><span>Date</span><input id="date-filter" type="date"></label>
+    <label><span>Since</span><input id="date-filter" type="date"></label>
     <label class="wide"><span>Search</span><input id="keyword-filter" type="search" placeholder="BigQuery、障害、GA など"></label>
     <button id="clear-filter" type="button" aria-label="条件をクリア" title="条件をクリア"><i class="ti ti-filter-x"></i></button>
   </section>
@@ -82,7 +82,7 @@
     var t = [s.name,s.category,s.note].join(' ').toLowerCase();
     return t.indexOf(state.keyword)>=0 || updates(s.id).some(function(u){ return [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; });
   }
-  function updates(id){ return state.data.updates.filter(function(u){ return u.serviceId===id; }).filter(function(u){ return !state.date || u.date===state.date; }).filter(function(u){ return !state.keyword || [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; }); }
+  function updates(id){ return state.data.updates.filter(function(u){ return u.serviceId===id; }).filter(function(u){ return !state.date || u.date>=state.date; }).filter(function(u){ return !state.keyword || [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; }); }
   function renderFeature(u){
     $('featured-update').innerHTML = '<div class="ed-kicker">Latest Signal</div><h2>'+hotMark(u)+u.title+'</h2><p>'+u.summary+'</p><div class="ed-feature-meta"><span>'+fmt(u.date)+'</span><span>'+u.kind+'</span><a href="'+u.report+'">レポートを読む</a></div>';
   }

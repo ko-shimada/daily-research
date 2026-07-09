@@ -465,7 +465,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 
 .ed-controls {
   display: grid;
-  grid-template-columns: 190px 190px minmax(220px, 1fr) 48px;
+  grid-template-columns: 190px 190px minmax(220px, 1fr) 76px;
   gap: 10px;
   padding: 18px 0;
   border-bottom: 1px solid var(--ed-line);
@@ -488,7 +488,13 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   padding: 0 12px;
   font: inherit;
 }
-.ed-controls button { width: 48px; padding: 0; align-self: end; font-size: 20px; }
+.ed-controls button {
+  width: 76px;
+  padding: 0 10px;
+  align-self: end;
+  font-size: 13px;
+  font-weight: 700;
+}
 .ed-controls :focus-visible,
 .ed-service button:focus-visible,
 .ed-archive-list a,
@@ -771,7 +777,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 
   <section class="ed-controls" aria-label="絞り込み">
     <label><span>Project</span><select id="project-filter"><option value="all">すべて</option><option value="voicebot">ボイスボット</option><option value="chatbot">チャットボット</option></select></label>
-    <label><span>Date</span><input id="date-filter" type="date"></label>
+    <label><span>Since</span><input id="date-filter" type="date"></label>
     <label class="wide"><span>Search</span><input id="keyword-filter" type="search" placeholder="BigQuery、障害、GA など"></label>
     <button id="clear-filter" type="button" aria-label="条件をクリア" title="条件をクリア">Clear</button>
   </section>
@@ -836,7 +842,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
     var t = [s.name,s.category,s.note].join(' ').toLowerCase();
     return t.indexOf(state.keyword)>=0 || updates(s.id).some(function(u){ return [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; });
   }
-  function updates(id){ return state.data.updates.filter(function(u){ return u.serviceId===id; }).filter(function(u){ return !state.date || u.date===state.date; }).filter(function(u){ return !state.keyword || [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; }); }
+  function updates(id){ return state.data.updates.filter(function(u){ return u.serviceId===id; }).filter(function(u){ return !state.date || u.date>=state.date; }).filter(function(u){ return !state.keyword || [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; }); }
   function renderFeature(u){
     $('featured-update').innerHTML = '<div class="ed-kicker">Latest Signal</div><h2>'+hotMark(u)+u.title+'</h2><p>'+u.summary+'</p><div class="ed-feature-meta"><span>'+fmt(u.date)+'</span><span>'+u.kind+'</span><a target="_blank" rel="noopener noreferrer" href="'+u.source+'">公式ソース</a></div>';
   }

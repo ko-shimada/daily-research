@@ -458,7 +458,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 
 .ed-controls {
   display: grid;
-  grid-template-columns: 190px 190px minmax(220px, 1fr) 48px;
+  grid-template-columns: 190px 190px minmax(220px, 1fr) 76px;
   gap: 10px;
   padding: 18px 0;
   border-bottom: 1px solid var(--ed-line);
@@ -481,7 +481,13 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   padding: 0 12px;
   font: inherit;
 }
-.ed-controls button { width: 48px; padding: 0; align-self: end; font-size: 20px; }
+.ed-controls button {
+  width: 76px;
+  padding: 0 10px;
+  align-self: end;
+  font-size: 13px;
+  font-weight: 700;
+}
 .ed-controls :focus-visible,
 .ed-service button:focus-visible,
 .ed-archive-list a:focus-visible,
