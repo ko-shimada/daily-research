@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デイリーリサーチ SharePoint版</title>
+      <style>
+/* ================================================================
+   デイリーリサーチ — shared stylesheet
+   Style: 社内報告書（まとめ資料）スタイル
+   Covers: index.html + yyyy-mm-dd.html report pages
+   ================================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg:         #FFFFFF;
+  --bg-sub:     #F7F7F5;
+  --bg-row:     #FAFAF9;
+  --ink:        #1A1A18;
+  --muted:      #6B6B67;
+  --subtle:     #9B9B97;
+  --bd:         rgba(28,28,26,.09);
+  --bd-med:     rgba(28,28,26,.20);
+  --bd-str:     rgba(28,28,26,.36);
+  --sans:       'Noto Sans JP', system-ui, sans-serif;
+
+  --green-bg:   #EAF3DE; --green-fg: #3B6D11;
+  --blue-bg:    #E6F1FB; --blue-fg:  #185FA5; --blue-bd: #B5D4F4;
+  --amber-bg:   #FAEEDA; --amber-fg: #854F0B;
+  --red-bg:     #FCEBEB; --red-fg:   #A32D2D;
+  --gray-bg:    #F2F1EC; --gray-fg:  #5F5E5A;
+  --teal-bg:    #E1F5EE; --teal-fg:  #0F6E56;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 2rem 1.5rem 5rem;
+}
+
+.wrap { max-width: 800px; margin: 0 auto; }
+
+/* ── Report header ── */
+.rpt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+  border-bottom: 1.5px solid var(--ink);
+  margin-bottom: 1.5rem;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.rpt-eyebrow {
+  font-size: 11px; color: var(--muted);
+  margin-bottom: 4px; letter-spacing: .02em;
+}
+.rpt-date {
+  font-size: 22px; font-weight: 500;
+  line-height: 1.2; margin-bottom: 3px;
+}
+.rpt-period {
+  font-size: 12px; color: var(--muted);
+}
+.rpt-nav {
+  display: flex; gap: 6px;
+  align-items: center; flex-shrink: 0;
+  padding-top: 4px; flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* ── Link badge ── */
+a.lb {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 11px; font-weight: 500;
+  padding: 3px 10px;
+  background: var(--blue-bg); color: var(--blue-fg);
+  text-decoration: none;
+  border: 1px solid var(--blue-bd);
+  white-space: nowrap;
+  transition: background .1s;
+}
+a.lb:hover { background: var(--blue-bd); }
+a.lb.neutral {
+  background: var(--bg-sub); color: var(--muted);
+  border-color: var(--bd-med);
+}
+a.lb.neutral:hover { background: var(--gray-bg); color: var(--ink); }
+
+a.src-link {
+  display: inline-flex; align-items: center; gap: 2px;
+  font-size: 11px; color: var(--blue-fg);
+  text-decoration: none; white-space: nowrap;
+}
+a.src-link:hover { text-decoration: underline; }
+
+/* ── Section title ── */
+.sec-title {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted);
+  padding: .4rem 0 .4rem .625rem;
+  border-left: 3px solid var(--bd-str);
+  margin-bottom: .875rem;
+  margin-top: 1.75rem;
+}
+.sec-title:first-child, .sec-title.no-margin-top { margin-top: 0; }
+
+/* ── Overview status table ── */
+.status-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13px; margin-bottom: 1.75rem;
+  border: 1px solid var(--bd-med);
+}
+.status-table th {
+  font-size: 10px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); padding: 7px 10px;
+  background: var(--bg-sub);
+  border-bottom: 1px solid var(--bd-med);
+  text-align: left;
+}
+.status-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--bd);
+  vertical-align: middle;
+}
+.status-table tr:last-child td { border-bottom: none; }
+.status-table tr:hover td { background: var(--bg-row); }
+.status-table .svc-col { font-weight: 500; }
+.status-table .dt-col  { color: var(--muted); font-size: 12px; white-space: nowrap; }
+
+/* jump link from overview → detail section */
+.svc-jump {
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1px dotted var(--bd-med);
+  transition: color .1s, border-color .1s;
+}
+.svc-jump:hover { color: var(--blue-fg); border-bottom-color: var(--blue-fg); }
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex; align-items: center;
+  font-size: 11px; font-weight: 600;
+  padding: 2px 9px; white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid rgba(28,28,26,.08);
+}
+.b-updated { background: var(--green-bg); color: var(--green-fg); }
+.b-none    { background: var(--gray-bg);  color: var(--gray-fg); }
+.b-alert   { background: var(--amber-bg); color: var(--amber-fg); }
+.b-sdk     { background: var(--teal-bg);  color: var(--teal-fg); }
+
+/* ── Stage tags ── */
+.tag {
+  display: inline-block; font-size: 10.5px; font-weight: 600;
+  padding: 1px 8px; white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid rgba(28,28,26,.08);
+}
+.t-ga  { background: var(--green-bg); color: var(--green-fg); }
+.t-pre { background: var(--blue-bg);  color: var(--blue-fg); }
+.t-amb { background: var(--amber-bg); color: var(--amber-fg); }
+.t-brk { background: var(--red-bg);   color: var(--red-fg); }
+.t-nc  { background: var(--gray-bg);  color: var(--gray-fg); }
+.t-sdk { background: var(--teal-bg);  color: var(--teal-fg); }
+
+/* ── Service section ── */
+.svc-section {
+  margin-bottom: 1rem;
+  border: 1px solid var(--bd-med);
+  border-radius: 6px;
+  overflow: hidden;
+  scroll-margin-top: 1rem;
+}
+.svc-section.has-update { border-color: var(--blue-bd); }
+.svc-hd {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: .5rem .875rem;
+  background: var(--bg-sub);
+  border-bottom: 1px solid var(--bd-med);
+  gap: 12px; flex-wrap: wrap;
+}
+.svc-section.has-update .svc-hd {
+  background: #EEF4FF;
+  border-bottom-color: var(--blue-bd);
+}
+.svc-name {
+  font-size: 13.5px; font-weight: 500;
+  display: flex; align-items: center; gap: 6px;
+  line-height: 1.4;
+}
+.svc-meta {
+  display: flex; align-items: center;
+  gap: 8px; flex-shrink: 0; flex-wrap: wrap;
+}
+.last-upd {
+  font-size: 11px; color: var(--muted);
+}
+.no-upd-note {
+  font-size: 12.5px; color: var(--muted);
+  padding: .6rem .875rem;
+  line-height: 1.65;
+}
+
+/* ── Detail feature table ── */
+.detail-table {
+  width: 100%; border-collapse: collapse; font-size: 13px;
+}
+.detail-table th {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--subtle); padding: 5px 10px;
+  border-bottom: 1px solid var(--bd-med);
+  text-align: left; background: var(--bg-row);
+}
+.detail-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--bd);
+  vertical-align: top; line-height: 1.55;
+}
+.detail-table tr:last-child td { border-bottom: none; }
+.detail-table tr:hover td { background: var(--bg-row); }
+.detail-table .col-stage { white-space: nowrap; }
+.detail-table .col-date  { white-space: nowrap; color: var(--muted); font-size: 12px; }
+.detail-table .col-src   { white-space: nowrap; }
+.detail-table .col-sum   { color: var(--muted); font-size: 12.5px; }
+
+/* ── Other GCP compact table ── */
+.other-table {
+  width: 100%; border-collapse: collapse; font-size: 13px;
+}
+.other-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--bd);
+  vertical-align: middle;
+}
+.other-table tr:last-child td { border-bottom: none; }
+.other-table tr:hover td { background: var(--bg-row); }
+.other-table .svc-col { font-weight: 500; }
+.other-table .dt-col  { color: var(--muted); font-size: 12px; white-space: nowrap; }
+
+/* ── Deadline alert box ── */
+.alert-box {
+  border: 1px solid var(--red-fg);
+  margin-top: .5rem;
+}
+.alert-hd {
+  background: var(--red-bg);
+  padding: .5rem .875rem;
+  font-size: 11.5px; font-weight: 500; color: var(--red-fg);
+  border-bottom: 1px solid var(--red-fg);
+  display: flex; align-items: center; gap: 6px;
+}
+.alert-list { list-style: none; }
+.alert-item {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 8px; align-items: start;
+  padding: 8px .875rem;
+  border-bottom: 1px solid var(--bd);
+  font-size: 13px;
+}
+.alert-item:last-child { border-bottom: none; }
+.alert-date { font-weight: 500; font-size: 12px; padding-top: 2px; line-height: 1.45; }
+.alert-desc { color: var(--muted); line-height: 1.55; }
+.days-badge {
+  display: inline-block;
+  background: var(--amber-bg); color: var(--amber-fg);
+  font-size: 10px; font-weight: 500;
+  padding: 1px 7px; margin-top: 3px;
+}
+
+/* ── Tokyo region table ── */
+.region-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13px; border: 1px solid var(--bd-med);
+}
+.region-table th {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); padding: 6px 10px;
+  background: var(--bg-sub);
+  border-bottom: 1px solid var(--bd-med);
+  text-align: left;
+}
+.region-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--bd);
+  vertical-align: middle;
+}
+.region-table tr:last-child td { border-bottom: none; }
+.region-table tr:hover td { background: var(--bg-row); }
+.region-table .svc-col { font-weight: 500; }
+
+.sbadge {
+  display: inline-block; font-size: 10.5px;
+  font-weight: 600; padding: 2px 9px;
+  border-radius: 4px;
+  border: 1px solid rgba(28,28,26,.08);
+}
+.s-ok   { background: var(--green-bg); color: var(--green-fg); }
+.s-ng   { background: var(--red-bg);   color: var(--red-fg); }
+.s-part { background: var(--amber-bg); color: var(--amber-fg); }
+.s-nc   { background: var(--gray-bg);  color: var(--gray-fg); }
+
+/* ── Report footer ── */
+.rpt-footer {
+  margin-top: 2.5rem; padding-top: .875rem;
+  border-top: 1px solid var(--bd-med);
+  font-size: 11px; color: var(--subtle);
+  display: flex; gap: 8px; flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ── Icon helper ── */
+i.ti { font-size: 14px; vertical-align: -2px; }
+
+/* ── Index page ── */
+.idx-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-end; flex-wrap: wrap; gap: 8px;
+  padding-bottom: 1rem;
+  border-bottom: 1.5px solid var(--ink);
+  margin-bottom: 1.25rem;
+}
+.idx-eyebrow { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+.idx-title   { font-size: 22px; font-weight: 500; }
+
+.about {
+  border: 1px solid var(--bd-med);
+  padding: .875rem 1.125rem;
+  margin-bottom: 1.25rem;
+  font-size: 13px; color: var(--muted);
+  line-height: 1.65; background: var(--bg-sub);
+}
+.about strong { color: var(--ink); }
+
+.report-list { list-style: none; }
+.report-item { border-bottom: 1px solid var(--bd); }
+.report-item:last-child { border-bottom: none; }
+.report-link {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: .875rem 0;
+  text-decoration: none; color: var(--ink);
+  gap: 16px;
+}
+.report-link:hover .report-date { color: var(--blue-fg); }
+.report-link:hover .report-arrow { opacity: 1; }
+.report-left { display: flex; align-items: baseline; gap: 12px; }
+.report-date {
+  font-size: 17px; font-weight: 500;
+  transition: color .1s; white-space: nowrap;
+}
+.report-meta { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.report-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.rtag {
+  font-size: 10px; font-weight: 500; padding: 1px 7px;
+  background: var(--bg-sub); color: var(--muted);
+  border: 1px solid var(--bd-med);
+}
+.report-arrow {
+  font-size: 18px; color: var(--muted);
+  opacity: .4; flex-shrink: 0;
+  transition: opacity .1s;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  body { padding: 1.25rem .875rem 3rem; }
+  .rpt-header { flex-direction: column; }
+  .alert-item { grid-template-columns: 120px 1fr; }
+  .alert-item a.src-link { grid-column: 2; }
+  .status-table { font-size: 12px; }
+}
+
+/* ================================================================
+   Editorial service home (2026-07-09)
+   Direction: modern media dashboard, inspired by Forbes/NYT/NewsPicks.
+   ================================================================ */
+.editorial-home {
+  --ed-paper: #f7f4ee;
+  --ed-ink: #161411;
+  --ed-muted: #675f55;
+  --ed-line: #d8cec0;
+  --ed-gold: #b27a2c;
+  --ed-red: #bd3827;
+  --ed-blue: #1f4f8f;
+  --ed-card: #fffdf8;
+  background: var(--ed-paper);
+  color: var(--ed-ink);
+  padding: 0 20px 64px;
+}
+
+.editorial-home a { color: inherit; }
+.editorial-home i.ti { font-size: 1.05em; }
+.ed-shell { max-width: 1240px; margin: 0 auto; }
+
+.ed-masthead {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 30px 0 24px;
+  border-bottom: 4px double var(--ed-ink);
+}
+
+.ed-kicker {
+  color: var(--ed-red);
+  font: 700 12px/1.2 "Noto Sans JP", sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.ed-masthead h1 {
+  margin-top: 8px;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(42px, 7vw, 84px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: .98;
+}
+
+.ed-masthead p {
+  max-width: 760px;
+  margin-top: 14px;
+  color: var(--ed-muted);
+  font-size: 15px;
+}
+
+.ed-github,
+.ed-controls button {
+  min-height: 44px;
+  border: 1px solid var(--ed-ink);
+  background: #fffdf8;
+  color: var(--ed-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.ed-github {
+  margin-top: 18px;
+  border-color: var(--ed-line);
+  color: var(--ed-blue);
+}
+
+.ed-github:hover,
+.ed-controls button:hover {
+  border-color: var(--ed-blue);
+  background: #eef3f8;
+  color: var(--ed-blue);
+}
+
+.ed-controls {
+  display: grid;
+  grid-template-columns: 190px 190px minmax(220px, 1fr) 48px;
+  gap: 10px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--ed-line);
+}
+
+.ed-controls label { display: grid; gap: 5px; }
+.ed-controls label span {
+  color: var(--ed-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.ed-controls select,
+.ed-controls input {
+  min-height: 44px;
+  border: 1px solid var(--ed-line);
+  background: #fff;
+  color: var(--ed-ink);
+  padding: 0 12px;
+  font: inherit;
+}
+.ed-controls button { width: 48px; padding: 0; align-self: end; font-size: 20px; }
+.ed-controls :focus-visible,
+.ed-service button:focus-visible,
+.ed-archive-list a,
+.ed-archive-entry:focus-visible,
+.ed-source-rail a:focus-visible,
+.ed-github:focus-visible {
+  outline: 3px solid rgba(31,79,143,.28);
+  outline-offset: 3px;
+}
+
+.ed-lead-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 18px;
+  margin: 22px 0;
+}
+
+.ed-feature,
+.ed-index-card,
+.ed-source-rail,
+.ed-archive {
+  background: var(--ed-card);
+  border: 1px solid var(--ed-line);
+}
+
+.ed-feature {
+  min-height: 250px;
+  padding: clamp(22px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-top: 5px solid var(--ed-ink);
+}
+.ed-feature h2 {
+  max-width: 820px;
+  margin: 8px 0 12px;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(26px, 4vw, 46px);
+  line-height: 1.15;
+}
+.ed-feature p { max-width: 780px; color: var(--ed-muted); font-size: 15px; }
+.ed-feature-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.ed-feature-meta span,
+.ed-feature-meta a {
+  border-top: 1px solid var(--ed-line);
+  padding-top: 7px;
+  color: var(--ed-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.ed-feature-meta a { color: var(--ed-blue); }
+
+.ed-index-card { padding: 20px; }
+.ed-index-card h2,
+.ed-source-rail h2,
+.ed-section-title h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 22px;
+  line-height: 1.2;
+}
+.ed-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--ed-line);
+}
+.ed-stat span { color: var(--ed-muted); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.ed-stat strong { font-family: "Noto Serif JP", serif; font-size: 28px; }
+.ed-stat a { text-decoration: none; }
+
+.ed-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px;
+  align-items: start;
+}
+.ed-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin: 0 0 12px;
+  border-bottom: 2px solid var(--ed-ink);
+  padding-bottom: 8px;
+}
+.ed-section-title span { color: var(--ed-muted); font-size: 12px; font-weight: 700; }
+
+.ed-service-list { display: grid; gap: 10px; }
+.ed-service {
+  background: var(--ed-card);
+  border: 1px solid var(--ed-line);
+  transition: border-color .16s, transform .16s;
+}
+.ed-service.open { border-color: var(--ed-ink); }
+.ed-service button {
+  width: 100%;
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  border: 0;
+  background: transparent;
+  color: var(--ed-ink);
+  padding: 14px 16px;
+  text-align: left;
+  cursor: pointer;
+}
+.ed-service-icon {
+  display: none;
+}
+.ed-service strong { display: block; font-family: "Noto Serif JP", serif; font-size: 20px; line-height: 1.25; }
+.ed-service small { display: block; color: var(--ed-muted); margin-top: 4px; }
+.ed-service em {
+  font-style: normal;
+  color: var(--ed-gold);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.ed-service-body {
+  display: none;
+  padding: 0 16px 16px;
+  border-top: 1px solid var(--ed-line);
+}
+.ed-service.open .ed-service-body { display: block; }
+.ed-service-body > p { color: var(--ed-muted); margin: 13px 0; font-size: 13px; }
+
+.ed-update {
+  position: relative;
+  padding: 13px 0 13px 16px;
+  border-left: 2px solid var(--ed-gold);
+  border-bottom: 1px solid var(--ed-line);
+}
+.ed-update div { display: flex; gap: 8px; flex-wrap: wrap; color: var(--ed-muted); font-size: 11px; font-weight: 700; }
+.ed-update b { color: var(--ed-red); }
+.ed-update h3 { margin: 5px 0; font-size: 15px; line-height: 1.45; }
+.ed-update p { color: var(--ed-muted); font-size: 12.5px; }
+.ed-update a,
+.ed-links a,
+.ed-source-rail a { display: inline-flex; margin: 8px 12px 0 0; color: var(--ed-blue); font-size: 12px; font-weight: 700; text-decoration: none; }
+.ed-update a:hover,
+.ed-links a:hover,
+.ed-source-rail a:hover,
+.ed-archive-list a,
+.ed-archive-entry:hover span { text-decoration: underline; }
+
+.ed-source-rail {
+  position: sticky;
+  top: 18px;
+  padding: 18px;
+}
+.ed-source-rail p { color: var(--ed-muted); font-size: 12.5px; margin: 8px 0 12px; }
+.ed-source-rail details { border-top: 1px solid var(--ed-line); padding: 9px 0; }
+.ed-source-rail summary { cursor: pointer; font-weight: 700; font-size: 13px; }
+.ed-source-rail a { display: block; margin-top: 7px; }
+
+.ed-archive { margin-top: 24px; padding: 18px; }
+.ed-archive-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+.ed-archive-list a,
+.ed-archive-entry {
+  display: grid;
+  gap: 5px;
+  min-height: 90px;
+  padding: 13px;
+  border: 1px solid var(--ed-line);
+  background: #fff;
+  text-decoration: none;
+}
+.ed-archive-list strong { font-family: "Noto Serif JP", serif; font-size: 18px; }
+.ed-archive-list span { color: var(--ed-muted); font-size: 12px; line-height: 1.55; }
+
+.ed-empty {
+  border: 1px dashed var(--ed-line);
+  background: #fff;
+  color: var(--ed-muted);
+  padding: 16px;
+}
+.ed-empty.small { padding: 10px 12px; font-size: 12px; }
+
+@media (max-width: 900px) {
+  .ed-lead-grid,
+  .ed-layout { grid-template-columns: 1fr; }
+  .ed-source-rail { position: static; }
+  .ed-controls { grid-template-columns: 1fr 1fr; }
+  .ed-controls .wide { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  .editorial-home { padding: 0 12px 44px; }
+  .ed-masthead h1 { font-size: 42px; }
+  .ed-controls { grid-template-columns: 1fr; }
+  .ed-service button { grid-template-columns: 1fr; }
+  .ed-service em { grid-column: 1; }
+  .ed-service-body { padding: 0 14px 14px; }
+}
+
+
+.ed-update-counts {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 196px;
+  font-style: normal;
+  color: var(--ed-gold);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: normal;
+}
+.ed-update-counts span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 2px 8px;
+  border: 1px solid rgba(178,122,44,.28);
+  background: rgba(178,122,44,.08);
+}
+.ed-update-counts.zero {
+  min-width: 0;
+  color: var(--ed-muted);
+}
+.ed-update-group { margin-top: 12px; }
+.ed-update-group h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ed-line);
+  color: var(--ed-ink);
+  font-family: "Noto Serif JP", serif;
+  font-size: 15px;
+  line-height: 1.3;
+}
+.ed-update-group h4 span {
+  color: var(--ed-gold);
+  font: 700 12px/1 "Noto Sans JP", sans-serif;
+}
+@media (max-width: 600px) {
+  .ed-update-counts {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+}
+
+
+.ed-hot-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35em;
+  margin-right: 6px;
+  color: var(--ed-red);
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: .8em;
+  line-height: 1;
+  vertical-align: .08em;
+}
+.ed-update-counts .ed-hot-count {
+  border-color: rgba(189,56,39,.32);
+  background: rgba(189,56,39,.08);
+  color: var(--ed-red);
+}
+
+</style>
+</head>
+<body class="editorial-home">
+<div class="ed-shell">
+  <header class="ed-masthead">
+    <div class="ed-kicker">Daily SaaS Intelligence</div>
+    <h1>デイリーリサーチ</h1>
+    <p>ボイスボットとチャットボットに関係するSaaSのアップデート、障害、メンテナンスをサービス単位で読むためのホームです。</p>
+    <div class="ed-github ed-sp-note">SharePoint版 / Daily SaaS Intelligence</div>
+  </header>
+
+  <section class="ed-controls" aria-label="絞り込み">
+    <label><span>Project</span><select id="project-filter"><option value="all">すべて</option><option value="voicebot">ボイスボット</option><option value="chatbot">チャットボット</option></select></label>
+    <label><span>Date</span><input id="date-filter" type="date"></label>
+    <label class="wide"><span>Search</span><input id="keyword-filter" type="search" placeholder="BigQuery、障害、GA など"></label>
+    <button id="clear-filter" type="button" aria-label="条件をクリア" title="条件をクリア">Clear</button>
+  </section>
+
+  <section class="ed-lead-grid">
+    <article class="ed-feature" id="featured-update"></article>
+    <aside class="ed-index-card">
+      <h2>Monitor</h2>
+      <div class="ed-stat"><span>Services</span><strong id="stat-services">-</strong></div>
+      <div class="ed-stat"><span>Updates</span><strong id="stat-updates">-</strong></div>
+      <div class="ed-stat"><span>Latest</span><strong id="stat-latest">-</strong></div>
+    </aside>
+  </section>
+
+  <main class="ed-layout">
+    <section>
+      <div class="ed-section-title"><h2>Services</h2><span id="visible-count"></span></div>
+      <div id="service-list" class="ed-service-list"></div>
+    </section>
+    <aside class="ed-source-rail">
+      <h2>Official Sources</h2>
+      <p>公式リリースノート、ステータスページ、公式ニュースを採取対象にします。</p>
+      <div id="source-list"></div>
+    </aside>
+  </main>
+
+  <section class="ed-archive">
+    <div class="ed-section-title"><h2>Reports by Date</h2><span>既存の日付別レポート</span></div>
+    <div id="archive-list" class="ed-archive-list"></div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var state = {data:null, project:'all', date:'', keyword:''};
+  var $ = function(id){ return document.getElementById(id); };
+  var project = $('project-filter'), date = $('date-filter'), keyword = $('keyword-filter');
+  project.value = 'all'; date.value = ''; keyword.value = '';
+  try { state.data = JSON.parse(document.getElementById('research-data').textContent); render(); } catch(e) { $('service-list').innerHTML='<p class="ed-empty">データを読み込めませんでした。</p>'; }
+  project.onchange = function(){ state.project=this.value; render(); };
+  date.onchange = function(){ state.date=this.value; render(); };
+  keyword.oninput = function(){ state.keyword=this.value.trim().toLowerCase(); render(); };
+  $('clear-filter').onclick = function(){ state.project='all'; state.date=''; state.keyword=''; project.value='all'; date.value=''; keyword.value=''; render(); };
+
+  function render(){
+    var data = state.data; if(!data) return;
+    var services = data.services.filter(function(s){ return state.project==='all' || s.projects.indexOf(state.project)>=0; }).filter(matchKeyword);
+    $('stat-services').textContent = data.services.length;
+    $('stat-updates').textContent = data.updates.length;
+    var latestReport = data.reports[0];
+    $('stat-latest').textContent = latestReport ? fmt(latestReport.date) : '-';
+    $('visible-count').textContent = services.length + ' services';
+    renderFeature(data.updates[0]);
+    renderServices(services);
+    renderSources(services);
+    $('archive-list').innerHTML = data.reports.map(function(r){ return '<div class="ed-archive-entry"><strong>'+fmt(r.date)+'</strong><span>'+r.summary+'</span></div>'; }).join('');
+  }
+  function matchKeyword(s){
+    if(!state.keyword) return true;
+    var t = [s.name,s.category,s.note].join(' ').toLowerCase();
+    return t.indexOf(state.keyword)>=0 || updates(s.id).some(function(u){ return [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; });
+  }
+  function updates(id){ return state.data.updates.filter(function(u){ return u.serviceId===id; }).filter(function(u){ return !state.date || u.date===state.date; }).filter(function(u){ return !state.keyword || [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; }); }
+  function renderFeature(u){
+    $('featured-update').innerHTML = '<div class="ed-kicker">Latest Signal</div><h2>'+hotMark(u)+u.title+'</h2><p>'+u.summary+'</p><div class="ed-feature-meta"><span>'+fmt(u.date)+'</span><span>'+u.kind+'</span><a target="_blank" rel="noopener noreferrer" href="'+u.source+'">公式ソース</a></div>';
+  }
+  function renderServices(list){
+    $('service-list').innerHTML = list.map(function(s){
+      var us = updates(s.id);
+      return '<article class="ed-service"><button type="button" aria-expanded="false"><span class="ed-service-icon"></span><span><strong>'+s.name+'</strong><small>'+s.category+' / '+s.projects.map(plabel).join('・')+'</small></span>'+densityHtml(us)+'</button><div class="ed-service-body"><p>'+s.note+'</p>'+(us.length?groupedUpdatesHtml(us):'<p class="ed-empty small">選択条件内の更新はありません。公式ソースの到達確認対象です。</p>')+'<div class="ed-links">'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</div></div></article>';
+    }).join('');
+    document.querySelectorAll('.ed-service button').forEach(function(btn){ btn.onclick=function(){ var card=btn.parentElement, open=card.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); }; });
+  }
+  function groupedUpdatesHtml(list){
+    var groups = [
+      {key:'fresh', label:'直近3日間'},
+      {key:'week', label:'1週間以内'},
+      {key:'month', label:'1か月以内'},
+      {key:'older', label:'過去'}
+    ];
+    var buckets = {fresh:[], week:[], month:[], older:[]};
+    list.forEach(function(u){ buckets[recencyKey(u.date)].push(u); });
+    return groups.filter(function(g){ return buckets[g.key].length; }).map(function(g){
+      return '<section class="ed-update-group"><h4>'+g.label+'<span>'+buckets[g.key].length+'</span></h4>'+buckets[g.key].map(updateHtml).join('')+'</section>';
+    }).join('');
+  }
+  function densityHtml(list){
+    if(!list.length) return '<em class="ed-update-counts zero">0 updates</em>';
+    var c = {fresh:0, week:0, month:0};
+    list.forEach(function(u){ var k=recencyKey(u.date); if(c[k] !== undefined) c[k]++; });
+    var hot = list.filter(isHot).length;
+    return '<em class="ed-update-counts">'+(hot?'<span class="ed-hot-count" aria-label="案件直結">🔥 '+hot+'</span>':'')+'<span>3日 '+c.fresh+'</span><span>1週 '+c.week+'</span><span>1か月 '+c.month+'</span></em>';
+  }
+  function recencyKey(date){
+    var diff = Math.floor((parseDate(todayDate()).getTime() - parseDate(date).getTime()) / 86400000);
+    if(diff <= 2) return 'fresh';
+    if(diff <= 6) return 'week';
+    if(diff <= 30) return 'month';
+    return 'older';
+  }
+  function todayDate(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function parseDate(d){ var p=d.split('-').map(Number); return new Date(p[0], p[1]-1, p[2]); }
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function hotMark(u){ return isHot(u) ? '<span class="ed-hot-mark" aria-label="案件直結" title="案件直結">🔥</span>' : ''; }
+  function isHot(u){ return Array.isArray(u.hotProjects) && (state.project==='all' || u.hotProjects.indexOf(state.project)>=0); }
+  function updateHtml(u){ return '<div class="ed-update"><div><span>'+fmt(u.date)+'</span><b>'+u.kind+'</b></div><h3>'+hotMark(u)+u.title+'</h3><p>'+u.summary+'</p><a target="_blank" rel="noopener noreferrer" href="'+u.source+'">公式ソース</a></div>'; }
+  function renderSources(list){ $('source-list').innerHTML = list.map(function(s){ return '<details><summary>'+s.name+'</summary>'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</details>'; }).join(''); }
+  function plabel(v){ return v==='voicebot'?'ボイスボット':'チャットボット'; }
+  function fmt(d){ var p=d.split('-'); return p[0]+'.'+p[1]+'.'+p[2]; }
+})();
+</script>
+<script type="application/json" id="research-data">{"hotCriteria":{"projects":{"voicebot":"さとふるの日本語ボイスボットに直接影響する更新だけを🔥対象にする。Genesys Bot Flow、非日本語音声モデル、未利用機能、対象外リージョン固有の話は除外。","chatbot":"さとふるのチャットボット、ChatPlus、FAQ、LINE連携、会話エージェント運用に直接影響する更新だけを🔥対象にする。"},"googleCloudRegions":{"include":["asia-northeast*","global","us*"],"excludeNote":"Google Cloudのリージョン固有更新は、asia-northeast、global、us系に関係する場合のみ🔥対象。その他リージョン固有の障害・追加・制約は通常更新として記録する。"}},"services":[{"id":"genesys-cloud","name":"Genesys Cloud","category":"CCaaS / Voice","projects":["voicebot"],"icon":"ti-headset","note":"Dialogflow CX連携、Architect、インバウンドフロー、STT/TTS、AVAを重点確認します。","sources":[{"label":"Release notes","url":"https://help.genesys.cloud/release-notes/genesys-cloud/"},{"label":"Status","url":"https://status.mypurecloud.com/"},{"label":"Dialogflow CX連携","url":"https://help.genesys.cloud/articles/about-the-google-cloud-dialogflow-cx-integration/"},{"label":"Architect","url":"https://help.genesys.cloud/articles/about-architect/"}]},{"id":"chatplus","name":"ChatPlus","category":"Chatbot SaaS","projects":["chatbot"],"icon":"ti-messages","note":"公式ニュース、システムアップデート、FAQトップのメンテナンス告知を確認します。","sources":[{"label":"Service","url":"https://chatplus.jp/service/chatplus/"},{"label":"News","url":"https://chatplus.jp/news/"},{"label":"FAQ / お知らせ","url":"https://faq.chatplus.jp/"}]},{"id":"dialogflow-cx","name":"Dialogflow CX","category":"Google Cloud / Conversational AI","projects":["voicebot"],"icon":"ti-message-chatbot","note":"フロー、Playbook、音声入出力、API、リージョン変更を確認します。","sources":[{"label":"Docs","url":"https://docs.cloud.google.com/dialogflow/cx/docs"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"conversational-agents","name":"Conversational Agents","category":"Google Cloud / Agent Console","projects":["voicebot","chatbot"],"icon":"ti-robot","note":"Dialogflow CXの新UI、Playbook、Data store、評価機能を確認します。","sources":[{"label":"Docs","url":"https://docs.cloud.google.com/dialogflow/cx/docs"},{"label":"Google Cloud release notes","url":"https://docs.cloud.google.com/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"cx-agent-studio","name":"CX Agent Studio","category":"Gemini Enterprise CX","projects":["voicebot","chatbot"],"icon":"ti-wand","note":"Geminiベースの会話エージェント構築、評価、トレーシング、マルチモーダルを確認します。","sources":[{"label":"Product","url":"https://cloud.google.com/gemini-enterprise-cx/cx-agent-studio"},{"label":"Google Cloud release notes","url":"https://docs.cloud.google.com/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"text-to-speech","name":"Google Cloud Text-to-Speech","category":"Google Cloud / TTS","projects":["voicebot"],"icon":"ti-volume","note":"Chirp、Gemini TTS、音声モデル、東京リージョン対応を確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/text-to-speech/docs/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"speech-to-text","name":"Google Cloud Speech-to-Text","category":"Google Cloud / STT","projects":["voicebot"],"icon":"ti-microphone","note":"Chirp 3、API V2、音声認識モデル、対応リージョンを確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/speech-to-text/docs/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"bigquery","name":"BigQuery","category":"Google Cloud / Data","projects":["voicebot","chatbot"],"icon":"ti-database","note":"分析基盤、AI functions、移行期限、権限や課金影響のある変更を確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/bigquery/docs/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"cloud-run","name":"Cloud Run","category":"Google Cloud / Runtime","projects":["voicebot","chatbot"],"icon":"ti-server","note":"Webhook、API、Agent連携の実行基盤としてリリースと障害を確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/run/docs/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"vertex-agent-platform","name":"Vertex AI / GenAI / Agent Platform","category":"Google Cloud / GenAI","projects":["voicebot","chatbot"],"icon":"ti-sparkles","note":"モデル、Agent Platform、MaaS、非推奨、移行期限を確認します。","sources":[{"label":"Vertex AI release notes","url":"https://docs.cloud.google.com/vertex-ai/docs/release-notes"},{"label":"Google Cloud release notes","url":"https://docs.cloud.google.com/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"cloud-storage","name":"Cloud Storage","category":"Google Cloud / Storage","projects":["voicebot","chatbot"],"icon":"ti-cloud-data-connection","note":"ログ、学習データ、静的ファイル保管に関わる変更を確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/storage/docs/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"vpc-service-controls","name":"VPC Service Controls","category":"Google Cloud / Security","projects":["voicebot","chatbot"],"icon":"ti-shield-lock","note":"Dialogflow、Agent Studio、Storage、BigQuery連携の境界制御影響を確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"workflows","name":"Workflows","category":"Google Cloud / Orchestration","projects":["voicebot","chatbot"],"icon":"ti-route","note":"連携処理、バッチ、リージョン対応、コネクタ変更を確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/workflows/docs/release-notes"},{"label":"Status","url":"https://status.cloud.google.com/"}]},{"id":"cloud-sdk","name":"Cloud SDK / gcloud CLI","category":"Google Cloud / CLI","projects":["voicebot","chatbot"],"icon":"ti-terminal-2","note":"開発・運用コマンド、破壊的変更、Windows同梱Python更新を確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/sdk/docs/release-notes"},{"label":"Google Cloud release notes","url":"https://docs.cloud.google.com/release-notes"}]}],"updates":[{"serviceId":"chatplus","date":"2026-07-08","kind":"月次更新","title":"ChatPlus 6月アップデートまとめ","summary":"AI AgentPlusのサイト学習精度、解決確認表示、複製、LINE連携、レポート、チケット連携、多言語音声再生などが改善されました。","report":"2026-07-09.html#svc-chatplus","source":"https://chatplus.jp/news/update-202606/","hotProjects":["chatbot"]},{"serviceId":"cloud-run","date":"2026-07-08","kind":"Preview","title":"Cloud Run sandboxesがPreview","summary":"AIエージェント生成コードなど、信頼できないコードを隔離実行するCloud Run sandboxesがPreviewで利用可能になりました。","report":"2026-07-09.html#svc-cloudrun","source":"https://docs.cloud.google.com/run/docs/release-notes"},{"serviceId":"vertex-agent-platform","date":"2026-07-08","kind":"GA / Deprecated","title":"Memory Bank強化とGrok 4.1非推奨","summary":"Memory Bank IngestEvents APIがGA。gemini-embedding-2対応も追加。Grok 4.1系は2026年8月20日に停止予定です。","report":"2026-07-09.html#svc-agent-platform","source":"https://docs.cloud.google.com/release-notes","hotProjects":["voicebot","chatbot"]},{"serviceId":"bigquery","date":"2026-07-08","kind":"Preview","title":"GoogleSQLでmulti-level aggregationがPreview","summary":"集約関数の引数に別の集約関数を使えるmulti-level aggregationがPreview。分析SQLの表現力が上がります。","report":"2026-07-09.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},{"serviceId":"bigquery","date":"2026-07-08","kind":"Driver","title":"BigQuery Simba ODBC driver更新","summary":"BigQuery向けSimba ODBC driverの更新版が公開されました。接続端末やBI連携環境のドライバ更新確認が必要です。","report":"2026-07-09.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},{"serviceId":"cloud-sdk","date":"2026-07-07","kind":"Security","title":"gcloud 575.0.1でWindows同梱Python更新","summary":"Google Cloud CLIのWindows同梱Pythonが3.14.6へ更新され、CVE-2026-34182に対応しました。","report":"2026-07-09.html#svc-cloudsdk","source":"https://docs.cloud.google.com/sdk/docs/release-notes"},{"serviceId":"bigquery","date":"2026-07-06","kind":"Change","title":"Facebook Ads AdInsightsMMM reportが一時無効化","summary":"Facebook Ads APIのスキーマ変更により、BigQuery Data Transfer ServiceのAdInsightsMMM reportサポートが一時無効化されました。","report":"2026-07-09.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},{"serviceId":"genesys-cloud","date":"2026-07-06","kind":"AVA / Flow","title":"AVA言語追加とBot Flow呼び出し強化","summary":"AVAが13言語を追加サポート。Bot Flowから別Bot Flowを呼び出せるようになり、In-Queue Flow Errorから別キュー転送も可能になりました。","report":"2026-07-09.html#svc-genesys","source":"https://help.genesys.cloud/release-notes/genesys-cloud/"},{"serviceId":"genesys-cloud","date":"2026-07-06","kind":"Deprecation","title":"Polish native voice transcriptionが非推奨","summary":"Genesys Cloudのポーランド語ネイティブ音声文字起こしが非推奨対象になりました。該当言語の音声botは移行影響の確認が必要です。","report":"2026-07-09.html#svc-genesys","source":"https://help.genesys.cloud/release-notes/genesys-cloud/"},{"serviceId":"bigquery","date":"2026-07-01","kind":"GA","title":"Connected SheetsからTimesFMモデル利用がGA","summary":"BigQuery MLの事前学習済みTimesFMモデルをConnected Sheetsから直接使えるようになりました。AI.FORECAST / AI.DETECT_ANOMALIESに対応します。","report":"2026-07-09.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},{"serviceId":"bigquery","date":"2026-06-30","kind":"Feature","title":"reservation assignmentにprincipal指定を追加","summary":"BigQuery reservation assignmentsでprincipalプロパティを指定でき、ユーザーやサービスアカウント単位で予約へルーティングしやすくなりました。","report":"2026-07-09.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},{"serviceId":"cloud-run","date":"2026-06-29","kind":"GA","title":"Cloud Run service healthとreadiness probesがGA","summary":"マルチリージョンの自動failover/failbackに使うCloud Run service healthと、HTTP/gRPC readiness probesがGAになりました。","report":"2026-07-09.html#svc-cloudrun","source":"https://docs.cloud.google.com/run/docs/release-notes"},{"serviceId":"genesys-cloud","date":"2026-06-29","kind":"Architect / AVA","title":"Architect dark modeとAVAデバッグ情報を追加","summary":"Architectのダークモード/UI更新、Execution HistoryとReplay modeでのAVAデバッグ詳細、Knowledge回答改善が追加されました。","report":"2026-07-09.html#svc-genesys","source":"https://help.genesys.cloud/release-notes/genesys-cloud/"},{"serviceId":"genesys-cloud","date":"2026-06-29","kind":"STT / Analytics","title":"文字起こし精度・辞書上限・会話データ抽出を強化","summary":"英語方言/専門領域のネイティブ文字起こし精度向上、辞書語数上限増加、会話データ抽出の統合・スケール化が追加されました。","report":"2026-07-09.html#svc-genesys","source":"https://help.genesys.cloud/release-notes/genesys-cloud/"},{"serviceId":"vpc-service-controls","date":"2026-06-29","kind":"GA","title":"Agent identitiesとSPIFFE形式がingress/egressでGA","summary":"サービス境界で保護されたリソースへのアクセス制御に、Agent identitiesと第三者workforce/workload identity向けSPIFFE形式を利用可能になりました。","report":"2026-07-09.html#svc-vpcsc","source":"https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"},{"serviceId":"bigquery","date":"2026-06-25","kind":"Preview","title":"BigQueryでハイブリッド検索がPreview","summary":"VECTOR_SEARCHとAI.SEARCHのHYBRID modeで、セマンティック検索とキーワード検索を組み合わせられるようになりました。","report":"2026-07-09.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes","hotProjects":["voicebot","chatbot"]},{"serviceId":"vpc-service-controls","date":"2026-06-24","kind":"GA","title":"Conversational Analytics API連携がGA","summary":"VPC Service ControlsでConversational Analytics API integrationがGA。分析エージェント利用時の境界制御確認対象です。","report":"2026-07-09.html#svc-vpcsc","source":"https://docs.cloud.google.com/vpc-service-controls/docs/release-notes","hotProjects":["voicebot","chatbot"]},{"serviceId":"bigquery","date":"2026-06-23","kind":"GA / Preview","title":"Conversational Analytics GAとtrigger-based scheduling Preview","summary":"BigQuery Conversational AnalyticsがGA。BigQuery Data Transfer Serviceではテーブル更新に基づくtrigger-based schedulingがPreviewです。","report":"2026-07-09.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes","hotProjects":["voicebot","chatbot"]},{"serviceId":"genesys-cloud","date":"2026-06-22","kind":"STT / Knowledge","title":"French transcription改善とKnowledge Fabric強化","summary":"フランス語方言の音声文字起こし改善、Knowledge Fabricのメタデータアクセス制御、API同期・ファイル管理強化が追加されました。","report":"2026-07-09.html#svc-genesys","source":"https://help.genesys.cloud/release-notes/genesys-cloud/"},{"serviceId":"genesys-cloud","date":"2026-06-22","kind":"Messaging","title":"Supervisor takeoverとオンデマンド要約","summary":"Supervisorがアクティブなメッセージング会話を引き継げるようになり、エージェントはインタラクション要約をオンデマンド作成できます。","report":"2026-07-09.html#svc-genesys","source":"https://help.genesys.cloud/release-notes/genesys-cloud/"},{"serviceId":"cloud-run","date":"2026-06-18","kind":"Incident","title":"Google Cloudネットワーク障害の継続更新を確認","summary":"Delhi/Chennai/Mumbai周辺発のGoogle Cloud向け通信で高レイテンシ/パケットロスが継続し、6/29に復旧更新が掲載されました。","report":"2026-07-09.html#svc-status","source":"https://status.cloud.google.com/incidents.json"},{"serviceId":"bigquery","date":"2026-06-17","kind":"予告","title":"Table ExplorerがReferenceパネルへ移行予定","summary":"BigQuery StudioのTable Explorer機能がReferenceパネルへ統合される予定。7月以降の追加告知を追跡します。","report":"2026-06-17.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},{"serviceId":"cloud-run","date":"2026-06-17","kind":"SDK GA","title":"readiness probeフラグがCloud SDK 573.0.0でGA","summary":"Cloud Runのreadiness probe設定がgcloudから正式サポート。WebhookやAgent連携サービスの運用手順に影響します。","report":"2026-06-17.html#svc-cloudrun","source":"https://docs.cloud.google.com/release-notes"},{"serviceId":"cloud-sdk","date":"2026-06-17","kind":"Breaking","title":"attached clusters get-credentialsが廃止","summary":"gcloud container attached clusters get-credentialsが廃止され、fleet memberships get-credentialsへの移行が必要。","report":"2026-06-17.html#svc-other","source":"https://docs.cloud.google.com/sdk/docs/release-notes"},{"serviceId":"cloud-storage","date":"2026-06-17","kind":"SDK GA","title":"バケット管理バッチ操作がCloud SDK 573.0.0でGA","summary":"Cloud Storageのバケット管理バッチ操作がCLI側でGA昇格。","report":"2026-06-17.html#svc-other","source":"https://docs.cloud.google.com/storage/docs/release-notes"},{"serviceId":"genesys-cloud","date":"2026-06-17","kind":"参考更新","title":"Agent CopilotとSemantic Topic Spottingの直近更新","summary":"6/15更新としてSemantic Topic Spotting、チェックリストExact Match、複数チェックリスト対応を追跡。","report":"2026-06-17.html#svc-genesys","source":"https://help.genesys.cloud/release-notes/genesys-cloud/"},{"serviceId":"bigquery","date":"2026-06-16","kind":"Preview","title":"Gemini Cloud AssistによるSQLクエリ最適化","summary":"BigQuery Editions向けに、SQLを分析してパフォーマンス改善案を提示する機能がPreview。","report":"2026-06-16.html","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},{"serviceId":"text-to-speech","date":"2026-06-16","kind":"リージョン確認","title":"Chirp 3 HD voicesの東京対応を確認","summary":"Chirp 3 HD voicesはasia-northeast1で利用可能。Gemini TTS 2.5はGlobal/US/EU中心として継続確認。","report":"2026-06-16.html","source":"https://docs.cloud.google.com/text-to-speech/docs/release-notes","hotProjects":["voicebot"]},{"serviceId":"bigquery","date":"2026-06-15","kind":"GA","title":"BigQuery AI functions関連の更新","summary":"AI functionsやStudio周辺のGA/Preview更新を確認。分析基盤への影響を継続追跡します。","report":"2026-06-15.html","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},{"serviceId":"genesys-cloud","date":"2026-06-15","kind":"GA","title":"Semantic Topic SpottingとAgent Copilot強化","summary":"セマンティック類似性によるトピック設定、完全一致オプション、複数チェックリスト対応を確認。","report":"2026-06-15.html","source":"https://help.genesys.cloud/release-notes/genesys-cloud/"},{"serviceId":"bigquery","date":"2026-06-13","kind":"複数更新","title":"BigQuery GA/Preview更新とAgent Platform名称変更","summary":"BigQueryのGA×1、Preview×3に加え、Gemini Agent Platform名称変更を確認。","report":"2026-06-13.html","source":"https://docs.cloud.google.com/release-notes"},{"serviceId":"vertex-agent-platform","date":"2026-06-13","kind":"名称変更","title":"Gemini Agent Platform関連の名称変更を確認","summary":"Vertex AI / GenAI領域からAgent Platformへの移行・名称変更の流れを継続監視対象にします。","report":"2026-06-13.html","source":"https://docs.cloud.google.com/release-notes","hotProjects":["voicebot","chatbot"]},{"serviceId":"cx-agent-studio","date":"2026-06-11","kind":"GA","title":"評価データのインポート/エクスポート対応","summary":"CX Agent Studioで評価データの入出力が可能になり、回帰評価やCI/CDとの接続がしやすくなりました。","report":"2026-06-11.html","source":"https://cloud.google.com/gemini-enterprise-cx/cx-agent-studio","hotProjects":["voicebot","chatbot"]},{"serviceId":"speech-to-text","date":"2026-06-11","kind":"リージョン確認","title":"STTモデルと言語・リージョン状況を確認","summary":"音声認識モデルの言語・リージョン状況を確認。Google STT Chirp 3の東京未対応は継続監視。","report":"2026-06-11.html","source":"https://docs.cloud.google.com/speech-to-text/docs/release-notes","hotProjects":["voicebot"]},{"serviceId":"vpc-service-controls","date":"2026-06-11","kind":"確認","title":"VPC Service Controlsの関連更新を確認","summary":"Agent系サービスやGCP周辺サービスのVPC SCサポート状況を継続確認対象にします。","report":"2026-06-11.html","source":"https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"}],"reports":[{"date":"2026-07-09","href":"2026-07-09.html","summary":"6/18以降の差分追跡: ChatPlus、Genesys、BigQuery、Cloud Run、Agent Platform"},{"date":"2026-06-17","href":"2026-06-17.html","summary":"BigQuery移行予告、Cloud SDK 573、Genesys Agent Copilot強化"},{"date":"2026-06-16","href":"2026-06-16.html","summary":"BigQuery Geminiクエリ最適化、TTS東京対応確認"},{"date":"2026-06-15","href":"2026-06-15.html","summary":"BigQuery AI functions、Genesys Semantic Topic Spotting"},{"date":"2026-06-13","href":"2026-06-13.html","summary":"BigQuery更新、Gemini Agent Platform名称変更"},{"date":"2026-06-11","href":"2026-06-11.html","summary":"CX Agent Studio評価データ、Genesys STT、VPC Service Controls"}]}</script>
+</body>
+</html>
