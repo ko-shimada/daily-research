@@ -397,10 +397,10 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 
 .ed-masthead {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 20px;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
   padding: 30px 0 24px;
   border-bottom: 4px double var(--ed-ink);
 }
@@ -432,8 +432,8 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 .ed-controls button {
   min-height: 44px;
   border: 1px solid var(--ed-ink);
-  background: var(--ed-ink);
-  color: #fffdf8;
+  background: #fffdf8;
+  color: var(--ed-ink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -441,6 +441,19 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   padding: 0 15px;
   text-decoration: none;
   font-weight: 700;
+}
+
+.ed-github {
+  margin-top: 18px;
+  border-color: var(--ed-line);
+  color: var(--ed-blue);
+}
+
+.ed-github:hover,
+.ed-controls button:hover {
+  border-color: var(--ed-blue);
+  background: #eef3f8;
+  color: var(--ed-blue);
 }
 
 .ed-controls {
@@ -468,7 +481,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   padding: 0 12px;
   font: inherit;
 }
-.ed-controls button { width: 48px; padding: 0; align-self: end; }
+.ed-controls button { width: 48px; padding: 0; align-self: end; font-size: 20px; }
 .ed-controls :focus-visible,
 .ed-service button:focus-visible,
 .ed-archive-list a:focus-visible,
@@ -657,7 +670,6 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 .ed-empty.small { padding: 10px 12px; font-size: 12px; }
 
 @media (max-width: 900px) {
-  .ed-masthead,
   .ed-lead-grid,
   .ed-layout { grid-template-columns: 1fr; }
   .ed-source-rail { position: static; }
