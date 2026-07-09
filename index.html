@@ -6,7 +6,7 @@
   <title>デイリーリサーチ</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260709e">
+  <link rel="stylesheet" href="style.css?v=20260709f">
 </head>
 <body class="editorial-home">
 <div class="ed-shell">
@@ -84,7 +84,7 @@
   }
   function updates(id){ return state.data.updates.filter(function(u){ return u.serviceId===id; }).filter(function(u){ return !state.date || u.date===state.date; }).filter(function(u){ return !state.keyword || [u.title,u.summary,u.kind].join(' ').toLowerCase().indexOf(state.keyword)>=0; }); }
   function renderFeature(u){
-    $('featured-update').innerHTML = '<div class="ed-kicker">Latest Signal</div><h2>'+u.title+'</h2><p>'+u.summary+'</p><div class="ed-feature-meta"><span>'+fmt(u.date)+'</span><span>'+u.kind+'</span><a href="'+u.report+'">レポートを読む</a></div>';
+    $('featured-update').innerHTML = '<div class="ed-kicker">Latest Signal</div><h2>'+hotMark(u)+u.title+'</h2><p>'+u.summary+'</p><div class="ed-feature-meta"><span>'+fmt(u.date)+'</span><span>'+u.kind+'</span><a href="'+u.report+'">レポートを読む</a></div>';
   }
   function renderServices(list){
     $('service-list').innerHTML = list.map(function(s){
@@ -110,7 +110,8 @@
     if(!list.length) return '<em class="ed-update-counts zero">0 updates</em>';
     var c = {fresh:0, week:0, month:0};
     list.forEach(function(u){ var k=recencyKey(u.date); if(c[k] !== undefined) c[k]++; });
-    return '<em class="ed-update-counts"><span>3日 '+c.fresh+'</span><span>1週 '+c.week+'</span><span>1か月 '+c.month+'</span></em>';
+    var hot = list.filter(isHot).length;
+    return '<em class="ed-update-counts">'+(hot?'<span class="ed-hot-count" aria-label="案件直結">🔥 '+hot+'</span>':'')+'<span>3日 '+c.fresh+'</span><span>1週 '+c.week+'</span><span>1か月 '+c.month+'</span></em>';
   }
   function recencyKey(date){
     var diff = Math.floor((parseDate(todayDate()).getTime() - parseDate(date).getTime()) / 86400000);
@@ -122,7 +123,9 @@
   function todayDate(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
   function parseDate(d){ var p=d.split('-').map(Number); return new Date(p[0], p[1]-1, p[2]); }
   function pad(n){ return String(n).padStart(2,'0'); }
-  function updateHtml(u){ return '<div class="ed-update"><div><span>'+fmt(u.date)+'</span><b>'+u.kind+'</b></div><h3>'+u.title+'</h3><p>'+u.summary+'</p><a href="'+u.report+'">該当レポート</a><a target="_blank" rel="noopener noreferrer" href="'+u.source+'">公式ソース</a></div>'; }
+  function hotMark(u){ return isHot(u) ? '<span class="ed-hot-mark" aria-label="案件直結" title="案件直結">🔥</span>' : ''; }
+  function isHot(u){ return Array.isArray(u.hotProjects) && (state.project==='all' || u.hotProjects.indexOf(state.project)>=0); }
+  function updateHtml(u){ return '<div class="ed-update"><div><span>'+fmt(u.date)+'</span><b>'+u.kind+'</b></div><h3>'+hotMark(u)+u.title+'</h3><p>'+u.summary+'</p><a href="'+u.report+'">該当レポート</a><a target="_blank" rel="noopener noreferrer" href="'+u.source+'">公式ソース</a></div>'; }
   function renderSources(list){ $('source-list').innerHTML = list.map(function(s){ return '<details><summary>'+s.name+'</summary>'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</details>'; }).join(''); }
   function plabel(v){ return v==='voicebot'?'ボイスボット':'チャットボット'; }
   function fmt(d){ var p=d.split('-'); return p[0]+'.'+p[1]+'.'+p[2]; }

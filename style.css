@@ -728,3 +728,22 @@ i.ti { font-size: 14px; vertical-align: -2px; }
     min-width: 0;
   }
 }
+
+
+.ed-hot-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35em;
+  margin-right: 6px;
+  color: var(--ed-red);
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: .8em;
+  line-height: 1;
+  vertical-align: .08em;
+}
+.ed-update-counts .ed-hot-count {
+  border-color: rgba(189,56,39,.32);
+  background: rgba(189,56,39,.08);
+  color: var(--ed-red);
+}
