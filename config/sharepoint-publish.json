@@ -1,0 +1,12 @@
+{
+  "targetPath": "",
+  "codex": {
+    "enabled": true,
+    "model": "",
+    "promptPath": "prompts/daily-research-agent.md"
+  },
+  "schedule": {
+    "taskName": "Daily Research SharePoint Publish",
+    "time": "08:30"
+  }
+}

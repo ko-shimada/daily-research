@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>デイリーリサーチ SharePoint版</title>
-      <style>
+<style>
 /* ================================================================
    デイリーリサーチ — shared stylesheet
    Style: 社内報告書（まとめ資料）スタイル
@@ -497,8 +497,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 }
 .ed-controls :focus-visible,
 .ed-service button:focus-visible,
-.ed-archive-list a,
-.ed-archive-entry:focus-visible,
+.ed-archive-list a:focus-visible,
 .ed-source-rail a:focus-visible,
 .ed-github:focus-visible {
   outline: 3px solid rgba(31,79,143,.28);
@@ -641,8 +640,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 .ed-update a:hover,
 .ed-links a:hover,
 .ed-source-rail a:hover,
-.ed-archive-list a,
-.ed-archive-entry:hover span { text-decoration: underline; }
+.ed-archive-list a:hover span { text-decoration: underline; }
 
 .ed-source-rail {
   position: sticky;
@@ -656,8 +654,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
 
 .ed-archive { margin-top: 24px; padding: 18px; }
 .ed-archive-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
-.ed-archive-list a,
-.ed-archive-entry {
+.ed-archive-list a {
   display: grid;
   gap: 5px;
   min-height: 90px;
@@ -764,6 +761,20 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   color: var(--ed-red);
 }
 
+
+/* SharePoint single-file adjustments */
+.ed-archive-entry {
+  display: grid;
+  gap: 5px;
+  min-height: 90px;
+  padding: 13px;
+  border: 1px solid var(--ed-line);
+  background: #fff;
+  color: var(--ed-ink);
+}
+.ed-archive-entry strong { font-family: "Noto Serif JP", serif; font-size: 18px; }
+.ed-archive-entry span { color: var(--ed-muted); font-size: 12px; line-height: 1.55; }
+
 </style>
 </head>
 <body class="editorial-home">
@@ -772,7 +783,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
     <div class="ed-kicker">Daily SaaS Intelligence</div>
     <h1>デイリーリサーチ</h1>
     <p>ボイスボットとチャットボットに関係するSaaSのアップデート、障害、メンテナンスをサービス単位で読むためのホームです。</p>
-    <div class="ed-github ed-sp-note">SharePoint版 / Daily SaaS Intelligence</div>
+    <span class="ed-github">SharePoint版 / Daily SaaS Intelligence</span>
   </header>
 
   <section class="ed-controls" aria-label="絞り込み">
@@ -849,7 +860,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   function renderServices(list){
     $('service-list').innerHTML = list.map(function(s){
       var us = updates(s.id);
-      return '<article class="ed-service"><button type="button" aria-expanded="false"><span class="ed-service-icon"></span><span><strong>'+s.name+'</strong><small>'+s.category+' / '+s.projects.map(plabel).join('・')+'</small></span>'+densityHtml(us)+'</button><div class="ed-service-body"><p>'+s.note+'</p>'+(us.length?groupedUpdatesHtml(us):'<p class="ed-empty small">選択条件内の更新はありません。公式ソースの到達確認対象です。</p>')+'<div class="ed-links">'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</div></div></article>';
+      return '<article class="ed-service"><button type="button" aria-expanded="false"><span class="ed-service-icon"><i class="ti '+s.icon+'"></i></span><span><strong>'+s.name+'</strong><small>'+s.category+' / '+s.projects.map(plabel).join('・')+'</small></span>'+densityHtml(us)+'</button><div class="ed-service-body"><p>'+s.note+'</p>'+(us.length?groupedUpdatesHtml(us):'<p class="ed-empty small">選択条件内の更新はありません。公式ソースの到達確認対象です。</p>')+'<div class="ed-links">'+s.sources.map(function(src){return '<a target="_blank" rel="noopener noreferrer" href="'+src.url+'">'+src.label+'</a>';}).join('')+'</div></div></article>';
     }).join('');
     document.querySelectorAll('.ed-service button').forEach(function(btn){ btn.onclick=function(){ var card=btn.parentElement, open=card.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); }; });
   }
