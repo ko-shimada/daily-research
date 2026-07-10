@@ -10,6 +10,16 @@ This automation keeps using the self-contained `sharepoint/daily-research.html` 
 4. Let OneDrive sync the file to SharePoint.
 5. Run the flow daily through Windows Task Scheduler.
 
+
+## Configured SharePoint Destination
+
+The requested SharePoint targets are recorded in `config/sharepoint-publish.json`.
+
+- Current file URL: `https://sbplayers.sharepoint.com/:u:/s/CS_AI/IQD6MBPD-t4WSKy7kYTrM_1cAWmR75l7-zHcdNOlSkJYyVI?e=tsEJ5z`
+- Destination folder URL: `https://sbplayers.sharepoint.com/:f:/s/CS_AI/IgDXSMXy73TbT7WEckZoXV27ASeYveOHUVgkYIRu90ydltI?e=oDcC6K`
+
+The automation still needs the corresponding local OneDrive sync path because the daily task copies files from Windows. If the folder is not visible under `C:\Users\ko-shimada\OneDrive - ＳＢプレイヤーズ株式会社`, open the folder URL in SharePoint and select **Sync** or **Add shortcut to OneDrive**, then use the synced local folder path as `targetPath`.
+
 ## Configure Target Path
 
 Set the final SharePoint/OneDrive sync destination in one of these ways:

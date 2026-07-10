@@ -78,7 +78,8 @@ try {
     Write-Host 'NoCopy specified; skipping SharePoint copy.'
   } else {
     if (-not $TargetPath) {
-      throw 'TargetPath is not configured. Set config/sharepoint-publish.json targetPath, pass -TargetPath, or set DAILY_RESEARCH_SHAREPOINT_PATH.'
+      $folderUrl = if ($config.PSObject.Properties.Name -contains 'sharePoint') { $config.sharePoint.folderUrl } else { '' }
+      throw "TargetPath is not configured. Set config/sharepoint-publish.json targetPath, pass -TargetPath, or set DAILY_RESEARCH_SHAREPOINT_PATH. SharePoint folder URL: $folderUrl"
     }
     $targetDir = Split-Path -Parent $TargetPath
     if (-not $targetDir) { throw "Invalid TargetPath: $TargetPath" }

@@ -8,5 +8,10 @@
   "schedule": {
     "taskName": "Daily Research SharePoint Publish",
     "time": "08:30"
+  },
+  "sharePoint": {
+    "fileUrl": "https://sbplayers.sharepoint.com/:u:/s/CS_AI/IQD6MBPD-t4WSKy7kYTrM_1cAWmR75l7-zHcdNOlSkJYyVI?e=tsEJ5z",
+    "folderUrl": "https://sbplayers.sharepoint.com/:f:/s/CS_AI/IgDXSMXy73TbT7WEckZoXV27ASeYveOHUVgkYIRu90ydltI?e=oDcC6K",
+    "localSyncPathHint": ""
   }
 }
