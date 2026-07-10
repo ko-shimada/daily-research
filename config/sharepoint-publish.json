@@ -7,7 +7,7 @@
   },
   "schedule": {
     "taskName": "Daily Research SharePoint Publish",
-    "time": "08:30"
+    "time": "09:20"
   },
   "sharePoint": {
     "fileUrl": "https://sbplayers.sharepoint.com/:u:/s/CS_AI/IQD6MBPD-t4WSKy7kYTrM_1cAWmR75l7-zHcdNOlSkJYyVI?e=tsEJ5z",

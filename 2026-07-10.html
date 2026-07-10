@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デイリーリサーチ — 2026年7月10日</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260710a">
+</head>
+<body>
+<div class="wrap">
+  <header class="rpt-header">
+    <div>
+      <div class="rpt-eyebrow">Daily SaaS Intelligence 差分リサーチ</div>
+      <h1 class="rpt-date">2026年7月10日（金）</h1>
+      <div class="rpt-period">調査対象期間: 2026年7月9日〜2026年7月10日</div>
+    </div>
+    <nav class="rpt-nav">
+      <a href="index.html" class="lb neutral"><i class="ti ti-arrow-left" aria-hidden="true"></i> ホーム</a>
+      <a href="https://github.com/ko-shimada/daily-research" class="lb neutral" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+    </nav>
+  </header>
+
+  <h2 class="sec-title no-margin-top">概況 — 7/9以降の差分</h2>
+  <table class="status-table">
+    <thead><tr><th>サービス</th><th>状態</th><th class="dt-col">最新</th><th>要点</th></tr></thead>
+    <tbody>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-chatplus">ChatPlus</a></td><td><span class="badge b-alert">Maintenance</span></td><td class="dt-col">7/29</td><td>2026年7月29日 0:00〜3:00のシステムメンテナンス予定を確認。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-bigquery">BigQuery</a></td><td><span class="badge b-updated">更新あり</span></td><td class="dt-col">7/9</td><td>Knowledge Catalog向けメタデータ転送、Data Agent Kit extensionがPreview。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-agent-platform">Gemini Enterprise Agent Platform</a></td><td><span class="badge b-alert">Retirement</span></td><td class="dt-col">7/9</td><td>Gemini 2.5 Flash系と3.1 Flash-LiteのPreview endpointが利用不可。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-cx-agent-studio">CX Agent Studio / Google Cloud CCaaS</a></td><td><span class="badge b-updated">修正予告</span></td><td class="dt-col">7/7</td><td>Dialogflow CX転送時のLive Transcript欠落、CX Agent Studio転記文字化けの修正予告。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-status">Status</a></td><td><span class="badge b-none">重大障害なし</span></td><td class="dt-col">7/9</td><td>Google Cloudは広範な重大障害なし。Genesys東京/大阪もOperational。</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-title">詳細</h2>
+
+  <section class="svc-section has-update" id="svc-chatplus"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-messages"></i> ChatPlus</h3><div class="svc-meta"><span class="badge b-alert">Maintenance</span><span class="last-upd">予定: 7/29</span><a class="src-link" href="https://faq.chatplus.jp/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">FAQトップで、2026年7月29日 0:00〜3:00のシステムメンテナンス告知を確認しました。ChatPlusニュースは7/8公開の6月アップデートまとめが最新です。チャットボットの稼働時間、FAQ参照、LINE連携などの利用時間帯と重なる場合は運用告知を確認してください。</p></section>
+
+  <section class="svc-section has-update" id="svc-bigquery"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-database"></i> BigQuery</h3><div class="svc-meta"><span class="badge b-updated">更新あり</span><span class="last-upd">最終: 7/9</span><a class="src-link" href="https://docs.cloud.google.com/bigquery/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><table class="detail-table"><thead><tr><th>日付</th><th>内容</th><th>概要</th></tr></thead><tbody><tr><td class="col-date">7/9</td><td>Knowledge Catalog metadata transfer</td><td class="col-sum">PostgreSQL / Microsoft SQL ServerのメタデータをBigQuery Data Transfer ServiceからKnowledge Catalogへ転送できるPreviewが追加されました。</td></tr><tr><td class="col-date">7/9</td><td>Data Agent Kit extension</td><td class="col-sum">VS Codeなどのagent coding toolsからBigQueryリソース閲覧、パイプライン管理、クエリ実行を行える拡張がPreviewになりました。</td></tr></tbody></table></section>
+
+  <section class="svc-section has-update" id="svc-agent-platform"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-sparkles"></i> Vertex AI / GenAI / Agent Platform</h3><div class="svc-meta"><span class="badge b-alert">Retirement</span><span class="last-upd">最終: 7/9</span><a class="src-link" href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Gemini Enterprise Agent Platformで、gemini-2.5-flash-lite-preview-09-2025、gemini-2.5-flash-preview-05-2025、gemini-3.1-flash-lite-preview のPreview endpointが退役し、利用不可になりました。会話エージェント、検証環境、評価ジョブで該当モデルIDを固定していないか確認対象です。</p></section>
+
+  <section class="svc-section has-update" id="svc-cx-agent-studio"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-wand"></i> CX Agent Studio / Google Cloud CCaaS</h3><div class="svc-meta"><span class="badge b-updated">修正予告</span><span class="last-upd">最終: 7/7</span><a class="src-link" href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Google Cloud CCaaS prerelease notesで、Dialogflow CX agentから人へ転送した会話でLive Transcriptに顧客発話が欠落する問題と、CX Agent Studio agent会話のcall transcriptsが文字化けする問題の修正予告を確認しました。Google CCaaS連携を使う構成では、転送ログ・監査ログ・会話評価の確認観点になります。</p></section>
+
+  <section class="svc-section" id="svc-status"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-alert-triangle"></i> Status確認</h3><div class="svc-meta"><span class="badge b-none">重大障害なし</span><span class="last-upd">最終: 7/9</span><a class="src-link" href="https://status.cloud.google.com/" target="_blank" rel="noopener noreferrer">Google Cloud</a><a class="src-link" href="https://status.mypurecloud.com/" target="_blank" rel="noopener noreferrer">Genesys</a></div></div><p class="no-upd-note">Google Cloud Service Healthは「No broad severe incidents」を表示し、最終更新は2026年7月9日 17:50 PDTでした。Genesys Cloud Statusは東京/大阪を含む主要リージョンがOperationalで、7/9のインシデント報告はありません。</p></section>
+
+  <h2 class="sec-title">更新なし / 継続監視</h2>
+  <table class="other-table"><tbody><tr><td class="svc-col">Genesys Cloud</td><td>7/6以降の新規リリースなし。Bot Flow・非日本語言語モデル・未利用機能は🔥対象外として継続監視。</td></tr><tr><td class="svc-col">Cloud Run</td><td>7/8のCloud Run sandboxes Preview以降の新規更新なし。</td></tr><tr><td class="svc-col">Text-to-Speech / Speech-to-Text</td><td>対象期間内の新規更新なし。日本語音声・東京リージョン関連は継続監視。</td></tr><tr><td class="svc-col">Cloud Storage / VPC Service Controls / Workflows / Cloud SDK</td><td>対象期間内の新規更新なし。公式ページへの到達は成功。</td></tr></tbody></table>
+
+  <footer class="rpt-footer"><span>Official-source research completed for 2026-07-09 through 2026-07-10.</span></footer>
+</div>
+</body>
+</html>
