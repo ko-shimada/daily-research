@@ -2,7 +2,8 @@ param(
   [string]$RepoRoot,
   [string]$TargetPath,
   [switch]$SkipCodex,
-  [switch]$NoCopy
+  [switch]$NoCopy,
+  [switch]$NoGit
 )
 
 $ErrorActionPreference = 'Stop'
@@ -92,6 +93,55 @@ try {
     $dstHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $TargetPath).Hash
     if ($srcHash -ne $dstHash) { throw 'Copied file hash does not match source file hash.' }
     Write-Host "Published to: $TargetPath"
+  }
+
+  $gitEnabled = $true
+  if ($config.PSObject.Properties.Name -contains 'git' -and $config.git.PSObject.Properties.Name -contains 'enabled') {
+    $gitEnabled = [bool]$config.git.enabled
+  }
+
+  if (-not $NoGit -and $gitEnabled) {
+    Write-Host 'Publishing Git changes...'
+    $git = Get-Command git -ErrorAction Stop
+    $remote = 'origin'
+    $branch = 'main'
+    if ($config.PSObject.Properties.Name -contains 'git') {
+      if ($config.git.PSObject.Properties.Name -contains 'remote' -and $config.git.remote) { $remote = $config.git.remote }
+      if ($config.git.PSObject.Properties.Name -contains 'branch' -and $config.git.branch) { $branch = $config.git.branch }
+    }
+
+    $currentBranch = (& $git.Source -C $RepoRoot branch --show-current).Trim()
+    if ($LASTEXITCODE -ne 0) { throw "git branch check failed with exit code $LASTEXITCODE" }
+    if ($currentBranch -and $currentBranch -ne $branch) {
+      throw "Current Git branch is '$currentBranch', expected '$branch'."
+    }
+
+    & $git.Source -C $RepoRoot add -- data/research-data.json sharepoint/daily-research.html config/sharepoint-publish.json
+    if ($LASTEXITCODE -ne 0) { throw "git add failed with exit code $LASTEXITCODE" }
+
+    $reportFiles = Get-ChildItem -LiteralPath $RepoRoot -File |
+      Where-Object { $_.Name -match '^\d{4}-\d{2}-\d{2}\.(html|md)$' } |
+      ForEach-Object { $_.FullName }
+    if ($reportFiles) {
+      & $git.Source -C $RepoRoot add -- $reportFiles
+      if ($LASTEXITCODE -ne 0) { throw "git add report files failed with exit code $LASTEXITCODE" }
+    }
+
+    & $git.Source -C $RepoRoot diff --cached --quiet
+    if ($LASTEXITCODE -eq 0) {
+      Write-Host 'No Git changes to commit.'
+    } elseif ($LASTEXITCODE -eq 1) {
+      $commitDate = Get-Date -Format 'yyyy-MM-dd'
+      & $git.Source -C $RepoRoot commit -m "chore: update daily research $commitDate"
+      if ($LASTEXITCODE -ne 0) { throw "git commit failed with exit code $LASTEXITCODE" }
+      & $git.Source -C $RepoRoot push $remote $branch
+      if ($LASTEXITCODE -ne 0) { throw "git push failed with exit code $LASTEXITCODE" }
+      Write-Host "Pushed Git changes to $remote/$branch"
+    } else {
+      throw "git diff --cached failed with exit code $LASTEXITCODE"
+    }
+  } else {
+    Write-Host 'Skipping Git publish step.'
   }
 
   Write-Host "Daily Research SharePoint publish completed at $(Get-Date -Format o)"

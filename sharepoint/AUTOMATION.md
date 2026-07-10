@@ -7,8 +7,9 @@ This automation keeps using the self-contained `sharepoint/daily-research.html` 
 1. Run Codex CLI in this repository to update the research data.
 2. Build a self-contained SharePoint HTML file with embedded CSS, JavaScript, and JSON data.
 3. Copy the file into a OneDrive-synced SharePoint document library path.
-4. Let OneDrive sync the file to SharePoint.
-5. Run the flow daily through Windows Task Scheduler.
+4. Commit and push generated research changes to GitHub.
+5. Let OneDrive sync the file to SharePoint.
+6. Run the flow daily through Windows Task Scheduler.
 
 
 ## Configured SharePoint Destination
@@ -41,7 +42,7 @@ C:\Users\ko-shimada\OneDrive - <company>\<site/library folder>\Daily SaaS Intell
 Build and verify without copying:
 
 ```powershell
-.\scripts\run-daily-sharepoint.ps1 -SkipCodex -NoCopy
+.\scripts\run-daily-sharepoint.ps1 -SkipCodex -NoCopy -NoGit
 ```
 
 Run the full flow with an explicit target:
@@ -57,6 +58,20 @@ Run the full flow with an explicit target:
 ```
 
 The task runs only when the user is logged on, which keeps OneDrive sync available.
+
+
+## GitHub Publishing
+
+By default, the daily task commits generated research changes and pushes them to `origin/main` after the SharePoint file copy has succeeded.
+
+The GitHub push step tracks these generated files:
+
+- `data/research-data.json`
+- `sharepoint/daily-research.html`
+- date reports such as `2026-07-10.md` and `2026-07-10.html`
+- `config/sharepoint-publish.json`
+
+Disable this step by setting `git.enabled` to `false` in `config/sharepoint-publish.json`, or use `-NoGit` for a manual run.
 
 ## Logs
 

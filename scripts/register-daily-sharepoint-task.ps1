@@ -19,7 +19,8 @@ $config.targetPath = $TargetPath
 if (-not ($config.PSObject.Properties.Name -contains 'schedule')) { $config | Add-Member -NotePropertyName schedule -NotePropertyValue ([pscustomobject]@{}) }
 $config.schedule.taskName = $TaskName
 $config.schedule.time = $At
-$config | ConvertTo-Json -Depth 8 | Set-Content -Encoding utf8 -LiteralPath $configPath
+$json = ($config | ConvertTo-Json -Depth 8) + [Environment]::NewLine
+[System.IO.File]::WriteAllText($configPath, $json, [System.Text.UTF8Encoding]::new($false))
 
 $runner = Join-Path $repoRoot 'scripts\run-daily-sharepoint.ps1'
 $args = '-NoProfile -ExecutionPolicy Bypass -File "' + $runner + '"'
