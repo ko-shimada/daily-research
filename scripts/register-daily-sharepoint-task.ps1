@@ -27,7 +27,7 @@ if ($SkipCodex) { $args += ' -SkipCodex' }
 
 $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument $args -WorkingDirectory $repoRoot
 $trigger = New-ScheduledTaskTrigger -Daily -At $At
-$principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -LogonType Interactive -RunLevel LeastPrivilege
+$principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -LogonType Interactive -RunLevel Limited
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -MultipleInstances IgnoreNew -ExecutionTimeLimit (New-TimeSpan -Hours 2)
 
 Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Force | Out-Null

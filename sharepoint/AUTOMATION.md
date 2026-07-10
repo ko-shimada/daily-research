@@ -28,6 +28,8 @@ Set the final SharePoint/OneDrive sync destination in one of these ways:
 - Set the environment variable `DAILY_RESEARCH_SHAREPOINT_PATH`.
 - Run the task registration script, which writes `config/sharepoint-publish.json`.
 
+The detected local sync target is already set in `config/sharepoint-publish.json`.
+
 The target should be a local OneDrive sync path, for example:
 
 ```text
