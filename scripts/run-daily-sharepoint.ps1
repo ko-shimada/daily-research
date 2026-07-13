@@ -54,16 +54,76 @@ try {
     }
     if (-not (Test-Path -LiteralPath $promptPath)) { throw "Prompt file not found: $promptPath" }
 
-    $codex = Get-Command codex -ErrorAction Stop
-    $lastMessage = Join-Path $logDir 'codex-last-message.txt'
-    $codexArgs = @('exec', '--cd', $RepoRoot, '--sandbox', 'workspace-write', '-c', 'approval_policy="never"', '--output-last-message', $lastMessage, '-')
-    if ($config.PSObject.Properties.Name -contains 'codex' -and $config.codex.model) {
-      $codexArgs = @('exec', '--cd', $RepoRoot, '--sandbox', 'workspace-write', '-m', $config.codex.model, '-c', 'approval_policy="never"', '--output-last-message', $lastMessage, '-')
+    $codexPath = $null
+    $configuredCodexPath = $null
+    if ($config.PSObject.Properties.Name -contains 'codex' -and $config.codex.PSObject.Properties.Name -contains 'path') {
+      $configuredCodexPath = $config.codex.path
+    }
+    if ($configuredCodexPath -and (Test-Path -LiteralPath $configuredCodexPath)) {
+      $codexPath = $configuredCodexPath
+    } else {
+      $codexCommand = Get-Command codex -ErrorAction SilentlyContinue
+      if ($codexCommand) {
+        $codexPath = $codexCommand.Source
+      } else {
+        $fallbackCodexPath = Join-Path $env:USERPROFILE '.codex\.sandbox-bin\codex.exe'
+        if (Test-Path -LiteralPath $fallbackCodexPath) {
+          $codexPath = $fallbackCodexPath
+        }
+      }
+    }
+    $researchFailure = $null
+    if ($codexPath) {
+      Write-Host "Codex CLI: $codexPath"
+
+      $lastMessage = Join-Path $logDir 'codex-last-message.txt'
+      $codexArgs = @('exec', '--cd', $RepoRoot, '--sandbox', 'workspace-write', '-c', 'approval_policy="never"', '--output-last-message', $lastMessage, '-')
+      if ($config.PSObject.Properties.Name -contains 'codex' -and $config.codex.model) {
+        $codexArgs = @('exec', '--cd', $RepoRoot, '--sandbox', 'workspace-write', '-m', $config.codex.model, '-c', 'approval_policy="never"', '--output-last-message', $lastMessage, '-')
+      }
+
+      Write-Host 'Running Codex daily research agent...'
+      Get-Content -Raw -Encoding utf8 -LiteralPath $promptPath | & $codexPath @codexArgs
+      if ($LASTEXITCODE -ne 0) { $researchFailure = "Codex exec failed with exit code $LASTEXITCODE" }
+    } else {
+      $researchFailure = "Codex CLI not found. Checked config codex.path ('$configuredCodexPath'), PATH (codex command), and $(Join-Path $env:USERPROFILE '.codex\.sandbox-bin\codex.exe')"
     }
 
-    Write-Host 'Running Codex daily research agent...'
-    Get-Content -Raw -Encoding utf8 -LiteralPath $promptPath | & $codex.Source @codexArgs
-    if ($LASTEXITCODE -ne 0) { throw "Codex exec failed with exit code $LASTEXITCODE" }
+    if ($researchFailure) {
+      $claudeConfig = $null
+      if ($config.PSObject.Properties.Name -contains 'claudeFallback') { $claudeConfig = $config.claudeFallback }
+      $claudeEnabled = $false
+      if ($claudeConfig -and $claudeConfig.PSObject.Properties.Name -contains 'enabled') { $claudeEnabled = [bool]$claudeConfig.enabled }
+      if (-not $claudeEnabled) { throw "$researchFailure (Claude fallback is disabled)" }
+
+      $claudePath = $null
+      if ($claudeConfig.PSObject.Properties.Name -contains 'path' -and $claudeConfig.path -and (Test-Path -LiteralPath $claudeConfig.path)) {
+        $claudePath = $claudeConfig.path
+      } else {
+        $claudeCommand = Get-Command claude -ErrorAction SilentlyContinue
+        if ($claudeCommand) {
+          $claudePath = $claudeCommand.Source
+        } else {
+          $extensionClaude = Get-ChildItem -Path (Join-Path $env:USERPROFILE '.vscode\extensions\anthropic.claude-code-*\resources\native-binary\claude.exe') -ErrorAction SilentlyContinue |
+            Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if ($extensionClaude) { $claudePath = $extensionClaude.FullName }
+        }
+      }
+      if (-not $claudePath) { throw "$researchFailure; Claude fallback CLI not found (checked config claudeFallback.path, PATH, and VS Code extension bundle)" }
+
+      $claudeModel = 'sonnet'
+      if ($claudeConfig.PSObject.Properties.Name -contains 'model' -and $claudeConfig.model) { $claudeModel = $claudeConfig.model }
+      $claudePermissionMode = 'dontAsk'
+      if ($claudeConfig.PSObject.Properties.Name -contains 'permissionMode' -and $claudeConfig.permissionMode) { $claudePermissionMode = $claudeConfig.permissionMode }
+      $claudeAllowedTools = 'WebSearch,WebFetch,Read,Edit,Write,Glob,Grep,Bash(node:*)'
+      if ($claudeConfig.PSObject.Properties.Name -contains 'allowedTools' -and $claudeConfig.allowedTools) { $claudeAllowedTools = $claudeConfig.allowedTools }
+
+      Write-Host "Claude CLI: $claudePath"
+      Write-Host "$researchFailure; falling back to Claude Code ($claudeModel)..."
+      Get-Content -Raw -Encoding utf8 -LiteralPath $promptPath | & $claudePath -p --model $claudeModel --permission-mode $claudePermissionMode --allowedTools $claudeAllowedTools --output-format text
+      if ($LASTEXITCODE -ne 0) { throw "Claude fallback failed with exit code $LASTEXITCODE ($researchFailure)" }
+      Write-Host 'Claude fallback completed the research step.'
+    }
   } else {
     Write-Host 'Skipping Codex research step.'
   }
