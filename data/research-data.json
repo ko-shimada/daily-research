@@ -20,6 +20,7 @@
     {"serviceId":"chatplus","date":"2026-07-29","kind":"Maintenance","title":"ChatPlusシステムメンテナンス予定","summary":"ChatPlus FAQで、2026年7月29日 0:00〜3:00のシステムメンテナンス告知を確認しました。チャットボット運用時間帯への影響確認が必要です。","report":"2026-07-10.html#svc-chatplus","source":"https://faq.chatplus.jp/","hotProjects":["chatbot"]},
     {"serviceId":"bigquery","date":"2026-07-09","kind":"Preview","title":"BigQuery Data Transfer ServiceからKnowledge Catalogへメタデータ転送","summary":"PostgreSQLとMicrosoft SQL ServerのメタデータをBigQuery Data Transfer ServiceからKnowledge Catalogへ転送できるPreviewが追加されました。","report":"2026-07-10.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},
     {"serviceId":"bigquery","date":"2026-07-09","kind":"Preview","title":"BigQuery Data Agent Kit extensionがPreview","summary":"VS Codeなどのエージェント開発環境からBigQueryリソース閲覧、パイプライン管理、クエリ実行を行える拡張がPreviewになりました。","report":"2026-07-10.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},
+    {"serviceId":"bigquery","date":"2026-07-09","kind":"Change","title":"ハイブリッド検索(VECTOR_SEARCH)が一時無効化","summary":"VECTOR_SEARCHでセマンティック検索とキーワード検索を組み合わせるハイブリッド検索サポートが一時的に無効化されました。復旧時期は明記されていません。6月25日にPreview追加された機能のため、利用中の場合は影響確認が必要です。","report":"2026-07-13.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes","hotProjects":["voicebot","chatbot"]},
     {"serviceId":"vertex-agent-platform","date":"2026-07-09","kind":"Retirement","title":"Gemini preview model endpointsが退役","summary":"Gemini 2.5 Flash系とGemini 3.1 Flash-LiteのPreviewエンドポイントが利用不可になりました。会話エージェントで該当モデルIDを使っていないか確認が必要です。","report":"2026-07-10.html#svc-agent-platform","source":"https://docs.cloud.google.com/release-notes","hotProjects":["voicebot","chatbot"]},
     {"serviceId":"chatplus","date":"2026-07-08","kind":"月次更新","title":"ChatPlus 6月アップデートまとめ","summary":"AI AgentPlusのサイト学習精度、解決確認表示、複製、LINE連携、レポート、チケット連携、多言語音声再生などが改善されました。","report":"2026-07-09.html#svc-chatplus","source":"https://chatplus.jp/news/update-202606/","hotProjects":["chatbot"]},
     {"serviceId":"cloud-run","date":"2026-07-08","kind":"Preview","title":"Cloud Run sandboxesがPreview","summary":"AIエージェント生成コードなど、信頼できないコードを隔離実行するCloud Run sandboxesがPreviewで利用可能になりました。","report":"2026-07-09.html#svc-cloudrun","source":"https://docs.cloud.google.com/run/docs/release-notes"},
@@ -59,6 +60,7 @@
     {"serviceId":"vpc-service-controls","date":"2026-06-11","kind":"確認","title":"VPC Service Controlsの関連更新を確認","summary":"Agent系サービスやGCP周辺サービスのVPC SCサポート状況を継続確認対象にします。","report":"2026-06-11.html","source":"https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"}
   ],
   "reports": [
+    {"date":"2026-07-13","href":"2026-07-13.html","summary":"BigQueryハイブリッド検索が一時無効化、他13サービスは新規更新なし"},
     {"date":"2026-07-10","href":"2026-07-10.html","summary":"BigQuery 7/9更新、Gemini preview model退役、ChatPlus 7/29メンテナンス"},
     {"date":"2026-07-09","href":"2026-07-09.html","summary":"6/18以降の差分追跡: ChatPlus、Genesys、BigQuery、Cloud Run、Agent Platform"},
     {"date":"2026-06-17","href":"2026-06-17.html","summary":"BigQuery移行予告、Cloud SDK 573、Genesys Agent Copilot強化"},
