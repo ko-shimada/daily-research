@@ -84,7 +84,11 @@ try {
 
       Write-Host 'Running Codex daily research agent...'
       Get-Content -Raw -Encoding utf8 -LiteralPath $promptPath | & $codexPath @codexArgs
-      if ($LASTEXITCODE -ne 0) { $researchFailure = "Codex exec failed with exit code $LASTEXITCODE" }
+      if ($LASTEXITCODE -ne 0) {
+        $researchFailure = "Codex exec failed with exit code $LASTEXITCODE"
+      } elseif ((Test-Path -LiteralPath $logPath) -and (Select-String -LiteralPath $logPath -Pattern 'ERROR codex_core' -Quiet)) {
+        $researchFailure = "Codex exec reported internal tool errors (see $logPath)"
+      }
     } else {
       $researchFailure = "Codex CLI not found. Checked config codex.path ('$configuredCodexPath'), PATH (codex command), and $(Join-Path $env:USERPROFILE '.codex\.sandbox-bin\codex.exe')"
     }
