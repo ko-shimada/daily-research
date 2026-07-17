@@ -18,6 +18,7 @@
   ],
   "updates": [
     {"serviceId":"chatplus","date":"2026-07-29","kind":"Maintenance","title":"ChatPlusシステムメンテナンス予定","summary":"ChatPlus FAQで、2026年7月29日 0:00〜3:00のシステムメンテナンス告知を確認しました。チャットボット運用時間帯への影響確認が必要です。","report":"2026-07-10.html#svc-chatplus","source":"https://faq.chatplus.jp/","hotProjects":["chatbot"]},
+    {"serviceId":"genesys-cloud","date":"2026-07-16","kind":"Incident","title":"EMEA(UAE)リージョンで重大障害が継続","summary":"Genesys Cloud Statusで、EMEA(UAE)リージョンのコアプラットフォーム機能に影響する重大障害の継続更新を確認しました。対象リージョン限定のため、現行の日本語ボイスボットへの直接影響は確認していません。","report":"2026-07-17.html#svc-genesys-status","source":"https://status.mypurecloud.com/"},
     {"serviceId":"bigquery","date":"2026-07-15","kind":"Preview / Security","title":"データガバナンスタグで列レベルセキュリティとデータマスキングを制御可能に","summary":"7/15付でデータガバナンスタグがPreviewになりました。機密列にResource Managerタグを付与し、BigQueryデータポリシーで条件付きアクセス、列レベルセキュリティ、データマスキングを制御できます。会話ログ、ユーザー属性、問い合わせ履歴などをBigQueryに集約している場合、タグ設計と既存ポリシーの整理候補です。","report":"2026-07-16.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes","hotProjects":["voicebot","chatbot"]},
     {"serviceId":"vertex-agent-platform","date":"2026-07-15","kind":"GA","title":"Memory Bank memory profilesがGA","summary":"Gemini Enterprise Agent PlatformのMemory Bank memory profilesがGAになりました。固定スキーマで構造化プロフィールを作成し、LLMにより情報を更新する仕組みです。セッション中の検索コストを下げつつ、利用者属性や会話上の継続情報を参照する設計に関係します。","report":"2026-07-16.html#svc-agent-platform","source":"https://docs.cloud.google.com/release-notes","hotProjects":["voicebot","chatbot"]},
     {"serviceId":"cx-agent-studio","date":"2026-07-15","kind":"Prerelease / Chat","title":"Agent Assist hub、手動wrap-up、チャットDAP、Webチャット/仮想エージェント転送関連修正を予告","summary":"Google Cloud CCaaS prereleaseで、Agent Assist hub、手動wrap-up、チャットのAPI direct access point(DAP)が予告されました。DAPは外部APIエンドポイントの応答に基づき、エンドユーザーにキュー選択をさせずにチャットセッションを自動ルーティングする機能です。あわせて、Webチャットでエンドユーザーにメッセージが届かない問題、キューに残って割り当てられない問題、仮想エージェント転送後の扱いなど、チャット/仮想エージェント運用に関係する修正も掲載されています。","report":"2026-07-16.html#svc-cx-agent-studio","source":"https://docs.cloud.google.com/release-notes","hotProjects":["chatbot"]},
@@ -69,6 +70,7 @@
     {"serviceId":"vpc-service-controls","date":"2026-06-11","kind":"確認","title":"VPC Service Controlsの関連更新を確認","summary":"Agent系サービスやGCP周辺サービスのVPC SCサポート状況を継続確認対象にします。","report":"2026-06-11.html","source":"https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"}
   ],
   "reports": [
+    {"date":"2026-07-17","href":"2026-07-17.html","summary":"Genesys Cloud EMEA(UAE)重大障害継続、対象サービスの新規リリース差分なし、ChatPlus FAQ取得失敗"},
     {"date":"2026-07-16","href":"2026-07-16.html","summary":"データガバナンスタグで列レベルセキュリティとデータマスキングを制御可能に、Memory Bank memory profiles GA、Google Cloud CCaaS prerelease"},
     {"date":"2026-07-15","href":"2026-07-15.html","summary":"BigQuery権限昇格の脆弱性(GCP-2026-047)、Iceberg管理テーブルGA、Genesys TTS Connector GA、gcloud 576更新"},
     {"date":"2026-07-13","href":"2026-07-13.html","summary":"BigQueryハイブリッド検索が一時無効化、他13サービスは新規更新なし"},
