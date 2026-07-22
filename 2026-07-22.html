@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デイリーリサーチ — 2026年7月22日</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260722a">
+</head>
+<body>
+<div class="wrap">
+  <header class="rpt-header">
+    <div>
+      <div class="rpt-eyebrow">Daily SaaS Intelligence 差分リサーチ</div>
+      <h1 class="rpt-date">2026年7月22日（水）</h1>
+      <div class="rpt-period">調査対象期間: 2026年7月17日〜2026年7月22日</div>
+    </div>
+    <nav class="rpt-nav">
+      <a href="index.html" class="lb neutral"><i class="ti ti-arrow-left" aria-hidden="true"></i> ホーム</a>
+      <a href="https://github.com/ko-shimada/daily-research" class="lb neutral" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+    </nav>
+  </header>
+
+  <h2 class="sec-title no-margin-top">概況 — 7/17以降の差分</h2>
+  <table class="status-table">
+    <thead><tr><th>サービス</th><th>状態</th><th class="dt-col">最新</th><th>要点</th></tr></thead>
+    <tbody>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-cloudsdk">Cloud SDK</a></td><td><span class="badge b-updated">GA / Deprecation</span></td><td class="dt-col">7/21</td><td>gcloud 577.0.0でagent-identityコマンドがGA、CSEKフラグ非推奨。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-genesys">Genesys Cloud</a></td><td><span class="badge b-updated">Voice / Copilot</span></td><td class="dt-col">7/20</td><td>AMD/サイレントタイムアウト設定など追加。対象外機能中心でDialogflow CX連携への直接影響なし。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-bigquery">BigQuery</a></td><td><span class="badge b-updated">GA / Preview</span></td><td class="dt-col">7/20</td><td>Knowledge Catalogデータリネージ制御GA(7/17)、Lakehouse for IcebergがSAP BDCと統合(Preview, 7/20)。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-cloudstorage">Cloud Storage</a></td><td><span class="badge b-updated">Feature</span></td><td class="dt-col">7/20</td><td>Object Lifecycle Managementにサイズ条件(sizeAboveBytes/sizeBelowBytes)を追加。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-chatplus">ChatPlus</a></td><td><span class="badge b-none">変化なし</span></td><td class="dt-col">7/22</td><td>FAQは前回失敗から復旧、7/29メンテナンス告知は既知の内容のまま。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-genesys-status">Genesys Cloud Status</a></td><td><span class="badge b-alert">Incident</span></td><td class="dt-col">7/16</td><td>EMEA(UAE)重大障害は7/16更新のまま変化なく継続。</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-title">詳細</h2>
+
+  <section class="svc-section has-update" id="svc-cloudsdk"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-terminal-2"></i> Cloud SDK</h3><div class="svc-meta"><span class="badge b-updated">GA / Deprecation</span><span class="last-upd">最終: 7/21</span><a class="src-link" href="https://docs.cloud.google.com/sdk/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">gcloud 577.0.0が公開されました。<code>gcloud agent-identity auth-providers</code>と<code>gcloud agent-identity access-summaries</code>が正式GAになった一方、<code>gcloud compute</code>のCSEK(顧客管理暗号鍵)関連フラグは非推奨になりました。セキュリティ修正の記載はありません。</p></section>
+
+  <section class="svc-section has-update" id="svc-genesys"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-headset"></i> Genesys Cloud</h3><div class="svc-meta"><span class="badge b-updated">Voice / Copilot</span><span class="last-upd">最終: 7/20</span><a class="src-link" href="https://help.genesys.cloud/release-notes/genesys-cloud/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">設定可能な留守番電話検知(AMD)とサイレントコールタイムアウト、カンファレンスコールの秘匿保留、トランスクリプトセグメンテーション、Journey Managementの外部イベント管理が追加されました。Agent Copilotのインテントヘルスインサイトと利用状況ダッシュボード、ServiceNow ITSM連携、EU Sovereignリージョン展開、ArchitectのPolish語対応も掲載されていますが、いずれも対象外機能です。TTS Connector(BYOT)の記載もありますが7/13記載のGAと同一機能の再掲とみられます。Dialogflow CX連携や日本語音声処理への直接影響は確認していません。</p></section>
+
+  <section class="svc-section has-update" id="svc-bigquery"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-database"></i> BigQuery</h3><div class="svc-meta"><span class="badge b-updated">GA / Preview</span><span class="last-upd">最終: 7/20</span><a class="src-link" href="https://docs.cloud.google.com/bigquery/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">7/17付でKnowledge Catalogのデータリネージ制御がGAになりました。組織/フォルダ/プロジェクト単位でリネージ取り込みを制御でき、対象はBigQuery、Managed Service for Apache Spark、Managed Service for Apache Airflowです。7/20付ではLakehouse for Apache IcebergがSAP Business Data Cloud(BDC)と統合されました(Preview)。Delta Sharingカタログの自動同期、SAPデータの直接クエリ、Iceberg REST CatalogテーブルやKnowledge CatalogデータプロダクトのSAP BDCへの公開が可能です。現行の会話ログ分析基盤への直接影響は確認していません。</p></section>
+
+  <section class="svc-section has-update" id="svc-cloudstorage"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-cloud-data-connection"></i> Cloud Storage</h3><div class="svc-meta"><span class="badge b-updated">Feature</span><span class="last-upd">最終: 7/20</span><a class="src-link" href="https://docs.cloud.google.com/storage/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Object Lifecycle Managementの条件にサイズしきい値(sizeAboveBytes/sizeBelowBytes)が追加されました。最小/最大サイズを指定してライフサイクルアクションを発動できるため、音声ログや学習データバケットの容量ベース自動移行・削除ルール設計に使えます。</p></section>
+
+  <section class="svc-section has-update" id="svc-chatplus"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-messages"></i> ChatPlus</h3><div class="svc-meta"><span class="badge b-none">変化なし</span><span class="last-upd">最終: 7/22</span><a class="src-link" href="https://faq.chatplus.jp/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">FAQページ(faq.chatplus.jp)は前回(7/17)の取得失敗から復旧し、到達に成功しました。表示内容は7/29のメンテナンス告知(0:00〜3:00)で、既知の内容から変化はありません。Newsは7/17付でChatPlus/AI AgentPlusのITreview Grid Award 2026 Summer選出を確認しましたが、表彰発表でありSaaS機能更新ではないため対象外です。</p></section>
+
+  <section class="svc-section has-update" id="svc-genesys-status"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-alert-triangle"></i> Genesys Cloud Status</h3><div class="svc-meta"><span class="badge b-alert">Incident</span><span class="last-upd">最終: 7/16</span><a class="src-link" href="https://status.mypurecloud.com/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">EMEA(UAE)リージョンの重大障害は、最終更新7/16 16:28(EDT)のまま変化がなく継続監視(Monitoring)中です。対象期間内の新規インシデントはありません。対象リージョン限定のため、現行の日本語ボイスボットへの直接影響は確認していません。</p></section>
+
+  <h2 class="sec-title">到達確認</h2>
+  <table class="other-table"><tbody><tr><td class="svc-col">Genesys Cloud</td><td>Release notes / Status / Dialogflow CX連携 / Architectに到達成功。連携・Architect docsは目立った変更なし。</td></tr><tr><td class="svc-col">ChatPlus</td><td>Service / News / FAQすべて到達成功。FAQは前回失敗から復旧。</td></tr><tr><td class="svc-col">Dialogflow CX / Conversational Agents</td><td>Docs、Google Cloud release notes、Statusに到達成功。対象期間内の新規差分なし。</td></tr><tr><td class="svc-col">CX Agent Studio / Google Cloud CCaaS</td><td>Google Cloud release notesとStatusは到達成功、新規差分なし。製品ページ(cloud.google.com/gemini-enterprise-cx/cx-agent-studio)は本文取得に失敗。</td></tr><tr><td class="svc-col">Text-to-Speech / Speech-to-Text</td><td>Release notes / Statusに到達成功。対象期間内の新規更新なし。</td></tr><tr><td class="svc-col">Cloud Run / VPC Service Controls / Workflows</td><td>Release notes / Statusに到達成功。対象期間内の新規更新なし(Workflows最新は2026年2月付のまま)。</td></tr><tr><td class="svc-col">Vertex AI / GenAI / Agent Platform</td><td>Vertex AI release notes / Google Cloud release notes / Statusに到達成功。対象期間内の新規差分なし。</td></tr><tr><td class="svc-col">Google Cloud Status</td><td>Status ページ / incidents.jsonに到達成功。対象サービス・対象リージョン(asia-northeast*/global/us*)の障害は確認していません。</td></tr></tbody></table>
+
+  <footer class="rpt-footer"><span>Official-source research completed for 2026-07-17 through 2026-07-22.</span></footer>
+</div>
+</body>
+</html>
