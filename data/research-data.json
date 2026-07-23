@@ -18,6 +18,7 @@
   ],
   "updates": [
     {"serviceId":"chatplus","date":"2026-07-29","kind":"Maintenance","title":"ChatPlusシステムメンテナンス予定","summary":"ChatPlus FAQで、2026年7月29日 0:00〜3:00のシステムメンテナンス告知を確認しました。チャットボット運用時間帯への影響確認が必要です。","report":"2026-07-10.html#svc-chatplus","source":"https://faq.chatplus.jp/","hotProjects":["chatbot"]},
+    {"serviceId":"vertex-agent-platform","date":"2026-07-22","kind":"Preview","title":"認証なしCustom MCP Serverデータストアに対応","summary":"Gemini Enterpriseで、認証を必要としないCustom MCP Serverをデータストアとして設定できるようになりました(Public Preview)。現行の会話エージェント運用への直接影響は確認していません。","report":"2026-07-23.html#svc-agent-platform","source":"https://docs.cloud.google.com/release-notes"},
     {"serviceId":"cloud-sdk","date":"2026-07-21","kind":"GA / Deprecation","title":"gcloud 577.0.0でagent-identityコマンドがGA、CSEKフラグを非推奨化","summary":"Cloud SDK 577.0.0で`gcloud agent-identity auth-providers`と`gcloud agent-identity access-summaries`が正式GAになりました。あわせて`gcloud compute`のCSEK(顧客管理暗号鍵)関連フラグが非推奨になりました。セキュリティ修正の記載はありません。","report":"2026-07-22.html#svc-cloudsdk","source":"https://docs.cloud.google.com/sdk/docs/release-notes"},
     {"serviceId":"genesys-cloud","date":"2026-07-20","kind":"Voice / Copilot","title":"AMD/サイレントタイムアウト設定とAgent Copilot強化など7/20更新","summary":"設定可能な留守番電話検知(AMD)とサイレントコールタイムアウト、カンファレンスコールの秘匿保留、トランスクリプトセグメンテーション、Journey Managementの外部イベント管理が追加されました。Agent Copilotのインテントヘルスインサイトと利用状況ダッシュボード、ServiceNow ITSM連携、EU Sovereignリージョン展開、ArchitectのPolish語対応も掲載されていますが対象外機能です。TTS Connector(BYOT)の記載もありますが7/13記載のGAと同一機能とみられます。Dialogflow CX連携や日本語音声処理への直接影響は確認していません。","report":"2026-07-22.html#svc-genesys","source":"https://help.genesys.cloud/release-notes/genesys-cloud/"},
     {"serviceId":"bigquery","date":"2026-07-20","kind":"Preview","title":"Lakehouse for Apache IcebergがSAP Business Data Cloudと統合(Preview)","summary":"Cross-cloud LakehouseがSAP Business Data Cloud(BDC)と統合され、Delta Sharingカタログの自動同期、SAPデータの直接クエリ、Iceberg REST CatalogテーブルやKnowledge CatalogデータプロダクトのSAP BDCへの公開が可能になりました(Preview)。現行の会話ログ分析基盤への直接影響は確認していません。","report":"2026-07-22.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},
@@ -75,6 +76,7 @@
     {"serviceId":"vpc-service-controls","date":"2026-06-11","kind":"確認","title":"VPC Service Controlsの関連更新を確認","summary":"Agent系サービスやGCP周辺サービスのVPC SCサポート状況を継続確認対象にします。","report":"2026-06-11.html","source":"https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"}
   ],
   "reports": [
+    {"date":"2026-07-23","href":"2026-07-23.html","summary":"Gemini Enterpriseの認証なしCustom MCP Serverデータストア対応(Preview)、その他は新規差分なし、ChatPlus FAQ取得失敗"},
     {"date":"2026-07-22","href":"2026-07-22.html","summary":"BigQuery Knowledge Catalogリネージ制御GA、Cloud Storageサイズ条件ライフサイクル、gcloud 577.0.0、Genesys 7/20更新は対象外機能中心"},
     {"date":"2026-07-17","href":"2026-07-17.html","summary":"Genesys Cloud EMEA(UAE)重大障害継続、対象サービスの新規リリース差分なし、ChatPlus FAQ取得失敗"},
     {"date":"2026-07-16","href":"2026-07-16.html","summary":"データガバナンスタグで列レベルセキュリティとデータマスキングを制御可能に、Memory Bank memory profiles GA、Google Cloud CCaaS prerelease"},
