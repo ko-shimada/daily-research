@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デイリーリサーチ — 2026年7月29日</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260729a">
+</head>
+<body>
+<div class="wrap">
+  <header class="rpt-header">
+    <div>
+      <div class="rpt-eyebrow">Daily SaaS Intelligence 差分リサーチ</div>
+      <h1 class="rpt-date">2026年7月29日（水）</h1>
+      <div class="rpt-period">調査対象期間: 2026年7月27日〜2026年7月29日</div>
+    </div>
+    <nav class="rpt-nav">
+      <a href="index.html" class="lb neutral"><i class="ti ti-arrow-left" aria-hidden="true"></i> ホーム</a>
+      <a href="https://github.com/ko-shimada/daily-research" class="lb neutral" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+    </nav>
+  </header>
+
+  <h2 class="sec-title no-margin-top">概況 — 7/27以降の差分</h2>
+  <table class="status-table">
+    <thead><tr><th>サービス</th><th>状態</th><th class="dt-col">最新</th><th>要点</th></tr></thead>
+    <tbody>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-cx-agent-studio">CX Agent Studio / Google Cloud CCaaS</a></td><td><span class="badge b-alert">Prerelease / Fixed</span></td><td class="dt-col">7/27</td><td>Dialogflow／仮想エージェントの音声・チャット不具合修正を予告。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-genesys">Genesys Cloud</a></td><td><span class="badge b-updated">Feature / Integration</span></td><td class="dt-col">7/27</td><td>Data ActionsがCloud Run Functions v2に対応。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-bigquery">BigQuery</a></td><td><span class="badge b-updated">GA / Change</span></td><td class="dt-col">7/27</td><td>変更履歴関数とGoogle製ODBCドライバーがGA。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-cloudrun">Cloud Run</a></td><td><span class="badge b-updated">Preview</span></td><td class="dt-col">7/27</td><td>Node.js 26とBudget spend capsに対応。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-cloudsdk">Cloud SDK</a></td><td><span class="badge b-alert">Breaking / Fixed</span></td><td class="dt-col">7/28</td><td>578.0.0でDatabase Migrationの自動コミットを既定化。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-chatplus">ChatPlus</a></td><td><span class="badge b-alert">取得失敗</span></td><td class="dt-col">7/29</td><td>FAQ取得失敗のためメンテナンス完了は未確認。</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-title">詳細</h2>
+
+  <section class="svc-section has-update" id="svc-cx-agent-studio"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-wand"></i> CX Agent Studio / Google Cloud CCaaS</h3><div class="svc-meta"><span class="badge b-alert">Prerelease / Fixed</span><span class="last-upd">最終: 7/27</span><a class="src-link" href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">🔥 次期版で、録音済み音声だけを返すDialogflow呼び出しの誤切断、双方向音声のwrap-up重複通知、仮想エージェントの早期エスカレーション、転送後チャットの終了・キュー残留などの修正が予告されました。prereleaseのため、正式リリース時に再確認が必要です。</p></section>
+
+  <section class="svc-section has-update" id="svc-genesys"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-headset"></i> Genesys Cloud</h3><div class="svc-meta"><span class="badge b-updated">Feature / Integration</span><span class="last-upd">最終: 7/27</span><a class="src-link" href="https://help.genesys.cloud/release-notes/genesys-cloud/july-27-2026/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Data ActionsからGoogleサービスアカウント認証でCloud Run Functions v2を呼び出せるようになりました。Cloud Functions v1連携も継続利用できます。仮想エージェント要約カスタマイズと2件の非推奨は、現行日本語ボイスボットでの利用が確認できないため🔥対象外です。</p></section>
+
+  <section class="svc-section has-update" id="svc-genesys-status"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-alert-triangle"></i> Genesys Cloud Status</h3><div class="svc-meta"><span class="badge b-alert">Incident / Status</span><span class="last-upd">確認: 7/29</span><a class="src-link" href="https://status.mypurecloud.com/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">EMEA(UAE)障害はResolvedとして終了しましたが、解決通知は同リージョンが当面利用不可で、代替リージョン運用を継続するよう案内しています。現在の表ではEMEA(UAE)をOperationalと表示しており表記に差があります。東京・大阪はOperationalです。</p></section>
+
+  <section class="svc-section has-update" id="svc-bigquery"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-database"></i> BigQuery</h3><div class="svc-meta"><span class="badge b-updated">GA / Change</span><span class="last-upd">最終: 7/27</span><a class="src-link" href="https://docs.cloud.google.com/bigquery/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note"><code>APPENDS</code>／<code>CHANGES</code>関数とGoogle製ODBCドライバーがGAになりました。旧<code>tabledata.insertAll</code>はStorage Write API (REST)、従来のStorage Write APIはStorage Write API (gRPC)へ名称整理されています。</p></section>
+
+  <section class="svc-section has-update" id="svc-cloudrun"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-server"></i> Cloud Run</h3><div class="svc-meta"><span class="badge b-updated">Preview</span><span class="last-upd">最終: 7/27</span><a class="src-link" href="https://docs.cloud.google.com/run/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Node.js 26ランタイムと、予算超過時にワークロードを停止できるBudget spend capsがPreviewになりました。任意利用のため、既存Webhook／API実行基盤への自動変更はありません。</p></section>
+
+  <section class="svc-section has-update" id="svc-agent-platform"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-sparkles"></i> Gemini Enterprise / Agent Platform</h3><div class="svc-meta"><span class="badge b-updated">GA</span><span class="last-upd">最終: 7/27</span><a class="src-link" href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Gemini EnterpriseのTransparent thinkingがGAになりました。チャットUIで推論・計画とツール活動を展開表示します。Agent Platform実行APIや会話エージェントモデルの変更ではありません。</p></section>
+
+  <section class="svc-section has-update" id="svc-cloudsdk"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-terminal-2"></i> Cloud SDK / gcloud CLI</h3><div class="svc-meta"><span class="badge b-alert">Breaking / Fixed / CLI</span><span class="last-upd">最終: 7/28</span><a class="src-link" href="https://docs.cloud.google.com/sdk/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">578.0.0でDatabase Migration変換操作の<code>--auto-commit</code>が既定になりました。あわせて<code>gcloud init</code>のクラッシュ修正、BigQuery接続削除の<code>--force</code>、Cloud Run jobs／worker poolsのbeta版sandbox launcher設定が追加されています。</p></section>
+
+  <section class="svc-section has-update" id="svc-chatplus"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-messages"></i> ChatPlus</h3><div class="svc-meta"><span class="badge b-alert">一部取得失敗</span><span class="last-upd">最終確認: 7/29</span><a class="src-link" href="https://chatplus.jp/news/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">ServiceとNewsには到達し、Newsの最新は7月17日の表彰発表のままでSaaS機能更新はありません。FAQは取得エラーとなり、既報の7月29日0:00〜3:00メンテナンスの完了・予定変更有無を確認できませんでした。</p></section>
+
+  <h2 class="sec-title">到達確認</h2>
+  <table class="other-table"><tbody>
+    <tr><td class="svc-col">Genesys Cloud</td><td>Release notes / Status / Dialogflow CX連携 / Architectに到達成功。7/27更新を確認。東京・大阪はOperational。</td></tr>
+    <tr><td class="svc-col">ChatPlus</td><td>Service / Newsは到達成功、新規機能更新なし。FAQは本文取得失敗。</td></tr>
+    <tr><td class="svc-col">Dialogflow CX / Conversational Agents</td><td>Docs、Google Cloud release notes、Statusに到達成功。CCaaS prereleaseにDialogflow関連修正あり。</td></tr>
+    <tr><td class="svc-col">CX Agent Studio</td><td>Product、Google Cloud release notes、Statusに到達成功。次期Google Cloud CCaaSの修正予告を確認。</td></tr>
+    <tr><td class="svc-col">Text-to-Speech / Speech-to-Text</td><td>Release notes / Statusに到達成功。対象期間内の新規更新なし。</td></tr>
+    <tr><td class="svc-col">BigQuery / Cloud Run</td><td>Release notes / Statusに到達成功。7/27のGA／Preview更新を確認。</td></tr>
+    <tr><td class="svc-col">Vertex AI / GenAI / Agent Platform</td><td>Vertex AI release notes / Google Cloud release notes / Statusに到達成功。Transparent thinking GAを確認。</td></tr>
+    <tr><td class="svc-col">Cloud Storage / VPC Service Controls / Workflows</td><td>Release notes / Statusに到達成功。対象期間内の新規更新なし。</td></tr>
+    <tr><td class="svc-col">Cloud SDK</td><td>Release notesに到達成功。最新は7/28のgcloud 578.0.0。</td></tr>
+    <tr><td class="svc-col">Google Cloud Status</td><td>Statusに到達成功。7/28 16:45 PDT更新時点で広範な重大障害なし。</td></tr>
+  </tbody></table>
+
+  <footer class="rpt-footer"><span>Official-source research completed for 2026-07-27 through 2026-07-29.</span></footer>
+</div>
+</body>
+</html>
