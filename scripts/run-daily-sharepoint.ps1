@@ -132,6 +132,14 @@ try {
     Write-Host 'Skipping Codex research step.'
   }
 
+  $reportDate = Get-Date -Format 'yyyy-MM-dd'
+  $reportValidator = Join-Path $RepoRoot 'scripts\validate-daily-report.mjs'
+  if (Test-Path -LiteralPath $reportValidator) {
+    Write-Host "Validating daily report quality for $reportDate..."
+    & node $reportValidator $reportDate
+    if ($LASTEXITCODE -ne 0) { throw "Daily report validation failed with exit code $LASTEXITCODE" }
+  }
+
   Write-Host 'Building SharePoint single-file HTML...'
   & node (Join-Path $RepoRoot 'scripts\build-sharepoint-html.mjs')
   if ($LASTEXITCODE -ne 0) { throw "HTML build failed with exit code $LASTEXITCODE" }

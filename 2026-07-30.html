@@ -3,28 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>デイリーリサーチレポート: 2026年7月30日</title>
+  <title>デイリーリサーチ — 2026年7月30日</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=20260729a">
 </head>
 <body>
 <div class="wrap">
-  <header class="rpt-header"><div><div class="rpt-eyebrow">Daily SaaS Intelligence</div><h1 class="rpt-date">2026年7月30日</h1><div class="rpt-period">2026年7月29日 - 2026年7月30日</div></div><nav class="rpt-nav"><a href="index.html" class="lb neutral"><i class="ti ti-arrow-left" aria-hidden="true"></i> Home</a><a href="https://github.com/ko-shimada/daily-research" class="lb neutral" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a></nav></header>
-  <h2 class="sec-title no-margin-top">Summary</h2>
-  <table class="status-table"><thead><tr><th>Service</th><th>Status</th><th class="dt-col">Latest</th><th>Point</th></tr></thead><tbody>
-    <tr><td class="svc-col"><a class="svc-jump" href="#svc-bigquery">BigQuery</a></td><td><span class="badge b-updated">Preview / Data Transfer</span></td><td class="dt-col">7/29</td><td>Klaviyo -> BigQuery incremental transfer Preview.</td></tr>
-    <tr><td class="svc-col"><a class="svc-jump" href="#svc-google-status">Google Cloud Status</a></td><td><span class="badge b-ok">Status</span></td><td class="dt-col">7/30 JST</td><td>No broad severe incidents.</td></tr>
-    <tr><td class="svc-col"><a class="svc-jump" href="#svc-genesys-status">Genesys Cloud Status</a></td><td><span class="badge b-alert">Incident / Status</span></td><td class="dt-col">7/30 JST</td><td>EMEA(UAE) Platform Major Outage remains; Tokyo / Osaka Operational.</td></tr>
-    <tr><td class="svc-col"><a class="svc-jump" href="#svc-chatplus">ChatPlus</a></td><td><span class="badge b-alert">Source failure</span></td><td class="dt-col">7/30 JST</td><td>Service / News reachable; FAQ failed.</td></tr>
+  <header class="rpt-header">
+    <div>
+      <div class="rpt-eyebrow">Daily SaaS Intelligence 差分リサーチ</div>
+      <h1 class="rpt-date">2026年7月30日（木）</h1>
+      <div class="rpt-period">調査対象期間: 2026年7月29日〜2026年7月30日</div>
+    </div>
+    <nav class="rpt-nav">
+      <a href="index.html" class="lb neutral"><i class="ti ti-arrow-left" aria-hidden="true"></i> ホーム</a>
+      <a href="https://github.com/ko-shimada/daily-research" class="lb neutral" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+    </nav>
+  </header>
+
+  <h2 class="sec-title no-margin-top">概況 — 7/29以降の差分</h2>
+  <table class="status-table">
+    <thead><tr><th>サービス</th><th>状態</th><th class="dt-col">最新</th><th>要点</th></tr></thead>
+    <tbody>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-bigquery">BigQuery</a></td><td><span class="badge b-updated">Preview / Data Transfer</span></td><td class="dt-col">7/29</td><td>KlaviyoからBigQueryへの増分データ転送がPreviewで追加。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-google-cloud">Google Cloud全体</a></td><td><span class="badge b-ok">対象外中心</span></td><td class="dt-col">7/29</td><td>7/29掲載の対象サービス新規差分はBigQueryのみ。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-google-status">Google Cloud Status</a></td><td><span class="badge b-ok">Status</span></td><td class="dt-col">7/30 JST</td><td>広範な重大障害なし。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-genesys">Genesys Cloud</a></td><td><span class="badge b-ok">Status / 継続注記</span></td><td class="dt-col">7/30 JST</td><td>東京・大阪はOperational。UAE長期案内は継続注記。</td></tr>
+      <tr><td class="svc-col"><a class="svc-jump" href="#svc-chatplus">ChatPlus</a></td><td><span class="badge b-alert">一部取得失敗</span></td><td class="dt-col">7/30 JST</td><td>Service / Newsは到達、FAQ本文は取得失敗。</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-title">詳細</h2>
+
+  <section class="svc-section has-update" id="svc-bigquery"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-database"></i> BigQuery</h3><div class="svc-meta"><span class="badge b-updated">Preview / Data Transfer</span><span class="last-upd">最終: 7/29</span><a class="src-link" href="https://docs.cloud.google.com/bigquery/docs/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">KlaviyoからBigQueryへの増分データ転送がPreviewで追加されました。Klaviyoを使ったマーケティングデータ連携向けの更新であり、現行の会話ログ分析基盤への直接影響は確認していません。</p></section>
+
+  <section class="svc-section has-update" id="svc-google-cloud"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-cloud"></i> Google Cloud全体 / Cloud SDK</h3><div class="svc-meta"><span class="badge b-ok">確認済み</span><span class="last-upd">最終: 7/29</span><a class="src-link" href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Google Cloud全体の7/29更新には複数サービスの掲載がありますが、対象サービスではBigQueryのみが新規差分でした。Cloud SDKは7/28の578.0.0が最新で、Database Migration変換操作の<code>--auto-commit</code>既定化などを前回確認済みです。</p></section>
+
+  <section class="svc-section has-update" id="svc-google-status"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-cloud-check"></i> Google Cloud Status</h3><div class="svc-meta"><span class="badge b-ok">Status</span><span class="last-upd">確認: 7/30 JST</span><a class="src-link" href="https://status.cloud.google.com/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Google Cloud Service Healthでは、2026年7月29日17:54 PDT（2026年7月30日09:54 JST）時点で広範な重大障害は表示されていません。</p></section>
+
+  <section class="svc-section has-update" id="svc-genesys"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-headset"></i> Genesys Cloud</h3><div class="svc-meta"><span class="badge b-ok">Status / Incident note</span><span class="last-upd">確認: 7/30 JST</span><a class="src-link" href="https://status.mypurecloud.com/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">Release notes最新は7月27日のままです。StatusページではAsia Pacific (Tokyo / Osaka) はOperationalです。EMEA(UAE)はコンポーネント表上Operationalですが、7月15日の解決通知では代替リージョン運用を継続するよう案内されており、日本リージョンへの直接影響なしとして扱います。</p></section>
+
+  <section class="svc-section has-update" id="svc-chatplus"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-messages"></i> ChatPlus</h3><div class="svc-meta"><span class="badge b-alert">一部取得失敗</span><span class="last-upd">確認: 7/30 JST</span><a class="src-link" href="https://chatplus.jp/news/" target="_blank" rel="noopener noreferrer">公式ソース</a></div></div><p class="no-upd-note">ServiceとNewsには到達しました。Newsの最新は7月17日のITreview Grid Award選出で、システムアップデート系の最新は7月8日の6月分まとめです。FAQは取得エラーとなり、既報の7月29日0:00〜3:00メンテナンスの完了・予定変更有無を確認できませんでした。</p></section>
+
+  <section class="svc-section" id="svc-other"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-list-check"></i> その他の対象サービス</h3><div class="svc-meta"><span class="badge b-ok">新規差分なし</span><span class="last-upd">確認: 7/30 JST</span></div></div><p class="no-upd-note">Dialogflow CX、Conversational Agents、CX Agent Studio、Text-to-Speech、Speech-to-Text、Cloud Run、Vertex AI / GenAI / Agent Platform、Cloud Storage、VPC Service Controls、Workflowsはいずれも公式ソースへ到達しました。対象期間内に、現行の日本語ボイスボット／チャットボット運用へ直接影響する新規差分は確認していません。</p></section>
+
+  <h2 class="sec-title">到達確認</h2>
+  <table class="other-table"><tbody>
+    <tr><td class="svc-col">Genesys Cloud</td><td>Release notes / Status / Dialogflow CX連携 / Architectに到達成功。Release notes最新は7/27、東京・大阪はOperational。</td></tr>
+    <tr><td class="svc-col">ChatPlus</td><td>Service / Newsは到達成功。News最新は7/17、システムアップデート最新は7/8。FAQは本文取得失敗。</td></tr>
+    <tr><td class="svc-col">Dialogflow CX</td><td>Docs / Statusに到達成功。対象期間内の固有リリース差分なし。</td></tr>
+    <tr><td class="svc-col">Conversational Agents</td><td>Docs / Google Cloud release notes / Statusに到達成功。7/29更新に対象サービス固有の新規差分なし。</td></tr>
+    <tr><td class="svc-col">CX Agent Studio</td><td>Product / Google Cloud release notes / Statusに到達成功。7/27のGoogle Cloud CCaaS prerelease修正は前回確認済み。</td></tr>
+    <tr><td class="svc-col">Text-to-Speech</td><td>Release notes / Statusに到達成功。Release notes最新は2025年12月のまま。</td></tr>
+    <tr><td class="svc-col">Speech-to-Text</td><td>Release notes / Statusに到達成功。Release notes最新は2025年11月のChirp 3 preview地域追加のまま。</td></tr>
+    <tr><td class="svc-col">BigQuery</td><td>Release notes / Statusに到達成功。7/29にKlaviyo増分データ転送Previewを確認。</td></tr>
+    <tr><td class="svc-col">Cloud Run</td><td>Release notes / Statusに到達成功。Release notes最新は7/27のNode.js 26とBudget spend caps Previewのまま。</td></tr>
+    <tr><td class="svc-col">Vertex AI / GenAI / Agent Platform</td><td>Vertex AI release notes / Google Cloud release notes / Statusに到達成功。Vertex AI固有ページの最新は7/13。</td></tr>
+    <tr><td class="svc-col">Cloud Storage</td><td>Release notes / Statusに到達成功。Release notes最新は7/20のObject Lifecycle Managementサイズ条件追加のまま。</td></tr>
+    <tr><td class="svc-col">VPC Service Controls</td><td>Release notes / Statusに到達成功。Release notes最新は6/29のingress/egress対応ID拡張GAのまま。</td></tr>
+    <tr><td class="svc-col">Workflows</td><td>Release notes / Statusに到達成功。Release notes最新は2026年2月のasia-southeast3追加のまま。</td></tr>
+    <tr><td class="svc-col">Cloud SDK / gcloud CLI</td><td>Release notesに到達成功。最新は7/28のgcloud 578.0.0。対象期間内の追加更新なし。</td></tr>
+    <tr><td class="svc-col">Google Cloud Status</td><td>Statusに到達成功。2026年7月29日17:54 PDT更新時点で広範な重大障害なし。</td></tr>
   </tbody></table>
-  <h2 class="sec-title">Details</h2>
-  <section class="svc-section has-update" id="svc-bigquery"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-database"></i> BigQuery</h3><div class="svc-meta"><span class="badge b-updated">Preview / Data Transfer</span><span class="last-upd">7/29</span><a class="src-link" href="https://docs.cloud.google.com/bigquery/docs/release-notes" target="_blank" rel="noopener noreferrer">Official source</a></div></div><p class="no-upd-note">BigQuery Data Transfer Service supports incremental data transfers from Klaviyo to BigQuery in Preview. 現行の会話ログ分析基盤への直接影響は確認していません。</p></section>
-  <section class="svc-section has-update" id="svc-google-status"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-cloud-check"></i> Google Cloud Status</h3><div class="svc-meta"><span class="badge b-ok">Status</span><span class="last-upd">7/30 JST</span><a class="src-link" href="https://status.cloud.google.com/" target="_blank" rel="noopener noreferrer">Official source</a></div></div><p class="no-upd-note">No broad severe incidents were shown as of 2026-07-29 17:22 PDT / 2026-07-30 09:22 JST.</p></section>
-  <section class="svc-section has-update" id="svc-genesys-status"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-alert-triangle"></i> Genesys Cloud Status</h3><div class="svc-meta"><span class="badge b-alert">Incident / Status</span><span class="last-upd">7/30 JST</span><a class="src-link" href="https://status.mypurecloud.com/" target="_blank" rel="noopener noreferrer">Official source</a></div></div><p class="no-upd-note">EMEA(UAE) Platform Major Outage remains. Tokyo / Osaka are Operational. No direct impact to the Japanese voicebot was confirmed.</p></section>
-  <section class="svc-section has-update" id="svc-chatplus"><div class="svc-hd"><h3 class="svc-name"><i class="ti ti-messages"></i> ChatPlus</h3><div class="svc-meta"><span class="badge b-alert">Source failure</span><span class="last-upd">7/30 JST</span><a class="src-link" href="https://chatplus.jp/news/" target="_blank" rel="noopener noreferrer">Official source</a></div></div><p class="no-upd-note">Service and News were reachable. News latest remains 2026-07-17 and is not a SaaS feature update. FAQ failed, so the 2026-07-29 maintenance completion could not be confirmed.</p></section>
-  <h2 class="sec-title">Source Check</h2><table class="other-table"><tbody><tr><td class="svc-col">Genesys Cloud</td><td>Release notes / Status / Dialogflow CX integration / Architect reached.</td></tr><tr><td class="svc-col">ChatPlus</td><td>Service / News reached. FAQ failed.</td></tr><tr><td class="svc-col">Google Cloud services</td><td>Release notes / Status reached for target services. Only BigQuery had a new target entry.</td></tr></tbody></table>
-  <footer class="rpt-footer"><span>Official-source research completed for 2026-07-29 through 2026-07-30.</span></footer>
+
+  <footer class="rpt-footer"><span>公式ソース調査完了: 2026年7月29日〜2026年7月30日</span></footer>
 </div>
 </body>
 </html>
