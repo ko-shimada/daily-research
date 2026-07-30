@@ -17,6 +17,7 @@
     {"id":"cloud-sdk","name":"Cloud SDK / gcloud CLI","category":"Google Cloud / CLI","projects":["voicebot","chatbot"],"icon":"ti-terminal-2","note":"開発・運用コマンド、破壊的変更、Windows同梱Python更新を確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/sdk/docs/release-notes"},{"label":"Google Cloud release notes","url":"https://docs.cloud.google.com/release-notes"}]}
   ],
   "updates": [
+    {"serviceId":"bigquery","date":"2026-07-29","kind":"Preview / Data Transfer","title":"Klaviyo incremental transferがPreview","summary":"KlaviyoからBigQueryへのincremental data transfersがPreviewで追加されました。現行の会話ログ分析基盤への直接影響は確認していません。","report":"2026-07-30.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},
     {"serviceId":"chatplus","date":"2026-07-29","kind":"Maintenance","title":"ChatPlusシステムメンテナンス予定","summary":"ChatPlus FAQで、2026年7月29日 0:00〜3:00のシステムメンテナンス告知を確認しました。FAQは今回取得できず、完了や予定変更の有無は未確認です。","report":"2026-07-29.html#svc-chatplus","source":"https://faq.chatplus.jp/","hotProjects":["chatbot"]},
     {"serviceId":"genesys-cloud","date":"2026-07-29","kind":"Incident / Status","title":"EMEA(UAE)障害チケットを終了、利用不可案内は継続","summary":"Genesys Cloud StatusではEMEA(UAE)障害をResolvedとして終了しましたが、解決通知には同リージョンが当面利用不可で代替リージョン運用を継続するよう記載されています。東京・大阪はOperationalです。","report":"2026-07-29.html#svc-genesys-status","source":"https://status.mypurecloud.com/"},
     {"serviceId":"cloud-sdk","date":"2026-07-28","kind":"Breaking / Fixed / CLI","title":"gcloud 578.0.0でDatabase Migrationの自動コミットを既定化","summary":"Cloud SDK 578.0.0でDatabase Migration変換操作の`--auto-commit`が既定になりました。あわせて`gcloud init`のクラッシュ修正、BigQuery接続削除の`--force`、Cloud Runジョブ等のsandbox launcher設定が追加されています。現行会話基盤への直接影響は確認していません。","report":"2026-07-29.html#svc-cloudsdk","source":"https://docs.cloud.google.com/sdk/docs/release-notes"},
@@ -88,6 +89,7 @@
     {"serviceId":"vpc-service-controls","date":"2026-06-11","kind":"確認","title":"VPC Service Controlsの関連更新を確認","summary":"Agent系サービスやGCP周辺サービスのVPC SCサポート状況を継続確認対象にします。","report":"2026-06-11.html","source":"https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"}
   ],
   "reports": [
+    {"date":"2026-07-30","href":"2026-07-30.html","summary":"BigQueryのKlaviyo incremental transfer Preview、Google Cloud広域重大障害なし、Genesys EMEA(UAE)継続、ChatPlus FAQ取得失敗"},
     {"date":"2026-07-29","href":"2026-07-29.html","summary":"Google Cloud CCaaS prerelease、Genesys CloudのCloud Run Functions v2連携、BigQuery／Cloud Run／gcloud更新、ChatPlus FAQ取得失敗"},
     {"date":"2026-07-27","href":"2026-07-27.html","summary":"Gemini 3.6 Flashのusマルチリージョン対応、Google Cloud CCaaS 5.0、Agent Studio生成WebアプリのSSRF修正を補完、ChatPlus FAQ取得失敗"},
     {"date":"2026-07-24","href":"2026-07-24.html","summary":"BigQuery Simba ODBCドライバー更新、Gemini 3.6 Flash／3.5 Flash-Lite GAと破壊的変更・旧Flash削除予告を遡及補完、ChatPlus FAQ取得失敗"},
