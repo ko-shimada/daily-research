@@ -17,6 +17,8 @@
     {"id":"cloud-sdk","name":"Cloud SDK / gcloud CLI","category":"Google Cloud / CLI","projects":["voicebot","chatbot"],"icon":"ti-terminal-2","note":"開発・運用コマンド、破壊的変更、Windows同梱Python更新を確認します。","sources":[{"label":"Release notes","url":"https://docs.cloud.google.com/sdk/docs/release-notes"},{"label":"Google Cloud release notes","url":"https://docs.cloud.google.com/release-notes"}]}
   ],
   "updates": [
+    {"serviceId":"cx-agent-studio","date":"2026-07-30","kind":"Fixed / Voice / Chat","title":"Google Cloud CCaaSでDialogflow／仮想エージェント関連の不具合を修正","summary":"Google Cloud CCaaSで、仮想エージェント状態に残る音声通話、Dialogflowエージェントの誤エスカレーション／切断、仮想エージェントの早期エスカレーション、双方向音声通話のwrap-up重複通知、チャットのキュー残留などが修正されました。音声・チャット双方の会話エージェント運用に関わるため、該当CCaaS利用有無を確認対象にします。","report":"2026-07-31.html#svc-cx-agent-studio","source":"https://docs.cloud.google.com/release-notes","hotProjects":["voicebot","chatbot"]},
+    {"serviceId":"bigquery","date":"2026-07-30","kind":"GA / Audit / Pipeline","title":"BigQuery pipelinesタスク追加とUIダウンロード監査がGA","summary":"BigQuery pipelinesにテーブル、ビュー、データソース、データ品質テストをタスクとして追加できる機能がGAになりました。あわせてBigQueryコンソールからのクエリ結果ダウンロードをData Access監査ログの`uiDownloadRequest`で識別できるようになりました。会話ログ分析基盤では、監査・データ持ち出し確認の観点で確認候補です。","report":"2026-07-31.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes","hotProjects":["voicebot","chatbot"]},
     {"serviceId":"bigquery","date":"2026-07-29","kind":"Preview / Data Transfer","title":"Klaviyo incremental transferがPreview","summary":"KlaviyoからBigQueryへの増分データ転送がPreviewで追加されました。現行の会話ログ分析基盤への直接影響は確認していません。","report":"2026-07-30.html#svc-bigquery","source":"https://docs.cloud.google.com/bigquery/docs/release-notes"},
     {"serviceId":"chatplus","date":"2026-07-29","kind":"Maintenance","title":"ChatPlusシステムメンテナンス予定","summary":"ChatPlus FAQで、2026年7月29日 0:00〜3:00のシステムメンテナンス告知を確認しました。FAQは今回取得できず、完了や予定変更の有無は未確認です。","report":"2026-07-29.html#svc-chatplus","source":"https://faq.chatplus.jp/","hotProjects":["chatbot"]},
     {"serviceId":"genesys-cloud","date":"2026-07-29","kind":"Incident / Status","title":"EMEA(UAE)障害チケットを終了、利用不可案内は継続","summary":"Genesys Cloud StatusではEMEA(UAE)障害をResolvedとして終了しましたが、解決通知には同リージョンが当面利用不可で代替リージョン運用を継続するよう記載されています。東京・大阪はOperationalです。","report":"2026-07-29.html#svc-genesys-status","source":"https://status.mypurecloud.com/"},
@@ -89,6 +91,7 @@
     {"serviceId":"vpc-service-controls","date":"2026-06-11","kind":"確認","title":"VPC Service Controlsの関連更新を確認","summary":"Agent系サービスやGCP周辺サービスのVPC SCサポート状況を継続確認対象にします。","report":"2026-06-11.html","source":"https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"}
   ],
   "reports": [
+    {"date":"2026-07-31","href":"2026-07-31.html","summary":"Google Cloud CCaaSのDialogflow／仮想エージェント修正、BigQuery pipelinesタスク追加とUIダウンロード監査GA、Google Cloud広域重大障害なし、ChatPlus FAQ取得失敗"},
     {"date":"2026-07-30","href":"2026-07-30.html","summary":"BigQueryのKlaviyo増分データ転送Preview、Google Cloud広域重大障害なし、Genesys東京・大阪Operational、ChatPlus FAQ取得失敗"},
     {"date":"2026-07-29","href":"2026-07-29.html","summary":"Google Cloud CCaaS prerelease、Genesys CloudのCloud Run Functions v2連携、BigQuery／Cloud Run／gcloud更新、ChatPlus FAQ取得失敗"},
     {"date":"2026-07-27","href":"2026-07-27.html","summary":"Gemini 3.6 Flashのusマルチリージョン対応、Google Cloud CCaaS 5.0、Agent Studio生成WebアプリのSSRF修正を補完、ChatPlus FAQ取得失敗"},
