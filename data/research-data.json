@@ -330,6 +330,41 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-06",
+                        "kind":  "Incident / Status",
+                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
+                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outageとして監視継続中ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
+                        "report":  "2026-08-06.html#svc-genesys",
+                        "source":  "https://status.mypurecloud.com/"
+                    },
+                    {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-08-05",
+                        "kind":  "Preview / Runtime",
+                        "title":  "Cloud Run sandboxが全リソースに対応",
+                        "summary":  "Cloud Runのsandboxがjobsとworker poolsを含む全リソースでPreview対応しました。AIエージェント由来コードや外部連携処理を分離実行する選択肢が広がるため、Webhook、バッチ、ツール実行基盤で利用可否を確認対象にします。",
+                        "report":  "2026-08-06.html#svc-cloudrun",
+                        "source":  "https://docs.cloud.google.com/run/docs/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "cx-agent-studio",
+                        "date":  "2026-08-04",
+                        "kind":  "GA / Fixed / CCaaS",
+                        "title":  "Google Cloud CCaaS 5.2で仮想エージェントとチャット関連を修正",
+                        "summary":  "Google Cloud CCaaS 5.2で、異常終了やエスカレーション未完了後に音声通話が仮想エージェント状態に残る問題、Nexmo経由IVRで冒頭音声を取り逃す問題、チャットのキュー残留などが修正されました。Smart dispositionやprogressive campaign向けAMDも追加されています。",
+                        "report":  "2026-08-06.html#svc-cx-agent-studio",
+                        "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-08-04",
                         "kind":  "Feature / Observability",
@@ -1170,6 +1205,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-06",
+                        "href":  "2026-08-06.html",
+                        "summary":  "Cloud Run sandbox全リソースPreview、Google Cloud CCaaS 5.2の仮想エージェント／チャット修正、Genesys東京・大阪Operational、ChatPlus FAQ取得失敗"
+                    },
                     {
                         "date":  "2026-08-05",
                         "href":  "2026-08-05.html",
