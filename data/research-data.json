@@ -331,6 +331,40 @@
     "updates":  [
                     {
                         "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-07",
+                        "kind":  "Incident / Status",
+                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
+                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor OutageとしてMonitoring継続中ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
+                        "report":  "2026-08-07.html#svc-genesys",
+                        "source":  "https://status.mypurecloud.com/"
+                    },
+                    {
+                        "serviceId":  "vpc-service-controls",
+                        "date":  "2026-08-06",
+                        "kind":  "GA / Security",
+                        "title":  "VPC Service Controls service patternsがGA",
+                        "summary":  "VPC Service Controlsのservice patternsがGAになりました。private.googleapis.comやPrivate Service Connectのall-apis bundle利用時に、サービス境界内のVPCからアクセスできるGoogle APIを明示設定できます。Dialogflow、Agent Studio、Storage、BigQuery連携の境界設計で確認対象です。",
+                        "report":  "2026-08-07.html#svc-vpcsc",
+                        "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "cx-agent-studio",
+                        "date":  "2026-08-06",
+                        "kind":  "Fixed / Analytics / CCaaS",
+                        "title":  "Google Cloud CCaaS Advanced reporting dashboards 5.1",
+                        "summary":  "Advanced reporting dashboards 5.1で、仮想エージェント通話メトリクス、チャット放棄率、キュー時間、Available Agents、転送済み通話の表示、7日超のエクスポート失敗などが修正されました。会話運用レポートを使う場合は数値確認対象です。",
+                        "report":  "2026-08-07.html#svc-cx-agent-studio",
+                        "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },                    {
+                        "serviceId":  "genesys-cloud",
                         "date":  "2026-08-06",
                         "kind":  "Incident / Status",
                         "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
@@ -387,6 +421,17 @@
                         "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
                     },
                     {
+                        "serviceId":  "chatplus",
+                        "date":  "2026-08-04",
+                        "kind":  "Feature / AI AgentPlus",
+                        "title":  "ChatPlus 7月アップデートでAI AgentPlus機能を追加",
+                        "summary":  "ChatPlusの7月アップデートで、AI AgentPlusの役割プロンプト最適化、学習対象URL／対象外URL、訪問ページURLや訪問者属性によるAIエージェント割り当て条件が追加されました。チャットボット運用でAI AgentPlusを使う場合は設定確認対象です。",
+                        "report":  "2026-08-07.html#svc-chatplus",
+                        "source":  "https://chatplus.jp/news/",
+                        "hotProjects":  [
+                                            "chatbot"
+                                        ]
+                    },                    {
                         "serviceId":  "vpc-service-controls",
                         "date":  "2026-08-03",
                         "kind":  "Preview / Integration",
@@ -1206,6 +1251,10 @@
                 ],
     "reports":  [
                     {
+                        "date":  "2026-08-07",
+                        "href":  "2026-08-07.html",
+                        "summary":  "VPC Service Controls service patterns GA、Google Cloud CCaaS Advanced reporting dashboards 5.1、ChatPlus 7月AI AgentPlus更新、Genesys東京・大阪Operational、ChatPlus FAQ取得失敗"
+                    },                    {
                         "date":  "2026-08-06",
                         "href":  "2026-08-06.html",
                         "summary":  "Cloud Run sandbox全リソースPreview、Google Cloud CCaaS 5.2の仮想エージェント／チャット修正、Genesys東京・大阪Operational、ChatPlus FAQ取得失敗"
