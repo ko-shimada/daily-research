@@ -331,6 +331,103 @@
     "updates":  [
                     {
                         "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-13",
+                        "kind":  "Incident / Status",
+                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
+                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outage継続ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
+                        "report":  "2026-08-13.html#svc-genesys",
+                        "source":  "https://status.mypurecloud.com/"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-08-12",
+                        "kind":  "Deprecated / UI",
+                        "title":  "Table ExplorerがReferenceパネルへ移行",
+                        "summary":  "BigQueryのTable Explorer動作がReferenceパネルへ移行し、Table Explorerは非推奨になりました。BigQuery Studio手順や画面案内の更新確認対象です。",
+                        "report":  "2026-08-13.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-08-11",
+                        "kind":  "Breaking / CLI",
+                        "title":  "Snap版google-cloud-sdkが削除予定",
+                        "summary":  "Cloud SDK 580.0.0で、Snap版`google-cloud-sdk`パッケージが2026年9月29日に廃止・削除予定と案内されました。Linux Snap導入環境は`google-cloud-cli`への移行確認が必要です。",
+                        "report":  "2026-08-13.html#svc-cloudsdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-08-11",
+                        "kind":  "Feature / GPU",
+                        "title":  "NVIDIA L4 GPU driver 580.x.xが利用可能",
+                        "summary":  "Cloud RunでNVIDIA L4 GPU driver 580.x.xがservices、jobs、worker poolsで利用可能になりました。GPU推論・バッチ向けで、通常Webhookへの直接影響は確認していません。",
+                        "report":  "2026-08-13.html#svc-cloudrun",
+                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-08-11",
+                        "kind":  "GA",
+                        "title":  "data clean rooms query templatesとTVF table parametersがGA",
+                        "summary":  "BigQueryでdata clean roomsのquery templatesと、table-valued functionsのtable parametersがGAになりました。会話ログ分析基盤への直接影響は確認していません。",
+                        "report":  "2026-08-13.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-10",
+                        "kind":  "Feature / Virtual Agent",
+                        "title":  "Agentic Virtual Agentsでツール出力値の事後条件に対応",
+                        "summary":  "Genesys Cloud Agentic Virtual Agentsで、ツール出力値に対するプログラム的な事後条件を定義できるようになりました。ツール結果を自然言語指示へ紐づけ、複雑な業務応答を安定させる確認候補です。",
+                        "report":  "2026-08-13.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/",
+                        "hotProjects":  [
+                                            "voicebot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-08-10",
+                        "kind":  "Feature / GenAI",
+                        "title":  "AI functionsでGemini GAモデル2種をサポート",
+                        "summary":  "BigQuery AI functionsで`gemini-3.1-flash-lite`と`gemini-3.5-flash`のGAモデルが利用可能になりました。対象は`us`、`eu`、`global`で、会話ログ分析やFAQ生成にAI functionsを使う場合はモデルとロケーションの確認対象です。",
+                        "report":  "2026-08-13.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "cx-agent-studio",
+                        "date":  "2026-08-10",
+                        "kind":  "Announcement / CCaaS",
+                        "title":  "Google Cloud CCaaS 6.0を公開",
+                        "summary":  "Google Cloud CCaaS 6.0が公開されました。5.2からの顧客向け機能変更はなく、内部インフラ更新として案内されています。反映タイミングはdeployment scheduleに依存します。",
+                        "report":  "2026-08-13.html#svc-cx-agent-studio",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-10",
+                        "kind":  "GA / Admin",
+                        "title":  "Gemini EnterpriseのユーザーデータCSVエクスポートがGA",
+                        "summary":  "Gemini Enterprise管理者がユーザーデータをCSVへエクスポートできる機能がGAになりました。会話エージェント運用の利用者棚卸しや監査で確認候補です。",
+                        "report":  "2026-08-13.html#svc-other",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "chatplus",
+                        "date":  "2026-08-10",
+                        "kind":  "Service / AI Agent",
+                        "title":  "AIエージェント導入支援のAXソリューションを公開",
+                        "summary":  "ChatPlusがAIエージェント導入から運用定着までを支援するAXソリューションを公開しました。ChatPlus / AI AgentPlusを基盤とした構築支援とカスタム開発を含む伴走型サービスです。",
+                        "report":  "2026-08-13.html#svc-chatplus",
+                        "source":  "https://chatplus.jp/news/"
+                    },
+                    {
+                        "serviceId":  "genesys-cloud",
                         "date":  "2026-08-07",
                         "kind":  "Incident / Status",
                         "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
@@ -1250,6 +1347,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-13",
+                        "href":  "2026-08-13.html",
+                        "summary":  "Genesys Agentic Virtual Agents事後条件、BigQuery AI functions Geminiモデル追加とTable Explorer非推奨化、Google Cloud CCaaS 6.0、gcloud 580.0.0、ChatPlus AXソリューション、ChatPlus FAQ取得失敗"
+                    },
                     {
                         "date":  "2026-08-07",
                         "href":  "2026-08-07.html",
