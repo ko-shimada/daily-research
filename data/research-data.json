@@ -330,6 +330,75 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "chatplus",
+                        "date":  "2026-08-14",
+                        "kind":  "予告 / 仕様変更",
+                        "title":  "AI AgentPlus学習機能の仕様変更を予告(9月3日実施)",
+                        "summary":  "ChatPlus FAQで、AI AgentPlus(AIチャットボットプラン)の学習機能仕様変更が案内されました。手動実行していた「高速化」処理を自動実行に標準化し、パーツ名称も「生成AIドキュメント連携(高速化)」→「学習データから回答」等に変更されます。2026年9月3日実施予定で、初回実行中は学習データの追加・更新ができません。",
+                        "report":  "2026-08-14.html#svc-chatplus",
+                        "source":  "https://faq.chatplus.jp/article/1390",
+                        "hotProjects":  [
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-14",
+                        "kind":  "Incident / Status",
+                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
+                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outage継続ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
+                        "report":  "2026-08-14.html#svc-genesys",
+                        "source":  "https://status.mypurecloud.com/"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-13",
+                        "kind":  "GA / Region",
+                        "title":  "Gemini 3.7 FlashがGA、global/us/euリージョンで利用可能に",
+                        "summary":  "Gemini EnterpriseでGemini 3.7 Flashモデルがglobal、us、euリージョンでGAになりました。管理者がGemini Enterpriseアプリで有効化できます。Google Cloudリージョン基準のus/globalに該当するため、Agent Platform上でGemini系モデルを指定している場合はモデル切り替えの確認対象です。",
+                        "report":  "2026-08-14.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-13",
+                        "kind":  "GA / Feature",
+                        "title":  "Gemini EnterpriseでCustom Skillsの作成・共有がGA",
+                        "summary":  "Gemini Enterprise管理者・利用者が再利用可能なカスタム指示(Custom Skills)を作成・アップロード・共有できる機能がGAになりました。会話エージェント運用チームのナレッジ共有・定型プロンプト管理での活用候補です。",
+                        "report":  "2026-08-14.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vpc-service-controls",
+                        "date":  "2026-08-13",
+                        "kind":  "Preview / Feature",
+                        "title":  "VPC Service Controls recommenderがPreviewで利用可能に",
+                        "summary":  "サービス境界の最適化を支援するVPC Service Controls recommenderがPreviewになりました。境界外で稼働する機密リソース(BigQuery、Cloud Storage等)の情報持ち出しリスク、境界内で未設定/誤設定のアクセス可能APIを検出します。Dialogflow、CX Agent Studio、Storage、BigQuery連携の境界設計レビューでの活用候補です。",
+                        "report":  "2026-08-14.html#svc-vpcsc",
+                        "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "cx-agent-studio",
+                        "date":  "2026-08-12",
+                        "kind":  "Prerelease / Fixed",
+                        "title":  "次期Google Cloud CCaaSでagent desktopカスタムパネルURL対応とチャット/コール処理修正50件超を予告",
+                        "summary":  "Google Cloud CCaaS prerelease notesで、agent desktopのカスタムパネルURLへのパラメータ渡し対応、callback offerの制限設定に加え、チャット/コール処理に関する50件超の不具合修正が予告されました。音声・チャット双方の会話エージェント運用に関わるため、次期リリース反映時の動作確認対象です。",
+                        "report":  "2026-08-14.html#svc-cx-agent-studio",
+                        "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
                         "serviceId":  "genesys-cloud",
                         "date":  "2026-08-13",
                         "kind":  "Incident / Status",
@@ -1347,6 +1416,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-14",
+                        "href":  "2026-08-14.html",
+                        "summary":  "Gemini 3.7 Flash GA(global/us/eu)、VPC Service Controls recommender Preview、次期Google Cloud CCaaSのagent desktop/チャット・コール修正予告、ChatPlus AI AgentPlus学習機能仕様変更予告(9/3実施)"
+                    },
                     {
                         "date":  "2026-08-13",
                         "href":  "2026-08-13.html",
