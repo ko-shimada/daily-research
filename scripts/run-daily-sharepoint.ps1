@@ -8,7 +8,10 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $PSDefaultParameterValues['*:Encoding'] = 'utf8'
-[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
+$utf8NoBom = [System.Text.UTF8Encoding]::new($false)
+[Console]::InputEncoding = $utf8NoBom
+[Console]::OutputEncoding = $utf8NoBom
+$OutputEncoding = $utf8NoBom
 
 if (-not $RepoRoot) {
   $RepoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
@@ -59,18 +62,30 @@ try {
     if ($config.PSObject.Properties.Name -contains 'codex' -and $config.codex.PSObject.Properties.Name -contains 'path') {
       $configuredCodexPath = $config.codex.path
     }
-    if ($configuredCodexPath -and (Test-Path -LiteralPath $configuredCodexPath)) {
-      $codexPath = $configuredCodexPath
-    } else {
-      $codexCommand = Get-Command codex -ErrorAction SilentlyContinue
-      if ($codexCommand) {
-        $codexPath = $codexCommand.Source
-      } else {
-        $fallbackCodexPath = Join-Path $env:USERPROFILE '.codex\.sandbox-bin\codex.exe'
-        if (Test-Path -LiteralPath $fallbackCodexPath) {
-          $codexPath = $fallbackCodexPath
-        }
+    $codexCandidates = @()
+    if ($configuredCodexPath) { $codexCandidates += $configuredCodexPath }
+
+    # Codex CLI 0.148+ needs codex-code-mode-host.exe beside codex.exe. Prefer
+    # the complete bundle shipped by the current VS Code OpenAI extension, whose
+    # versioned path changes whenever the extension is updated.
+    $extensionCodex = Get-ChildItem -Path (Join-Path $env:USERPROFILE '.vscode\extensions\openai.chatgpt-*\bin\windows-x86_64\codex.exe') -File -ErrorAction SilentlyContinue |
+      Sort-Object LastWriteTime -Descending
+    $codexCandidates += @($extensionCodex | ForEach-Object { $_.FullName })
+
+    $codexCommand = Get-Command codex -ErrorAction SilentlyContinue
+    if ($codexCommand) { $codexCandidates += $codexCommand.Source }
+    $codexCandidates += (Join-Path $env:USERPROFILE '.codex\.sandbox-bin\codex.exe')
+
+    foreach ($candidate in ($codexCandidates | Select-Object -Unique)) {
+      if (-not (Test-Path -LiteralPath $candidate)) { continue }
+
+      $hostPath = Join-Path (Split-Path -Parent $candidate) 'codex-code-mode-host.exe'
+      if (Test-Path -LiteralPath $hostPath) {
+        $codexPath = $candidate
+        break
       }
+
+      Write-Warning "Skipping incomplete Codex bundle (codex-code-mode-host.exe is missing): $candidate"
     }
     $researchFailure = $null
     if ($codexPath) {
@@ -90,7 +105,7 @@ try {
         $researchFailure = "Codex exec reported internal tool errors (see $logPath)"
       }
     } else {
-      $researchFailure = "Codex CLI not found. Checked config codex.path ('$configuredCodexPath'), PATH (codex command), and $(Join-Path $env:USERPROFILE '.codex\.sandbox-bin\codex.exe')"
+      $researchFailure = "Complete Codex CLI bundle not found. Checked config codex.path ('$configuredCodexPath'), the current VS Code OpenAI extension, PATH (codex command), and $(Join-Path $env:USERPROFILE '.codex\.sandbox-bin\codex.exe')"
     }
 
     if ($researchFailure) {
