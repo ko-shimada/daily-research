@@ -330,6 +330,46 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-17",
+                        "kind":  "Incident / Status",
+                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
+                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outage継続ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
+                        "report":  "2026-08-17.html#svc-genesys",
+                        "source":  "https://status.mypurecloud.com/"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-15",
+                        "kind":  "Preview / Feature",
+                        "title":  "Gemini Enterprise Agent Platformでsemantic governance policyの監視メトリクスがPreview",
+                        "summary":  "Gemini Enterprise Agent Platformで、semantic governance policyの実行状況をCloud Monitoringで追跡できる監視メトリクスがPreviewで追加されました。リクエストのスループット、評価件数、レイテンシ、判定結果の分布、LLMトークン消費量をMetrics Explorer、Monitoring API、PromQL、アラートポリシーから参照できます。Agent Platformでガバナンスポリシーを運用している場合、適用状況の監視・アラート設計の確認対象です。",
+                        "report":  "2026-08-17.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-14",
+                        "kind":  "GA / Mobile",
+                        "title":  "Gemini 3.7 FlashがGemini Enterpriseモバイルアプリでも利用可能に",
+                        "summary":  "Gemini EnterpriseモバイルアプリでGemini 3.7 Flashをモデルとして選択できるようになりました(管理者による機能有効化が必要)。8月13日にGAとなったglobal/us/euリージョンでの提供を補完するもので、Agent Platform APIの仕様変更ではありません。",
+                        "report":  "2026-08-17.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-14",
+                        "kind":  "GA / Security",
+                        "title":  "Agent Identity向け組織ポリシーカスタム制約がGA",
+                        "summary":  "Agent Identityリソース(AuthProvider等)の特定フィールドに対して組織ポリシーのカスタム制約を設定できる機能がGAになりました。Agent Identity機能を利用している場合の権限設計強化の選択肢です。",
+                        "report":  "2026-08-17.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
                         "serviceId":  "chatplus",
                         "date":  "2026-08-14",
                         "kind":  "予告 / 仕様変更",
@@ -1416,6 +1456,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-17",
+                        "href":  "2026-08-17.html",
+                        "summary":  "Gemini Enterprise Agent Platform semantic governance policy監視メトリクスPreview、Gemini 3.7 FlashモバイルアプリGA、Agent Identity組織ポリシーカスタム制約GA、Genesys東京・大阪Operational、Google Cloud広域重大障害なし"
+                    },
                     {
                         "date":  "2026-08-14",
                         "href":  "2026-08-14.html",
