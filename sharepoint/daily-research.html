@@ -787,25 +787,25 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   </header>
 
   <section class="ed-controls" aria-label="絞り込み">
-    <label><span>Project</span><select id="project-filter"><option value="all">すべて</option><option value="voicebot">ボイスボット</option><option value="chatbot">チャットボット</option></select></label>
-    <label><span>Since</span><input id="date-filter" type="date"></label>
-    <label class="wide"><span>Search</span><input id="keyword-filter" type="search" placeholder="BigQuery、障害、GA など"></label>
+    <label><span>プロジェクト</span><select id="project-filter"><option value="all">すべて</option><option value="voicebot">ボイスボット</option><option value="chatbot">チャットボット</option></select></label>
+    <label><span>開始日</span><input id="date-filter" type="date"></label>
+    <label class="wide"><span>検索</span><input id="keyword-filter" type="search" placeholder="BigQuery、障害、GA など"></label>
     <button id="clear-filter" type="button" aria-label="条件をクリア" title="条件をクリア">解除</button>
   </section>
 
   <section class="ed-lead-grid">
     <article class="ed-feature" id="featured-update"></article>
     <aside class="ed-index-card">
-      <h2>Monitor</h2>
-      <div class="ed-stat"><span>Services</span><strong id="stat-services">-</strong></div>
-      <div class="ed-stat"><span>Updates</span><strong id="stat-updates">-</strong></div>
-      <div class="ed-stat"><span>Latest</span><strong id="stat-latest">-</strong></div>
+      <h2>概況</h2>
+      <div class="ed-stat"><span>サービス</span><strong id="stat-services">-</strong></div>
+      <div class="ed-stat"><span>更新</span><strong id="stat-updates">-</strong></div>
+      <div class="ed-stat"><span>最新</span><strong id="stat-latest">-</strong></div>
     </aside>
   </section>
 
   <main class="ed-layout">
     <section>
-      <div class="ed-section-title"><h2>Services</h2><span id="visible-count"></span></div>
+      <div class="ed-section-title"><h2>サービス</h2><span id="visible-count"></span></div>
       <div id="service-list" class="ed-service-list"></div>
     </section>
     <aside class="ed-source-rail">
@@ -816,7 +816,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   </main>
 
   <section class="ed-archive">
-    <div class="ed-section-title"><h2>Reports by Date</h2><span>既存の日付別レポート</span></div>
+    <div class="ed-section-title"><h2>日付別レポート</h2><span>既存の日付別レポート</span></div>
     <div id="archive-list" class="ed-archive-list"></div>
   </section>
 </div>
@@ -842,7 +842,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
     $('stat-updates').textContent = data.updates.length;
     var latestReport = data.reports[0];
     $('stat-latest').textContent = latestReport ? fmt(latestReport.date) : '-';
-    $('visible-count').textContent = services.length + ' services';
+    $('visible-count').textContent = services.length + '件';
     renderFeature(data.updates[0]);
     renderServices(services);
     renderSources(services);
@@ -878,7 +878,7 @@ i.ti { font-size: 14px; vertical-align: -2px; }
     }).join('');
   }
   function densityHtml(list){
-    if(!list.length) return '<em class="ed-update-counts zero">0 updates</em>';
+    if(!list.length) return '<em class="ed-update-counts zero">更新0件</em>';
     var c = {fresh:0, week:0, month:0};
     list.forEach(function(u){ var k=recencyKey(u.date); if(c[k] !== undefined) c[k]++; });
     var hot = list.filter(isHot).length;

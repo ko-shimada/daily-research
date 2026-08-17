@@ -62,7 +62,7 @@ html = html.replace(
 );
 html = html.replace(
   /<button id="clear-filter" type="button" aria-label="条件をクリア" title="条件をクリア"><i class="ti ti-filter-x"><\/i><\/button>/,
-  '<button id="clear-filter" type="button" aria-label="条件をクリア" title="条件をクリア">Clear</button>'
+  '<button id="clear-filter" type="button" aria-label="条件をクリア" title="条件をクリア">解除</button>'
 );
 html = replaceOnce(
   html,
@@ -86,8 +86,8 @@ html = html.replace(
   "$('archive-list').innerHTML = data.reports.map(function(r){ return '<div class=\"ed-archive-entry\"><strong>'+fmt(r.date)+'</strong><span>'+r.summary+'</span></div>'; }).join('');"
 );
 html = html.replace(
-  /\$\('featured-update'\)\.innerHTML = '<div class="ed-kicker">Latest Signal<\/div><h2>'\+hotMark\(u\)\+u\.title\+'<\/h2><p>'\+u\.summary\+'<\/p><div class="ed-feature-meta"><span>'\+fmt\(u\.date\)\+'<\/span><span>'\+u\.kind\+'<\/span><a href="'\+u\.report\+'">レポートを読む<\/a><\/div>';/,
-  "$('featured-update').innerHTML = '<div class=\"ed-kicker\">Latest Signal</div><h2>'+hotMark(u)+u.title+'</h2><p>'+u.summary+'</p><div class=\"ed-feature-meta\"><span>'+fmt(u.date)+'</span><span>'+u.kind+'</span><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"'+u.source+'\">公式ソース</a></div>';"
+  /\$\('featured-update'\)\.innerHTML = '<div class="ed-kicker">最新シグナル<\/div><h2>'\+hotMark\(u\)\+u\.title\+'<\/h2><p>'\+u\.summary\+'<\/p><div class="ed-feature-meta"><span>'\+fmt\(u\.date\)\+'<\/span><span>'\+u\.kind\+'<\/span><a href="'\+u\.report\+'">レポートを読む<\/a><\/div>';/,
+  "$('featured-update').innerHTML = '<div class=\"ed-kicker\">最新シグナル</div><h2>'+hotMark(u)+u.title+'</h2><p>'+u.summary+'</p><div class=\"ed-feature-meta\"><span>'+fmt(u.date)+'</span><span>'+u.kind+'</span><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"'+u.source+'\">公式ソース</a></div>';"
 );
 html = html.replace(
   /function updateHtml\(u\)\{ return '<div class="ed-update"><div><span>'\+fmt\(u\.date\)\+'<\/span><b>'\+u\.kind\+'<\/b><\/div><h3>'\+hotMark\(u\)\+u\.title\+'<\/h3><p>'\+u\.summary\+'<\/p><a href="'\+u\.report\+'">該当レポート<\/a><a target="_blank" rel="noopener noreferrer" href="'\+u\.source\+'">公式ソース<\/a><\/div>'; \}/,
