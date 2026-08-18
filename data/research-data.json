@@ -330,6 +330,33 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "cloud-storage",
+                        "date":  "2026-08-17",
+                        "kind":  "Feature / Data protection",
+                        "title":  "削除プロジェクト内のsoft delete有効バケットを一定期間保持",
+                        "summary":  "Cloud Storageで、soft deleteを有効にしたバケットはプロジェクト削除後も一定期間保持されるようになりました。保持期間中にプロジェクトを復元すると、バケットはプロジェクト削除時点の状態へ復元されます。ログや学習データを保管するプロジェクトの削除・復元手順を確認する際の変更点です。",
+                        "report":  "2026-08-18.html#svc-storage",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-17",
+                        "kind":  "GA / Agent integration",
+                        "title":  "Gemini EnterpriseでA2UI/A2Aエージェント登録・管理がGA",
+                        "summary":  "Gemini EnterpriseでA2UIおよびA2Aエージェントの登録・管理がGAになり、A2UI v0.9にも対応しました。Gemini Enterprise連携を採用する場合、エージェント間連携とカスタムUIの実装選択肢が増えます。",
+                        "report":  "2026-08-18.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-17",
+                        "kind":  "Feature / CCaaS",
+                        "title":  "ケース管理ビュー、Copilotダッシュボードなどを追加",
+                        "summary":  "Genesys Cloudの8月17日リリースで、スーパーバイザー・ケース管理者向けケース管理ビュー、Agent Copilot Performanceダッシュボードのフィルター・指標などが追加されました。今回の記載に日本語ボイスボットのBot Flow、STT/TTS、Dialogflow CX連携へ直接影響する変更は確認していません。",
+                        "report":  "2026-08-18.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
+                    },
+                    {
                         "serviceId":  "genesys-cloud",
                         "date":  "2026-08-17",
                         "kind":  "Incident / Status",
@@ -426,6 +453,15 @@
                                         ]
                     },
                     {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-13",
+                        "kind":  "Incident / Status",
+                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
+                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outage継続ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
+                        "report":  "2026-08-13.html#svc-genesys",
+                        "source":  "https://status.mypurecloud.com/"
+                    },
+                    {
                         "serviceId":  "cx-agent-studio",
                         "date":  "2026-08-12",
                         "kind":  "Prerelease / Fixed",
@@ -437,15 +473,6 @@
                                             "voicebot",
                                             "chatbot"
                                         ]
-                    },
-                    {
-                        "serviceId":  "genesys-cloud",
-                        "date":  "2026-08-13",
-                        "kind":  "Incident / Status",
-                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
-                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outage継続ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
-                        "report":  "2026-08-13.html#svc-genesys",
-                        "source":  "https://status.mypurecloud.com/"
                     },
                     {
                         "serviceId":  "bigquery",
@@ -1456,6 +1483,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-18",
+                        "href":  "2026-08-18.html",
+                        "summary":  "Genesys Cloud 8/17リリース、Gemini EnterpriseのA2UI/A2Aエージェント登録GA、Cloud Storageのsoft delete有効バケット保持、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-08-17",
                         "href":  "2026-08-17.html",
