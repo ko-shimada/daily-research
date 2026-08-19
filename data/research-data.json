@@ -329,7 +329,16 @@
                      }
                  ],
     "updates":  [
-                    {
+                     {
+                         "serviceId":  "cloud-sdk",
+                         "date":  "2026-08-18",
+                         "kind":  "Breaking / CLI",
+                         "title":  "Cloud SDK 581.0.0でMCP有効化関連のno-opコマンドを削除",
+                         "summary":  "Cloud SDK 581.0.0で、既にno-opとなっていた`gcloud beta services mcp enable`、`disable`、`list`コマンドが削除されました。MCP有効化は不要になっているため、これらのコマンドを自動化スクリプトに残している場合は削除が必要です。",
+                         "report":  "2026-08-19.html#svc-cloudsdk",
+                         "source":  "https://docs.cloud.google.com/release-notes"
+                     },
+                     {
                         "serviceId":  "cloud-storage",
                         "date":  "2026-08-17",
                         "kind":  "Feature / Data protection",
@@ -1483,7 +1492,12 @@
                     }
                 ],
     "reports":  [
-                    {
+                     {
+                         "date":  "2026-08-19",
+                         "href":  "2026-08-19.html",
+                         "summary":  "Cloud SDK 581.0.0のMCP有効化関連no-opコマンド削除、Genesys Tokyo・Osaka Operational、ChatPlus FAQ到達失敗"
+                     },
+                     {
                         "date":  "2026-08-18",
                         "href":  "2026-08-18.html",
                         "summary":  "Genesys Cloud 8/17リリース、Gemini EnterpriseのA2UI/A2Aエージェント登録GA、Cloud Storageのsoft delete有効バケット保持、ChatPlus FAQ到達失敗"
