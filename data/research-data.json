@@ -330,6 +330,15 @@
                  ],
     "updates":  [
                      {
+                         "serviceId":  "vertex-agent-platform",
+                         "date":  "2026-08-20",
+                         "kind":  "Deprecation / Model",
+                         "title":  "Grok 4.1モデルの提供終了により該当API呼び出しが失敗",
+                         "summary":  "Gemini Enterprise Agent PlatformのGrok 4.1モデルは8月20日に提供終了となり、該当モデルIDをglobalエンドポイントへ送るAPI呼び出しは400エラーになります。利用中の場合はGrok 4.2／4.3またはModel Gardenの代替モデルへ移行が必要です。",
+                         "report":  "2026-08-20.html#svc-agent-platform",
+                         "source":  "https://docs.cloud.google.com/release-notes"
+                     },
+                     {
                          "serviceId":  "cloud-sdk",
                          "date":  "2026-08-18",
                          "kind":  "Breaking / CLI",
@@ -1492,7 +1501,12 @@
                     }
                 ],
     "reports":  [
-                     {
+                    {
+                        "date":  "2026-08-20",
+                        "href":  "2026-08-20.html",
+                        "summary":  "Gemini Enterprise Agent PlatformのGrok 4.1提供終了、Google Cloud広域重大障害なし、Genesys東京・大阪Operational、ChatPlus FAQ到達失敗"
+                    },
+                    {
                          "date":  "2026-08-19",
                          "href":  "2026-08-19.html",
                          "summary":  "Cloud SDK 581.0.0のMCP有効化関連no-opコマンド削除、Genesys Tokyo・Osaka Operational、ChatPlus FAQ到達失敗"
