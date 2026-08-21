@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>デイリーリサーチ — 2026年8月21日</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css'>
+  <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&amp;display=swap' rel='stylesheet'>
+  <link rel='stylesheet' href='style.css?v=20260729a'>
+</head>
+<body>
+<div class='wrap'>
+  <header class='rpt-header'>
+    <div><div class='rpt-eyebrow'>日次SaaSインテリジェンス 差分リサーチ</div><h1 class='rpt-date'>2026年8月21日（金）</h1><div class='rpt-period'>調査対象期間: 2026年8月21日</div></div>
+    <nav class='rpt-nav'><a href='index.html' class='lb neutral'><i class='ti ti-arrow-left' aria-hidden='true'></i> ホーム</a><a href='https://github.com/ko-shimada/daily-research' class='lb neutral' target='_blank' rel='noopener noreferrer'><i class='ti ti-brand-github' aria-hidden='true'></i> GitHub</a></nav>
+  </header>
+  <h2 class='sec-title no-margin-top'>概況 — 8/21確認分</h2>
+  <table class='status-table'><thead><tr><th>サービス</th><th>状態</th><th class='dt-col'>最新</th><th>要点</th></tr></thead><tbody>
+    <tr><td class='svc-col'><a class='svc-jump' href='#svc-bigquery'>BigQuery</a></td><td><span class='badge b-updated'>非推奨 / Preview</span></td><td class='dt-col'>8/20</td><td>Graphコア処理のエディション制限予告と<code>run_bq_command</code> Preview。</td></tr>
+    <tr><td class='svc-col'><a class='svc-jump' href='#svc-incident'>Google Cloud Service Health</a></td><td><span class='badge b-ok'>復旧済み</span></td><td class='dt-col'>8/20</td><td>us-west1で複数サービスが影響。公式ステータスでは復旧済み。</td></tr>
+  </tbody></table>
+  <h2 class='sec-title'>詳細</h2>
+  <section class='svc-section has-update' id='svc-bigquery'><div class='svc-hd'><h3 class='svc-name'><i class='ti ti-database'></i> BigQuery</h3><div class='svc-meta'><span class='badge b-updated'>非推奨 / Preview</span><span class='last-upd'>最終: 8/20</span><a class='src-link' href='https://docs.cloud.google.com/bigquery/docs/release-notes' target='_blank' rel='noopener noreferrer'>公式ソース</a></div></div><p class='no-upd-note'>2027年4月26日から、BigQuery Graphのコアグラフ処理はEnterprise／Enterprise Plusエディションに限定され、Standardエディションとオンデマンド課金でのサポートが終了します。また、Cloud CLI remote MCP serverで<code>bq</code>コマンドを実行する<code>run_bq_command</code>ツールがPreviewになりました。現行プロジェクトへの直接影響は確認できないため、🔥対象にはしていません。</p></section>
+  <section class='svc-section has-update' id='svc-incident'><div class='svc-hd'><h3 class='svc-name'><i class='ti ti-cloud-check'></i> Google Cloud Service Health</h3><div class='svc-meta'><span class='badge b-ok'>復旧済み</span><span class='last-upd'>確認: 8/21 JST</span><a class='src-link' href='https://status.cloud.google.com/incidents/utF3FMFdQfwBzJcGG6vf' target='_blank' rel='noopener noreferrer'>公式ソース</a></div></div><p class='no-upd-note'>8月20日8:40～12:20（米国太平洋時間）、us-west1でCloud Run、BigQuery、Cloud Storage、Contact Center AI Platformなどにタイムアウト、エラー、遅延が発生しました。公式ステータスでは復旧済みで、asia-northeast系への影響は記載されていません。Genesys CloudはTokyo・OsakaがOperationalです。</p></section>
+  <h2 class="sec-title">到達確認</h2>
+  <table class='other-table'><tbody>
+    <tr><td class='svc-col'>Genesys Cloud</td><td>公式リリースノート / ステータス / Dialogflow CX連携 / Architectに到達成功。最新の公式リリースは8月17日。Tokyo・OsakaはOperational、EMEA (UAE)のPlatform Major Outageは継続。</td></tr>
+    <tr><td class='svc-col'>ChatPlus</td><td>サービス紹介・公式ニュースは到達成功。FAQ・お知らせ（https://faq.chatplus.jp/）は取得エラーのため到達失敗。公式ニュースの対象期間内の新規掲載は確認していません。</td></tr>
+    <tr><td class='svc-col'>Dialogflow CX</td><td>公式ドキュメント / ステータスに到達成功。対象期間内のDialogflow CX固有の新規差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>Conversational Agents</td><td>公式ドキュメント / Google Cloud公式リリースノート / ステータスに到達成功。対象期間内のConversational Agents固有の新規差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>CX Agent Studio</td><td>製品ページ / Google Cloud公式リリースノート / ステータスに到達成功。us-west1のContact Center AI Platform障害は復旧済み。固有の新規リリース差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>Google Cloud Text-to-Speech</td><td>公式リリースノート / ステータスに到達成功。対象期間内の新規差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>Google Cloud Speech-to-Text</td><td>公式リリースノート / ステータスに到達成功。対象期間内の新規差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>BigQuery</td><td>公式リリースノート / ステータスに到達成功。Graphのエディション制限予告、<code>run_bq_command</code> Preview、us-west1障害の復旧を確認。</td></tr>
+    <tr><td class='svc-col'>Cloud Run</td><td>公式リリースノート / ステータスに到達成功。us-west1障害は復旧済み。対象期間内の新規リリース差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>Vertex AI / GenAI / Agent Platform</td><td>Vertex AI公式リリースノート / Google Cloud公式リリースノート / ステータスに到達成功。対象期間内の新規差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>Cloud Storage</td><td>公式リリースノート / ステータスに到達成功。us-west1障害は復旧済み。対象期間内の新規リリース差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>VPC Service Controls</td><td>公式リリースノート / ステータスに到達成功。対象期間内の新規差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>Workflows</td><td>公式リリースノート / ステータスに到達成功。対象期間内の新規差分は確認していません。</td></tr>
+    <tr><td class='svc-col'>Cloud SDK / gcloud CLI</td><td>公式リリースノート / Google Cloud公式リリースノートに到達成功。最新版は581.0.0（8月18日）。対象期間内の新規差分は確認していません。</td></tr>
+  </tbody></table>
+  <footer class='rpt-footer'><span>公式ソース調査完了: 2026年8月21日</span></footer>
+</div>
+</body>
+</html>

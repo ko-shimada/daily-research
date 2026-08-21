@@ -330,6 +330,33 @@
                  ],
     "updates":  [
                      {
+                         "serviceId":  "bigquery",
+                         "date":  "2026-08-20",
+                         "kind":  "Deprecation / Pricing",
+                         "title":  "BigQuery Graphのコア処理をEnterprise系エディションへ限定予定",
+                         "summary":  "2027年4月26日からBigQuery Graphのコアグラフ処理はEnterprise／Enterprise Plusエディションに限定され、Standardエディションとオンデマンド課金でのサポートが終了します。graph measuresは引き続きEnterprise系とオンデマンド課金で利用できます。該当機能を利用する場合はエディションと課金方式の移行計画が必要です。",
+                         "report":  "2026-08-21.html#svc-bigquery",
+                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                     },
+                     {
+                         "serviceId":  "bigquery",
+                         "date":  "2026-08-20",
+                         "kind":  "Preview / MCP",
+                         "title":  "Cloud CLI remote MCP serverに`run_bq_command`を追加",
+                         "summary":  "Cloud CLI remote MCP serverで`bq`コマンドを実行する`run_bq_command`ツールがPreviewになりました。AIエージェントからジョブのスケジュール・管理や予約管理などの高度なBigQuery操作をマネージドMCPエンドポイント経由で実行できます。現行プロジェクトでの利用は確認できないため、導入時の権限設計と操作範囲の確認対象です。",
+                         "report":  "2026-08-21.html#svc-bigquery",
+                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                     },
+                     {
+                         "serviceId":  "cloud-run",
+                         "date":  "2026-08-20",
+                         "kind":  "Incident / Resolved",
+                         "title":  "us-west1の複数サービス障害は復旧済み",
+                         "summary":  "us-west1で計画光回線メンテナンスに伴う予期しない輻輳が発生し、Cloud Run、BigQuery、Cloud Storage、Contact Center AI Platformなどでタイムアウト、エラー、遅延が発生しました。障害は8月20日8:40～12:20（米国太平洋時間）で、公式ステータスでは復旧済みです。asia-northeast系への影響は記載されていません。",
+                         "report":  "2026-08-21.html#svc-incident",
+                         "source":  "https://status.cloud.google.com/incidents/utF3FMFdQfwBzJcGG6vf"
+                     },
+                     {
                          "serviceId":  "vertex-agent-platform",
                          "date":  "2026-08-20",
                          "kind":  "Deprecation / Model",
@@ -1501,6 +1528,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-21",
+                        "href":  "2026-08-21.html",
+                        "summary":  "BigQuery Graphコア処理のエディション制限予告、remote MCP serverの`run_bq_command` Preview、us-west1複数サービス障害は復旧済み、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-08-20",
                         "href":  "2026-08-20.html",
