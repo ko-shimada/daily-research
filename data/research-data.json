@@ -329,6 +329,18 @@
                      }
                  ],
     "updates":  [
+                    {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-24",
+                        "kind":  "Feature / Architect",
+                        "title":  "Architect音声フローのData Actionエラー情報を改善",
+                        "summary":  "Architect音声フローでData Action／Secure Data ActionのHTTPステータスコードとエラー理由を参照できるようになりました。Webhook相当の外部連携失敗をより正確に分岐・調査できるため、既存フローのエラー処理を確認します。",
+                        "report":  "2026-08-25.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/august-24-2026/",
+                        "hotProjects":  [
+                                            "voicebot"
+                                        ]
+                    },
                      {
                          "serviceId":  "vertex-agent-platform",
                          "date":  "2026-08-23",
@@ -1546,6 +1558,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-25",
+                        "href":  "2026-08-25.html",
+                        "summary":  "Genesys Architect音声フローのData Actionエラー情報改善、東京・大阪Operational、Google Cloud対象サービス新規差分なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-08-24",
                         "href":  "2026-08-24.html",
