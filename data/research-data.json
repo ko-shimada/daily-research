@@ -330,6 +330,15 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-08-25",
+                        "kind":  "Breaking / CLI",
+                        "title":  "Cloud SDK 582.0.0で旧MCP関連コマンドを削除",
+                        "summary":  "Cloud SDK 582.0.0で、`gcloud api-registry mcp servers list`と`gcloud api-registry mcp tools list`、およびno-opとなっていた`gcloud beta services mcp policies`配下のコマンドが削除されました。該当コマンドを自動化で利用している場合は、Agent Registryへの移行または不要なポリシー操作の削除が必要です。",
+                        "report":  "2026-08-26.html#svc-cloudsdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "genesys-cloud",
                         "date":  "2026-08-24",
                         "kind":  "Feature / Architect",
@@ -1558,6 +1567,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-26",
+                        "href":  "2026-08-26.html",
+                        "summary":  "Cloud SDK 582.0.0の旧MCP関連コマンド削除、Genesys東京・大阪Operational、Google Cloud対象サービス新規差分・新規障害なし、ChatPlus公式3ページ到達成功"
+                    },
                     {
                         "date":  "2026-08-25",
                         "href":  "2026-08-25.html",
