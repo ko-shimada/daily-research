@@ -330,6 +330,24 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-08-26",
+                        "kind":  "Security / GA",
+                        "title":  "BigQuery DTSのJDBCドライバー脆弱性とPython UDFログGA",
+                        "summary":  "BigQuery Data Transfer Serviceの2026年5月1日より前のJDBCドライバーに、認証済み攻撃者が細工した接続文字列でコネクター内のリモートコード実行と権限昇格を行える脆弱性（GCP-2026-056）が公表されました。併せてPython UDFのリアルタイムログ表示がGAになりました。JDBCコネクター利用時はバージョンと接続設定を確認します。",
+                        "report":  "2026-08-27.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-08-25",
+                        "kind":  "Preview",
+                        "title":  "長時間・個別アドレス可能なCloud Run instancesをPreview提供",
+                        "summary":  "長時間稼働し、個別にアドレス指定できるワークロード向けのCloud Run instancesがPreviewになりました。既存のWebhookやAPI実行基盤への直接変更ではないため、採用検討時の確認対象とします。",
+                        "report":  "2026-08-27.html#svc-cloudrun",
+                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "cloud-sdk",
                         "date":  "2026-08-25",
                         "kind":  "Breaking / CLI",
@@ -1567,6 +1585,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-27",
+                        "href":  "2026-08-27.html",
+                        "summary":  "BigQuery DTSのJDBCドライバー脆弱性GCP-2026-056とPython UDFログGA、Cloud Run instances Preview、Genesys東京・大阪Operational、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-08-26",
                         "href":  "2026-08-26.html",
