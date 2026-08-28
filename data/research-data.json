@@ -331,6 +331,24 @@
     "updates":  [
                     {
                         "serviceId":  "bigquery",
+                        "date":  "2026-08-27",
+                        "kind":  "Compliance / GA",
+                        "title":  "BigQuery Data Engineering AgentがHIPAA準拠",
+                        "summary":  "BigQuery Data Engineering AgentがHIPAA準拠になりました。保護対象保健情報を扱う環境で採用を検討する場合は、Google CloudとのBAA、対象サービス、権限、ログ、データ処理条件を確認します。現行プロジェクトへの直接影響は確認していません。",
+                        "report":  "2026-08-28.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-storage",
+                        "date":  "2026-08-26",
+                        "kind":  "Breaking / Lifecycle",
+                        "title":  "階層型名前空間バケットのLifecycle Deleteが空フォルダも削除",
+                        "summary":  "階層型名前空間を有効にしたCloud Storageバケットでは、Object Lifecycle ManagementのDeleteアクションがルール条件を満たす空フォルダも削除する仕様になりました。対象バケットでフォルダ保持を前提とする処理がある場合は、Lifecycleルールと依存処理を確認します。",
+                        "report":  "2026-08-28.html#svc-storage",
+                        "source":  "https://docs.cloud.google.com/storage/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
                         "date":  "2026-08-26",
                         "kind":  "Security / GA",
                         "title":  "BigQuery DTSのJDBCドライバー脆弱性とPython UDFログGA",
@@ -1585,6 +1603,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-28",
+                        "href":  "2026-08-28.html",
+                        "summary":  "BigQuery Data Engineering AgentのHIPAA準拠、Cloud Storage階層型名前空間のLifecycle Delete仕様適用、Genesys東京・大阪Operational、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-08-27",
                         "href":  "2026-08-27.html",
