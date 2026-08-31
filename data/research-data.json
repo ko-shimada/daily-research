@@ -330,6 +330,15 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-28",
+                        "kind":  "Public Preview / Data stores",
+                        "title":  "Gemini Enterpriseに新データストアとアクションを追加",
+                        "summary":  "Gemini EnterpriseでCampfire、Clay、CourtListener、Daloopa、MSCIのデータストアがPublic Previewになり、自然言語による検索と読み取りに対応しました。AirOps、Airtable、Zoho Deskには新しい書き込みアクションが追加されました。現行プロジェクトへの直接影響は確認していません。",
+                        "report":  "2026-08-31.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
                         "serviceId":  "bigquery",
                         "date":  "2026-08-27",
                         "kind":  "Compliance / GA",
@@ -1603,6 +1612,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-08-31",
+                        "href":  "2026-08-31.html",
+                        "summary":  "Gemini Enterpriseの新データストア／アクションPublic Preview、Genesys東京・大阪Operational、Google Cloud広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-08-28",
                         "href":  "2026-08-28.html",
