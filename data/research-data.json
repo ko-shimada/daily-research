@@ -330,6 +330,36 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-31",
+                        "kind":  "Feature / Architect",
+                        "title":  "Architectに顧客意図・外部連絡先・会話属性のネイティブ操作を追加",
+                        "summary":  "Genesys CloudのArchitectで、音声・受信メッセージ・メールフローから顧客意図の取得、外部連絡先の部分更新、会話属性の作成・取得・更新をネイティブ操作で実行できるようになりました。既存のカスタムData Actionを置き換えられる可能性があるため、音声フローの設計と権限を確認します。",
+                        "report":  "2026-09-01.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/august-31-2026/",
+                        "hotProjects":  [
+                                            "voicebot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-08-31",
+                        "kind":  "Preview / GA",
+                        "title":  "BigQueryパイプラインのGitフォルダ対応とIdentity列を提供",
+                        "summary":  "BigQueryでGitフォルダ内のパイプライン作成・保存・管理がPreview、通常フォルダでのパイプライン管理がGAになりました。自動採番するIdentity列もPreview、BigQuery GraphはGAになり、生成AI関数の日次トークンクォータ設定も復旧しました。現行プロジェクトへの直接影響は確認していません。",
+                        "report":  "2026-09-01.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-31",
+                        "kind":  "GA / Data stores",
+                        "title":  "Gemini EnterpriseがAssured Workloads内の連携データストアに対応",
+                        "summary":  "Gemini Enterpriseで、FedRAMP Highの統制を適用するAssured Workloadsフォルダ内のプロジェクトから、Google Workspaceおよび第三者の連携データストアへ接続できる機能がGAになりました。現行プロジェクトへの直接影響は確認していません。",
+                        "report":  "2026-09-01.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-08-28",
                         "kind":  "Public Preview / Data stores",
@@ -1612,6 +1642,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-01",
+                        "href":  "2026-09-01.html",
+                        "summary":  "Genesys Architectのネイティブ操作追加、BigQueryパイプライン更新、Gemini Enterprise連携データストアGA、東京・大阪Operational、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-08-31",
                         "href":  "2026-08-31.html",
