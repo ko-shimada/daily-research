@@ -330,6 +330,42 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-09-01",
+                        "kind":  "Incident / Resolved",
+                        "title":  "us-central1-bのネットワーク障害でCloud RunとBigQueryが一時影響",
+                        "summary":  "us-central1-bの一部で定期ネットワークメンテナンスを契機とするパケット損失とエラーが発生し、Cloud RunとBigQueryを含む複数サービスが影響を受けました。障害は9月1日7:44～11:52（米国太平洋時間）で、公式ステータスでは復旧済みです。現行プロジェクトの配置先と実影響は確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-02.html#svc-cloudrun",
+                        "source":  "https://status.cloud.google.com/incidents/J5ia5t9p3g9Q5Wi7r8Ev"
+                    },
+                    {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-09-01",
+                        "kind":  "Preview / Agent Identity",
+                        "title":  "Cloud RunでAgent IdentityとAgent Registry連携をPreview提供",
+                        "summary":  "Cloud Runのサービスとジョブで、システム管理のAgent IdentityによるAIエージェント／MCPサーバー認証とAgent Registryへの自動登録を構成できるようになりました。Preview機能のため、採用時は権限、登録情報、ロールバック方法を確認します。",
+                        "report":  "2026-09-02.html#svc-cloudrun",
+                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-01",
+                        "kind":  "Change / Pricing",
+                        "title":  "Agent PlatformのsessionとMemory Bank computeでメータリングを開始",
+                        "summary":  "Gemini Enterprise Agent Platformのcompute SKUで、sessionとMemory Bank computeの利用量メータリングが有効になりました。該当機能を利用する場合は、課金明細、予算アラート、利用量監視を確認します。現行プロジェクトでの利用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-02.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-09-01",
+                        "kind":  "Release / CLI",
+                        "title":  "Cloud SDK 583.0.0でAgent Identity設定フラグを追加",
+                        "summary":  "Cloud SDK 583.0.0で、Cloud RunのAgent Registry／Agent Identityを構成する`--identity-certificate`、`--identity-type`、`--functional-type`が追加されました。BigQueryのAWS接続では`--s3_service_directory_service`が非推奨となり、`--service_directory_service`への移行が案内されています。",
+                        "report":  "2026-09-02.html#svc-cloudsdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "genesys-cloud",
                         "date":  "2026-08-31",
                         "kind":  "Feature / Architect",
@@ -1642,6 +1678,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-02",
+                        "href":  "2026-09-02.html",
+                        "summary":  "Cloud RunのAgent Identity連携Preview、Agent Platformメータリング開始、Cloud SDK 583.0.0、us-central1-b障害復旧、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-09-01",
                         "href":  "2026-09-01.html",
