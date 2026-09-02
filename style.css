@@ -370,7 +370,19 @@ i.ti { font-size: 14px; vertical-align: -2px; }
   .rpt-header { flex-direction: column; }
   .alert-item { grid-template-columns: 120px 1fr; }
   .alert-item a.src-link { grid-column: 2; }
+  .status-table,
+  .other-table { table-layout: fixed; }
   .status-table { font-size: 12px; }
+  .status-table th,
+  .status-table td,
+  .other-table td,
+  .svc-name { overflow-wrap: anywhere; }
+  .status-table .svc-col { width: 29%; }
+  .status-table th:nth-child(2),
+  .status-table td:nth-child(2) { width: 24%; }
+  .status-table .dt-col { width: 13%; }
+  .other-table .svc-col { width: 36%; }
+  .svc-hd > * { min-width: 0; }
 }
 
 /* ================================================================
