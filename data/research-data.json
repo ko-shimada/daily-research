@@ -330,6 +330,24 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-02",
+                        "kind":  "GA / Model",
+                        "title":  "Gemini Enterprise Agent PlatformでGemini 3.8 FlashがGA",
+                        "summary":  "Gemini Enterprise Agent PlatformでGemini 3.8 FlashがGAとなり、本番利用可能になりました。Gemini Enterpriseでは`global`、`us`、`eu`リージョンで利用できます。現行プロジェクトでのモデル採用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-03.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-02",
+                        "kind":  "Change / Driver",
+                        "title":  "BigQuery向けSimba JDBCドライバーを更新",
+                        "summary":  "BigQuery向けSimba JDBCドライバーの更新版が公開されました。公式リリースノートには変更内容や移行期限の記載がないため、利用中の場合は導入前にドライバー固有のリリースノートと互換性を確認します。現行プロジェクトでの利用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-03.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "cloud-run",
                         "date":  "2026-09-01",
                         "kind":  "Incident / Resolved",
@@ -1678,6 +1696,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-03",
+                        "href":  "2026-09-03.html",
+                        "summary":  "Gemini 3.8 Flash GA、BigQuery向けSimba JDBCドライバー更新、Genesys東京・大阪Operational、Google Cloud広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-09-02",
                         "href":  "2026-09-02.html",
