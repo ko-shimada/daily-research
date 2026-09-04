@@ -330,6 +330,33 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-03",
+                        "kind":  "GA / Analytics",
+                        "title":  "会話型分析がマーケットバスケット分析の質問に対応",
+                        "summary":  "BigQueryの会話型分析で、マーケットバスケット分析に関する質問への対応がGAになりました。購買データ分析向けの機能であり、現行のボイスボット／チャットボットへの直接影響は確認していません。",
+                        "report":  "2026-09-04.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-03",
+                        "kind":  "GA / Observability",
+                        "title":  "Gemini Enterpriseでエージェントのレイテンシーとエラー率を可視化",
+                        "summary":  "Gemini EnterpriseのObservabilityで、エージェントのTTFT・TTFA・TTLTと、応答クラス別のエラー率を確認できるビューがGAになりました。現行プロジェクトでの利用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-04.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vpc-service-controls",
+                        "date":  "2026-09-03",
+                        "kind":  "Preview / Perimeter",
+                        "title":  "削除済みIAM主体を含むサービス境界の取得・更新に対応",
+                        "summary":  "VPC Service Controlsで、削除済みのユーザー、グループ、サービスアカウントを含むサービス境界を、メールアドレス不正エラーなしで取得・更新できる機能がPreviewになりました。採用時は有効化条件と境界変更手順を確認します。",
+                        "report":  "2026-09-04.html#svc-vpcsc",
+                        "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-09-02",
                         "kind":  "GA / Model",
@@ -1696,6 +1723,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-04",
+                        "href":  "2026-09-04.html",
+                        "summary":  "Gemini Enterpriseエージェント監視指標GA、BigQuery会話型分析GA、VPC Service Controls境界管理Preview、Genesys東京・大阪Operational、Google Cloud広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-09-03",
                         "href":  "2026-09-03.html",
