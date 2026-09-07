@@ -330,6 +330,45 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-04",
+                        "kind":  "GA / Data Connector",
+                        "title":  "Gemini EnterpriseにMonday連携データストアを追加",
+                        "summary":  "Gemini Enterpriseの連携データストアで、ワークマネジメントSaaS「Monday」のデータをGAで検索・参照できるようになりました。現行プロジェクトでの利用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-07.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-04",
+                        "kind":  "GA / Workspace",
+                        "title":  "Gemini Enterpriseにプロジェクト作成・管理機能を追加",
+                        "summary":  "Gemini Enterpriseで、エージェントやアプリをプロジェクト単位で作成・管理できる機能がGAになりました。現行プロジェクトでの利用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-07.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-03",
+                        "kind":  "GA / Workflow",
+                        "title":  "Gemini EnterpriseのWorkflow BuilderがGA",
+                        "summary":  "Gemini Enterpriseでノーコードでワークフローを作成できるWorkflow BuilderがGAになりました。9月3日付の更新で、前回レポート作成時点では未確認でした。現行プロジェクトでの利用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-07.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "chatplus",
+                        "date":  "2026-09-03",
+                        "kind":  "月次更新",
+                        "title":  "ChatPlus 8月アップデートまとめ",
+                        "summary":  "ChatPlusの8月アップデートで、Google Drive連携、Markdown・サイトマップの学習対応、検証機能の100件拡張、ハルシネーションリスク分析のプロンプト改善案、レポートのAIエージェント／チャットタグ絞り込み、有人チャット自動翻訳の言語指定、通知タイミング設定、ツリーエディタのURL・訪問者属性別出し分け、権限設定のアカウント間コピーが追加されました。ChatPlus運用に直接影響するため🔥対象です。",
+                        "report":  "2026-09-07.html#svc-chatplus",
+                        "source":  "https://chatplus.jp/news/update-202608/",
+                        "hotProjects":  [
+                                            "chatbot"
+                                        ]
+                    },
+                    {
                         "serviceId":  "bigquery",
                         "date":  "2026-09-03",
                         "kind":  "GA / Analytics",
@@ -1723,6 +1762,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-07",
+                        "href":  "2026-09-07.html",
+                        "summary":  "Gemini Enterpriseにデータストア・プロジェクト管理・Workflow Builder追加、ChatPlus 8月アップデートまとめ公開、Genesys東京・大阪Operational、Google Cloud広域重大障害なし、ChatPlus全ソース到達成功"
+                    },
                     {
                         "date":  "2026-09-04",
                         "href":  "2026-09-04.html",
