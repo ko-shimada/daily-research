@@ -330,6 +330,15 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-09-07",
+                        "kind":  "Release / 対象確認",
+                        "title":  "Genesys Cloud 9月7日リリースを確認",
+                        "summary":  "9月7日リリースを確認しました。日本語ボイスボットで利用中のDialogflow CX連携、Architect音声フロー、STT/TTSに直接影響する変更はなく、🔥対象にはしていません。",
+                        "report":  "2026-09-08.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
+                    },
+                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-09-04",
                         "kind":  "GA / Data Connector",
@@ -1762,6 +1771,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-08",
+                        "href":  "2026-09-08.html",
+                        "summary":  "Genesys Cloud 9月7日リリースは日本語ボイスボットへの直接影響なし、東京・大阪Operational、Google Cloud対象サービス新規差分・広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-09-07",
                         "href":  "2026-09-07.html",
