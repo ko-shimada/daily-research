@@ -330,6 +330,33 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-08",
+                        "kind":  "Preview / Conversational analytics",
+                        "title":  "会話型分析で予測モデリングの質問に対応",
+                        "summary":  "BigQueryの会話型分析で、`AI.PREDICT`関数を使う予測モデリングの質問にPreviewで対応しました。現行プロジェクトで会話型分析を利用していることを確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-09.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-09-08",
+                        "kind":  "Preview / Jobs",
+                        "title":  "Cloud Run Jobsで最長12時間の遅延実行に対応",
+                        "summary":  "Cloud Run Jobsで、非緊急ジョブを最長12時間遅延実行し、低価格の実行枠を利用できる機能がPreviewになりました。現行のWebhook・API実行基盤に対する直接影響は確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-09.html#svc-cloud-run",
+                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vpc-service-controls",
+                        "date":  "2026-09-08",
+                        "kind":  "GA / Integration",
+                        "title":  "Observability APIのサービス境界連携がGA",
+                        "summary":  "VPC Service ControlsでObservability APIをサービス境界の対象サービスとして利用できる連携がGAになりました。現行プロジェクトでのObservability API利用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-09.html#svc-vpcsc",
+                        "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "genesys-cloud",
                         "date":  "2026-09-07",
                         "kind":  "Release / 対象確認",
@@ -1771,8 +1798,13 @@
                     }
                 ],
     "reports":  [
-                    {
-                        "date":  "2026-09-08",
+                      {
+                          "date":  "2026-09-09",
+                          "href":  "2026-09-09.html",
+                          "summary":  "BigQuery会話型分析の予測モデリングPreview、Cloud Run Jobs遅延実行Preview、VPC Service ControlsのObservability API連携GAを確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                      },
+                      {
+                          "date":  "2026-09-08",
                         "href":  "2026-09-08.html",
                         "summary":  "Genesys Cloud 9月7日リリースは日本語ボイスボットへの直接影響なし、東京・大阪Operational、Google Cloud対象サービス新規差分・広域重大障害なし、ChatPlus FAQ到達失敗"
                     },
