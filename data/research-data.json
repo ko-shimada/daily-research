@@ -330,6 +330,33 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-09",
+                        "kind":  "Feature / Security",
+                        "title":  "Agent GatewayがVPC Service Controlsに対応",
+                        "summary":  "Gemini Enterprise Agent PlatformのAgent GatewayでVPC Service Controlsの境界ルールを適用できるようになりました。対象は2026年9月8日より後に作成し、VPC接続テンプレートを`ALL_TRAFFIC`で構成したデプロイです。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-10.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-09",
+                        "kind":  "Feature / Models",
+                        "title":  "生成AI関数で新しいGeminiモデルに対応",
+                        "summary":  "BigQueryの生成AI関数が`gemini-3.5-flash-lite`、`gemini-3.6-flash`、`gemini-3.7-flash`に対応しました。現行プロジェクトでの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-10.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-09-09",
+                        "kind":  "Release / Deprecation",
+                        "title":  "Cloud SDK 584.0.0を公開",
+                        "summary":  "Cloud SDK 584.0.0で`gcloud storage buckets anywhere-caches pause`が非推奨となり、Linux同梱PythonのOpenSSLがCVE-2026-42508対応版の3.5.8へ更新されました。対象コマンドの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-10.html#svc-cloudsdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "bigquery",
                         "date":  "2026-09-08",
                         "kind":  "Preview / Conversational analytics",
@@ -1798,6 +1825,11 @@
                     }
                 ],
     "reports":  [
+                      {
+                          "date":  "2026-09-10",
+                          "href":  "2026-09-10.html",
+                          "summary":  "Agent GatewayのVPC Service Controls対応、BigQuery生成AI関数のGemini 3.5/3.6/3.7対応、Cloud SDK 584.0.0を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                      },
                       {
                           "date":  "2026-09-09",
                           "href":  "2026-09-09.html",
