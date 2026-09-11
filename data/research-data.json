@@ -331,6 +331,33 @@
     "updates":  [
                     {
                         "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-10",
+                        "kind":  "Feature / Billing",
+                        "title":  "Gemini Enterprise従量課金版とAI developer toolsの利用対象を拡大",
+                        "summary":  "請求書払いのCloud Billingアカウントに紐づく全プロジェクトで、Gemini Enterprise Pay-as-you-go editionへの加入とAI developer toolsの利用が可能になりました。従来は案内メールを受け取った顧客に限定されていました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-11.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-10",
+                        "kind":  "Preview / Analytics",
+                        "title":  "分析・機械学習評価向け3関数をPreview提供",
+                        "summary":  "BigQueryで、会話型分析から相関を求める`ML.CORRELATION`、保存済みモデルなしで分類・回帰を評価する`ML.METRICS`、時系列への介入効果を測る`AI.CAUSAL_EFFECT`がPreviewになりました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-11.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-storage",
+                        "date":  "2026-09-10",
+                        "kind":  "GA / Operations",
+                        "title":  "Storage Intelligence advisorがGA",
+                        "summary":  "組織、フォルダ、プロジェクトを横断してCloud Storage環境を監視・管理できるStorage Intelligence advisorがGAになりました。現行プロジェクトでの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-11.html#svc-storage",
+                        "source":  "https://docs.cloud.google.com/storage/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
                         "date":  "2026-09-09",
                         "kind":  "Feature / Security",
                         "title":  "Agent GatewayがVPC Service Controlsに対応",
@@ -1825,6 +1852,11 @@
                     }
                 ],
     "reports":  [
+                      {
+                          "date":  "2026-09-11",
+                          "href":  "2026-09-11.html",
+                          "summary":  "BigQueryの分析・機械学習評価向け3関数Preview、Storage Intelligence advisor GA、Gemini Enterprise従量課金版の利用対象拡大を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                      },
                       {
                           "date":  "2026-09-10",
                           "href":  "2026-09-10.html",
