@@ -1853,6 +1853,11 @@
                 ],
     "reports":  [
                       {
+                          "date":  "2026-09-12",
+                          "href":  "2026-09-12.html",
+                          "summary":  "登録対象サービスの新規リリース差分なし。Genesys東京・大阪はOperationalで9月11日・12日の新規インシデントなし、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                      },
+                      {
                           "date":  "2026-09-11",
                           "href":  "2026-09-11.html",
                           "summary":  "BigQueryの分析・機械学習評価向け3関数Preview、Storage Intelligence advisor GA、Gemini Enterprise従量課金版の利用対象拡大を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
