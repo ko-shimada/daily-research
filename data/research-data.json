@@ -1853,6 +1853,11 @@
                 ],
     "reports":  [
                       {
+                          "date":  "2026-09-14",
+                          "href":  "2026-09-14.html",
+                          "summary":  "登録対象サービスの新規リリース差分なし。Genesys 9月14日予定機能は未提供、東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                      },
+                      {
                           "date":  "2026-09-13",
                           "href":  "2026-09-13.html",
                           "summary":  "登録対象サービスの新規リリース差分なし。Genesys東京・大阪はOperational、Google Cloudは対象サービスの障害表示なし、ChatPlus FAQ到達失敗"
