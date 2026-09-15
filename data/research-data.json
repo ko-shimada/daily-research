@@ -330,6 +330,15 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-14",
+                        "kind":  "Change / Preview",
+                        "title":  "ODBCドライバー更新とBigQuery機能2件をPreview提供",
+                        "summary":  "BigQuery向けSimba ODBCドライバーが更新され、BigQuery GraphメタデータのKnowledge Catalogへの自動取り込み・検索と、集約関数内の`WHERE`句による入力絞り込みがPreviewになりました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-15.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-09-10",
                         "kind":  "Feature / Billing",
@@ -1852,6 +1861,11 @@
                     }
                 ],
     "reports":  [
+                      {
+                          "date":  "2026-09-15",
+                          "href":  "2026-09-15.html",
+                          "summary":  "BigQueryのSimba ODBCドライバー更新と2機能Previewを確認。Genesys 9月14日リリースは対象外機能のみ、東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                      },
                       {
                           "date":  "2026-09-14",
                           "href":  "2026-09-14.html",
