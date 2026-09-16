@@ -330,6 +330,24 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-15",
+                        "kind":  "Preview / AI",
+                        "title":  "強化学習ファインチューニング管理をPreview提供",
+                        "summary":  "Gemini Enterprise Agent Platformで、Geminiモデルの強化学習ファインチューニングジョブをGoogle Cloudコンソールから作成・監視・テストできる機能がPreviewになりました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-16.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-09-15",
+                        "kind":  "Breaking / Deprecation",
+                        "title":  "Cloud SDK 585.0.0で旧設定を非推奨・削除",
+                        "summary":  "Cloud Storage Anywhere Cacheの`ADMIT_ON_SECOND_MISS`選択肢が非推奨になり、企業証明書設定の旧`--tls-offload`フラグが削除、旧C++ ECP TLS Offload Engineが非推奨になりました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-16.html#svc-cloud-sdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "bigquery",
                         "date":  "2026-09-14",
                         "kind":  "Change / Preview",
@@ -1861,6 +1879,11 @@
                     }
                 ],
     "reports":  [
+                      {
+                          "date":  "2026-09-16",
+                          "href":  "2026-09-16.html",
+                          "summary":  "Gemini Enterprise Agent Platformの強化学習ファインチューニングPreviewとCloud SDK 585.0.0のBreaking変更を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                      },
                       {
                           "date":  "2026-09-15",
                           "href":  "2026-09-15.html",
