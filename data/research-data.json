@@ -330,6 +330,28 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "cx-agent-studio",
+                        "date":  "2026-09-16",
+                        "kind":  "Prerelease / Fixed / Voice / Chat",
+                        "title":  "次期Google Cloud CCaaS 6.13で通話・チャット処理の修正を予告",
+                        "summary":  "Google Cloud CCaaS 6.13の事前リリース情報で、モバイル着信のエンドユーザー側通話失敗、agent desktopの通話・チャットデータ消失、未応答転送後も受信エージェントが通話中になる問題、チャット終了イベントの重複などの修正が予告されました。音声・チャット双方の運用に直接関係するため🔥対象です。",
+                        "report":  "2026-09-17.html#svc-cx-agent-studio",
+                        "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-16",
+                        "kind":  "Preview / Restored",
+                        "title":  "migration lineageをPreview提供、AI.KEY_DRIVERSを再開",
+                        "summary":  "移行元データベースのデータフローと接続関係を可視化するmigration lineage serviceがPreviewになり、指標の有意な変化要因を特定する`AI.KEY_DRIVERS`関数のPreview提供が再開されました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-17.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-09-15",
                         "kind":  "Preview / AI",
@@ -1879,6 +1901,11 @@
                     }
                 ],
     "reports":  [
+                      {
+                          "date":  "2026-09-17",
+                          "href":  "2026-09-17.html",
+                          "summary":  "Google Cloud CCaaS 6.13の通話・チャット修正予告とBigQueryのmigration lineage Preview／AI.KEY_DRIVERS再開を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                      },
                       {
                           "date":  "2026-09-16",
                           "href":  "2026-09-16.html",
