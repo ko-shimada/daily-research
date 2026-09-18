@@ -330,6 +330,15 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-17",
+                        "kind":  "GA / Testing",
+                        "title":  "BigQueryパイプラインの単体テストがGA",
+                        "summary":  "BigQueryパイプラインで、モックデータと期待結果を使ってSQL変換ロジックを検証する単体テスト機能がGAになりました。現行プロジェクトでの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-18.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "cx-agent-studio",
                         "date":  "2026-09-16",
                         "kind":  "Prerelease / Fixed / Voice / Chat",
@@ -1901,6 +1910,11 @@
                     }
                 ],
     "reports":  [
+                      {
+                          "date":  "2026-09-18",
+                          "href":  "2026-09-18.html",
+                          "summary":  "BigQueryパイプラインの単体テストGAを確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                      },
                       {
                           "date":  "2026-09-17",
                           "href":  "2026-09-17.html",
