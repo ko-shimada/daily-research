@@ -331,6 +331,76 @@
     "updates":  [
                     {
                         "serviceId":  "bigquery",
+                        "date":  "2026-09-22",
+                        "kind":  "Preview / Agent Integration",
+                        "title":  "BigQuery data agentのGemini Enterprise公開を簡素化",
+                        "summary":  "BigQuery data agentをAgent Registryへ登録し、Google管理認証情報でGemini Enterpriseへ取り込める機能がPreviewになりました。同一プロジェクトかつAgent Gatewayリージョンが一致する場合、A2A JSON cardやOAuth client credentialsの手動設定が不要になります。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-24.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-09-22",
+                        "kind":  "Breaking / Deprecation",
+                        "title":  "Cloud SDK 586.0.0で複数コンポーネントを削除・非推奨化",
+                        "summary":  "Cloud SDK 586.0.0で、同梱のKustomizeとKptを削除し、`google-cloud-sdk` Snap packageを9月29日に、`gcloud-man-pages`を590.0.0で削除する予定が示されました。Cloud ServicesのAPI key作成・更新では`--api-target`制限が必須になり、`--clear-restrictions`が削除されました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-24.html#svc-cloud-sdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-22",
+                        "kind":  "Model / Available",
+                        "title":  "Claude Opus 5.5をModel Gardenで提供",
+                        "summary":  "Gemini Enterprise Agent PlatformのModel GardenでAnthropic Claude Opus 5.5が利用可能になりました。現行エージェントでの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-24.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "cx-agent-studio",
+                        "date":  "2026-09-21",
+                        "kind":  "Prerelease / Fixed / Voice",
+                        "title":  "次期Google Cloud CCaaS 6.15で仮想エージェント通話を修正予定",
+                        "summary":  "Google Cloud CCaaS 6.15の事前リリース情報で、仮想エージェントから有人キューへ転送できない問題、仮想エージェントでデフレクトした通話の録音欠落・誤紐付け、IVR通話のcustom wrap-up eventがDialogflow CXへ送信されない問題などの修正が予告されました。音声運用に直接関係するため🔥対象です。",
+                        "report":  "2026-09-24.html#svc-cx-agent-studio",
+                        "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-21",
+                        "kind":  "GA / AI",
+                        "title":  "クエリ実行履歴表示がGA、生成AI関数がGemini 3.8 Flash対応",
+                        "summary":  "BigQuery StudioのQuery results paneで直近のクエリ実行履歴を確認する機能がGAになり、BigQuery generative AI functionsが`gemini-3.8-flash`に対応しました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-24.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cx-agent-studio",
+                        "date":  "2026-09-18",
+                        "kind":  "Release / Fixed / Voice / Chat",
+                        "title":  "Google Cloud CCaaS 6.13をリリース",
+                        "summary":  "Google Cloud CCaaS 6.13がリリースされ、モバイル着信のエンドユーザー側通話失敗、agent desktopの通話・チャットデータ消失、転送先エージェントの通話中状態残留、チャット終了イベント重複などが修正されました。音声・チャット双方の運用に直接関係するため🔥対象です。",
+                        "report":  "2026-09-24.html#svc-cx-agent-studio",
+                        "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-18",
+                        "kind":  "Breaking / SDK",
+                        "title":  "Agent Platform SDK for Python 2.0.1でnamespaceを再編",
+                        "summary":  "`google-cloud-agentplatform` 2.0.1が公開され、生成AIモジュールをGoogle Gen AI SDKへ移行し、agent surfaceを`google-cloud-aiplatform`から専用packageへ分離してnamespaceを再編しました。移行ガイド確認が必要なBreaking changeですが、現行利用を確認できないため🔥対象にはしていません。",
+                        "report":  "2026-09-24.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
                         "date":  "2026-09-17",
                         "kind":  "GA / Testing",
                         "title":  "BigQueryパイプラインの単体テストがGA",
@@ -1910,6 +1980,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-24",
+                        "href":  "2026-09-24.html",
+                        "summary":  "Google Cloud CCaaS 6.15の音声系修正予告、BigQuery data agent連携Preview、Cloud SDK 586.0.0のBreaking変更を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                       {
                           "date":  "2026-09-18",
                           "href":  "2026-09-18.html",
