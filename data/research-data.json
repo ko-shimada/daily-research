@@ -1981,6 +1981,11 @@
                 ],
     "reports":  [
                     {
+                        "date":  "2026-09-25",
+                        "href":  "2026-09-25.html",
+                        "summary":  "登録対象サービスの新規リリース差分なし。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
                         "date":  "2026-09-24",
                         "href":  "2026-09-24.html",
                         "summary":  "Google Cloud CCaaS 6.15の音声系修正予告、BigQuery data agent連携Preview、Cloud SDK 586.0.0のBreaking変更を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
