@@ -331,6 +331,15 @@
     "updates":  [
                     {
                         "serviceId":  "bigquery",
+                        "date":  "2026-09-24",
+                        "kind":  "GA / UI",
+                        "title":  "BigQuery Studioのクエリ結果で行番号を固定表示",
+                        "summary":  "BigQuery StudioのQuery results tableで横スクロールしても左側の行番号が表示され続ける機能がGAになりました。幅の広い結果でも行を追いやすくなります。現行プロジェクトへの直接影響は確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-28.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
                         "date":  "2026-09-22",
                         "kind":  "Preview / Agent Integration",
                         "title":  "BigQuery data agentのGemini Enterprise公開を簡素化",
@@ -1980,6 +1989,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-28",
+                        "href":  "2026-09-28.html",
+                        "summary":  "BigQuery Studioの行番号固定表示GAを追加確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-09-25",
                         "href":  "2026-09-25.html",
