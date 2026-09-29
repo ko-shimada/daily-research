@@ -330,6 +330,60 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-09-28",
+                        "kind":  "Feature / Voice Operations",
+                        "title":  "組織単位の同時通話セッション使用量をリアルタイム表示",
+                        "summary":  "Genesys Cloudで、クラウドメディアの同時通話セッション使用数と設定済み容量を組織単位でリアルタイム確認できるようになりました。繁忙時の容量監視と障害切り分けを支援する運用機能で、通話処理仕様の変更ではないため🔥対象にはしていません。",
+                        "report":  "2026-09-29.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/september-28-2026/"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-28",
+                        "kind":  "Preview / API",
+                        "title":  "Interactions APIがGemini 3モデルに対応",
+                        "summary":  "Gemini Enterprise Agent PlatformのInteractions APIでGemini 3モデルをPreview利用できるようになりました。現行エージェントでの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-29.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-28",
+                        "kind":  "Feature / IAM",
+                        "title":  "Gemini Enterpriseのアプリとデータストアにリソース単位IAMを追加",
+                        "summary":  "Gemini Enterpriseで、アプリやデータストアごとにAdmin、Viewer、User権限を付与できるようになりました。Google Cloudコンソール、CLI、REST APIから個別リソースのアクセスを制御できます。現行構成への直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-29.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-28",
+                        "kind":  "Model / Available",
+                        "title":  "Claude Sonnet 5.5をModel Gardenで提供",
+                        "summary":  "Gemini Enterprise Agent PlatformのModel GardenでAnthropic Claude Sonnet 5.5が利用可能になりました。現行エージェントでの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-29.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-09-28",
+                        "kind":  "Preview / Networking",
+                        "title":  "Cloud RunのグローバルなカスタムURLをPreview提供",
+                        "summary":  "Cloud Runサービスに、DNS設定やロードバランサーを用意せず追加費用なしでグローバルなカスタムURLを設定できる機能がPreviewになりました。現行Webhook構成への直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-29.html#svc-cloud-run",
+                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-28",
+                        "kind":  "Feature / Streaming",
+                        "title":  "continuous queriesの出力をIceberg managed tablesへ直接書き込み",
+                        "summary":  "BigQuery continuous queriesが生成した行を、`INSERT` DMLでApache Iceberg managed tablesへ直接書き込めるようになりました。現行分析基盤への直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-29.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
                         "serviceId":  "bigquery",
                         "date":  "2026-09-24",
                         "kind":  "GA / UI",
@@ -1989,6 +2043,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-29",
+                        "href":  "2026-09-29.html",
+                        "summary":  "Genesysの同時通話セッション監視、Cloud RunカスタムURLPreview、BigQueryとAgent Platformの更新を確認。東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-09-28",
                         "href":  "2026-09-28.html",
