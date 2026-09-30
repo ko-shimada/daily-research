@@ -330,6 +330,42 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-29",
+                        "kind":  "GA / Preview / Analytics",
+                        "title":  "AI.KEY_DRIVERSがGA、フェイルオーバー履歴をPreview提供",
+                        "summary":  "BigQueryの`AI.KEY_DRIVERS`関数がGAになり、合計可能な指標に統計的に有意な変化を与えるデータ区分を特定できます。managed disaster recoveryを使う予約では、`INFORMATION_SCHEMA.FAILOVER_HISTORY`からフェイルオーバー履歴をほぼリアルタイムに取得する機能がPreviewになりました。現行分析基盤への直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-30.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-09-29",
+                        "kind":  "GA / Scaling",
+                        "title":  "CPU・同時実行数のカスタム目標値によるスケーリング制御がGA",
+                        "summary":  "Cloud Runで、CPU使用率または同時実行数のカスタム目標値を指定するスケーリング制御がGAになりました。既定値を変更しているサービスではスケール判断に関係しますが、現行Webhook構成への直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-30.html#svc-cloud-run",
+                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-09-29",
+                        "kind":  "Breaking / CLI",
+                        "title":  "Cloud SDK 587.0.0でCloud Storageコマンドを削除",
+                        "summary":  "Cloud SDK 587.0.0で`gcloud storage buckets anywhere-caches pause`が削除され、Python 3.15対応やAgent Registry・semantic governance policy関連のCLI更新が入りました。削除対象コマンドの現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-30.html#svc-cloud-sdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-28",
+                        "kind":  "GA / MCP",
+                        "title":  "BigQuery Data Transfer Service MCP serverがGA",
+                        "summary":  "BigQuery Data Transfer Service MCP serverがGAになりました。AIアプリケーションから転送構成を扱うための公式MCP連携ですが、現行エージェントでの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-30.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "genesys-cloud",
                         "date":  "2026-09-28",
                         "kind":  "Feature / Voice Operations",
@@ -2043,6 +2079,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-09-30",
+                        "href":  "2026-09-30.html",
+                        "summary":  "BigQueryのAI.KEY_DRIVERS GA・フェイルオーバー履歴Preview、Cloud Runスケーリング制御GA、Cloud SDK 587.0.0のBreaking変更を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-09-29",
                         "href":  "2026-09-29.html",
