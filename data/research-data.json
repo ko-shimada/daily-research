@@ -331,6 +331,33 @@
     "updates":  [
                     {
                         "serviceId":  "bigquery",
+                        "date":  "2026-09-30",
+                        "kind":  "GA / Analytics / Security",
+                        "title":  "Security centerなど分析・運用機能をGA提供",
+                        "summary":  "BigQuery Security center、jobs explorerのレイアウト・フィルター改善、永続オブジェクトテーブルなしでCloud Storage上の非構造化データを探索する`OBJ.LIST`関数がGAになりました。クエリ計画では`UPDATE`、`DELETE`、`MERGE`、`EXPORT`の実行ステップも確認できます。現行分析基盤への直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-10-01.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-30",
+                        "kind":  "GA / Observability",
+                        "title":  "App Topology APIがGA",
+                        "summary":  "Gemini Enterprise Agent Platformでエージェントのトポロジーを提供するApp Topology APIがGAになりました。Topologiesページのクエリビルダーと、Agent Registryにおける単一エージェントのトポロジー表示も改善されました。現行エージェントへの直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-10-01.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vpc-service-controls",
+                        "date":  "2026-09-30",
+                        "kind":  "GA / Security",
+                        "title":  "フォルダ・組織単位の境界ルールと保護がGA",
+                        "summary":  "VPC Service Controlsで、ingress／egressルールのリソースにGoogle Cloudのフォルダと組織を指定する機能、およびフォルダ階層配下のプロジェクトをサービス境界で自動保護する機能がGAになりました。現行構成への直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-10-01.html#svc-vpc-sc",
+                        "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
                         "date":  "2026-09-29",
                         "kind":  "GA / Preview / Analytics",
                         "title":  "AI.KEY_DRIVERSがGA、フェイルオーバー履歴をPreview提供",
@@ -2079,6 +2106,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-10-01",
+                        "href":  "2026-10-01.html",
+                        "summary":  "BigQueryのSecurity center・jobs explorer改善・OBJ.LIST GA、Agent PlatformのApp Topology API GA、VPC Service Controlsのフォルダ／組織対応GAを確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-09-30",
                         "href":  "2026-09-30.html",
