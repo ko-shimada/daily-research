@@ -331,6 +331,33 @@
     "updates":  [
                     {
                         "serviceId":  "bigquery",
+                        "date":  "2026-10-01",
+                        "kind":  "GA / Analytics / Data Governance",
+                        "title":  "グラフ対話とパイプラインのメタデータ強化がGA",
+                        "summary":  "BigQueryのConversational Analyticsで、複数のグラフ、テーブル、ビュー、UDFをデータソースにしたグラフ対話がGAになりました。BigQuery pipelinesではメタデータ自動補完、Knowledge Catalogのデータ品質スコアカード連携、Data Engineering Agentによるセマンティックメタデータ生成がGAになり、Simba JDBCドライバーも更新されました。現行分析基盤への直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-10-02.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-30",
+                        "kind":  "Preview / Observability",
+                        "title":  "Agent GatewayとCloud Traceの統合をPreview提供",
+                        "summary":  "Gemini Enterprise Agent PlatformのAgent GatewayでCloud Trace統合がPreviewになりました。エージェントからゲートウェイ、Google Cloudサービス、ツール、他エージェント、MCPサーバーまでのリクエスト経路を追跡できます。現行エージェントへの直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-10-02.html#svc-agent-gateway",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-storage",
+                        "date":  "2026-09-30",
+                        "kind":  "Feature / Data Integrity",
+                        "title":  "クライアントライブラリのE2Eチェックサムを既定化",
+                        "summary":  "Cloud Storageクライアントライブラリで、オブジェクトの読み書き時に自動的なエンドツーエンドのチェックサム検証が既定で行われるようになりました。クライアントからストレージまでのデータ整合性を確認する機能です。現行実装への直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-10-02.html#svc-cloud-storage",
+                        "source":  "https://docs.cloud.google.com/storage/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
                         "date":  "2026-09-30",
                         "kind":  "GA / Analytics / Security",
                         "title":  "Security centerなど分析・運用機能をGA提供",
@@ -2106,6 +2133,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-10-02",
+                        "href":  "2026-10-02.html",
+                        "summary":  "BigQueryのグラフ対話・パイプラインメタデータ強化GA、Agent GatewayのCloud Trace統合Preview、Cloud StorageのE2Eチェックサム既定化を確認。Genesys東京・大阪は正常、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-10-01",
                         "href":  "2026-10-01.html",
