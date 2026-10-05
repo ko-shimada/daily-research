@@ -331,6 +331,24 @@
     "updates":  [
                     {
                         "serviceId":  "bigquery",
+                        "date":  "2026-10-02",
+                        "kind":  "GA / SDK / Model Support",
+                        "title":  "Rust SDKがGA、Data Engineering AgentがGemini 3.7 Flashに対応",
+                        "summary":  "BigQuery向けRust SDKがGAになりました。Data Engineering Agentはus、eu、globalのマルチリージョンでgemini-3.7-flashモデルに対応しました。現行構成との直接的な利用関係は確認できないため、hotProjectsは設定していません。",
+                        "report":  "2026-10-05.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-10-02",
+                        "kind":  "Deprecation / Schedule Change",
+                        "title":  "Gemini 2.5 Flash Imageの退役日を2027年3月に延長",
+                        "summary":  "Gemini Enterprise Agent PlatformのGemini 2.5 Flash Imageは、退役日が2026年10月2日から2027年3月15日に延長されました。現行構成での利用を確認できないため、hotProjectsは設定していません。",
+                        "report":  "2026-10-05.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
                         "date":  "2026-10-01",
                         "kind":  "GA / Analytics / Data Governance",
                         "title":  "グラフ対話とパイプラインのメタデータ強化がGA",
@@ -2133,6 +2151,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-10-05",
+                        "href":  "2026-10-05.html",
+                        "summary":  "BigQuery Rust SDK GAとData Engineering AgentのGemini 3.7 Flash対応、Agent PlatformのGemini 2.5 Flash Image退役日延長を確認。Genesys東京・大阪は正常、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
                     {
                         "date":  "2026-10-02",
                         "href":  "2026-10-02.html",
