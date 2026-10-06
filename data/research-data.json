@@ -331,6 +331,24 @@
     "updates":  [
                     {
                         "serviceId":  "bigquery",
+                        "date":  "2026-10-05",
+                        "kind":  "GA / AI / Embedding",
+                        "title":  "日本語を含むマルチモーダル埋め込みモデルgemini-embedding-2がGA",
+                        "summary":  "BigQueryのgemini-embedding-2がGAになりました。長文や日本語を含む多言語データに加え、テキスト、画像、音声、動画、PDFに対応し、AI.EMBED、AI.SIMILARITY、AI.GENERATE_EMBEDDINGで利用できます。現行プロジェクトでの利用は確認できないためhotProjectsは設定していません。",
+                        "report":  "2026-10-06.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-10-05",
+                        "kind":  "GA / Iceberg",
+                        "title":  "Icebergテーブルの柔軟な列名が既定で有効化",
+                        "summary":  "BigQueryのIceberg外部テーブルと管理テーブルで、柔軟な列名のサポートが既定で有効になりました。現行分析基盤との直接的な関連は確認できないためhotProjectsは設定していません。",
+                        "report":  "2026-10-06.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
                         "date":  "2026-10-02",
                         "kind":  "GA / SDK / Model Support",
                         "title":  "Rust SDKがGA、Data Engineering AgentがGemini 3.7 Flashに対応",
@@ -2151,6 +2169,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-10-06",
+                        "href":  "2026-10-06.html",
+                        "summary":  "BigQueryのgemini-embedding-2 GAとIceberg柔軟列名を確認。Genesys東京・大阪はOperational、Dialogflow CX文書・ChatPlus FAQの取得失敗を記録"
+                    },
                     {
                         "date":  "2026-10-05",
                         "href":  "2026-10-05.html",
