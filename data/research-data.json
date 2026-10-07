@@ -330,6 +330,45 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "chatplus",
+                        "date":  "2026-10-07",
+                        "kind":  "機能更新 / AI AgentPlus",
+                        "title":  "問い合わせ対応結果をナレッジ化する機能などを追加",
+                        "summary":  "9月の更新として、AI AgentPlusのチケットでメール対応を解決済みにすると未承認QAを生成する機能、回答段階別の表示文言、改善提案・ハルシネーションリスク分析レポートのプロンプト設定を追加しました。初回メッセージへの移動、ツリーエディタの一時保存、コンバージョン項目も拡充。チャットボット運用に直接関係するためチャットボット案件を対象にします。",
+                        "report":  "2026-10-07.html#svc-chatplus",
+                        "source":  "https://chatplus.jp/news/update-202609/",
+                        "hotProjects":  [
+                            "chatbot"
+                        ]
+                    },
+                    {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-10-07",
+                        "kind":  "Deprecation / Authentication",
+                        "title":  "Salesforceデータアクションの旧ユーザー名・パスワード認証を非推奨化",
+                        "summary":  "Genesys CloudはSalesforceデータアクションで使う旧ユーザー名・パスワード認証方式を10月7日に非推奨化しました。OAuth Client Credentials Flowへの移行が案内されています。対象環境での利用は未確認のため🔥対象にはしていません。",
+                        "report":  "2026-10-07.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/october-5-2026/"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-10-06",
+                        "kind":  "Preview / AI",
+                        "title":  "AI.CAUSAL_EFFECTで時系列データの介入効果を分析",
+                        "summary":  "BigQueryのConversational Analyticsで、時系列データに対する介入の影響を定量化するAI.CAUSAL_EFFECT関数がPreviewになりました。現行プロジェクトでの利用は確認できないため🔥対象にはしていません。",
+                        "report":  "2026-10-07.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-10-06",
+                        "kind":  "Breaking / CLI",
+                        "title":  "Cloud SDK 588.0.0でManaged Flink Clientを削除",
+                        "summary":  "Cloud SDK 588.0.0でGoogle Cloud CLIからManaged Flink Client（managed-flink-client）が削除されました。ボイスボット・チャットボットでの利用は確認できないため🔥対象にはしていません。",
+                        "report":  "2026-10-07.html#svc-cloud-sdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "bigquery",
                         "date":  "2026-10-05",
                         "kind":  "GA / AI / Embedding",
@@ -2169,6 +2208,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-10-07",
+                        "href":  "2026-10-07.html",
+                        "summary":  "ChatPlus更新、GenesysのSalesforce旧認証非推奨化、BigQuery AI.CAUSAL_EFFECT Preview、Cloud SDK Breaking変更を確認。東京・大阪は稼働中、ChatPlus FAQは取得失敗"
+                    },
                     {
                         "date":  "2026-10-06",
                         "href":  "2026-10-06.html",
