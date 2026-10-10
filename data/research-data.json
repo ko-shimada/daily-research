@@ -330,16 +330,17 @@
                  ],
     "updates":  [
                     {
-                        "serviceId":  "chatplus",
-                        "date":  "2026-10-07",
-                        "kind":  "機能更新 / AI AgentPlus",
-                        "title":  "問い合わせ対応結果をナレッジ化する機能などを追加",
-                        "summary":  "9月の更新として、AI AgentPlusのチケットでメール対応を解決済みにすると未承認QAを生成する機能、回答段階別の表示文言、改善提案・ハルシネーションリスク分析レポートのプロンプト設定を追加しました。初回メッセージへの移動、ツリーエディタの一時保存、コンバージョン項目も拡充。チャットボット運用に直接関係するためチャットボット案件を対象にします。",
-                        "report":  "2026-10-07.html#svc-chatplus",
-                        "source":  "https://chatplus.jp/news/update-202609/",
+                        "serviceId":  "conversational-agents",
+                        "date":  "2026-10-08",
+                        "kind":  "修正 / Google Cloud CCaaS 6.19",
+                        "title":  "仮想エージェント連携とチャット割当の不具合を修正",
+                        "summary":  "Google Cloud CCaaS 6.19で、同時チャット提示時に設定上限を超えて担当者へ割り当てる問題、仮想エージェントから有人窓口への誤転送、転送時に担当者の企業メールアドレスと内部IDがブラウザーのネットワーク情報へ露出する問題などを修正しました。音声の誤転送や有人接続時の遅延も修正。会話エージェント運用に直接関係するため、ボイスボットとチャットボットを対象にします。",
+                        "report":  "2026-10-10.html#svc-conversational-agents",
+                        "source":  "https://docs.cloud.google.com/release-notes",
                         "hotProjects":  [
-                            "chatbot"
-                        ]
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
                     },
                     {
                         "serviceId":  "genesys-cloud",
@@ -349,6 +350,18 @@
                         "summary":  "Genesys CloudはSalesforceデータアクションで使う旧ユーザー名・パスワード認証方式を10月7日に非推奨化しました。OAuth Client Credentials Flowへの移行が案内されています。対象環境での利用は未確認のため🔥対象にはしていません。",
                         "report":  "2026-10-07.html#svc-genesys",
                         "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/october-5-2026/"
+                    },
+                    {
+                        "serviceId":  "chatplus",
+                        "date":  "2026-10-07",
+                        "kind":  "機能更新 / AI AgentPlus",
+                        "title":  "問い合わせ対応結果をナレッジ化する機能などを追加",
+                        "summary":  "9月の更新として、AI AgentPlusのチケットでメール対応を解決済みにすると未承認QAを生成する機能、回答段階別の表示文言、改善提案・ハルシネーションリスク分析レポートのプロンプト設定を追加しました。初回メッセージへの移動、ツリーエディタの一時保存、コンバージョン項目も拡充。チャットボット運用に直接関係するためチャットボット案件を対象にします。",
+                        "report":  "2026-10-07.html#svc-chatplus",
+                        "source":  "https://chatplus.jp/news/update-202609/",
+                        "hotProjects":  [
+                                            "chatbot"
+                                        ]
                     },
                     {
                         "serviceId":  "bigquery",
@@ -371,15 +384,6 @@
                     {
                         "serviceId":  "bigquery",
                         "date":  "2026-10-05",
-                        "kind":  "GA / AI / Embedding",
-                        "title":  "日本語を含むマルチモーダル埋め込みモデルgemini-embedding-2がGA",
-                        "summary":  "BigQueryのgemini-embedding-2がGAになりました。長文や日本語を含む多言語データに加え、テキスト、画像、音声、動画、PDFに対応し、AI.EMBED、AI.SIMILARITY、AI.GENERATE_EMBEDDINGで利用できます。現行プロジェクトでの利用は確認できないためhotProjectsは設定していません。",
-                        "report":  "2026-10-06.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
-                    },
-                    {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-10-05",
                         "kind":  "GA / Iceberg",
                         "title":  "Icebergテーブルの柔軟な列名が既定で有効化",
                         "summary":  "BigQueryのIceberg外部テーブルと管理テーブルで、柔軟な列名のサポートが既定で有効になりました。現行分析基盤との直接的な関連は確認できないためhotProjectsは設定していません。",
@@ -388,11 +392,11 @@
                     },
                     {
                         "serviceId":  "bigquery",
-                        "date":  "2026-10-02",
-                        "kind":  "GA / SDK / Model Support",
-                        "title":  "Rust SDKがGA、Data Engineering AgentがGemini 3.7 Flashに対応",
-                        "summary":  "BigQuery向けRust SDKがGAになりました。Data Engineering Agentはus、eu、globalのマルチリージョンでgemini-3.7-flashモデルに対応しました。現行構成との直接的な利用関係は確認できないため、hotProjectsは設定していません。",
-                        "report":  "2026-10-05.html#svc-bigquery",
+                        "date":  "2026-10-05",
+                        "kind":  "GA / AI / Embedding",
+                        "title":  "日本語を含むマルチモーダル埋め込みモデルgemini-embedding-2がGA",
+                        "summary":  "BigQueryのgemini-embedding-2がGAになりました。長文や日本語を含む多言語データに加え、テキスト、画像、音声、動画、PDFに対応し、AI.EMBED、AI.SIMILARITY、AI.GENERATE_EMBEDDINGで利用できます。現行プロジェクトでの利用は確認できないためhotProjectsは設定していません。",
+                        "report":  "2026-10-06.html#svc-bigquery",
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
@@ -406,12 +410,30 @@
                     },
                     {
                         "serviceId":  "bigquery",
+                        "date":  "2026-10-02",
+                        "kind":  "GA / SDK / Model Support",
+                        "title":  "Rust SDKがGA、Data Engineering AgentがGemini 3.7 Flashに対応",
+                        "summary":  "BigQuery向けRust SDKがGAになりました。Data Engineering Agentはus、eu、globalのマルチリージョンでgemini-3.7-flashモデルに対応しました。現行構成との直接的な利用関係は確認できないため、hotProjectsは設定していません。",
+                        "report":  "2026-10-05.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
                         "date":  "2026-10-01",
                         "kind":  "GA / Analytics / Data Governance",
                         "title":  "グラフ対話とパイプラインのメタデータ強化がGA",
                         "summary":  "BigQueryのConversational Analyticsで、複数のグラフ、テーブル、ビュー、UDFをデータソースにしたグラフ対話がGAになりました。BigQuery pipelinesではメタデータ自動補完、Knowledge Catalogのデータ品質スコアカード連携、Data Engineering Agentによるセマンティックメタデータ生成がGAになり、Simba JDBCドライバーも更新されました。現行分析基盤への直接影響を確認できないため、🔥対象にはしていません。",
                         "report":  "2026-10-02.html#svc-bigquery",
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-30",
+                        "kind":  "GA / Observability",
+                        "title":  "App Topology APIがGA",
+                        "summary":  "Gemini Enterprise Agent Platformでエージェントのトポロジーを提供するApp Topology APIがGAになりました。Topologiesページのクエリビルダーと、Agent Registryにおける単一エージェントのトポロジー表示も改善されました。現行エージェントへの直接影響を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-10-01.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
                         "serviceId":  "vertex-agent-platform",
@@ -441,15 +463,6 @@
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
-                        "serviceId":  "vertex-agent-platform",
-                        "date":  "2026-09-30",
-                        "kind":  "GA / Observability",
-                        "title":  "App Topology APIがGA",
-                        "summary":  "Gemini Enterprise Agent Platformでエージェントのトポロジーを提供するApp Topology APIがGAになりました。Topologiesページのクエリビルダーと、Agent Registryにおける単一エージェントのトポロジー表示も改善されました。現行エージェントへの直接影響を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-10-01.html#svc-agent-platform",
-                        "source":  "https://docs.cloud.google.com/release-notes"
-                    },
-                    {
                         "serviceId":  "vpc-service-controls",
                         "date":  "2026-09-30",
                         "kind":  "GA / Security",
@@ -457,6 +470,15 @@
                         "summary":  "VPC Service Controlsで、ingress／egressルールのリソースにGoogle Cloudのフォルダと組織を指定する機能、およびフォルダ階層配下のプロジェクトをサービス境界で自動保護する機能がGAになりました。現行構成への直接影響を確認できないため、🔥対象にはしていません。",
                         "report":  "2026-10-01.html#svc-vpc-sc",
                         "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-09-29",
+                        "kind":  "Breaking / CLI",
+                        "title":  "Cloud SDK 587.0.0でCloud Storageコマンドを削除",
+                        "summary":  "Cloud SDK 587.0.0で`gcloud storage buckets anywhere-caches pause`が削除され、Python 3.15対応やAgent Registry・semantic governance policy関連のCLI更新が入りました。削除対象コマンドの現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-30.html#svc-cloud-sdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
                     },
                     {
                         "serviceId":  "bigquery",
@@ -477,15 +499,6 @@
                         "source":  "https://docs.cloud.google.com/run/docs/release-notes"
                     },
                     {
-                        "serviceId":  "cloud-sdk",
-                        "date":  "2026-09-29",
-                        "kind":  "Breaking / CLI",
-                        "title":  "Cloud SDK 587.0.0でCloud Storageコマンドを削除",
-                        "summary":  "Cloud SDK 587.0.0で`gcloud storage buckets anywhere-caches pause`が削除され、Python 3.15対応やAgent Registry・semantic governance policy関連のCLI更新が入りました。削除対象コマンドの現行利用を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-09-30.html#svc-cloud-sdk",
-                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
-                    },
-                    {
                         "serviceId":  "bigquery",
                         "date":  "2026-09-28",
                         "kind":  "GA / MCP",
@@ -493,6 +506,15 @@
                         "summary":  "BigQuery Data Transfer Service MCP serverがGAになりました。AIアプリケーションから転送構成を扱うための公式MCP連携ですが、現行エージェントでの利用を確認できないため、🔥対象にはしていません。",
                         "report":  "2026-09-30.html#svc-bigquery",
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-28",
+                        "kind":  "Model / Available",
+                        "title":  "Claude Sonnet 5.5をModel Gardenで提供",
+                        "summary":  "Gemini Enterprise Agent PlatformのModel GardenでAnthropic Claude Sonnet 5.5が利用可能になりました。現行エージェントでの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-29.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
                         "serviceId":  "genesys-cloud",
@@ -518,15 +540,6 @@
                         "kind":  "Feature / IAM",
                         "title":  "Gemini Enterpriseのアプリとデータストアにリソース単位IAMを追加",
                         "summary":  "Gemini Enterpriseで、アプリやデータストアごとにAdmin、Viewer、User権限を付与できるようになりました。Google Cloudコンソール、CLI、REST APIから個別リソースのアクセスを制御できます。現行構成への直接影響を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-09-29.html#svc-agent-platform",
-                        "source":  "https://docs.cloud.google.com/release-notes"
-                    },
-                    {
-                        "serviceId":  "vertex-agent-platform",
-                        "date":  "2026-09-28",
-                        "kind":  "Model / Available",
-                        "title":  "Claude Sonnet 5.5をModel Gardenで提供",
-                        "summary":  "Gemini Enterprise Agent PlatformのModel GardenでAnthropic Claude Sonnet 5.5が利用可能になりました。現行エージェントでの利用を確認できないため、🔥対象にはしていません。",
                         "report":  "2026-09-29.html#svc-agent-platform",
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
@@ -558,15 +571,6 @@
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-09-22",
-                        "kind":  "Preview / Agent Integration",
-                        "title":  "BigQuery data agentのGemini Enterprise公開を簡素化",
-                        "summary":  "BigQuery data agentをAgent Registryへ登録し、Google管理認証情報でGemini Enterpriseへ取り込める機能がPreviewになりました。同一プロジェクトかつAgent Gatewayリージョンが一致する場合、A2A JSON cardやOAuth client credentialsの手動設定が不要になります。現行利用を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-09-24.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
-                    },
-                    {
                         "serviceId":  "cloud-sdk",
                         "date":  "2026-09-22",
                         "kind":  "Breaking / Deprecation",
@@ -576,6 +580,15 @@
                         "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
                     },
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-22",
+                        "kind":  "Preview / Agent Integration",
+                        "title":  "BigQuery data agentのGemini Enterprise公開を簡素化",
+                        "summary":  "BigQuery data agentをAgent Registryへ登録し、Google管理認証情報でGemini Enterpriseへ取り込める機能がPreviewになりました。同一プロジェクトかつAgent Gatewayリージョンが一致する場合、A2A JSON cardやOAuth client credentialsの手動設定が不要になります。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-24.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-09-22",
                         "kind":  "Model / Available",
@@ -583,6 +596,15 @@
                         "summary":  "Gemini Enterprise Agent PlatformのModel GardenでAnthropic Claude Opus 5.5が利用可能になりました。現行エージェントでの利用を確認できないため、🔥対象にはしていません。",
                         "report":  "2026-09-24.html#svc-agent-platform",
                         "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-21",
+                        "kind":  "GA / AI",
+                        "title":  "クエリ実行履歴表示がGA、生成AI関数がGemini 3.8 Flash対応",
+                        "summary":  "BigQuery StudioのQuery results paneで直近のクエリ実行履歴を確認する機能がGAになり、BigQuery generative AI functionsが`gemini-3.8-flash`に対応しました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-24.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
                         "serviceId":  "cx-agent-studio",
@@ -595,15 +617,6 @@
                         "hotProjects":  [
                                             "voicebot"
                                         ]
-                    },
-                    {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-09-21",
-                        "kind":  "GA / AI",
-                        "title":  "クエリ実行履歴表示がGA、生成AI関数がGemini 3.8 Flash対応",
-                        "summary":  "BigQuery StudioのQuery results paneで直近のクエリ実行履歴を確認する機能がGAになり、BigQuery generative AI functionsが`gemini-3.8-flash`に対応しました。現行利用を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-09-24.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
                         "serviceId":  "cx-agent-studio",
@@ -637,6 +650,15 @@
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-09-16",
+                        "kind":  "Preview / Restored",
+                        "title":  "migration lineageをPreview提供、AI.KEY_DRIVERSを再開",
+                        "summary":  "移行元データベースのデータフローと接続関係を可視化するmigration lineage serviceがPreviewになり、指標の有意な変化要因を特定する`AI.KEY_DRIVERS`関数のPreview提供が再開されました。現行利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-17.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "cx-agent-studio",
                         "date":  "2026-09-16",
                         "kind":  "Prerelease / Fixed / Voice / Chat",
@@ -648,15 +670,6 @@
                                             "voicebot",
                                             "chatbot"
                                         ]
-                    },
-                    {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-09-16",
-                        "kind":  "Preview / Restored",
-                        "title":  "migration lineageをPreview提供、AI.KEY_DRIVERSを再開",
-                        "summary":  "移行元データベースのデータフローと接続関係を可視化するmigration lineage serviceがPreviewになり、指標の有意な変化要因を特定する`AI.KEY_DRIVERS`関数のPreview提供が再開されました。現行利用を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-09-17.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
                         "serviceId":  "vertex-agent-platform",
@@ -686,6 +699,15 @@
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
+                        "serviceId":  "cloud-storage",
+                        "date":  "2026-09-10",
+                        "kind":  "GA / Operations",
+                        "title":  "Storage Intelligence advisorがGA",
+                        "summary":  "組織、フォルダ、プロジェクトを横断してCloud Storage環境を監視・管理できるStorage Intelligence advisorがGAになりました。現行プロジェクトでの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-11.html#svc-storage",
+                        "source":  "https://docs.cloud.google.com/storage/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-09-10",
                         "kind":  "Feature / Billing",
@@ -704,13 +726,13 @@
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
-                        "serviceId":  "cloud-storage",
-                        "date":  "2026-09-10",
-                        "kind":  "GA / Operations",
-                        "title":  "Storage Intelligence advisorがGA",
-                        "summary":  "組織、フォルダ、プロジェクトを横断してCloud Storage環境を監視・管理できるStorage Intelligence advisorがGAになりました。現行プロジェクトでの利用を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-09-11.html#svc-storage",
-                        "source":  "https://docs.cloud.google.com/storage/docs/release-notes"
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-09-09",
+                        "kind":  "Release / Deprecation",
+                        "title":  "Cloud SDK 584.0.0を公開",
+                        "summary":  "Cloud SDK 584.0.0で`gcloud storage buckets anywhere-caches pause`が非推奨となり、Linux同梱PythonのOpenSSLがCVE-2026-42508対応版の3.5.8へ更新されました。対象コマンドの利用を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-10.html#svc-cloudsdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
                     },
                     {
                         "serviceId":  "vertex-agent-platform",
@@ -731,13 +753,13 @@
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
-                        "serviceId":  "cloud-sdk",
-                        "date":  "2026-09-09",
-                        "kind":  "Release / Deprecation",
-                        "title":  "Cloud SDK 584.0.0を公開",
-                        "summary":  "Cloud SDK 584.0.0で`gcloud storage buckets anywhere-caches pause`が非推奨となり、Linux同梱PythonのOpenSSLがCVE-2026-42508対応版の3.5.8へ更新されました。対象コマンドの利用を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-09-10.html#svc-cloudsdk",
-                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                        "serviceId":  "vpc-service-controls",
+                        "date":  "2026-09-08",
+                        "kind":  "GA / Integration",
+                        "title":  "Observability APIのサービス境界連携がGA",
+                        "summary":  "VPC Service ControlsでObservability APIをサービス境界の対象サービスとして利用できる連携がGAになりました。現行プロジェクトでのObservability API利用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-09.html#svc-vpcsc",
+                        "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"
                     },
                     {
                         "serviceId":  "bigquery",
@@ -756,15 +778,6 @@
                         "summary":  "Cloud Run Jobsで、非緊急ジョブを最長12時間遅延実行し、低価格の実行枠を利用できる機能がPreviewになりました。現行のWebhook・API実行基盤に対する直接影響は確認できないため、🔥対象にはしていません。",
                         "report":  "2026-09-09.html#svc-cloud-run",
                         "source":  "https://docs.cloud.google.com/run/docs/release-notes"
-                    },
-                    {
-                        "serviceId":  "vpc-service-controls",
-                        "date":  "2026-09-08",
-                        "kind":  "GA / Integration",
-                        "title":  "Observability APIのサービス境界連携がGA",
-                        "summary":  "VPC Service ControlsでObservability APIをサービス境界の対象サービスとして利用できる連携がGAになりました。現行プロジェクトでのObservability API利用状況を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-09-09.html#svc-vpcsc",
-                        "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"
                     },
                     {
                         "serviceId":  "genesys-cloud",
@@ -794,15 +807,6 @@
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
-                        "serviceId":  "vertex-agent-platform",
-                        "date":  "2026-09-03",
-                        "kind":  "GA / Workflow",
-                        "title":  "Gemini EnterpriseのWorkflow BuilderがGA",
-                        "summary":  "Gemini Enterpriseでノーコードでワークフローを作成できるWorkflow BuilderがGAになりました。9月3日付の更新で、前回レポート作成時点では未確認でした。現行プロジェクトでの利用状況を確認できないため、🔥対象にはしていません。",
-                        "report":  "2026-09-07.html#svc-agent-platform",
-                        "source":  "https://docs.cloud.google.com/release-notes"
-                    },
-                    {
                         "serviceId":  "chatplus",
                         "date":  "2026-09-03",
                         "kind":  "月次更新",
@@ -813,6 +817,24 @@
                         "hotProjects":  [
                                             "chatbot"
                                         ]
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-09-03",
+                        "kind":  "GA / Workflow",
+                        "title":  "Gemini EnterpriseのWorkflow BuilderがGA",
+                        "summary":  "Gemini Enterpriseでノーコードでワークフローを作成できるWorkflow BuilderがGAになりました。9月3日付の更新で、前回レポート作成時点では未確認でした。現行プロジェクトでの利用状況を確認できないため、🔥対象にはしていません。",
+                        "report":  "2026-09-07.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vpc-service-controls",
+                        "date":  "2026-09-03",
+                        "kind":  "Preview / Perimeter",
+                        "title":  "削除済みIAM主体を含むサービス境界の取得・更新に対応",
+                        "summary":  "VPC Service Controlsで、削除済みのユーザー、グループ、サービスアカウントを含むサービス境界を、メールアドレス不正エラーなしで取得・更新できる機能がPreviewになりました。採用時は有効化条件と境界変更手順を確認します。",
+                        "report":  "2026-09-04.html#svc-vpcsc",
+                        "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"
                     },
                     {
                         "serviceId":  "bigquery",
@@ -833,15 +855,6 @@
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
-                        "serviceId":  "vpc-service-controls",
-                        "date":  "2026-09-03",
-                        "kind":  "Preview / Perimeter",
-                        "title":  "削除済みIAM主体を含むサービス境界の取得・更新に対応",
-                        "summary":  "VPC Service Controlsで、削除済みのユーザー、グループ、サービスアカウントを含むサービス境界を、メールアドレス不正エラーなしで取得・更新できる機能がPreviewになりました。採用時は有効化条件と境界変更手順を確認します。",
-                        "report":  "2026-09-04.html#svc-vpcsc",
-                        "source":  "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes"
-                    },
-                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-09-02",
                         "kind":  "GA / Model",
@@ -858,6 +871,15 @@
                         "summary":  "BigQuery向けSimba JDBCドライバーの更新版が公開されました。公式リリースノートには変更内容や移行期限の記載がないため、利用中の場合は導入前にドライバー固有のリリースノートと互換性を確認します。現行プロジェクトでの利用状況を確認できないため、🔥対象にはしていません。",
                         "report":  "2026-09-03.html#svc-bigquery",
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-09-01",
+                        "kind":  "Release / CLI",
+                        "title":  "Cloud SDK 583.0.0でAgent Identity設定フラグを追加",
+                        "summary":  "Cloud SDK 583.0.0で、Cloud RunのAgent Registry／Agent Identityを構成する`--identity-certificate`、`--identity-type`、`--functional-type`が追加されました。BigQueryのAWS接続では`--s3_service_directory_service`が非推奨となり、`--service_directory_service`への移行が案内されています。",
+                        "report":  "2026-09-02.html#svc-cloudsdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
                     },
                     {
                         "serviceId":  "cloud-run",
@@ -887,13 +909,13 @@
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
-                        "serviceId":  "cloud-sdk",
-                        "date":  "2026-09-01",
-                        "kind":  "Release / CLI",
-                        "title":  "Cloud SDK 583.0.0でAgent Identity設定フラグを追加",
-                        "summary":  "Cloud SDK 583.0.0で、Cloud RunのAgent Registry／Agent Identityを構成する`--identity-certificate`、`--identity-type`、`--functional-type`が追加されました。BigQueryのAWS接続では`--s3_service_directory_service`が非推奨となり、`--service_directory_service`への移行が案内されています。",
-                        "report":  "2026-09-02.html#svc-cloudsdk",
-                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-31",
+                        "kind":  "GA / Data stores",
+                        "title":  "Gemini EnterpriseがAssured Workloads内の連携データストアに対応",
+                        "summary":  "Gemini Enterpriseで、FedRAMP Highの統制を適用するAssured Workloadsフォルダ内のプロジェクトから、Google Workspaceおよび第三者の連携データストアへ接続できる機能がGAになりました。現行プロジェクトへの直接影響は確認していません。",
+                        "report":  "2026-09-01.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
                         "serviceId":  "genesys-cloud",
@@ -915,15 +937,6 @@
                         "summary":  "BigQueryでGitフォルダ内のパイプライン作成・保存・管理がPreview、通常フォルダでのパイプライン管理がGAになりました。自動採番するIdentity列もPreview、BigQuery GraphはGAになり、生成AI関数の日次トークンクォータ設定も復旧しました。現行プロジェクトへの直接影響は確認していません。",
                         "report":  "2026-09-01.html#svc-bigquery",
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
-                    },
-                    {
-                        "serviceId":  "vertex-agent-platform",
-                        "date":  "2026-08-31",
-                        "kind":  "GA / Data stores",
-                        "title":  "Gemini EnterpriseがAssured Workloads内の連携データストアに対応",
-                        "summary":  "Gemini Enterpriseで、FedRAMP Highの統制を適用するAssured Workloadsフォルダ内のプロジェクトから、Google Workspaceおよび第三者の連携データストアへ接続できる機能がGAになりました。現行プロジェクトへの直接影響は確認していません。",
-                        "report":  "2026-09-01.html#svc-agent-platform",
-                        "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
                         "serviceId":  "vertex-agent-platform",
@@ -991,76 +1004,67 @@
                                             "voicebot"
                                         ]
                     },
-                     {
-                         "serviceId":  "vertex-agent-platform",
-                         "date":  "2026-08-23",
-                         "kind":  "Deprecation / Model",
-                         "title":  "Anthropic Claude 3 Haikuが提供終了期限に到達",
-                         "summary":  "Vertex AIのAnthropic Claude 3 Haikuは、2026年2月23日の非推奨化告知で示された8月23日の提供終了期限に到達しました。該当モデルを利用している場合は、後継または代替モデルへの移行状況を確認する必要があります。",
-                         "report":  "2026-08-24.html#svc-agent-platform",
-                         "source":  "https://docs.cloud.google.com/vertex-ai/docs/release-notes"
-                     },
-                     {
-                         "serviceId":  "vertex-agent-platform",
-                         "date":  "2026-08-22",
-                         "kind":  "GA / Agent Identity",
-                         "title":  "Agent Identity認証マネージャーとAPIがGA",
-                         "summary":  "Agent Identity認証マネージャーと`agentidentity.googleapis.com`、`agentidentitycredentials.googleapis.com`がGAになりました。エージェントの外部ツール認証をOAuthまたはAPIキーで集中管理でき、従来のIAM Connectors APIを置き換えます。採用時は既存の認証プロバイダー管理方式との移行要否を確認します。",
-                         "report":  "2026-08-24.html#svc-agent-platform",
-                         "source":  "https://docs.cloud.google.com/release-notes"
-                     },
-                     {
-                         "serviceId":  "bigquery",
-                         "date":  "2026-08-20",
-                         "kind":  "Deprecation / Pricing",
-                         "title":  "BigQuery Graphのコア処理をEnterprise系エディションへ限定予定",
-                         "summary":  "2027年4月26日からBigQuery Graphのコアグラフ処理はEnterprise／Enterprise Plusエディションに限定され、Standardエディションとオンデマンド課金でのサポートが終了します。graph measuresは引き続きEnterprise系とオンデマンド課金で利用できます。該当機能を利用する場合はエディションと課金方式の移行計画が必要です。",
-                         "report":  "2026-08-21.html#svc-bigquery",
-                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
-                     },
-                     {
-                         "serviceId":  "bigquery",
-                         "date":  "2026-08-20",
-                         "kind":  "Preview / MCP",
-                         "title":  "Cloud CLI remote MCP serverに`run_bq_command`を追加",
-                         "summary":  "Cloud CLI remote MCP serverで`bq`コマンドを実行する`run_bq_command`ツールがPreviewになりました。AIエージェントからジョブのスケジュール・管理や予約管理などの高度なBigQuery操作をマネージドMCPエンドポイント経由で実行できます。現行プロジェクトでの利用は確認できないため、導入時の権限設計と操作範囲の確認対象です。",
-                         "report":  "2026-08-21.html#svc-bigquery",
-                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
-                     },
-                     {
-                         "serviceId":  "cloud-run",
-                         "date":  "2026-08-20",
-                         "kind":  "Incident / Resolved",
-                         "title":  "us-west1の複数サービス障害は復旧済み",
-                         "summary":  "us-west1で計画光回線メンテナンスに伴う予期しない輻輳が発生し、Cloud Run、BigQuery、Cloud Storage、Contact Center AI Platformなどでタイムアウト、エラー、遅延が発生しました。障害は8月20日8:40～12:20（米国太平洋時間）で、公式ステータスでは復旧済みです。asia-northeast系への影響は記載されていません。",
-                         "report":  "2026-08-21.html#svc-incident",
-                         "source":  "https://status.cloud.google.com/incidents/utF3FMFdQfwBzJcGG6vf"
-                     },
-                     {
-                         "serviceId":  "vertex-agent-platform",
-                         "date":  "2026-08-20",
-                         "kind":  "Deprecation / Model",
-                         "title":  "Grok 4.1モデルの提供終了により該当API呼び出しが失敗",
-                         "summary":  "Gemini Enterprise Agent PlatformのGrok 4.1モデルは8月20日に提供終了となり、該当モデルIDをglobalエンドポイントへ送るAPI呼び出しは400エラーになります。利用中の場合はGrok 4.2／4.3またはModel Gardenの代替モデルへ移行が必要です。",
-                         "report":  "2026-08-20.html#svc-agent-platform",
-                         "source":  "https://docs.cloud.google.com/release-notes"
-                     },
-                     {
-                         "serviceId":  "cloud-sdk",
-                         "date":  "2026-08-18",
-                         "kind":  "Breaking / CLI",
-                         "title":  "Cloud SDK 581.0.0でMCP有効化関連のno-opコマンドを削除",
-                         "summary":  "Cloud SDK 581.0.0で、既にno-opとなっていた`gcloud beta services mcp enable`、`disable`、`list`コマンドが削除されました。MCP有効化は不要になっているため、これらのコマンドを自動化スクリプトに残している場合は削除が必要です。",
-                         "report":  "2026-08-19.html#svc-cloudsdk",
-                         "source":  "https://docs.cloud.google.com/release-notes"
-                     },
-                     {
-                        "serviceId":  "cloud-storage",
-                        "date":  "2026-08-17",
-                        "kind":  "Feature / Data protection",
-                        "title":  "削除プロジェクト内のsoft delete有効バケットを一定期間保持",
-                        "summary":  "Cloud Storageで、soft deleteを有効にしたバケットはプロジェクト削除後も一定期間保持されるようになりました。保持期間中にプロジェクトを復元すると、バケットはプロジェクト削除時点の状態へ復元されます。ログや学習データを保管するプロジェクトの削除・復元手順を確認する際の変更点です。",
-                        "report":  "2026-08-18.html#svc-storage",
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-23",
+                        "kind":  "Deprecation / Model",
+                        "title":  "Anthropic Claude 3 Haikuが提供終了期限に到達",
+                        "summary":  "Vertex AIのAnthropic Claude 3 Haikuは、2026年2月23日の非推奨化告知で示された8月23日の提供終了期限に到達しました。該当モデルを利用している場合は、後継または代替モデルへの移行状況を確認する必要があります。",
+                        "report":  "2026-08-24.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/vertex-ai/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-22",
+                        "kind":  "GA / Agent Identity",
+                        "title":  "Agent Identity認証マネージャーとAPIがGA",
+                        "summary":  "Agent Identity認証マネージャーと`agentidentity.googleapis.com`、`agentidentitycredentials.googleapis.com`がGAになりました。エージェントの外部ツール認証をOAuthまたはAPIキーで集中管理でき、従来のIAM Connectors APIを置き換えます。採用時は既存の認証プロバイダー管理方式との移行要否を確認します。",
+                        "report":  "2026-08-24.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-20",
+                        "kind":  "Deprecation / Model",
+                        "title":  "Grok 4.1モデルの提供終了により該当API呼び出しが失敗",
+                        "summary":  "Gemini Enterprise Agent PlatformのGrok 4.1モデルは8月20日に提供終了となり、該当モデルIDをglobalエンドポイントへ送るAPI呼び出しは400エラーになります。利用中の場合はGrok 4.2／4.3またはModel Gardenの代替モデルへ移行が必要です。",
+                        "report":  "2026-08-20.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-08-20",
+                        "kind":  "Deprecation / Pricing",
+                        "title":  "BigQuery Graphのコア処理をEnterprise系エディションへ限定予定",
+                        "summary":  "2027年4月26日からBigQuery Graphのコアグラフ処理はEnterprise／Enterprise Plusエディションに限定され、Standardエディションとオンデマンド課金でのサポートが終了します。graph measuresは引き続きEnterprise系とオンデマンド課金で利用できます。該当機能を利用する場合はエディションと課金方式の移行計画が必要です。",
+                        "report":  "2026-08-21.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-08-20",
+                        "kind":  "Preview / MCP",
+                        "title":  "Cloud CLI remote MCP serverに`run_bq_command`を追加",
+                        "summary":  "Cloud CLI remote MCP serverで`bq`コマンドを実行する`run_bq_command`ツールがPreviewになりました。AIエージェントからジョブのスケジュール・管理や予約管理などの高度なBigQuery操作をマネージドMCPエンドポイント経由で実行できます。現行プロジェクトでの利用は確認できないため、導入時の権限設計と操作範囲の確認対象です。",
+                        "report":  "2026-08-21.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-08-20",
+                        "kind":  "Incident / Resolved",
+                        "title":  "us-west1の複数サービス障害は復旧済み",
+                        "summary":  "us-west1で計画光回線メンテナンスに伴う予期しない輻輳が発生し、Cloud Run、BigQuery、Cloud Storage、Contact Center AI Platformなどでタイムアウト、エラー、遅延が発生しました。障害は8月20日8:40～12:20（米国太平洋時間）で、公式ステータスでは復旧済みです。asia-northeast系への影響は記載されていません。",
+                        "report":  "2026-08-21.html#svc-incident",
+                        "source":  "https://status.cloud.google.com/incidents/utF3FMFdQfwBzJcGG6vf"
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-08-18",
+                        "kind":  "Breaking / CLI",
+                        "title":  "Cloud SDK 581.0.0でMCP有効化関連のno-opコマンドを削除",
+                        "summary":  "Cloud SDK 581.0.0で、既にno-opとなっていた`gcloud beta services mcp enable`、`disable`、`list`コマンドが削除されました。MCP有効化は不要になっているため、これらのコマンドを自動化スクリプトに残している場合は削除が必要です。",
+                        "report":  "2026-08-19.html#svc-cloudsdk",
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
@@ -1070,6 +1074,15 @@
                         "title":  "Gemini EnterpriseでA2UI/A2Aエージェント登録・管理がGA",
                         "summary":  "Gemini EnterpriseでA2UIおよびA2Aエージェントの登録・管理がGAになり、A2UI v0.9にも対応しました。Gemini Enterprise連携を採用する場合、エージェント間連携とカスタムUIの実装選択肢が増えます。",
                         "report":  "2026-08-18.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-storage",
+                        "date":  "2026-08-17",
+                        "kind":  "Feature / Data protection",
+                        "title":  "削除プロジェクト内のsoft delete有効バケットを一定期間保持",
+                        "summary":  "Cloud Storageで、soft deleteを有効にしたバケットはプロジェクト削除後も一定期間保持されるようになりました。保持期間中にプロジェクトを復元すると、バケットはプロジェクト削除時点の状態へ復元されます。ログや学習データを保管するプロジェクトの削除・復元手順を確認する際の変更点です。",
+                        "report":  "2026-08-18.html#svc-storage",
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
@@ -1113,6 +1126,15 @@
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-14",
+                        "kind":  "Incident / Status",
+                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
+                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outage継続ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
+                        "report":  "2026-08-14.html#svc-genesys",
+                        "source":  "https://status.mypurecloud.com/"
+                    },
+                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-08-14",
                         "kind":  "GA / Security",
@@ -1135,11 +1157,11 @@
                     },
                     {
                         "serviceId":  "genesys-cloud",
-                        "date":  "2026-08-14",
+                        "date":  "2026-08-13",
                         "kind":  "Incident / Status",
                         "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
                         "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outage継続ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
-                        "report":  "2026-08-14.html#svc-genesys",
+                        "report":  "2026-08-13.html#svc-genesys",
                         "source":  "https://status.mypurecloud.com/"
                     },
                     {
@@ -1178,13 +1200,13 @@
                                         ]
                     },
                     {
-                        "serviceId":  "genesys-cloud",
-                        "date":  "2026-08-13",
-                        "kind":  "Incident / Status",
-                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
-                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outage継続ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
-                        "report":  "2026-08-13.html#svc-genesys",
-                        "source":  "https://status.mypurecloud.com/"
+                        "serviceId":  "bigquery",
+                        "date":  "2026-08-12",
+                        "kind":  "Deprecated / UI",
+                        "title":  "Table ExplorerがReferenceパネルへ移行",
+                        "summary":  "BigQueryのTable Explorer動作がReferenceパネルへ移行し、Table Explorerは非推奨になりました。BigQuery Studio手順や画面案内の更新確認対象です。",
+                        "report":  "2026-08-13.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
                         "serviceId":  "cx-agent-studio",
@@ -1200,15 +1222,6 @@
                                         ]
                     },
                     {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-08-12",
-                        "kind":  "Deprecated / UI",
-                        "title":  "Table ExplorerがReferenceパネルへ移行",
-                        "summary":  "BigQueryのTable Explorer動作がReferenceパネルへ移行し、Table Explorerは非推奨になりました。BigQuery Studio手順や画面案内の更新確認対象です。",
-                        "report":  "2026-08-13.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
-                    },
-                    {
                         "serviceId":  "cloud-sdk",
                         "date":  "2026-08-11",
                         "kind":  "Breaking / CLI",
@@ -1216,6 +1229,15 @@
                         "summary":  "Cloud SDK 580.0.0で、Snap版`google-cloud-sdk`パッケージが2026年9月29日に廃止・削除予定と案内されました。Linux Snap導入環境は`google-cloud-cli`への移行確認が必要です。",
                         "report":  "2026-08-13.html#svc-cloudsdk",
                         "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-08-11",
+                        "kind":  "GA",
+                        "title":  "data clean rooms query templatesとTVF table parametersがGA",
+                        "summary":  "BigQueryでdata clean roomsのquery templatesと、table-valued functionsのtable parametersがGAになりました。会話ログ分析基盤への直接影響は確認していません。",
+                        "report":  "2026-08-13.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
                         "serviceId":  "cloud-run",
@@ -1228,12 +1250,16 @@
                     },
                     {
                         "serviceId":  "bigquery",
-                        "date":  "2026-08-11",
-                        "kind":  "GA",
-                        "title":  "data clean rooms query templatesとTVF table parametersがGA",
-                        "summary":  "BigQueryでdata clean roomsのquery templatesと、table-valued functionsのtable parametersがGAになりました。会話ログ分析基盤への直接影響は確認していません。",
+                        "date":  "2026-08-10",
+                        "kind":  "Feature / GenAI",
+                        "title":  "AI functionsでGemini GAモデル2種をサポート",
+                        "summary":  "BigQuery AI functionsで`gemini-3.1-flash-lite`と`gemini-3.5-flash`のGAモデルが利用可能になりました。対象は`us`、`eu`、`global`で、会話ログ分析やFAQ生成にAI functionsを使う場合はモデルとロケーションの確認対象です。",
                         "report":  "2026-08-13.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
                     },
                     {
                         "serviceId":  "genesys-cloud",
@@ -1248,17 +1274,13 @@
                                         ]
                     },
                     {
-                        "serviceId":  "bigquery",
+                        "serviceId":  "chatplus",
                         "date":  "2026-08-10",
-                        "kind":  "Feature / GenAI",
-                        "title":  "AI functionsでGemini GAモデル2種をサポート",
-                        "summary":  "BigQuery AI functionsで`gemini-3.1-flash-lite`と`gemini-3.5-flash`のGAモデルが利用可能になりました。対象は`us`、`eu`、`global`で、会話ログ分析やFAQ生成にAI functionsを使う場合はモデルとロケーションの確認対象です。",
-                        "report":  "2026-08-13.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
-                        "hotProjects":  [
-                                            "voicebot",
-                                            "chatbot"
-                                        ]
+                        "kind":  "Service / AI Agent",
+                        "title":  "AIエージェント導入支援のAXソリューションを公開",
+                        "summary":  "ChatPlusがAIエージェント導入から運用定着までを支援するAXソリューションを公開しました。ChatPlus / AI AgentPlusを基盤とした構築支援とカスタム開発を含む伴走型サービスです。",
+                        "report":  "2026-08-13.html#svc-chatplus",
+                        "source":  "https://chatplus.jp/news/"
                     },
                     {
                         "serviceId":  "cx-agent-studio",
@@ -1279,21 +1301,21 @@
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
-                        "serviceId":  "chatplus",
-                        "date":  "2026-08-10",
-                        "kind":  "Service / AI Agent",
-                        "title":  "AIエージェント導入支援のAXソリューションを公開",
-                        "summary":  "ChatPlusがAIエージェント導入から運用定着までを支援するAXソリューションを公開しました。ChatPlus / AI AgentPlusを基盤とした構築支援とカスタム開発を含む伴走型サービスです。",
-                        "report":  "2026-08-13.html#svc-chatplus",
-                        "source":  "https://chatplus.jp/news/"
-                    },
-                    {
                         "serviceId":  "genesys-cloud",
                         "date":  "2026-08-07",
                         "kind":  "Incident / Status",
                         "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
                         "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor OutageとしてMonitoring継続中ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
                         "report":  "2026-08-07.html#svc-genesys",
+                        "source":  "https://status.mypurecloud.com/"
+                    },
+                    {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-08-06",
+                        "kind":  "Incident / Status",
+                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
+                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outageとして監視継続中ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
+                        "report":  "2026-08-06.html#svc-genesys",
                         "source":  "https://status.mypurecloud.com/"
                     },
                     {
@@ -1321,14 +1343,6 @@
                                             "voicebot",
                                             "chatbot"
                                         ]
-                    },                    {
-                        "serviceId":  "genesys-cloud",
-                        "date":  "2026-08-06",
-                        "kind":  "Incident / Status",
-                        "title":  "東京・大阪はOperational、EMEA(UAE)はMajor Outage継続",
-                        "summary":  "Genesys Cloud StatusでAsia Pacific (Tokyo) と Asia Pacific (Osaka) はOperationalです。EMEA(UAE)のPlatformはMajor Outageとして監視継続中ですが、日本語ボイスボット対象リージョンへの直接影響は確認していません。",
-                        "report":  "2026-08-06.html#svc-genesys",
-                        "source":  "https://status.mypurecloud.com/"
                     },
                     {
                         "serviceId":  "cloud-run",
@@ -1344,12 +1358,12 @@
                                         ]
                     },
                     {
-                        "serviceId":  "cx-agent-studio",
+                        "serviceId":  "vertex-agent-platform",
                         "date":  "2026-08-04",
-                        "kind":  "GA / Fixed / CCaaS",
-                        "title":  "Google Cloud CCaaS 5.2で仮想エージェントとチャット関連を修正",
-                        "summary":  "Google Cloud CCaaS 5.2で、異常終了やエスカレーション未完了後に音声通話が仮想エージェント状態に残る問題、Nexmo経由IVRで冒頭音声を取り逃す問題、チャットのキュー残留などが修正されました。Smart dispositionやprogressive campaign向けAMDも追加されています。",
-                        "report":  "2026-08-06.html#svc-cx-agent-studio",
+                        "kind":  "Feature / Observability",
+                        "title":  "Gemini Enterprise data connectorのend-to-end tracingに対応",
+                        "summary":  "Gemini Enterpriseでdata connector workflowのend-to-end tracingが拡張され、agent orchestration層の`execute_tool`とconnector execution層の`invoke_connector`をTrace Explorerで追跡できるようになりました。会話エージェントの外部データ連携を運用している場合、障害解析と監査の確認対象です。",
+                        "report":  "2026-08-05.html#svc-agent-platform",
                         "source":  "https://docs.cloud.google.com/release-notes",
                         "hotProjects":  [
                                             "voicebot",
@@ -1357,12 +1371,12 @@
                                         ]
                     },
                     {
-                        "serviceId":  "vertex-agent-platform",
+                        "serviceId":  "cx-agent-studio",
                         "date":  "2026-08-04",
-                        "kind":  "Feature / Observability",
-                        "title":  "Gemini Enterprise data connectorのend-to-end tracingに対応",
-                        "summary":  "Gemini Enterpriseでdata connector workflowのend-to-end tracingが拡張され、agent orchestration層の`execute_tool`とconnector execution層の`invoke_connector`をTrace Explorerで追跡できるようになりました。会話エージェントの外部データ連携を運用している場合、障害解析と監査の確認対象です。",
-                        "report":  "2026-08-05.html#svc-agent-platform",
+                        "kind":  "GA / Fixed / CCaaS",
+                        "title":  "Google Cloud CCaaS 5.2で仮想エージェントとチャット関連を修正",
+                        "summary":  "Google Cloud CCaaS 5.2で、異常終了やエスカレーション未完了後に音声通話が仮想エージェント状態に残る問題、Nexmo経由IVRで冒頭音声を取り逃す問題、チャットのキュー残留などが修正されました。Smart dispositionやprogressive campaign向けAMDも追加されています。",
+                        "report":  "2026-08-06.html#svc-cx-agent-studio",
                         "source":  "https://docs.cloud.google.com/release-notes",
                         "hotProjects":  [
                                             "voicebot",
@@ -1389,7 +1403,21 @@
                         "hotProjects":  [
                                             "chatbot"
                                         ]
-                    },                    {
+                    },
+                    {
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-08-03",
+                        "kind":  "Security / Feature",
+                        "title":  "Malicious Skill runtime threat detectorsを追加",
+                        "summary":  "Security Command CenterでGKE、Cloud Run、Agent Platform向けのMalicious Skill runtime threat detectorsが追加されました。AIエージェント能力としてタグ付けされた悪性バイナリの実行・読み込みを検出する機能で、Agent PlatformやCloud Run上の会話エージェント運用では確認候補です。",
+                        "report":  "2026-08-05.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
                         "serviceId":  "vpc-service-controls",
                         "date":  "2026-08-03",
                         "kind":  "Preview / Integration",
@@ -1430,19 +1458,6 @@
                                         ]
                     },
                     {
-                        "serviceId":  "vertex-agent-platform",
-                        "date":  "2026-08-03",
-                        "kind":  "Security / Feature",
-                        "title":  "Malicious Skill runtime threat detectorsを追加",
-                        "summary":  "Security Command CenterでGKE、Cloud Run、Agent Platform向けのMalicious Skill runtime threat detectorsが追加されました。AIエージェント能力としてタグ付けされた悪性バイナリの実行・読み込みを検出する機能で、Agent PlatformやCloud Run上の会話エージェント運用では確認候補です。",
-                        "report":  "2026-08-05.html#svc-agent-platform",
-                        "source":  "https://docs.cloud.google.com/release-notes",
-                        "hotProjects":  [
-                                            "voicebot",
-                                            "chatbot"
-                                        ]
-                    },
-                    {
                         "serviceId":  "cx-agent-studio",
                         "date":  "2026-07-31",
                         "kind":  "Feature / Quality AI",
@@ -1465,19 +1480,6 @@
                                         ]
                     },
                     {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-07-30",
-                        "kind":  "GA / Audit / Pipeline",
-                        "title":  "BigQuery pipelinesタスク追加とUIダウンロード監査がGA",
-                        "summary":  "BigQuery pipelinesにテーブル、ビュー、データソース、データ品質テストをタスクとして追加できる機能がGAになりました。あわせてBigQueryコンソールからのクエリ結果ダウンロードをData Access監査ログの`uiDownloadRequest`で識別できるようになりました。会話ログ分析基盤では、監査・データ持ち出し確認の観点で確認候補です。",
-                        "report":  "2026-07-31.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
-                        "hotProjects":  [
-                                            "voicebot",
-                                            "chatbot"
-                                        ]
-                    },
-                    {
                         "serviceId":  "cx-agent-studio",
                         "date":  "2026-07-30",
                         "kind":  "Fixed / Voice / Chat",
@@ -1485,6 +1487,19 @@
                         "summary":  "Google Cloud CCaaSで、仮想エージェント状態に残る音声通話、Dialogflowエージェントの誤エスカレーション／切断、仮想エージェントの早期エスカレーション、双方向音声通話のwrap-up重複通知、チャットのキュー残留などが修正されました。音声・チャット双方の会話エージェント運用に関わるため、該当CCaaS利用有無を確認対象にします。",
                         "report":  "2026-07-31.html#svc-cx-agent-studio",
                         "source":  "https://docs.cloud.google.com/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-07-30",
+                        "kind":  "GA / Audit / Pipeline",
+                        "title":  "BigQuery pipelinesタスク追加とUIダウンロード監査がGA",
+                        "summary":  "BigQuery pipelinesにテーブル、ビュー、データソース、データ品質テストをタスクとして追加できる機能がGAになりました。あわせてBigQueryコンソールからのクエリ結果ダウンロードをData Access監査ログの`uiDownloadRequest`で識別できるようになりました。会話ログ分析基盤では、監査・データ持ち出し確認の観点で確認候補です。",
+                        "report":  "2026-07-31.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
                         "hotProjects":  [
                                             "voicebot",
                                             "chatbot"
@@ -1500,6 +1515,15 @@
                         "source":  "https://status.mypurecloud.com/"
                     },
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-07-29",
+                        "kind":  "Preview / Data Transfer",
+                        "title":  "Klaviyo incremental transferがPreview",
+                        "summary":  "KlaviyoからBigQueryへの増分データ転送がPreviewで追加されました。現行の会話ログ分析基盤への直接影響は確認していません。",
+                        "report":  "2026-07-30.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "chatplus",
                         "date":  "2026-07-29",
                         "kind":  "Maintenance",
@@ -1510,15 +1534,6 @@
                         "hotProjects":  [
                                             "chatbot"
                                         ]
-                    },
-                    {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-07-29",
-                        "kind":  "Preview / Data Transfer",
-                        "title":  "Klaviyo incremental transferがPreview",
-                        "summary":  "KlaviyoからBigQueryへの増分データ転送がPreviewで追加されました。現行の会話ログ分析基盤への直接影響は確認していません。",
-                        "report":  "2026-07-30.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
                         "serviceId":  "cloud-sdk",
@@ -1548,6 +1563,15 @@
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-07-27",
+                        "kind":  "Feature / Integration",
+                        "title":  "Data ActionsがCloud Run Functions v2に対応",
+                        "summary":  "Genesys Cloud Data Actionsから、Googleサービスアカウントで認証したCloud Run Functions v2を呼び出せるようになりました。既存のCloud Functions v1連携も継続利用できます。",
+                        "report":  "2026-07-29.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
+                    },
+                    {
                         "serviceId":  "bigquery",
                         "date":  "2026-07-27",
                         "kind":  "GA / Change",
@@ -1568,15 +1592,6 @@
                                             "voicebot",
                                             "chatbot"
                                         ]
-                    },
-                    {
-                        "serviceId":  "genesys-cloud",
-                        "date":  "2026-07-27",
-                        "kind":  "Feature / Integration",
-                        "title":  "Data ActionsがCloud Run Functions v2に対応",
-                        "summary":  "Genesys Cloud Data Actionsから、Googleサービスアカウントで認証したCloud Run Functions v2を呼び出せるようになりました。既存のCloud Functions v1連携も継続利用できます。",
-                        "report":  "2026-07-29.html#svc-genesys",
-                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
                     },
                     {
                         "serviceId":  "vertex-agent-platform",
@@ -1622,15 +1637,6 @@
                         "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
-                        "serviceId":  "cloud-sdk",
-                        "date":  "2026-07-21",
-                        "kind":  "GA / Deprecation",
-                        "title":  "gcloud 577.0.0でagent-identityコマンドがGA、CSEKフラグを非推奨化",
-                        "summary":  "Cloud SDK 577.0.0で`gcloud agent-identity auth-providers`と`gcloud agent-identity access-summaries`が正式GAになりました。あわせて`gcloud compute`のCSEK(顧客管理暗号鍵)関連フラグが非推奨になりました。セキュリティ修正の記載はありません。",
-                        "report":  "2026-07-22.html#svc-cloudsdk",
-                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
-                    },
-                    {
                         "serviceId":  "vertex-agent-platform",
                         "date":  "2026-07-21",
                         "kind":  "GA / Breaking / Removal",
@@ -1642,6 +1648,24 @@
                                             "voicebot",
                                             "chatbot"
                                         ]
+                    },
+                    {
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-07-21",
+                        "kind":  "GA / Deprecation",
+                        "title":  "gcloud 577.0.0でagent-identityコマンドがGA、CSEKフラグを非推奨化",
+                        "summary":  "Cloud SDK 577.0.0で`gcloud agent-identity auth-providers`と`gcloud agent-identity access-summaries`が正式GAになりました。あわせて`gcloud compute`のCSEK(顧客管理暗号鍵)関連フラグが非推奨になりました。セキュリティ修正の記載はありません。",
+                        "report":  "2026-07-22.html#svc-cloudsdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-07-20",
+                        "kind":  "Preview",
+                        "title":  "Lakehouse for Apache IcebergがSAP Business Data Cloudと統合(Preview)",
+                        "summary":  "Cross-cloud LakehouseがSAP Business Data Cloud(BDC)と統合され、Delta Sharingカタログの自動同期、SAPデータの直接クエリ、Iceberg REST CatalogテーブルやKnowledge CatalogデータプロダクトのSAP BDCへの公開が可能になりました(Preview)。現行の会話ログ分析基盤への直接影響は確認していません。",
+                        "report":  "2026-07-22.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
                         "serviceId":  "cloud-storage",
@@ -1676,15 +1700,6 @@
                     },
                     {
                         "serviceId":  "bigquery",
-                        "date":  "2026-07-20",
-                        "kind":  "Preview",
-                        "title":  "Lakehouse for Apache IcebergがSAP Business Data Cloudと統合(Preview)",
-                        "summary":  "Cross-cloud LakehouseがSAP Business Data Cloud(BDC)と統合され、Delta Sharingカタログの自動同期、SAPデータの直接クエリ、Iceberg REST CatalogテーブルやKnowledge CatalogデータプロダクトのSAP BDCへの公開が可能になりました(Preview)。現行の会話ログ分析基盤への直接影響は確認していません。",
-                        "report":  "2026-07-22.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
-                    },
-                    {
-                        "serviceId":  "bigquery",
                         "date":  "2026-07-17",
                         "kind":  "GA",
                         "title":  "Knowledge Catalogのデータリネージ制御がGA",
@@ -1700,6 +1715,19 @@
                         "summary":  "Genesys Cloud Statusで、EMEA(UAE)リージョンのコアプラットフォーム機能に影響する重大障害の継続更新を確認しました。対象リージョン限定のため、現行の日本語ボイスボットへの直接影響は確認していません。",
                         "report":  "2026-07-17.html#svc-genesys-status",
                         "source":  "https://status.mypurecloud.com/"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-07-15",
+                        "kind":  "Preview / Security",
+                        "title":  "データガバナンスタグで列レベルセキュリティとデータマスキングを制御可能に",
+                        "summary":  "7/15付でデータガバナンスタグがPreviewになりました。機密列にResource Managerタグを付与し、BigQueryデータポリシーで条件付きアクセス、列レベルセキュリティ、データマスキングを制御できます。会話ログ、ユーザー属性、問い合わせ履歴などをBigQueryに集約している場合、タグ設計と既存ポリシーの整理候補です。",
+                        "report":  "2026-07-16.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
                     },
                     {
                         "serviceId":  "cx-agent-studio",
@@ -1727,17 +1755,13 @@
                                         ]
                     },
                     {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-07-15",
-                        "kind":  "Preview / Security",
-                        "title":  "データガバナンスタグで列レベルセキュリティとデータマスキングを制御可能に",
-                        "summary":  "7/15付でデータガバナンスタグがPreviewになりました。機密列にResource Managerタグを付与し、BigQueryデータポリシーで条件付きアクセス、列レベルセキュリティ、データマスキングを制御できます。会話ログ、ユーザー属性、問い合わせ履歴などをBigQueryに集約している場合、タグ設計と既存ポリシーの整理候補です。",
-                        "report":  "2026-07-16.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
-                        "hotProjects":  [
-                                            "voicebot",
-                                            "chatbot"
-                                        ]
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-07-14",
+                        "kind":  "GA",
+                        "title":  "GitHub Container Registryからの公開イメージインポートがGA",
+                        "summary":  "Cloud RunでGitHub Container Registry(GHCR)の公開コンテナイメージを直接インポートしてデプロイできる機能がGAになりました。",
+                        "report":  "2026-07-15.html#svc-cloudrun",
+                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
                     },
                     {
                         "serviceId":  "cloud-sdk",
@@ -1749,20 +1773,24 @@
                         "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
                     },
                     {
-                        "serviceId":  "cloud-run",
-                        "date":  "2026-07-14",
-                        "kind":  "GA",
-                        "title":  "GitHub Container Registryからの公開イメージインポートがGA",
-                        "summary":  "Cloud RunでGitHub Container Registry(GHCR)の公開コンテナイメージを直接インポートしてデプロイできる機能がGAになりました。",
-                        "report":  "2026-07-15.html#svc-cloudrun",
-                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
-                    },
-                    {
                         "serviceId":  "bigquery",
                         "date":  "2026-07-14",
                         "kind":  "Preview",
                         "title":  "Conversational AnalyticsでAI.AGG関数に対応",
                         "summary":  "BigQuery Conversational AnalyticsがAI.AGG関数に対応(Preview)。あわせてHIPAA準拠対応も進みました。",
+                        "report":  "2026-07-15.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-07-13",
+                        "kind":  "Security",
+                        "title":  "BigQuery/Dataform/Colab Enterpriseで権限昇格の脆弱性(GCP-2026-047)",
+                        "summary":  "リポジトリに対するMissing Authorizationの脆弱性が公表されました。認証済み攻撃者がテナントを跨いでリポジトリを乗っ取り、権限昇格できる可能性があります。BigQueryのリポジトリ機能利用有無の確認が必要です。",
                         "report":  "2026-07-15.html#svc-bigquery",
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
                         "hotProjects":  [
@@ -1789,13 +1817,13 @@
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-07-13",
-                        "kind":  "Security",
-                        "title":  "BigQuery/Dataform/Colab Enterpriseで権限昇格の脆弱性(GCP-2026-047)",
-                        "summary":  "リポジトリに対するMissing Authorizationの脆弱性が公表されました。認証済み攻撃者がテナントを跨いでリポジトリを乗っ取り、権限昇格できる可能性があります。BigQueryのリポジトリ機能利用有無の確認が必要です。",
-                        "report":  "2026-07-15.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
+                        "serviceId":  "vertex-agent-platform",
+                        "date":  "2026-07-09",
+                        "kind":  "Retirement",
+                        "title":  "Gemini preview model endpointsが退役",
+                        "summary":  "Gemini 2.5 Flash系とGemini 3.1 Flash-LiteのPreviewエンドポイントが利用不可になりました。会話エージェントで該当モデルIDを使っていないか確認が必要です。",
+                        "report":  "2026-07-10.html#svc-agent-platform",
+                        "source":  "https://docs.cloud.google.com/release-notes",
                         "hotProjects":  [
                                             "voicebot",
                                             "chatbot"
@@ -1809,19 +1837,6 @@
                         "summary":  "VECTOR_SEARCHでセマンティック検索とキーワード検索を組み合わせるハイブリッド検索サポートが一時的に無効化されました。復旧時期は明記されていません。6月25日にPreview追加された機能のため、利用中の場合は影響確認が必要です。",
                         "report":  "2026-07-13.html#svc-bigquery",
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes",
-                        "hotProjects":  [
-                                            "voicebot",
-                                            "chatbot"
-                                        ]
-                    },
-                    {
-                        "serviceId":  "vertex-agent-platform",
-                        "date":  "2026-07-09",
-                        "kind":  "Retirement",
-                        "title":  "Gemini preview model endpointsが退役",
-                        "summary":  "Gemini 2.5 Flash系とGemini 3.1 Flash-LiteのPreviewエンドポイントが利用不可になりました。会話エージェントで該当モデルIDを使っていないか確認が必要です。",
-                        "report":  "2026-07-10.html#svc-agent-platform",
-                        "source":  "https://docs.cloud.google.com/release-notes",
                         "hotProjects":  [
                                             "voicebot",
                                             "chatbot"
@@ -1848,6 +1863,15 @@
                     {
                         "serviceId":  "bigquery",
                         "date":  "2026-07-08",
+                        "kind":  "Driver",
+                        "title":  "BigQuery Simba ODBC driver更新",
+                        "summary":  "BigQuery向けSimba ODBC driverの更新版が公開されました。接続端末やBI連携環境のドライバ更新確認が必要です。",
+                        "report":  "2026-07-09.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-07-08",
                         "kind":  "Preview",
                         "title":  "GoogleSQLでmulti-level aggregationがPreview",
                         "summary":  "集約関数の引数に別の集約関数を使えるmulti-level aggregationがPreview。分析SQLの表現力が上がります。",
@@ -1855,13 +1879,13 @@
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
-                        "serviceId":  "bigquery",
+                        "serviceId":  "cloud-run",
                         "date":  "2026-07-08",
-                        "kind":  "Driver",
-                        "title":  "BigQuery Simba ODBC driver更新",
-                        "summary":  "BigQuery向けSimba ODBC driverの更新版が公開されました。接続端末やBI連携環境のドライバ更新確認が必要です。",
-                        "report":  "2026-07-09.html#svc-bigquery",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                        "kind":  "Preview",
+                        "title":  "Cloud Run sandboxesがPreview",
+                        "summary":  "AIエージェント生成コードなど、信頼できないコードを隔離実行するCloud Run sandboxesがPreviewで利用可能になりました。",
+                        "report":  "2026-07-09.html#svc-cloudrun",
+                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
                     },
                     {
                         "serviceId":  "vertex-agent-platform",
@@ -1889,24 +1913,6 @@
                                         ]
                     },
                     {
-                        "serviceId":  "cloud-run",
-                        "date":  "2026-07-08",
-                        "kind":  "Preview",
-                        "title":  "Cloud Run sandboxesがPreview",
-                        "summary":  "AIエージェント生成コードなど、信頼できないコードを隔離実行するCloud Run sandboxesがPreviewで利用可能になりました。",
-                        "report":  "2026-07-09.html#svc-cloudrun",
-                        "source":  "https://docs.cloud.google.com/run/docs/release-notes"
-                    },
-                    {
-                        "serviceId":  "cloud-sdk",
-                        "date":  "2026-07-07",
-                        "kind":  "Security",
-                        "title":  "gcloud 575.0.1でWindows同梱Python更新",
-                        "summary":  "Google Cloud CLIのWindows同梱Pythonが3.14.6へ更新され、CVE-2026-34182に対応しました。",
-                        "report":  "2026-07-09.html#svc-cloudsdk",
-                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
-                    },
-                    {
                         "serviceId":  "cx-agent-studio",
                         "date":  "2026-07-07",
                         "kind":  "Prerelease / Fixed",
@@ -1920,13 +1926,13 @@
                                         ]
                     },
                     {
-                        "serviceId":  "genesys-cloud",
-                        "date":  "2026-07-06",
-                        "kind":  "Deprecation",
-                        "title":  "Polish native voice transcriptionが非推奨",
-                        "summary":  "Genesys Cloudのポーランド語ネイティブ音声文字起こしが非推奨対象になりました。該当言語の音声botは移行影響の確認が必要です。",
-                        "report":  "2026-07-09.html#svc-genesys",
-                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
+                        "serviceId":  "cloud-sdk",
+                        "date":  "2026-07-07",
+                        "kind":  "Security",
+                        "title":  "gcloud 575.0.1でWindows同梱Python更新",
+                        "summary":  "Google Cloud CLIのWindows同梱Pythonが3.14.6へ更新され、CVE-2026-34182に対応しました。",
+                        "report":  "2026-07-09.html#svc-cloudsdk",
+                        "source":  "https://docs.cloud.google.com/sdk/docs/release-notes"
                     },
                     {
                         "serviceId":  "genesys-cloud",
@@ -1934,6 +1940,15 @@
                         "kind":  "AVA / Flow",
                         "title":  "AVA言語追加とBot Flow呼び出し強化",
                         "summary":  "AVAが13言語を追加サポート。Bot Flowから別Bot Flowを呼び出せるようになり、In-Queue Flow Errorから別キュー転送も可能になりました。",
+                        "report":  "2026-07-09.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
+                    },
+                    {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-07-06",
+                        "kind":  "Deprecation",
+                        "title":  "Polish native voice transcriptionが非推奨",
+                        "summary":  "Genesys Cloudのポーランド語ネイティブ音声文字起こしが非推奨対象になりました。該当言語の音声botは移行影響の確認が必要です。",
                         "report":  "2026-07-09.html#svc-genesys",
                         "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
                     },
@@ -1974,6 +1989,15 @@
                         "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
                     },
                     {
+                        "serviceId":  "genesys-cloud",
+                        "date":  "2026-06-29",
+                        "kind":  "Architect / AVA",
+                        "title":  "Architect dark modeとAVAデバッグ情報を追加",
+                        "summary":  "Architectのダークモード/UI更新、Execution HistoryとReplay modeでのAVAデバッグ詳細、Knowledge回答改善が追加されました。",
+                        "report":  "2026-07-09.html#svc-genesys",
+                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
+                    },
+                    {
                         "serviceId":  "vpc-service-controls",
                         "date":  "2026-06-29",
                         "kind":  "GA",
@@ -1990,15 +2014,6 @@
                         "summary":  "マルチリージョンの自動failover/failbackに使うCloud Run service healthと、HTTP/gRPC readiness probesがGAになりました。",
                         "report":  "2026-07-09.html#svc-cloudrun",
                         "source":  "https://docs.cloud.google.com/run/docs/release-notes"
-                    },
-                    {
-                        "serviceId":  "genesys-cloud",
-                        "date":  "2026-06-29",
-                        "kind":  "Architect / AVA",
-                        "title":  "Architect dark modeとAVAデバッグ情報を追加",
-                        "summary":  "Architectのダークモード/UI更新、Execution HistoryとReplay modeでのAVAデバッグ詳細、Knowledge回答改善が追加されました。",
-                        "report":  "2026-07-09.html#svc-genesys",
-                        "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
                     },
                     {
                         "serviceId":  "bigquery",
@@ -2042,18 +2057,18 @@
                     {
                         "serviceId":  "genesys-cloud",
                         "date":  "2026-06-22",
-                        "kind":  "Messaging",
-                        "title":  "Supervisor takeoverとオンデマンド要約",
-                        "summary":  "Supervisorがアクティブなメッセージング会話を引き継げるようになり、エージェントはインタラクション要約をオンデマンド作成できます。",
+                        "kind":  "STT / Knowledge",
+                        "title":  "French transcription改善とKnowledge Fabric強化",
+                        "summary":  "フランス語方言の音声文字起こし改善、Knowledge Fabricのメタデータアクセス制御、API同期・ファイル管理強化が追加されました。",
                         "report":  "2026-07-09.html#svc-genesys",
                         "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
                     },
                     {
                         "serviceId":  "genesys-cloud",
                         "date":  "2026-06-22",
-                        "kind":  "STT / Knowledge",
-                        "title":  "French transcription改善とKnowledge Fabric強化",
-                        "summary":  "フランス語方言の音声文字起こし改善、Knowledge Fabricのメタデータアクセス制御、API同期・ファイル管理強化が追加されました。",
+                        "kind":  "Messaging",
+                        "title":  "Supervisor takeoverとオンデマンド要約",
+                        "summary":  "Supervisorがアクティブなメッセージング会話を引き継げるようになり、エージェントはインタラクション要約をオンデマンド作成できます。",
                         "report":  "2026-07-09.html#svc-genesys",
                         "source":  "https://help.genesys.cloud/release-notes/genesys-cloud/"
                     },
@@ -2074,6 +2089,15 @@
                         "summary":  "Cloud Storageのバケット管理バッチ操作がCLI側でGA昇格。",
                         "report":  "2026-06-17.html#svc-other",
                         "source":  "https://docs.cloud.google.com/storage/docs/release-notes"
+                    },
+                    {
+                        "serviceId":  "cloud-run",
+                        "date":  "2026-06-17",
+                        "kind":  "SDK GA",
+                        "title":  "readiness probeフラグがCloud SDK 573.0.0でGA",
+                        "summary":  "Cloud Runのreadiness probe設定がgcloudから正式サポート。WebhookやAgent連携サービスの運用手順に影響します。",
+                        "report":  "2026-06-17.html#svc-cloudrun",
+                        "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
                         "serviceId":  "genesys-cloud",
@@ -2103,13 +2127,13 @@
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
-                        "serviceId":  "cloud-run",
-                        "date":  "2026-06-17",
-                        "kind":  "SDK GA",
-                        "title":  "readiness probeフラグがCloud SDK 573.0.0でGA",
-                        "summary":  "Cloud Runのreadiness probe設定がgcloudから正式サポート。WebhookやAgent連携サービスの運用手順に影響します。",
-                        "report":  "2026-06-17.html#svc-cloudrun",
-                        "source":  "https://docs.cloud.google.com/release-notes"
+                        "serviceId":  "bigquery",
+                        "date":  "2026-06-16",
+                        "kind":  "Preview",
+                        "title":  "Gemini Cloud AssistによるSQLクエリ最適化",
+                        "summary":  "BigQuery Editions向けに、SQLを分析してパフォーマンス改善案を提示する機能がPreview。",
+                        "report":  "2026-06-16.html",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
                         "serviceId":  "text-to-speech",
@@ -2125,11 +2149,11 @@
                     },
                     {
                         "serviceId":  "bigquery",
-                        "date":  "2026-06-16",
-                        "kind":  "Preview",
-                        "title":  "Gemini Cloud AssistによるSQLクエリ最適化",
-                        "summary":  "BigQuery Editions向けに、SQLを分析してパフォーマンス改善案を提示する機能がPreview。",
-                        "report":  "2026-06-16.html",
+                        "date":  "2026-06-15",
+                        "kind":  "GA",
+                        "title":  "BigQuery AI functions関連の更新",
+                        "summary":  "AI functionsやStudio周辺のGA/Preview更新を確認。分析基盤への影響を継続追跡します。",
+                        "report":  "2026-06-15.html",
                         "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
                     },
                     {
@@ -2143,12 +2167,12 @@
                     },
                     {
                         "serviceId":  "bigquery",
-                        "date":  "2026-06-15",
-                        "kind":  "GA",
-                        "title":  "BigQuery AI functions関連の更新",
-                        "summary":  "AI functionsやStudio周辺のGA/Preview更新を確認。分析基盤への影響を継続追跡します。",
-                        "report":  "2026-06-15.html",
-                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                        "date":  "2026-06-13",
+                        "kind":  "複数更新",
+                        "title":  "BigQuery GA/Preview更新とAgent Platform名称変更",
+                        "summary":  "BigQueryのGA×1、Preview×3に加え、Gemini Agent Platform名称変更を確認。",
+                        "report":  "2026-06-13.html",
+                        "source":  "https://docs.cloud.google.com/release-notes"
                     },
                     {
                         "serviceId":  "vertex-agent-platform",
@@ -2164,13 +2188,17 @@
                                         ]
                     },
                     {
-                        "serviceId":  "bigquery",
-                        "date":  "2026-06-13",
-                        "kind":  "複数更新",
-                        "title":  "BigQuery GA/Preview更新とAgent Platform名称変更",
-                        "summary":  "BigQueryのGA×1、Preview×3に加え、Gemini Agent Platform名称変更を確認。",
-                        "report":  "2026-06-13.html",
-                        "source":  "https://docs.cloud.google.com/release-notes"
+                        "serviceId":  "cx-agent-studio",
+                        "date":  "2026-06-11",
+                        "kind":  "GA",
+                        "title":  "評価データのインポート/エクスポート対応",
+                        "summary":  "CX Agent Studioで評価データの入出力が可能になり、回帰評価やCI/CDとの接続がしやすくなりました。",
+                        "report":  "2026-06-11.html",
+                        "source":  "https://cloud.google.com/gemini-enterprise-cx/cx-agent-studio",
+                        "hotProjects":  [
+                                            "voicebot",
+                                            "chatbot"
+                                        ]
                     },
                     {
                         "serviceId":  "vpc-service-controls",
@@ -2192,22 +2220,14 @@
                         "hotProjects":  [
                                             "voicebot"
                                         ]
-                    },
-                    {
-                        "serviceId":  "cx-agent-studio",
-                        "date":  "2026-06-11",
-                        "kind":  "GA",
-                        "title":  "評価データのインポート/エクスポート対応",
-                        "summary":  "CX Agent Studioで評価データの入出力が可能になり、回帰評価やCI/CDとの接続がしやすくなりました。",
-                        "report":  "2026-06-11.html",
-                        "source":  "https://cloud.google.com/gemini-enterprise-cx/cx-agent-studio",
-                        "hotProjects":  [
-                                            "voicebot",
-                                            "chatbot"
-                                        ]
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-10-10",
+                        "href":  "2026-10-10.html",
+                        "summary":  "Google Cloud CCaaS 6.19の仮想エージェント転送・チャット割当修正を確認。Genesys東京・大阪は稼働中、Google Cloudは広域重大障害なし、ChatPlus FAQは到達失敗"
+                    },
                     {
                         "date":  "2026-10-07",
                         "href":  "2026-10-07.html",
@@ -2258,58 +2278,58 @@
                         "href":  "2026-09-24.html",
                         "summary":  "Google Cloud CCaaS 6.15の音声系修正予告、BigQuery data agent連携Preview、Cloud SDK 586.0.0のBreaking変更を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
                     },
-                      {
-                          "date":  "2026-09-18",
-                          "href":  "2026-09-18.html",
-                          "summary":  "BigQueryパイプラインの単体テストGAを確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-17",
-                          "href":  "2026-09-17.html",
-                          "summary":  "Google Cloud CCaaS 6.13の通話・チャット修正予告とBigQueryのmigration lineage Preview／AI.KEY_DRIVERS再開を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-16",
-                          "href":  "2026-09-16.html",
-                          "summary":  "Gemini Enterprise Agent Platformの強化学習ファインチューニングPreviewとCloud SDK 585.0.0のBreaking変更を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-15",
-                          "href":  "2026-09-15.html",
-                          "summary":  "BigQueryのSimba ODBCドライバー更新と2機能Previewを確認。Genesys 9月14日リリースは対象外機能のみ、東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-14",
-                          "href":  "2026-09-14.html",
-                          "summary":  "登録対象サービスの新規リリース差分なし。Genesys 9月14日予定機能は未提供、東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-13",
-                          "href":  "2026-09-13.html",
-                          "summary":  "登録対象サービスの新規リリース差分なし。Genesys東京・大阪はOperational、Google Cloudは対象サービスの障害表示なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-12",
-                          "href":  "2026-09-12.html",
-                          "summary":  "登録対象サービスの新規リリース差分なし。Genesys東京・大阪はOperationalで9月11日・12日の新規インシデントなし、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-11",
-                          "href":  "2026-09-11.html",
-                          "summary":  "BigQueryの分析・機械学習評価向け3関数Preview、Storage Intelligence advisor GA、Gemini Enterprise従量課金版の利用対象拡大を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-10",
-                          "href":  "2026-09-10.html",
-                          "summary":  "Agent GatewayのVPC Service Controls対応、BigQuery生成AI関数のGemini 3.5/3.6/3.7対応、Cloud SDK 584.0.0を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-09",
-                          "href":  "2026-09-09.html",
-                          "summary":  "BigQuery会話型分析の予測モデリングPreview、Cloud Run Jobs遅延実行Preview、VPC Service ControlsのObservability API連携GAを確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
-                      },
-                      {
-                          "date":  "2026-09-08",
+                    {
+                        "date":  "2026-09-18",
+                        "href":  "2026-09-18.html",
+                        "summary":  "BigQueryパイプラインの単体テストGAを確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-17",
+                        "href":  "2026-09-17.html",
+                        "summary":  "Google Cloud CCaaS 6.13の通話・チャット修正予告とBigQueryのmigration lineage Preview／AI.KEY_DRIVERS再開を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-16",
+                        "href":  "2026-09-16.html",
+                        "summary":  "Gemini Enterprise Agent Platformの強化学習ファインチューニングPreviewとCloud SDK 585.0.0のBreaking変更を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-15",
+                        "href":  "2026-09-15.html",
+                        "summary":  "BigQueryのSimba ODBCドライバー更新と2機能Previewを確認。Genesys 9月14日リリースは対象外機能のみ、東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-14",
+                        "href":  "2026-09-14.html",
+                        "summary":  "登録対象サービスの新規リリース差分なし。Genesys 9月14日予定機能は未提供、東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-13",
+                        "href":  "2026-09-13.html",
+                        "summary":  "登録対象サービスの新規リリース差分なし。Genesys東京・大阪はOperational、Google Cloudは対象サービスの障害表示なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-12",
+                        "href":  "2026-09-12.html",
+                        "summary":  "登録対象サービスの新規リリース差分なし。Genesys東京・大阪はOperationalで9月11日・12日の新規インシデントなし、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-11",
+                        "href":  "2026-09-11.html",
+                        "summary":  "BigQueryの分析・機械学習評価向け3関数Preview、Storage Intelligence advisor GA、Gemini Enterprise従量課金版の利用対象拡大を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-10",
+                        "href":  "2026-09-10.html",
+                        "summary":  "Agent GatewayのVPC Service Controls対応、BigQuery生成AI関数のGemini 3.5/3.6/3.7対応、Cloud SDK 584.0.0を確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-09",
+                        "href":  "2026-09-09.html",
+                        "summary":  "BigQuery会話型分析の予測モデリングPreview、Cloud Run Jobs遅延実行Preview、VPC Service ControlsのObservability API連携GAを確認。Genesys東京・大阪はOperational、Google Cloudは広域重大障害なし、ChatPlus FAQ到達失敗"
+                    },
+                    {
+                        "date":  "2026-09-08",
                         "href":  "2026-09-08.html",
                         "summary":  "Genesys Cloud 9月7日リリースは日本語ボイスボットへの直接影響なし、東京・大阪Operational、Google Cloud対象サービス新規差分・広域重大障害なし、ChatPlus FAQ到達失敗"
                     },
@@ -2379,11 +2399,11 @@
                         "summary":  "Gemini Enterprise Agent PlatformのGrok 4.1提供終了、Google Cloud広域重大障害なし、Genesys東京・大阪Operational、ChatPlus FAQ到達失敗"
                     },
                     {
-                         "date":  "2026-08-19",
-                         "href":  "2026-08-19.html",
-                         "summary":  "Cloud SDK 581.0.0のMCP有効化関連no-opコマンド削除、Genesys Tokyo・Osaka Operational、ChatPlus FAQ到達失敗"
-                     },
-                     {
+                        "date":  "2026-08-19",
+                        "href":  "2026-08-19.html",
+                        "summary":  "Cloud SDK 581.0.0のMCP有効化関連no-opコマンド削除、Genesys Tokyo・Osaka Operational、ChatPlus FAQ到達失敗"
+                    },
+                    {
                         "date":  "2026-08-18",
                         "href":  "2026-08-18.html",
                         "summary":  "Genesys Cloud 8/17リリース、Gemini EnterpriseのA2UI/A2Aエージェント登録GA、Cloud Storageのsoft delete有効バケット保持、ChatPlus FAQ到達失敗"
@@ -2407,7 +2427,8 @@
                         "date":  "2026-08-07",
                         "href":  "2026-08-07.html",
                         "summary":  "VPC Service Controls service patterns GA、Google Cloud CCaaS Advanced reporting dashboards 5.1、ChatPlus 7月AI AgentPlus更新、Genesys東京・大阪Operational、ChatPlus FAQ取得失敗"
-                    },                    {
+                    },
+                    {
                         "date":  "2026-08-06",
                         "href":  "2026-08-06.html",
                         "summary":  "Cloud Run sandbox全リソースPreview、Google Cloud CCaaS 5.2の仮想エージェント／チャット修正、Genesys東京・大阪Operational、ChatPlus FAQ取得失敗"
