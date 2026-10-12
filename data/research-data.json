@@ -330,6 +330,15 @@
                  ],
     "updates":  [
                     {
+                        "serviceId":  "bigquery",
+                        "date":  "2026-10-09",
+                        "kind":  "GA / AI Agent",
+                        "title":  "BigQuery Data Engineering Agentが東京リージョンでGA",
+                        "summary":  "BigQuery Data Engineering Agentがasia-northeast1（東京）のリージョンエンドポイントで利用可能になり、gemini-3.5-flashをサポートしました。GAとして公開されています。対象環境での利用は未確認のため、案件への直接影響は未判定です。",
+                        "report":  "2026-10-12.html#svc-bigquery",
+                        "source":  "https://docs.cloud.google.com/bigquery/docs/release-notes"
+                    },
+                    {
                         "serviceId":  "conversational-agents",
                         "date":  "2026-10-08",
                         "kind":  "修正 / Google Cloud CCaaS 6.19",
@@ -2223,6 +2232,11 @@
                     }
                 ],
     "reports":  [
+                    {
+                        "date":  "2026-10-12",
+                        "href":  "2026-10-12.html",
+                        "summary":  "BigQuery Data Engineering Agentの東京リージョンGAを確認。Genesys CloudのUAE重大障害は継続、東京・大阪とGoogle Cloud広域サービスは稼働。ChatPlus FAQは取得失敗"
+                    },
                     {
                         "date":  "2026-10-10",
                         "href":  "2026-10-10.html",
