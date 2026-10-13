@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デイリーリサーチ — 2026年10月13日</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header><a href="index.html">ホーム</a> / デイリーリサーチ　2026年10月13日</header>
+    <h1>デイリーリサーチ</h1>
+    <p>対象期間: 2026年10月12日〜13日</p>
+    <h2 class="sec-title">概況</h2>
+    <p>BigQuery Data Transfer ServiceでPostgreSQL・ServiceNow向け増分転送がGA。Genesys Cloudは東京・大阪稼働中、UAE重大障害継続。Google Cloudに広域重大障害なし。ChatPlusニュース更新あり。Cloud SDK個別ノート取得失敗。</p>
+    <h2 class="sec-title">詳細</h2>
+    <h3 id="svc-bigquery">BigQuery</h3><p>10月12日、PostgreSQLおよびServiceNow向け増分データ転送がGAになりました。利用状況は未確認です。</p>
+    <h3 id="svc-genesys">Genesys Cloud</h3><p>10月12日付一覧にAgentic Virtual Agentsの会話フックなどが掲載されました。日本語ボイスボットへの直接影響は未判定です。東京・大阪はOperational、UAEはMajor Outageです。</p>
+    <h3 id="svc-chatplus">ChatPlusとGoogle Cloud</h3><p>ChatPlusは10月6日のAWS FTR取得告知、10月7日の9月更新まとめを掲載。FAQ・お知らせに対象メンテナンス告知は確認できませんでした。Agent Platform Workbenchは依存パッケージを更新し、pyOpenSSLとcryptographyの不整合によるgcloud・gsutilの読み込み失敗を修正しました。</p>
+    <h2 class="sec-title">到達確認</h2>
+    <table class="other-table"><thead><tr><th>サービス</th><th>公式ソース</th><th>状態</th><th>要点</th></tr></thead><tbody>
+      <tr><td>Genesys Cloud</td><td>到達</td><td>10月12日</td><td>東京・大阪Operational、UAE Major Outage。日本語ボイスボットに明確な直接影響なし。</td></tr>
+      <tr><td>ChatPlus</td><td>到達</td><td>10月7日</td><td>ニュースにFTR告知と9月更新まとめ。FAQで対象メンテナンス告知なし。</td></tr>
+      <tr><td>Dialogflow CX</td><td>到達</td><td>更新なし</td><td>ドキュメント・ステータス確認。</td></tr>
+      <tr><td>Conversational Agents</td><td>到達</td><td>更新なし</td><td>ドキュメント・Google Cloudリリースノート・ステータス確認。</td></tr>
+      <tr><td>CX Agent Studio</td><td>到達</td><td>更新なし</td><td>製品ページ・Google Cloudリリースノート・ステータス確認。</td></tr>
+      <tr><td>Google Cloud Text-to-Speech</td><td>到達</td><td>2025年12月30日</td><td>対象期間の更新なし。</td></tr>
+      <tr><td>Google Cloud Speech-to-Text</td><td>到達</td><td>2025年11月13日</td><td>対象期間の更新なし。</td></tr>
+      <tr><td>BigQuery</td><td>到達</td><td>10月12日</td><td>PostgreSQL・ServiceNow増分転送GA。</td></tr>
+      <tr><td>Cloud Run</td><td>到達</td><td>10月7日</td><td>SSH接続Preview以降、新規掲載なし。</td></tr>
+      <tr><td>Vertex AI / GenAI / Agent Platform</td><td>到達</td><td>10月12日</td><td>Workbench依存パッケージ更新とgcloud/gsutil不具合修正。</td></tr>
+      <tr><td>Cloud Storage</td><td>到達</td><td>9月30日</td><td>対象期間の更新なし。</td></tr>
+      <tr><td>VPC Service Controls</td><td>到達</td><td>10月8日</td><td>対象期間の更新なし。</td></tr>
+      <tr><td>Workflows</td><td>到達</td><td>2月17日</td><td>対象期間の更新なし。</td></tr>
+      <tr><td>Cloud SDK / gcloud CLI</td><td>一部取得失敗</td><td>確認未完了</td><td>個別リリースノート本文を検索側で取得できず。Google Cloud全体ノートのWorkbench関連修正は確認。</td></tr>
+    </tbody></table>
+    <h2 class="sec-title">公式ソース</h2>
+    <ul>
+      <li><a href="https://docs.cloud.google.com/bigquery/docs/release-notes">BigQuery公式リリースノート</a></li>
+      <li><a href="https://status.cloud.google.com/">Google Cloud公式ステータス</a></li>
+      <li><a href="https://help.genesys.cloud/release-notes/genesys-cloud/">Genesys Cloud公式リリースノート</a></li>
+      <li><a href="https://status.mypurecloud.com/">Genesys Cloud公式ステータス</a></li>
+      <li><a href="https://chatplus.jp/news/">ChatPlus公式ニュース</a></li>
+      <li><a href="https://faq.chatplus.jp/">ChatPlus FAQ・お知らせ</a></li>
+      <li><a href="https://docs.cloud.google.com/dialogflow/cx/docs">Dialogflow CX公式ドキュメント</a></li>
+      <li><a href="https://docs.cloud.google.com/run/docs/release-notes">Cloud Run公式リリースノート</a></li>
+      <li><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes">Vertex AI公式リリースノート</a></li>
+      <li><a href="https://docs.cloud.google.com/vpc-service-controls/docs/release-notes">VPC Service Controls公式リリースノート</a></li>
+      <li><a href="https://docs.cloud.google.com/sdk/docs/release-notes">Cloud SDK公式リリースノート</a></li>
+    </ul>
+  </main>
+</body>
+</html>
