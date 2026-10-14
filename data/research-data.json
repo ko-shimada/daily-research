@@ -330,12 +330,21 @@
   ],
   "updates": [
     {
+      "serviceId": "vertex-agent-platform",
+      "date": "2026-10-12",
+      "kind": "修正 / Agent Platform Workbench",
+      "title": "Workbenchのgcloud・gsutil読み込み不具合を修正",
+      "summary": "依存パッケージを更新し、pyOpenSSLとcryptographyの版不整合でgcloud・gsutilがOpenSSL.cryptoのAttributeErrorにより読み込みに失敗する問題を修正しました。Workbenchの利用有無は未確認です。",
+      "report": "2026-10-14.html#svc-vertex-agent-platform",
+      "source": "https://docs.cloud.google.com/vertex-ai/docs/release-notes"
+    },
+    {
       "serviceId": "bigquery",
       "date": "2026-10-12",
       "kind": "GA / Data Transfer Service",
       "title": "PostgreSQL・ServiceNow向け増分データ転送がGA",
       "summary": "BigQuery Data Transfer ServiceでPostgreSQLとServiceNowを対象にした増分データ転送がGAになりました。対象プロジェクトでの利用状況は未確認です。",
-      "report": "2026-10-13.html#svc-bigquery",
+      "report": "2026-10-14.html#svc-bigquery",
       "source": "https://docs.cloud.google.com/bigquery/docs/release-notes"
     },
     {
@@ -353,7 +362,7 @@
       "kind": "機能更新 / Agentic Virtual Agents",
       "title": "Agentic Virtual Agents向け会話フックなどを掲載",
       "summary": "Genesys Cloudの10月12日リリース一覧に、Agentic Virtual Agents向け会話フック、依存変数を結ぶ知識設定、AI Studioのツール入力の事前条件が掲載されました。日本語ボイスボット案件での利用は未確認のため直接影響は未判定です。",
-      "report": "2026-10-13.html#svc-genesys",
+      "report": "2026-10-14.html#svc-genesys",
       "source": "https://help.genesys.cloud/release-notes/genesys-cloud/"
     },
     {
@@ -2268,6 +2277,11 @@
     }
   ],
   "reports": [
+    {
+      "date": "2026-10-14",
+      "href": "2026-10-14.html",
+      "summary": "BigQueryのPostgreSQL・ServiceNow増分転送GA、Agent Platform Workbench修正、Genesys Cloud 10月12日更新を確認。ChatPlus FAQとCloud SDK個別ノートは取得失敗"
+    },
     {
       "date": "2026-10-13",
       "href": "2026-10-13.html",
